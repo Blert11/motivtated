@@ -156,7 +156,7 @@ class Engine:
                 self.event(key, 'reviewed_schedule_retry_after_old_time_readback')
             record['reschedule_intent'] = change
             self.event(key, 'before_buffer_editPost')
-            self.buffer.reschedule(post_id, due_at)
+            self.buffer.reschedule(post_id, due_at, record)
             self.event(key, 'before_buffer_reschedule_readback')
             post = self.buffer.post(post_id)
         require(post['id'] == post_id and post['status'] == 'scheduled'

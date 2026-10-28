@@ -42,11 +42,17 @@ class Buffer:
         return self.query('query($input: PostInput!) { post(input: $input) { '+POST_FIELDS+' } }',
                           {'input': {'id': post_id}})['post']
 
-    def reschedule(self, post_id, due_at):
+    def reschedule(self, post_id, due_at, record):
+        # The live API rejects a schedule-only edit for video posts, despite optional
+        # content fields in its schema. Preserve our recorded caption/video/layout.
+        edit = payload(record['platform'], record['channel_id'], record['caption'], record['media']['url'], due_at)
+        edit.pop('channelId')
+        edit.pop('needsApproval')
+        edit['id'] = post_id
         result = self.query('mutation($input: EditPostInput!) { editPost(input: $input) { __typename '
             '... on PostActionSuccess { post { '+POST_FIELDS+' } } '
             '... on MutationError { message } } }',
-            {'input': {'id': post_id, 'mode': 'customScheduled', 'dueAt': due_at}})['editPost']
+            {'input': edit})['editPost']
         if result.get('__typename') != 'PostActionSuccess' or result.get('post', {}).get('id') != post_id:
             message = str(result.get('message', 'No error detail returned.'))
             secrets = [self.token] + [v for k,v in os.environ.items()

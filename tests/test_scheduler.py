@@ -25,7 +25,7 @@ def plan():
 
 
 class ScheduledBuffer(fixtures.FakeBuffer):
-    def reschedule(self, post_id, due_at):
+    def reschedule(self, post_id, due_at, record=None):
         assert self.ledger.snapshots[-1]['events'][-1]['action'] == 'before_buffer_editPost'
         assert any(r.get('reschedule_intent',{}).get('post_id') == post_id
                    for r in self.ledger.snapshots[-1]['records'].values())
@@ -146,8 +146,8 @@ class SchedulerTests(unittest.TestCase):
     def test_lost_edit_response_recovers_by_readback_without_another_edit(self):
         self.run_scheduler(); self.change_second_slot()
         original=self.buffer.reschedule; edits=[]
-        def lost(pid,due):
-            edits.append(pid); original(pid,due); raise Stop('lost response')
+        def lost(pid,due,record):
+            edits.append(pid); original(pid,due,record); raise Stop('lost response')
         self.buffer.reschedule=lost
         with self.assertRaisesRegex(Stop,'lost response'): self.run_scheduler()
         self.buffer.reschedule=original
@@ -158,7 +158,7 @@ class SchedulerTests(unittest.TestCase):
 
     def test_unresolved_edit_is_not_blindly_retried(self):
         self.run_scheduler(); self.change_second_slot(); edits=[]
-        def lost(pid,due): edits.append(pid); raise Stop('lost response')
+        def lost(pid,due,record): edits.append(pid); raise Stop('lost response')
         self.buffer.reschedule=lost
         with self.assertRaises(Stop): self.run_scheduler()
         with self.assertRaisesRegex(Stop,'no automatic edit retry'): self.run_scheduler()
@@ -187,7 +187,8 @@ class SchedulerTests(unittest.TestCase):
         b=Buffer(token='private-test-key')
         b.query=lambda *a:{'editPost':{'__typename':'InvalidInputError',
             'message':'bad private-test-key https://example.com/?private=value'}}
-        with self.assertRaises(Stop) as error: b.reschedule('known','2099-01-01T09:00:00+01:00')
+        record={'platform':'tiktok','channel_id':'tiktok','caption':'Keep moving','media':{'url':'https://media.example/video.mp4'}}
+        with self.assertRaises(Stop) as error: b.reschedule('known','2099-01-01T09:00:00+01:00',record)
         self.assertNotIn('private-test-key',str(error.exception))
         self.assertNotIn('example.com',str(error.exception))
         self.assertIn('InvalidInputError',str(error.exception))
@@ -203,14 +204,21 @@ class SchedulerTests(unittest.TestCase):
         self.plan['max_pending_per_channel']=11
         with self.assertRaises(Stop): validate_plan(self.plan)
 
-    def test_edit_payload_changes_only_existing_id_and_schedule(self):
+    def test_edit_payload_preserves_content_and_existing_id(self):
         b=Buffer(token='fake'); captured=[]
         def query(q,v):
             captured.append(v['input'])
             return {'editPost':{'__typename':'PostActionSuccess','post':{'id':'known'}}}
         b.query=query
-        b.reschedule('known','2099-01-01T10:30:00+01:00')
-        self.assertEqual(captured,[{'id':'known','mode':'customScheduled','dueAt':'2099-01-01T10:30:00+01:00'}])
+        record={'platform':'instagram','channel_id':'instagram','caption':'Keep moving','media':{'url':'https://media.example/video.mp4'}}
+        b.reschedule('known','2099-01-01T10:30:00+01:00',record)
+        self.assertEqual(captured[0]['id'],'known')
+        self.assertEqual(captured[0]['text'],record['caption'])
+        self.assertEqual(captured[0]['assets'],[{'video':{'url':record['media']['url']}}])
+        self.assertEqual(captured[0]['metadata']['instagram']['type'],'reel')
+        self.assertEqual(captured[0]['dueAt'],'2099-01-01T10:30:00+01:00')
+        self.assertEqual(captured[0]['mode'],'customScheduled')
+        self.assertNotIn('channelId',captured[0])
 
     def test_disabled_plan_makes_no_calls(self):
         self.plan['enabled']=False
