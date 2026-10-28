@@ -48,8 +48,34 @@ def https_url(value):
     return value.rstrip('/')
 
 
+def github_error_message(exc, headers):
+    """Only expose GitHub's bounded message field, with known credentials redacted."""
+    try:
+        body = exc.read(8193)
+        if len(body) > 8192:
+            return ''
+        message = json.loads(body).get('message')
+        if not isinstance(message, str):
+            return ''
+        secrets = [value for name, value in os.environ.items()
+                   if re.search(r'TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY', name, re.I) and value]
+        for name, value in headers.items():
+            if re.search(r'authorization|cookie|token|key', name, re.I):
+                secrets.extend([value, value.split(' ', 1)[-1]])
+        for value in sorted(set(secrets), key=len, reverse=True):
+            for representation in {value, urllib.parse.quote(value, safe='')}:
+                message = message.replace(representation, '[REDACTED]')
+        message = re.sub(r'(?i)\b(?:Bearer\s+\S+|github_pat_[A-Za-z0-9_]+|gh[pousr]_[A-Za-z0-9_]+)',
+                         '[REDACTED]', message)
+        message = re.sub(r'https?://\S+', '[URL]', message)
+        message = ' '.join(''.join(c if c.isprintable() else ' ' for c in message).split())
+        return message[:500] + ('...' if len(message) > 500 else '')
+    except (OSError, ValueError, AttributeError, TypeError):
+        return ''
+
+
 class HTTP:
-    """No automatic mutation retries. Errors omit credentials and response bodies."""
+    """No automatic mutation retries; only sanitized GitHub error messages are exposed."""
     def json(self, method, url, headers=None, data=None, missing_ok=False, form=None):
         headers = dict(headers or {})
         headers.setdefault('User-Agent', 'motivtated-publisher/1')
@@ -69,16 +95,10 @@ class HTTP:
         except urllib.error.HTTPError as exc:
             if exc.code == 404 and missing_ok:
                 return None
-            detail = ''
-            try:
-                body = json.loads(exc.read(64 * 1024) or b'{}')
-                if isinstance(body, dict):
-                    parts = [str(body.get('message', ''))[:200]]
-                    parts += [str(e.get('message') or e.get('code') or '')[:120] for e in body.get('errors', [])[:3] if isinstance(e, dict)]
-                    detail = ' — ' + '; '.join(p for p in parts if p)
-            except Exception:
-                pass
-            raise Stop(f'HTTP {exc.code} from {urllib.parse.urlsplit(url).hostname}{detail}; no automatic retry.') from None
+            hostname = urllib.parse.urlsplit(url).hostname
+            message = github_error_message(exc, headers) if hostname == 'api.github.com' else ''
+            detail = f' GitHub message: {message}' if message else ''
+            raise Stop(f'HTTP {exc.code} from {hostname}; no automatic retry.{detail}') from None
         except (urllib.error.URLError, TimeoutError, OSError, ValueError):
             raise Stop('Network/JSON response failure; no automatic mutation retry.') from None
 

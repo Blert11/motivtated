@@ -1,6 +1,6 @@
 # Deployment handoff to Claude — manual milestone
 
-Prepared 2026-10-28. Deploy into **Blert11/motivtated**, which must be PRIVATE. Codex has not pushed code, added credentials, uploaded public media, or published posts. Buffer's browser tests succeeded according to Blert; API publishing has not yet been tested live.
+Prepared 2026-10-28. Deploy into **Blert11/motivtated**, which must be PRIVATE. Blert authorized Codex to take over deployment. TikTok API publication succeeded and Blert confirmed public visibility; see CODEX_NOTES.md for current live state.
 
 **Latest decision: use GitHub Pages temporarily while Cloudflare payment setup is blocked.** Set MEDIA_PROVIDER=pages and use the separate public Blert11/motivtated-media repository. Keep Blert11/motivtated PRIVATE. R2 remains implemented for a later switch. Read CODEX_NOTES.md; copy the updated code AND workflow example before deployment.
 
@@ -60,7 +60,7 @@ Blert enters values at repository Settings → Secrets and variables → Actions
 
 **GitHub Pages:** create a separate public repository only if Blert chooses it. Initialize `main`, add `.nojekyll` and a minimal `index.html`; enable Pages from `main` at `/` in repository settings. Set the public base URL to the exact `html_url` from GitHub Pages (usually `https://blert11.github.io/motivtated-media`). Grant the media token access only to that repo. No Pages hosting on the private publisher repo.
 
-MP4s use immutable names containing their ID and full SHA256. The adapter refuses >=100 MiB files and caps the current site tree at 900 MB. The provider limit is a 1 GB published site and 100 GB/month soft bandwidth limit. Your current 65 clips average about 38 MB; roughly 26 average clips fill 1 GB, so retain fewer. Pages is not unlimited video hosting. Deleting from the current tree does not purge Git history; routine cleanup alone will not stop repository growth. There is no destructive history rewriting in this publisher. Confirm suitability with GitHub if using it as an ongoing media delivery service.
+MP4s use immutable names containing their ID and full SHA256. Uploads use the deployed git-push implementation with no force push and hosted blob hash verification; see CODEX_NOTES.md for the current live state. The actual 55 MB M000032 upload has succeeded. The adapter refuses >=100 MiB files and caps the current site tree at 900 MB. The provider limit is a 1 GB published site and 100 GB/month soft bandwidth limit. Your current 65 clips average about 38 MB; roughly 26 average clips fill 1 GB, so retain fewer. Pages is not unlimited video hosting. Deleting from the current tree does not purge Git history; routine cleanup alone will not stop repository growth. There is no destructive history rewriting in this publisher. Confirm suitability with GitHub if using it as an ongoing media delivery service.
 
 A new Pages commit can take time to deploy. If a manual publish run stops at public URL verification, inspect that it remains `failed_before_submit`. Wait for the Pages deployment, then rerun the SAME clip/platform with resume=true. Do not change IDs. The existing immutable file is reused. The publisher does not wait indefinitely or guess that HTTP 200 means a valid video.
 
@@ -95,7 +95,7 @@ From the Publisher/repository root:
 python -m unittest discover -s tests -v
 ```
 
-Expected after installing requirements: **40 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
+Expected after installing requirements: **46 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
 
 ## Manual workflow sequence
 

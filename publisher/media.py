@@ -36,6 +36,7 @@ class PagesHost:
         key = key_for(identifier, digest)
         existing = self.gh.file(key, self.branch, True)
         raw = path.read_bytes()
+        require(hashlib.sha256(raw).hexdigest() == digest, 'Video changed before Pages upload; refusing to publish.')
         git_sha = hashlib.sha1(f'blob {len(raw)}\0'.encode() + raw).hexdigest()
         if existing:
             require(existing.get('sha') == git_sha, 'Existing public media differs; refusing to overwrite it.')
