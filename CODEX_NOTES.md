@@ -6,4 +6,4 @@ Read SCHEDULER.md and posting-schedule.json. All 22 inputs are already in the pr
 
 Do not reallocate IDs or modify registry.json. Do not reset publisher-state. Approved time changes use Engine.reschedule on the existing Buffer ID with a durable edit intent and readback; never recreate a scheduled post. User does not need to upload packages to Drive. Both Codex and Claude can run the reusable uploader against validated receipts with their authorized GitHub access.
 
-76 offline tests passed. The scheduling API uses mode=customScheduled and dueAt; no invented scheduledAt field. Public confirmation still exists for manual use; autonomous cleanup uses explicit Buffer-sent evidence and records that basis separately.
+78 offline tests passed. The scheduling API uses mode=customScheduled and dueAt; no invented scheduledAt field. Public confirmation still exists for manual use; autonomous cleanup uses explicit Buffer-sent evidence and records that basis separately.

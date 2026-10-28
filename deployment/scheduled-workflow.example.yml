@@ -3,6 +3,11 @@ name: MOTIVTATED scheduled publisher
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
+    inputs:
+      reviewed_schedule_edit:
+        description: Optional exact record for a reviewed same-ID edit retry (M000012:tiktok)
+        type: string
+        default: ''
 permissions:
   contents: write
   actions: write
@@ -34,6 +39,7 @@ jobs:
       - name: Reconcile, refill, and clean completed media
         run: python -m publisher.scheduler
         env:
+          REVIEWED_SCHEDULE_EDIT: ${{ inputs.reviewed_schedule_edit }}
           GITHUB_TOKEN: ${{ github.token }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           MEDIA_GITHUB_TOKEN: ${{ secrets.MEDIA_GITHUB_TOKEN }}

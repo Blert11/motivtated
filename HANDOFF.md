@@ -99,7 +99,7 @@ From the Publisher/repository root:
 python -m unittest discover -s tests -v
 ```
 
-Expected after installing requirements: **76 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
+Expected after installing requirements: **78 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
 
 ## Manual workflow sequence
 
