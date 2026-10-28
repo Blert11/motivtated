@@ -27,7 +27,11 @@ def parse_time(value):
 
 def validate_plan(plan):
     require(plan.get('version') == 1 and plan.get('timezone') == 'Europe/Budapest', 'Unsupported schedule plan.')
-    require(plan.get('max_pending_per_channel') == 6, 'Keep at most six planned posts pending per channel.')
+    require(plan.get('max_pending_per_channel') in [6,10], 'Queue capacity must be six or ten per channel.')
+    daily = plan.get('posts_per_day', 5)
+    require(daily in [5,10], 'Unsupported daily posting count.')
+    slots = [(9,0),(12,0),(15,0),(18,0),(21,0)] if daily == 5 else [
+        (9+90*n//60,90*n%60) for n in range(10)]
     rows = plan['clips']
     require([r['clip_id'] for r in rows] == [f'M{n:06d}' for n in range(10,32)],
             'This approved queue must contain Tate videos 10-31 in order, exactly once.')
@@ -38,9 +42,9 @@ def validate_plan(plan):
         due = parse_time(row['due_at'])
         require(previous is None or due > previous, 'Clip times must strictly increase.')
         local = due.astimezone(ZoneInfo(plan['timezone']))
-        require(local.hour in [9,12,15,18,21] and local.minute == local.second == 0, 'Unexpected posting slot.')
+        require((local.hour,local.minute) in slots and local.second == local.microsecond == 0, 'Unexpected posting slot.')
         days[local.date()] = days.get(local.date(), 0)+1
-        require(days[local.date()] <= 5, 'The plan exceeds five posts per local day.')
+        require(days[local.date()] <= daily, 'The plan exceeds its approved posts per local day.')
         previous = due
     return rows
 
@@ -93,6 +97,16 @@ class Scheduler:
                     require(refreshed['state'] in ['submitted','posted'], 'Buffer post failed; inspect its existing ID.')
                     self.report['reconciled'].append(row['clip_id']+':'+platform)
 
+    def apply_schedule_changes(self):
+        for row in self.rows:
+            for platform in PLATFORMS:
+                record = self.records.get(row['clip_id']+':'+platform)
+                if not record or record.get('scheduled_at') == row['due_at']:
+                    continue
+                require(row.get('previous_due_at') == record.get('scheduled_at'),
+                        'Changing an existing schedule requires its explicit previous time.')
+                self.engine.reschedule(row['clip_id'], platform, row['previous_due_at'], row['due_at'])
+
     def cleanup(self):
         if not self.plan.get('cleanup_after_both_sent'):
             return
@@ -123,7 +137,7 @@ class Scheduler:
                 if record and record['state'] not in ['preparing','failed_before_submit']:
                     continue
                 # Pre-submit reservations already occupy one local queue slot.
-                if not record and pending[platform] >= 6:
+                if not record and pending[platform] >= self.plan['max_pending_per_channel']:
                     continue
                 require(parse_time(row['due_at']) > self.clock()+timedelta(minutes=5),
                         f"Missed scheduling window for {row['clip_id']}; stop rather than publish a backlog in a burst.")
@@ -147,14 +161,15 @@ class Scheduler:
         self.report = {'scheduled': [], 'reconciled': [], 'cleaned': [], 'errors': []}
         if not self.plan.get('enabled'):
             return {'enabled': False}
+        self.apply_schedule_changes()
         self.reconcile_due()
         self.cleanup()
         candidates = self.candidates()
         if candidates:
             counts = self.pending_counts()
             for row, platforms in candidates:
-                require(all(counts[p] < 6 for p in platforms),
-                        'Buffer already has six pending posts on a target channel; wait for capacity or inspect external posts.')
+                require(all(counts[p] < self.plan['max_pending_per_channel'] for p in platforms),
+                        'Buffer has reached the configured pending limit; wait for capacity or inspect external posts.')
                 with tempfile.TemporaryDirectory(prefix='motivtated-scheduler-') as scratch:
                     manifest, content = self.loader(row, Path(scratch))
                     for platform in platforms:

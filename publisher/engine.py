@@ -127,6 +127,44 @@ class Engine:
         self.accept_post(key, record, post, strict_source=not bool(known_id))
         return record
 
+    def reschedule(self, identifier, platform, previous_due, due_at):
+        key = clip_id(identifier)+':'+platform
+        record = self.ledger.data['records'].get(key)
+        require(record and record['state'] == 'submitted' and record.get('buffer_post_id'),
+                'Only an existing scheduled post can be rescheduled.')
+        require(record.get('scheduled_at') == previous_due, 'Previous schedule does not match the authorized change.')
+        target = datetime.fromisoformat(due_at.replace('Z','+00:00'))
+        require(target.tzinfo is not None and target > datetime.now(timezone.utc), 'New schedule must be in the future.')
+        post_id = record['buffer_post_id']
+        self.event(key, 'before_buffer_reschedule_lookup')
+        post = self.buffer.post(post_id)
+        require(post['id'] == post_id and post['channelId'] == record['channel_id']
+                and post['channelService'] == platform and post['text'].strip() == record['caption']
+                and post['status'] == 'scheduled' and post.get('schedulingType') == 'automatic',
+                'Existing post changed or is no longer scheduled; inspect before editing.')
+        intent = record.get('reschedule_intent')
+        change = {'post_id': post_id, 'previous_due': previous_due, 'due_at': due_at}
+        require(not intent or intent == change, 'An unresolved different schedule edit exists.')
+        live_due = datetime.fromisoformat(post['dueAt'].replace('Z','+00:00'))
+        if intent:
+            require(live_due == target, 'Schedule edit outcome is unresolved; no automatic edit retry.')
+        else:
+            require(live_due == datetime.fromisoformat(previous_due.replace('Z','+00:00')),
+                    'Live schedule differs from the saved previous time.')
+            record['reschedule_intent'] = change
+            self.event(key, 'before_buffer_editPost')
+            self.buffer.reschedule(post_id, due_at)
+            self.event(key, 'before_buffer_reschedule_readback')
+            post = self.buffer.post(post_id)
+        require(post['id'] == post_id and post['status'] == 'scheduled'
+                and datetime.fromisoformat(post['dueAt'].replace('Z','+00:00')) == target,
+                'Schedule edit was not confirmed by readback; retain the existing post ID.')
+        record['scheduled_at'] = due_at
+        record.setdefault('schedule_history', []).append({**change, 'confirmed_at': now()})
+        record.pop('reschedule_intent', None)
+        self.accept_post(key, record, post, strict_source=False)
+        return record
+
     def confirm_public(self, identifier, platform, url):
         record = self.reconcile(identifier, platform)
         require(record['state'] == 'posted', 'Buffer has not confirmed publication yet.')

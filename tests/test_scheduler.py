@@ -8,7 +8,7 @@ from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 import test_publisher as fixtures
-from publisher.buffer import payload
+from publisher.buffer import Buffer, payload
 from publisher.common import Stop
 from publisher.engine import Engine
 from publisher.scheduler import Scheduler, validate_plan, wait_for_public
@@ -25,6 +25,13 @@ def plan():
 
 
 class ScheduledBuffer(fixtures.FakeBuffer):
+    def reschedule(self, post_id, due_at):
+        assert self.ledger.snapshots[-1]['events'][-1]['action'] == 'before_buffer_editPost'
+        assert any(r.get('reschedule_intent',{}).get('post_id') == post_id
+                   for r in self.ledger.snapshots[-1]['records'].values())
+        self.posts[post_id]['dueAt'] = due_at
+        return self.post(post_id)
+
     def organizations(self): return [{'id':'org'}]
     def pending(self, org, channels):
         return [p for p in self.posts.values() if p['status']=='scheduled']
@@ -93,7 +100,7 @@ class SchedulerTests(unittest.TestCase):
 
     def test_external_queue_capacity_blocks_new_submissions(self):
         self.buffer.pending=lambda *args:[{'id':str(i),'channelId':p,'status':'scheduled'} for i in range(6) for p in ['tiktok','instagram']]
-        with self.assertRaisesRegex(Stop,'six pending'): self.run_scheduler()
+        with self.assertRaisesRegex(Stop,'pending limit'): self.run_scheduler()
         self.assertEqual(self.buffer.calls,[])
 
     def test_missed_slot_stops_without_bursting(self):
@@ -106,7 +113,83 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaises(Stop): self.run_scheduler()
         self.buffer.disconnected=False
         self.scheduler.rows[0]['due_at']='2099-01-01T10:00:00+01:00'
-        with self.assertRaisesRegex(Stop,'scheduled time'): self.run_scheduler()
+        with self.assertRaisesRegex(Stop,'previous time'): self.run_scheduler()
+
+    def test_ten_daily_slots_and_ten_pending_after_two_bounded_refills(self):
+        self.plan.update(posts_per_day=10,max_pending_per_channel=10)
+        for n,row in enumerate(self.plan['clips']):
+            row['due_at']=(datetime(2099,1,1+n//10,9,tzinfo=ZoneInfo('Europe/Budapest'))
+                           +timedelta(minutes=90*(n%10))).isoformat()
+        validate_plan(self.plan)
+        self.run_scheduler(); self.run_scheduler(); self.run_scheduler()
+        self.assertEqual(len(self.buffer.calls),20)
+        for p in ['tiktok','instagram']:
+            self.assertEqual(sum(r['channelId']==p for r in self.buffer.posts.values()),10)
+
+    def change_second_slot(self):
+        row=self.plan['clips'][1]
+        row['previous_due_at']=row['due_at']
+        row['due_at']='2099-01-01T10:30:00+01:00'
+        return row
+
+    def test_schedule_edit_preserves_ids_and_does_not_create_posts(self):
+        self.run_scheduler(); ids=set(self.buffer.posts)
+        row=self.change_second_slot()
+        self.run_scheduler(); self.run_scheduler()
+        self.assertEqual(set(self.buffer.posts),ids)
+        self.assertEqual(len(self.buffer.calls),12)
+        for p in ['tiktok','instagram']:
+            r=self.ledger.data['records']['M000011:'+p]
+            self.assertEqual(r['scheduled_at'],row['due_at'])
+            self.assertEqual(len(r['schedule_history']),1)
+
+    def test_lost_edit_response_recovers_by_readback_without_another_edit(self):
+        self.run_scheduler(); self.change_second_slot()
+        original=self.buffer.reschedule; edits=[]
+        def lost(pid,due):
+            edits.append(pid); original(pid,due); raise Stop('lost response')
+        self.buffer.reschedule=lost
+        with self.assertRaisesRegex(Stop,'lost response'): self.run_scheduler()
+        self.buffer.reschedule=original
+        self.run_scheduler()
+        self.assertEqual(len(edits),1)
+        self.assertEqual(len(self.buffer.calls),12)
+        self.assertNotIn('reschedule_intent',self.ledger.data['records']['M000011:tiktok'])
+
+    def test_unresolved_edit_is_not_blindly_retried(self):
+        self.run_scheduler(); self.change_second_slot(); edits=[]
+        def lost(pid,due): edits.append(pid); raise Stop('lost response')
+        self.buffer.reschedule=lost
+        with self.assertRaises(Stop): self.run_scheduler()
+        with self.assertRaisesRegex(Stop,'no automatic edit retry'): self.run_scheduler()
+        self.assertEqual(len(edits),1)
+
+    def test_failed_intent_save_prevents_schedule_edit(self):
+        self.run_scheduler(); row=self.change_second_slot()
+        self.ledger.fail_action='before_buffer_editPost'
+        with self.assertRaises(Stop): self.run_scheduler()
+        r=self.ledger.data['records']['M000011:tiktok']
+        self.assertEqual(self.buffer.posts[r['buffer_post_id']]['dueAt'],row['previous_due_at'])
+
+    def test_cannot_reschedule_a_sent_post(self):
+        self.run_scheduler(); self.change_second_slot()
+        r=self.ledger.data['records']['M000011:tiktok']
+        self.buffer.posts[r['buffer_post_id']]['status']='sent'
+        with self.assertRaisesRegex(Stop,'no longer scheduled'): self.run_scheduler()
+        self.assertNotIn('reschedule_intent',r)
+
+    def test_queue_capacity_over_free_limit_rejected(self):
+        self.plan['max_pending_per_channel']=11
+        with self.assertRaises(Stop): validate_plan(self.plan)
+
+    def test_edit_payload_changes_only_existing_id_and_schedule(self):
+        b=Buffer(token='fake'); captured=[]
+        def query(q,v):
+            captured.append(v['input'])
+            return {'editPost':{'__typename':'PostActionSuccess','post':{'id':'known'}}}
+        b.query=query
+        b.reschedule('known','2099-01-01T10:30:00+01:00')
+        self.assertEqual(captured,[{'id':'known','mode':'customScheduled','dueAt':'2099-01-01T10:30:00+01:00'}])
 
     def test_disabled_plan_makes_no_calls(self):
         self.plan['enabled']=False

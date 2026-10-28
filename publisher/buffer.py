@@ -40,6 +40,15 @@ class Buffer:
         return self.query('query($input: PostInput!) { post(input: $input) { '+POST_FIELDS+' } }',
                           {'input': {'id': post_id}})['post']
 
+    def reschedule(self, post_id, due_at):
+        result = self.query('mutation($input: EditPostInput!) { editPost(input: $input) { __typename '
+            '... on PostActionSuccess { post { '+POST_FIELDS+' } } '
+            '... on MutationError { message } } }',
+            {'input': {'id': post_id, 'mode': 'customScheduled', 'dueAt': due_at}})['editPost']
+        require(result.get('__typename') == 'PostActionSuccess' and result.get('post', {}).get('id') == post_id,
+                'Buffer did not confirm the existing post edit; reconcile before retrying.')
+        return result['post']
+
     def pending(self, organization_id, channel_ids):
         result = self.query('query($input: PostsInput!) { posts(first: 100, input: $input) { '
             'edges { node { id channelId status dueAt } } pageInfo { hasNextPage } } }',

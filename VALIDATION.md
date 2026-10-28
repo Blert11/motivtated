@@ -23,3 +23,5 @@
 ## Scheduled queue validation
 
 68 tests passed after adding the explicit timed queue, private package selection, six-post capacity guard, missed-slot stop, per-platform ambiguity handling, refill/reuse behavior, Budapest timezone offsets, Pages readiness retry, and autonomous both-sent + 48-hour cleanup. Scheduled workflow has only cron and manual dispatch and shares global concurrency with the manual workflow.
+
+Ten-post cadence update: 76 tests pass, including bounded refill to ten, same-ID schedule edits, lost-response readback, unresolved edit stop, durable intent save failures, sent-post exclusion, plan capacity limits, and minimal edit payload.
