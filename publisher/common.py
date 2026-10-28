@@ -69,7 +69,16 @@ class HTTP:
         except urllib.error.HTTPError as exc:
             if exc.code == 404 and missing_ok:
                 return None
-            raise Stop(f'HTTP {exc.code} from {urllib.parse.urlsplit(url).hostname}; no automatic retry.') from None
+            detail = ''
+            try:
+                body = json.loads(exc.read(64 * 1024) or b'{}')
+                if isinstance(body, dict):
+                    parts = [str(body.get('message', ''))[:200]]
+                    parts += [str(e.get('message') or e.get('code') or '')[:120] for e in body.get('errors', [])[:3] if isinstance(e, dict)]
+                    detail = ' — ' + '; '.join(p for p in parts if p)
+            except Exception:
+                pass
+            raise Stop(f'HTTP {exc.code} from {urllib.parse.urlsplit(url).hostname}{detail}; no automatic retry.') from None
         except (urllib.error.URLError, TimeoutError, OSError, ValueError):
             raise Stop('Network/JSON response failure; no automatic mutation retry.') from None
 

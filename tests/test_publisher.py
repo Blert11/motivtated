@@ -332,5 +332,27 @@ class InfrastructureTests(unittest.TestCase):
             p=Path(t)/'v.mp4'; p.write_bytes(b'1234')
             with self.assertRaises(Stop): host.upload(p,'M000032',sha256(p))
 
+    def test_pages_large_upload_uses_git_push_and_verifies_sha(self):
+        class GH:
+            repo='owner/media'
+            pushed=0
+            existing=None
+            def request(self,method,path='',**kw):
+                if not path: return {'private':False,'default_branch':'main'}
+                if path=='/pages': return {'html_url':'https://owner.github.io/media/'}
+                return {'tree':[],'truncated':False}
+            def file(self,*a): return self.existing
+            def put(self,*a): raise AssertionError('Contents API PUT must not be used when git push is available')
+            def push_file(self,key,path,branch,message):
+                self.pushed+=1
+                raw=Path(path).read_bytes()
+                self.existing={'sha':hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()}
+        gh=GH(); host=PagesHost(gh,'https://owner.github.io/media')
+        with tempfile.TemporaryDirectory(prefix='test-',dir=Path(__file__).resolve().parent) as t:
+            p=Path(t)/'v.mp4'; p.write_bytes(b'5678')
+            first=host.upload(p,'M000032',sha256(p))
+            self.assertEqual(host.upload(p,'M000032',sha256(p)),first)
+            self.assertEqual(gh.pushed,1)
+
 
 if __name__=='__main__': unittest.main()

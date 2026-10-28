@@ -1,7 +1,12 @@
 import base64
 import json
+import os
 import re
+import shutil
+import subprocess
+import tempfile
 import urllib.parse
+from pathlib import Path
 
 from .common import HTTP, Stop, env, json_bytes, require
 
@@ -11,20 +16,56 @@ class GitHub:
         require(re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repo), 'Invalid GitHub repository name.')
         self.repo = repo
         self.http = http or HTTP()
+        self.token = token
         self.headers = {'Authorization': f'Bearer {token}', 'Accept': 'application/vnd.github+json',
                         'X-GitHub-Api-Version': '2022-11-28'}
 
     def request(self, method, path='', data=None, missing_ok=False):
         return self.http.json(method, f'https://api.github.com/repos/{self.repo}{path}', self.headers, data, missing_ok)
 
-    def file(self, path, branch):
-        return self.request('GET', f'/contents/{path}?ref={urllib.parse.quote(branch, safe="")}', missing_ok=True)
+    def file(self, path, branch, metadata_only=False):
+        url = f'https://api.github.com/repos/{self.repo}/contents/{path}?ref={urllib.parse.quote(branch, safe="")}'
+        if not metadata_only:
+            return self.http.json('GET', url, self.headers, None, True)
+        # Files of 1-100 MB need the "object" media type; it still returns the blob sha.
+        return self.http.json('GET', url, {**self.headers, 'Accept': 'application/vnd.github.object+json'}, None, True)
 
     def put(self, path, content, branch, message, sha=None):
         data = {'message': message, 'content': base64.b64encode(content).decode('ascii'), 'branch': branch}
         if sha:
             data['sha'] = sha
         return self.request('PUT', f'/contents/{path}', data)
+
+    def push_file(self, path, source, branch, message):
+        """Add ONE new file with git itself (the Contents API rejects large request bodies).
+        Fails if the file already exists on the branch; never force-pushes or rewrites history."""
+        require(re.fullmatch(r'[A-Za-z0-9_./-]+', path) and '..' not in path, 'Unsafe media path.')
+        auth = base64.b64encode(f'x-access-token:{self.token}'.encode()).decode()
+        git_env = {**os.environ, 'GIT_TERMINAL_PROMPT': '0'}
+        work = Path(tempfile.mkdtemp(prefix='media-push-'))
+
+        def git(*args):
+            result = subprocess.run(['git', '-c', f'http.extraheader=AUTHORIZATION: basic {auth}', *args],
+                                    cwd=work, env=git_env, capture_output=True, text=True, timeout=600)
+            if result.returncode != 0:
+                detail = (result.stderr or result.stdout).replace(self.token, '***').replace(auth, '***')[-400:]
+                raise Stop(f'git {args[0]} failed while hosting media: {detail.strip()}')
+            return result.stdout
+        try:
+            git('init', '-q')
+            git('remote', 'add', 'origin', f'https://github.com/{self.repo}.git')
+            git('fetch', '-q', '--depth', '1', 'origin', branch)
+            git('checkout', '-q', '-B', branch, 'FETCH_HEAD')
+            target = work / path
+            require(not target.exists(), 'Media file already exists in the media repository; refusing to overwrite it.')
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+            git('add', '--', path)
+            git('-c', 'user.name=motivtated-publisher', '-c', 'user.email=publisher@users.noreply.github.com',
+                'commit', '-q', '-m', message)
+            git('push', '-q', 'origin', f'HEAD:refs/heads/{branch}')
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
 
 
 class GitHubLedger:

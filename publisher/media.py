@@ -34,7 +34,7 @@ class PagesHost:
     def upload(self, path, identifier, digest):
         require(path.stat().st_size < 100 * 1024 * 1024, 'GitHub rejects files over 100 MiB; use R2 for this clip.')
         key = key_for(identifier, digest)
-        existing = self.gh.file(key, self.branch)
+        existing = self.gh.file(key, self.branch, True)
         raw = path.read_bytes()
         git_sha = hashlib.sha1(f'blob {len(raw)}\0'.encode() + raw).hexdigest()
         if existing:
@@ -44,14 +44,20 @@ class PagesHost:
             require(not tree.get('truncated'), 'Cannot establish total Pages site size.')
             total = sum(item.get('size', 0) for item in tree['tree'] if item['type'] == 'blob')
             require(total + len(raw) <= 900_000_000, 'Pages site would exceed the conservative 900 MB cap; clean up confirmed posts or use R2.')
-            self.gh.put(key, raw, self.branch, f'Host clip {identifier}')
+            if hasattr(self.gh, 'push_file'):
+                # git push handles 40-100 MB clips; the Contents API PUT returned HTTP 422 for a 55 MB clip.
+                self.gh.push_file(key, path, self.branch, f'Host clip {identifier}')
+                hosted = self.gh.file(key, self.branch, True)
+                require(hosted and hosted.get('sha') == git_sha, 'Pushed media does not match the local clip; do not publish.')
+            else:
+                self.gh.put(key, raw, self.branch, f'Host clip {identifier}')
         return {'provider': 'pages', 'key': key, 'url': self.base+'/'+key,
                 'repository': self.gh.repo, 'branch': self.branch, 'git_sha': git_sha}
 
     def delete(self, media):
         require(media['provider'] == 'pages' and media['repository'] == self.gh.repo
                 and media['branch'] == self.branch and media['url'] == self.base+'/'+media['key'], 'Media configuration changed; refusing deletion.')
-        existing = self.gh.file(media['key'], self.branch)
+        existing = self.gh.file(media['key'], self.branch, True)
         if existing:
             require(existing.get('sha') == media['git_sha'], 'Hosted object changed; refusing deletion.')
             self.gh.request('DELETE', '/contents/'+media['key'], {'message': 'Remove confirmed published media',
