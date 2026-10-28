@@ -1,0 +1,93 @@
+# Installed by Claude from deployment/manual-workflow.example.yml (Codex). Manual workflow_dispatch only.
+# No schedule or push trigger is allowed until both live API tests pass and Blert approves.
+name: MOTIVTATED manual publisher
+'on':
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Action (publish sends ONE clip immediately)
+        type: choice
+        required: true
+        options: [init-state, discover, validate, publish, reconcile, confirm-public, cleanup, status]
+        default: status
+      clip_id:
+        description: Clip ID, for example M000032
+        type: string
+      platform:
+        description: One destination platform
+        type: choice
+        options: [tiktok, instagram]
+      bundle_file_id:
+        description: Private Google Drive ZIP file ID (publish/validate only)
+        type: string
+      bundle_sha256:
+        description: SHA256 printed by prepare (publish/validate only)
+        type: string
+      post_id:
+        description: Existing Buffer post ID for reconciling an uncertain result
+        type: string
+      public_url:
+        description: Exact post_url, opened and verified public by Blert (confirm-public only)
+        type: string
+      resume:
+        description: Resume ONLY a pre-submission media/channel failure
+        type: boolean
+        default: false
+      confirm_unposted:
+        description: I checked this clip has not already been posted on the selected platform
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: motivtated-publisher-single-writer
+  cancel-in-progress: false
+jobs:
+  manual:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Ensure ffprobe is installed
+        run: |
+          if ! command -v ffprobe >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+      - name: Offline regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Run one selected action
+        run: python -m publisher workflow
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          MEDIA_GITHUB_TOKEN: ${{ secrets.MEDIA_GITHUB_TOKEN }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          MEDIA_PROVIDER: ${{ vars.MEDIA_PROVIDER }}
+          MEDIA_PUBLIC_BASE_URL: ${{ vars.MEDIA_PUBLIC_BASE_URL }}
+          MEDIA_GITHUB_REPOSITORY: ${{ vars.MEDIA_GITHUB_REPOSITORY }}
+          R2_ACCOUNT_ID: ${{ vars.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          BUFFER_TIKTOK_CHANNEL_ID: ${{ vars.BUFFER_TIKTOK_CHANNEL_ID }}
+          BUFFER_INSTAGRAM_CHANNEL_ID: ${{ vars.BUFFER_INSTAGRAM_CHANNEL_ID }}
+          INPUT_ACTION: ${{ inputs.action }}
+          INPUT_CLIP_ID: ${{ inputs.clip_id }}
+          INPUT_PLATFORM: ${{ inputs.platform }}
+          INPUT_BUNDLE_FILE_ID: ${{ inputs.bundle_file_id }}
+          INPUT_BUNDLE_SHA256: ${{ inputs.bundle_sha256 }}
+          INPUT_POST_ID: ${{ inputs.post_id }}
+          INPUT_PUBLIC_URL: ${{ inputs.public_url }}
+          INPUT_RESUME: ${{ inputs.resume }}
+          INPUT_CONFIRM_UNPOSTED: ${{ inputs.confirm_unposted }}
