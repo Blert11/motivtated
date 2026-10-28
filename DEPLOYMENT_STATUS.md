@@ -1,16 +1,17 @@
-# Current posting status — 2026-10-28
+# Current posting status - 2026-10-28
 
-Agents transfer prepared packages directly to the private posting-inputs release in Blert11/motivtated. Manual Google Drive uploads and new credentials are not required. Public posting copies still use GitHub Pages temporarily. No local folder watcher or timed scheduler is installed.
+The hourly cloud scheduler is enabled for Tate videos 10-31 (M000010-M000031), following Blert's latest authorization. Videos 1-9 and M000032 are excluded. Both platforms use five slots per full day in Europe/Budapest: 09:00, 12:00, 15:00, 18:00, 21:00. Video 10 starts October 28 at 21:00; video 31 ends November 2 at 09:00.
 
-All 26 Tate packages M000006–M000031 are uploaded and digest-verified, totaling 779,084,999 bytes. Videos 7–31 are prepared only and NOT scheduled. Videos 1–5 and previously posted M000032 are excluded from this queue.
+Initial refill: Actions run 40737305385, code commit 2878275. Buffer confirmed videos 10-15 scheduled on BOTH platforms, with all 12 submissions saved by 17:58:32 UTC. The first rolling queue is filled; videos 16-31 remain in the dated plan for automatic refill. Read the private publisher-state branch for authoritative current status. A planned time alone does not prove scheduling or publication.
 
-Tate #6 / M000006: Buffer confirms sent on both platforms:
+All packages are already in the private posting-inputs release. Agents handle transfers; no manual Drive upload is required. The workflow maintains at most six pending posts per channel and refills hourly. It runs with the PC off and consumes no Codex or Claude tokens. No local folder watcher is installed.
 
-- tiktok: https://tiktok.com/@motivtated/video/7701705913308056846 (Buffer ID 6ae1f4b8208accb65caf4821)
-- instagram: https://www.instagram.com/reel/DfC9ZN4BP7i/ (Buffer ID 6ae22f3f3faa02f74f9aba86)
+Hosted copies are deleted only after BOTH platforms report sent with links and 48 hours have passed. Private bundles and PC originals remain. The finite batch workflow disables itself after publication and cleanup finish. See SCHEDULER.md and posting-schedule.json.
 
-Publication evidence: TikTok reconcile workflow 40734734412; Instagram publish 40734915614 and final reconcile 40735418552. Never resubmit these post IDs. No duplicate TikTok post was made during the Pages deployment-delay recovery: the first attempt stopped before submission.
+M000006 was already sent on both platforms and must not be resubmitted:
+- TikTok: https://tiktok.com/@motivtated/video/7701705913308056846
+- Instagram: https://www.instagram.com/reel/DfC9ZN4BP7i/
 
-Both initial M000032 integration milestones were publicly confirmed by Blert. M000006 sent status is verified via Buffer; public_verified_at is not set because no human public confirmation was collected for this clip. Cleanup remains guarded and has not run. Keep all originals.
+M000032 integration milestones were publicly confirmed by Blert. No human public confirmation was recorded for M000006; its Buffer sent status was verified. Shared IDs and source hashes remain unchanged. Captions use #motivtated and end with a motivation emoji.
 
-Publisher code commit: 95b0740. 54 tests pass locally and in Actions. The shared Publisher contains upload_bundles.py and tate-queue.json for agent continuity. Users provide source videos; agents handle validation, package transfer and authorized publication. Future recurring scheduling still requires implementation and user approval.
+68 offline tests passed locally and in Actions. The former manual-only restriction is superseded for the approved videos 10-31. Do not automatically add other videos to this queue.
