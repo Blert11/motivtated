@@ -14,182 +14,274 @@
       "order": 6,
       "filename": "6. clip tate - comfort can keep you stuck.mp4",
       "bundle_sha256": "71a5cfa83e25e7f9bd0e5f08430b85bb2f291226830a2e2390dd62bb1a342641",
-      "authorization": "post_now_both"
+      "authorization": "post_now_both",
+      "cloud_source": "github-release",
+      "asset_id": 685034620,
+      "transfer_status": "uploaded_and_verified",
+      "publication": {
+        "tiktok": {
+          "state": "posted",
+          "buffer_status": "sent",
+          "buffer_post_id": "6ae1f4b8208accb65caf4821",
+          "post_url": "https://tiktok.com/@motivtated/video/7701705913308056846"
+        },
+        "instagram": {
+          "state": "posted",
+          "buffer_status": "sent",
+          "buffer_post_id": "6ae22f3f3faa02f74f9aba86",
+          "post_url": "https://www.instagram.com/reel/DfC9ZN4BP7i/"
+        }
+      }
     },
     {
       "clip_id": "M000007",
       "order": 7,
       "filename": "7. clip tate - believe there is a way out.mp4",
       "bundle_sha256": "b33b34ba85f0a78bd65bf27b2df03985c5237a445e60886bd916f78376c70223",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685039640,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000008",
       "order": 8,
       "filename": "8. clip tate - become a team.mp4",
       "bundle_sha256": "99d415e8704e6dd7f38798d4b57a2fa6a17b66339c9626d4bf7ce6e6c11d31ce",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685040427,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000009",
       "order": 9,
       "filename": "9. clip tate - a plan cannot save a quitter.mp4",
       "bundle_sha256": "007f700d3add9e70f4de563f1b93b097b83a6d089c097db36a60a93f4040b353",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685041347,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000010",
       "order": 10,
       "filename": "10. clip tate - lose until you find your strength.mp4",
       "bundle_sha256": "0c0f0c56b939a56d786f2e59fa16fc8a404eb8096c0d620bc3c4e35a85767c61",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685042020,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000011",
       "order": 11,
       "filename": "11. clip tate - act before the problem grows.mp4",
       "bundle_sha256": "b88e0de3e18b7422d1d65bcfc46f75e2c443d9883aefccae00f4a3b0ca9c2a62",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685042925,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000012",
       "order": 12,
       "filename": "12. clip tate - never miss your lucky day.mp4",
       "bundle_sha256": "83ccfc11e979bc477a26a0defe084f69d8a2698ddb107b93d78b46d29866f94c",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685043358,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000013",
       "order": 13,
       "filename": "13. clip tate - leave a mark.mp4",
       "bundle_sha256": "6f653b057967aad08bbce8ec53e47e3602cf0fb9decfb0afbc706dd0933afeb1",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685043480,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000014",
       "order": 14,
       "filename": "14. clip tate - wanting is different from wishing.mp4",
       "bundle_sha256": "204e044736307182a5cc9b84c34b0642a8a831655bfbd930ca7a854e847b91b8",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685044094,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000015",
       "order": 15,
       "filename": "15. clip tate - your starting point is not your finish.mp4",
       "bundle_sha256": "f5e6d01f5a141f88d13b4654b462e0a389966f8c75dd306d14d84eef3ebdba0f",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685044812,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000016",
       "order": 16,
       "filename": "16. clip tate - there are no shortcuts.mp4",
       "bundle_sha256": "8286a3f540aa2f919575481951ddc957dddd24f0fd03ebad59b27438d908ac2d",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685045196,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000017",
       "order": 17,
       "filename": "17. clip tate - study your own mistakes.mp4",
       "bundle_sha256": "a67ecb1e70da6af89bc2b74c8096041dff464caa2573affa8e332ecbf5024cf8",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685045614,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000018",
       "order": 18,
       "filename": "18. clip tate - when excuses run out.mp4",
       "bundle_sha256": "01344f559724be9897e68acb025a96fd751782d321624a1af06ba14fab0c9d8c",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685046121,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000019",
       "order": 19,
       "filename": "19. clip tate - appreciate the milestones.mp4",
       "bundle_sha256": "0724650fdb082a451d5526deb7dd48f7246f53dcbef07fc96e5217b4e93cfffe",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685046672,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000020",
       "order": 20,
       "filename": "20. clip tate - learn something from everyone.mp4",
       "bundle_sha256": "2d62767b666345124dccdcc8c142f4e8e8d391804fbc1a2e9d43994eb195aedc",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685047489,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000021",
       "order": 21,
       "filename": "21. clip tate - make time for what you want.mp4",
       "bundle_sha256": "547491822964da6a512cd5d8f4900848c0441db5d897c320e39519a758891b84",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685048384,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000022",
       "order": 22,
       "filename": "22. clip tate - your mood does not decide.mp4",
       "bundle_sha256": "5e401be7136e1d252c49c13d50ebfc21fb301a9055a8d0ad636b58ace9111841",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685048795,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000023",
       "order": 23,
       "filename": "23. clip tate - speaking is a superpower.mp4",
       "bundle_sha256": "2d9e103724f219a0be8e9185541befd2113b876ba6778e305cab9826fcb5864c",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685049433,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000024",
       "order": 24,
       "filename": "24. clip tate - build a stronger version of yourself.mp4",
       "bundle_sha256": "f780b735ed5f45495a61e69a85ef3852195a30dc35a3d8f0f44353237aa65222",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685050051,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000025",
       "order": 25,
       "filename": "25. clip tate - the reward of giving.mp4",
       "bundle_sha256": "b12359b92393eca4e24e5cb11a33afc87dc848a0b090ae6ec1a3a45752637481",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685050387,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000026",
       "order": 26,
       "filename": "26. clip tate - the hardest thing to sell.mp4",
       "bundle_sha256": "9915f1be201e97452cd4326630a65097dc039113fed169512c2e22c5e2b1facf",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685051044,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000027",
       "order": 27,
       "filename": "27. clip tate - momentum changes your energy.mp4",
       "bundle_sha256": "bdaa0c7b58ae27b6b96250aa0d8bd9264e8c16d7dc3aa4b0ae08eb00f6b11923",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685051199,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000028",
       "order": 28,
       "filename": "28. clip tate - live a life worth talking about.mp4",
       "bundle_sha256": "0c5a4bc38cf516c14de75badf9f5d71649375bb9f87d0604b27a899aaee82827",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685052765,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000029",
       "order": 29,
       "filename": "29. clip tate - what the ring teaches you.mp4",
       "bundle_sha256": "30825827652ae3dbd48091dc971dfb0f58c2327db2983810dbad9efc07c288cc",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685053447,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000030",
       "order": 30,
       "filename": "30. clip tate - make your own luck.mp4",
       "bundle_sha256": "e8cac8847d3d03e56498c84885c766be1073da01d2ed534c3e7a048003b91ed0",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685053903,
+      "transfer_status": "uploaded_and_verified"
     },
     {
       "clip_id": "M000031",
       "order": 31,
       "filename": "31. clip tate - use the time you have.mp4",
       "bundle_sha256": "02ff6e3e7b52cb51d804601415a6de31e14f8bac448a535bc4ee5a391ce13a79",
-      "authorization": "prepared_only_not_scheduled"
+      "authorization": "prepared_only_not_scheduled",
+      "cloud_source": "github-release",
+      "asset_id": 685054489,
+      "transfer_status": "uploaded_and_verified"
     }
   ]
 }
