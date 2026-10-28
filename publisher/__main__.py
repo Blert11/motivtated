@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 
 from .buffer import Buffer
-from .bundles import download_drive, prepare, unpack
+from .bundles import download_drive, download_github_release, prepare, unpack
 from .common import Stop, clip_id, env, require
 from .engine import Engine
 from .github import GitHubLedger
@@ -20,6 +20,7 @@ def workflow_arguments():
         clip_id=os.environ.get('INPUT_CLIP_ID','').strip(),
         platform=os.environ.get('INPUT_PLATFORM','').strip(),
         bundle_file_id=os.environ.get('INPUT_BUNDLE_FILE_ID','').strip(),
+        bundle_source=os.environ.get('INPUT_BUNDLE_SOURCE','drive').strip(),
         bundle_sha256=os.environ.get('INPUT_BUNDLE_SHA256','').strip(),
         post_id=os.environ.get('INPUT_POST_ID','').strip() or None,
         public_url=os.environ.get('INPUT_PUBLIC_URL','').strip(),
@@ -78,9 +79,14 @@ def with_bundle(args, callback):
         directory = Path(scratch)
         bundle = args.bundle
         if bundle is None:
-            require(args.bundle_file_id, 'Provide a Google Drive bundle file ID or a local --bundle path.')
             bundle = directory/'input.zip'
-            download_drive(args.bundle_file_id, bundle, args.bundle_sha256)
+            source = getattr(args, 'bundle_source', 'drive')
+            require(source in ['drive','github-release'], 'Unknown bundle source.')
+            if source == 'github-release':
+                download_github_release(args.clip_id, bundle, args.bundle_sha256)
+            else:
+                require(args.bundle_file_id, 'Provide a Google Drive bundle file ID or a local --bundle path.')
+                download_drive(args.bundle_file_id, bundle, args.bundle_sha256)
         content = directory/'content'
         content.mkdir()
         manifest = unpack(bundle, args.bundle_sha256, content)
@@ -106,6 +112,7 @@ def main():
     r.add_argument('--platform', choices=['tiktok','instagram'])
     r.add_argument('--bundle', type=Path)
     r.add_argument('--bundle-file-id', default='')
+    r.add_argument('--bundle-source', choices=['drive','github-release'], default='drive')
     r.add_argument('--bundle-sha256', default='')
     r.add_argument('--post-id')
     r.add_argument('--public-url', default='')

@@ -1,13 +1,14 @@
-# Deployment update — 2026-10-28
+# Agent-owned transfers — 2026-10-28
 
-Blert authorized Codex to take over deployment because Claude usage was exhausted. Live inspection found main ea7be6f053a8a43455b470e3abd881438ac6caea already contained Claude's git-push uploader fix, and M000032:tiktok was posted (Buffer sent). Do not publish it again.
+Blert asked Codex to do all package transfers. Google Drive uploads are no longer a required user step. Upload validated ZIPs to the private Blert11/motivtated release posting-inputs using upload_bundles.py. It verifies private visibility, local receipts, and the uploaded SHA256/size; it never overwrites existing assets and never publishes anything.
 
-TikTok: https://www.tiktok.com/@motivtated/video/7701549303701015821
-Buffer post ID: 6ae1664d4ee0f35758d9d0ef
-Blert confirmed this TikTok is publicly visible in chat. Next: record confirm-public, then publish the same M000032 bundle to Instagram and reconcile its existing Buffer post ID.
+Use manual workflow bundle_source=github-release, clip_id and bundle_sha256. No Drive file ID is needed. The runner uses its generated GITHUB_TOKEN through gh to download the exact package, verifies hashes, and publishes only the MP4 publicly through Pages. No new secrets are needed. Drive is still supported as an optional source.
 
-The working git-push upload is preserved, including large-file object metadata lookup. It uploaded the actual 55,178,411-byte MP4 in the live workflow. The alternative Git Data API implementation from the previous local handoff is superseded to avoid replacing the working deployment. HTTP errors now use the bounded, sanitized GitHub message handler with credential/token/URL redaction, and the local video SHA256 is checked before upload. No mutation retries were added.
+User authorized posting Tate #6 (M000006) to both platforms now and preparing #7–31 without scheduling. Videos 1–5 are explicitly excluded. M000032 was reported as previously posted; it has completed ledger records and must not be submitted again. No deletion of existing social posts was requested.
 
-46 offline tests pass, no skips (41 deployed tests plus 5 error-diagnostic tests). The reduction from the previous local 51 reflects retaining the deployed upload implementation and its tests. GitHub Pages is still temporary. No workflow triggers or dependencies changed. Scheduled posting remains disabled until both API milestones pass and Blert approves recurring execution.
+Both initial M000032 API tests passed and Blert confirmed both public. Instagram confirmation was recorded by successful workflow 40692285315. The per-clip Instagram gate now accepts an already completed two-platform milestone on the configured Instagram channel, so future authorized clips do not require repeated manual public checks before cross-posting. Duplicate checks and per-platform durable intent remain unchanged. Public confirmation still gates cleanup.
 
-Keep the same Drive bundle file ID 1ZvVf8RLCPktkg2DPmOZZUQCrVIfl66kc and bundle SHA256 b3b2d85c503777d56b0364e9e5a1c74640274339624c5552c127d789a4f976cc. Inspect the ledger before every live action. Existing post IDs must be reconciled, never resubmitted. Keep the shared allocator untouched. Preserve CLAUDE_NOTES.md as historical evidence.
+54 offline tests pass, no skips. The workflow remains workflow_dispatch only, with 10 inputs and the same global concurrency group. No timed schedule, automatic backlog drain or local folder watcher is installed. Agents run the reusable uploader for prepared clips; after transfer, GitHub can post with the PC off. The private release inputs are separate from the temporary public Pages media.
+
+Private package source: https://github.com/Blert11/motivtated/releases/tag/posting-inputs
+Docs: https://cli.github.com/manual/gh_release_download

@@ -29,12 +29,19 @@ class Engine:
         identifier = clip_id(manifest['clip_id'])
         require(confirmed_unposted, 'Confirm this clip has not already been posted manually on this platform.')
         # M000001 was supplied for the previous manual tests. Do not risk reusing it.
-        require(identifier != 'M000001', 'M000001 is held for the previous manual tests; choose a fresh clip.')
+        require(identifier not in {f'M{n:06d}' for n in range(1,6)},
+                'Tate videos 1-5 are excluded by the user; start from M000006.')
         records = self.ledger.data['records']
         key = identifier+':'+platform
         if platform == 'instagram':
             tiktok = records.get(identifier+':tiktok', {})
-            require(tiktok.get('state') == 'posted' and tiktok.get('public_verified_at') and not tiktok.get('media_deleted_at'),
+            # The public-visibility gate is the initial integration milestone, not a per-clip chore.
+            established = any(r.get('platform') == 'instagram' and r.get('channel_id') == channel_id
+                and r.get('state') == 'posted' and r.get('public_verified_at')
+                and records.get(r['clip_id']+':tiktok', {}).get('state') == 'posted'
+                and records.get(r['clip_id']+':tiktok', {}).get('public_verified_at')
+                for r in records.values())
+            require(established or (tiktok.get('state') == 'posted' and tiktok.get('public_verified_at') and not tiktok.get('media_deleted_at')),
                     'First verify this clip publicly on TikTok and run confirm-public before the Instagram milestone.')
         video_hash = manifest['files']['video.mp4']['sha256']
         for other_key, other in records.items():

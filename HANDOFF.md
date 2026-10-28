@@ -1,3 +1,5 @@
+> Current transfer setup: agents upload validated bundles to the private posting-inputs release using upload_bundles.py. Select bundle_source=github-release in the manual workflow. Drive is optional. See CODEX_NOTES.md.
+
 # Deployment handoff to Claude — manual milestone
 
 Prepared 2026-10-28. Deploy into **Blert11/motivtated**, which must be PRIVATE. Blert authorized Codex to take over deployment. TikTok API publication succeeded and Blert confirmed public visibility; see CODEX_NOTES.md for current live state.
@@ -95,7 +97,7 @@ From the Publisher/repository root:
 python -m unittest discover -s tests -v
 ```
 
-Expected after installing requirements: **46 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
+Expected after installing requirements: **54 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
 
 ## Manual workflow sequence
 

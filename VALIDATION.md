@@ -15,3 +15,7 @@
 - Preserved that deployed upload implementation. Merged credential-redacted bounded GitHub error messages and a pre-upload local SHA256 check. 46 offline tests passed with no skips.
 - The previous local Git Data API implementation and its mocked 55 MiB tests are superseded. See CODEX_NOTES.md for the deployment decision and existing post ID.
 - Instagram publication and public visibility remain to be confirmed. No timed schedule or automatic cleanup is enabled.
+
+## Direct GitHub transfer update
+
+54 tests passed. Added exact private release selection, remote/local hash verification, malformed/oversized download rejection, credential-safe subprocess errors, the completed-integration gate, and exclusions for Tate 1–5. M000006 package uploaded and verified against the GitHub asset digest.

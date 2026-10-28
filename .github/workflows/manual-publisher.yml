@@ -1,5 +1,5 @@
-# Installed by Claude from deployment/manual-workflow.example.yml (Codex). Manual workflow_dispatch only.
-# No schedule or push trigger is allowed until both live API tests pass and Blert approves.
+# Claude copies this to .github/workflows/manual-publisher.yml after review.
+# This file is NOT an installed workflow. No schedule or push trigger is allowed.
 name: MOTIVTATED manual publisher
 'on':
   workflow_dispatch:
@@ -17,6 +17,11 @@ name: MOTIVTATED manual publisher
         description: One destination platform
         type: choice
         options: [tiktok, instagram]
+      bundle_source:
+        description: Private package location (agents upload to GitHub Releases)
+        type: choice
+        options: [github-release, drive]
+        default: github-release
       bundle_file_id:
         description: Private Google Drive ZIP file ID (publish/validate only)
         type: string
@@ -85,6 +90,7 @@ jobs:
           INPUT_ACTION: ${{ inputs.action }}
           INPUT_CLIP_ID: ${{ inputs.clip_id }}
           INPUT_PLATFORM: ${{ inputs.platform }}
+          INPUT_BUNDLE_SOURCE: ${{ inputs.bundle_source }}
           INPUT_BUNDLE_FILE_ID: ${{ inputs.bundle_file_id }}
           INPUT_BUNDLE_SHA256: ${{ inputs.bundle_sha256 }}
           INPUT_POST_ID: ${{ inputs.post_id }}

@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import re
 import subprocess
 import zipfile
@@ -118,3 +119,29 @@ def download_drive(file_id, destination, expected_hash, http=None):
             'Drive bundle is missing, trashed, or too large.')
     http.download(f'https://www.googleapis.com/drive/v3/files/{file_id}?alt=media&supportsAllDrives=true', destination,
                   MAX_VIDEO + 4*1024*1024, headers, expected_hash)
+
+
+def download_github_release(identifier, destination, expected_hash, gh=None):
+    """Download an exact private package without exposing tokens to redirect hosts."""
+    from .github import GitHub
+    identifier = clip_id(identifier)
+    gh = gh or GitHub(env('GITHUB_REPOSITORY'), env('GITHUB_TOKEN'))
+    require(gh.request('GET').get('private') is True, 'Bundle repository must be private.')
+    release = gh.request('GET', '/releases/tags/posting-inputs')
+    matches = [a for a in release.get('assets', []) if a.get('name') == identifier+'.zip']
+    require(len(matches) == 1, 'Expected exactly one private release bundle for this clip.')
+    asset = matches[0]
+    require(asset.get('state') == 'uploaded' and 0 < asset.get('size', 0) <= MAX_VIDEO + 4*1024*1024,
+            'Private release bundle is incomplete or too large.')
+    if asset.get('digest'):
+        require(asset['digest'] == 'sha256:'+expected_hash, 'Release bundle digest differs from the approved package.')
+    try:
+        result = subprocess.run(['gh', 'release', 'download', 'posting-inputs', '--repo', gh.repo,
+            '--pattern', identifier+'.zip', '--output', str(destination)],
+            env={**os.environ, 'GH_TOKEN': env('GITHUB_TOKEN'), 'GH_PROMPT_DISABLED': '1'},
+            capture_output=True, timeout=300)
+    except (OSError, subprocess.SubprocessError):
+        raise Stop('Private GitHub package download failed; no post was created.') from None
+    require(result.returncode == 0 and destination.is_file(), 'Private GitHub package download failed; no post was created.')
+    require(destination.stat().st_size == asset['size'] and sha256(destination) == expected_hash,
+            'Downloaded release package hash/size mismatch; do not publish.')

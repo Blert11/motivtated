@@ -1,3 +1,5 @@
+> Current transfer setup: agents upload validated bundles to the private posting-inputs release using upload_bundles.py. Select bundle_source=github-release in the manual workflow. Drive is optional. See CODEX_NOTES.md.
+
 # MOTIVTATED manual publisher
 
 Publish one validated clip to one platform through Buffer. Python 3.12, ffprobe, optional R2 SDK in requirements.txt. Deployment belongs to Claude; operational credentials belong to Blert.
