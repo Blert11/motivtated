@@ -11,7 +11,7 @@ from .engine import Engine
 from .github import GitHubLedger
 from .media import host_from_env
 
-ACTIONS = ['init-state','discover','validate','publish','reconcile','confirm-public','cleanup','status']
+ACTIONS = ['init-state','discover','validate','publish','reconcile','confirm-public','cleanup','status','storage']
 
 
 def workflow_arguments():
@@ -46,6 +46,12 @@ def execute(args):
         ledger.initialize()
         return {'state': 'initialized_or_already_present', 'branch': ledger.BRANCH}
     ledger.load()
+    if args.action == 'storage':
+        require(env('MEDIA_PROVIDER') == 'r2', 'Storage monitoring in this milestone requires R2.')
+        report = host_from_env().usage()
+        ledger.data['storage_observation'] = report
+        Engine(ledger, None).event(None, 'r2_storage_checked')
+        return report
     if args.action == 'status':
         return {'records': [{k:v for k,v in r.items() if k in ['clip_id','platform','state','buffer_post_id','buffer_status','post_url','public_verified_at','media_deleted_at']}
                             for r in ledger.data['records'].values()]}

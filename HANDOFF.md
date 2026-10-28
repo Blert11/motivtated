@@ -2,6 +2,8 @@
 
 Prepared 2026-10-28. Deploy into **Blert11/motivtated**, which must be PRIVATE. Codex has not pushed code, added credentials, uploaded public media, or published posts. Buffer's browser tests succeeded according to Blert; API publishing has not yet been tested live.
 
+**Latest decision: use GitHub Pages temporarily while Cloudflare payment setup is blocked.** Set MEDIA_PROVIDER=pages and use the separate public Blert11/motivtated-media repository. Keep Blert11/motivtated PRIVATE. R2 remains implemented for a later switch. Read CODEX_NOTES.md; copy the updated code AND workflow example before deployment.
+
 ## Ownership and scope
 
 Copy the CONTENTS of `C:\Users\Blert\Desktop\photoshop projects\motivtated\Posting\Publisher` into the repository root. Preserve this implementation; report required logic changes through Blert or local `CLAUDE_NOTES.md`. Never copy Staging, Control, UploadBundles, source videos, ZIPs, or credentials into Git.
@@ -54,7 +56,7 @@ Blert enters values at repository Settings → Secrets and variables → Actions
 | `BUFFER_TIKTOK_CHANNEL_ID` | TikTok ID returned by `discover`; not the account username |
 | `BUFFER_INSTAGRAM_CHANNEL_ID` | Instagram ID returned by `discover` |
 
-## Media-host setup — decision still open
+## Media-host setup — GitHub Pages selected temporarily; R2 retained for later
 
 **GitHub Pages:** create a separate public repository only if Blert chooses it. Initialize `main`, add `.nojekyll` and a minimal `index.html`; enable Pages from `main` at `/` in repository settings. Set the public base URL to the exact `html_url` from GitHub Pages (usually `https://blert11.github.io/motivtated-media`). Grant the media token access only to that repo. No Pages hosting on the private publisher repo.
 
@@ -93,7 +95,7 @@ From the Publisher/repository root:
 python -m unittest discover -s tests -v
 ```
 
-Expected after installing requirements: **34 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
+Expected after installing requirements: **40 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
 
 ## Manual workflow sequence
 
@@ -130,6 +132,18 @@ TikTok and Instagram records are separate; an Instagram failure never resubmits 
 `cleanup` is also manual. It deletes only the exact hosted copies after BOTH platforms are posted/publicly verified and at least 48 hours past BOTH sent timestamps. It never deletes local files, private Drive bundles, source videos, or registry entries. Pages deletion changes the current site, not Git history. Do not add a time-based bucket lifecycle that can delete still-pending media.
 
 Automatic cleanup can be called by the later approved scheduler with these same guards. Daily 5–6 cross-posts, ordered folder intake, readiness markers, queue refill, retention, alerts, and unresolved-reservation handling are the NEXT phase after the two API tests. They are not enabled or represented as finished in this manual milestone.
+
+## R2 storage controls and monitoring
+
+Use a dedicated STANDARD-storage bucket named `motivtated-media` (or record the actual name in R2_BUCKET). Before each new upload the adapter scans this entire bucket, including objects outside media/, and stops if projected storage exceeds 2,000,000,000 bytes. A failed/incomplete measurement stops new uploads as well. The scan is bounded to 10 pages of 1,000 objects. Keep the single-writer workflow; unrelated writers can race this application check, so do not share the bucket with other uploaders.
+
+The manual `storage` action reports bucket bytes/object count, warns at 1.5 GB, and records the observation on the ledger branch. It does NOT measure the Cloudflare invoice, other buckets, partial multipart uploads, public request traffic, or account-wide free-tier consumption. No Cloudflare billing-monitor API token is collected by this milestone.
+
+Blert should configure a Cloudflare budget email alert (for example $1) under Manage Account → Billing → Billable Usage → Create budget alert. Alerts only notify after the spend threshold is crossed; they are not an automatic spending cap or a $0 guarantee. Use the billing dashboard to check request consumption too. Avoid enabling unrelated paid products.
+
+After the API tests and Blert's explicit approval to enable recurring execution, the cloud worker should run storage checks and the existing guarded cleanup regularly, notifying only on a warning, failure, or required action. This will work with the PC off. No such recurring monitor has been enabled yet because the account is not connected and scheduled workflows remain disabled.
+
+Keep originals on the PC/Drive. Delete only hosted copies, after BOTH platforms confirm publication/public visibility and the 48-hour grace period. Never delete immediately on upload or on Buffer accepting a post. A failed platform retains the media; if retained files fill the bucket, stop new uploads instead of deleting pending content.
 
 ## References checked for this implementation
 

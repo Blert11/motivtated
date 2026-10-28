@@ -8,7 +8,7 @@ name: MOTIVTATED manual publisher
         description: Action (publish sends ONE clip immediately)
         type: choice
         required: true
-        options: [init-state, discover, validate, publish, reconcile, confirm-public, cleanup, status]
+        options: [init-state, discover, validate, publish, reconcile, confirm-public, cleanup, status, storage]
         default: status
       clip_id:
         description: Clip ID, for example M000032

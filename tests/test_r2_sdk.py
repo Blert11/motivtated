@@ -23,6 +23,8 @@ class R2SDKTests(unittest.TestCase):
         digest='a'*64; key=key_for('M000032',digest)
         self.stub.add_client_error('head_object',service_error_code='404',http_status_code=404,
                                    expected_params={'Bucket':'test-bucket','Key':key})
+        self.stub.add_response('list_objects_v2',{'IsTruncated':False,'Contents':[]},
+                               expected_params={'Bucket':'test-bucket','MaxKeys':1000})
         self.stub.add_response('put_object',{},expected_params={'Bucket':'test-bucket','Key':key,'Body':ANY,
                                'ContentType':'video/mp4','Metadata':{'sha256':digest},'CacheControl':'public, max-age=3600'})
         with tempfile.TemporaryDirectory(prefix='test-',dir=Path(__file__).resolve().parent) as t:

@@ -4,6 +4,8 @@ Publish one validated clip to one platform through Buffer. Python 3.12, ffprobe,
 
 Read HANDOFF.md before deployment. No timed scheduler or folder watcher is enabled in this milestone. Ready/Posted folders and the local ID allocator are not modified.
 
+R2 is selected. New R2 uploads stop if projected bucket storage exceeds 2 GB or usage cannot be measured. The manual `storage` action reports usage and warns at 1.5 GB. These are application checks, not a Cloudflare billing cap; budget alerts must also be configured in Cloudflare. Read CODEX_NOTES.md before updating an earlier deployment.
+
 ```sh
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v

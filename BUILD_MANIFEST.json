@@ -1,23 +1,26 @@
 {
   "date": "2026-10-28",
-  "tests": 34,
+  "tests": 40,
   "live_posting_tested": false,
+  "selected_media_provider": "pages",
   "files": {
     ".gitignore": "e479d2fe5fc0801e65ff6100eb153104cda85a251c429c814c73852d3a74b1dc",
-    "HANDOFF.md": "1d3936149ec8fb401a3315e2d4c99fe2a1d92b29a4ae9b576bd992434e54307c",
-    "README.md": "ce309f2127fa82dc07f32db03a1f1fa1bb9615ac0502c7f9f71ba281d197fb75",
+    "CODEX_NOTES.md": "03edefacc43fbe03818f28e678d1e9973c8094aec730d6d104ea556a38a1e639",
+    "HANDOFF.md": "fb53f3ef1fb3993fd82b44a3e99174b4996ec78b726a7a986fe06e17ddacd07e",
+    "README.md": "d87c3820c9ebc612aa113f4ea89fca9a65b671632c52a24f7c0d475e37ef6227",
     "requirements.txt": "7960037b521a9ba5d7bc8eea4021c543ef53e4b7eac4cf09168be1c2b720b111",
-    "VALIDATION.md": "b92950bd6cd807fd30540af9f21d31743c12a7fd13cb9ecb9ed856cee2b7657c",
-    "deployment/manual-workflow.example.yml": "502c92373902fc7c7542968a1b39fb60f3ca24dd8aa14aefa1c7d37abb9a8bf3",
+    "VALIDATION.md": "5b3f507f81d63d94e809c9ceab673fa87d6f0221794f70a690eceae779f803eb",
+    "deployment/manual-workflow.example.yml": "ca9a2dc06cdbbe066cdbe329f852e254110113ac2343316f0c9df0da364d5399",
     "publisher/buffer.py": "8d6a07c840ab006fc002e6357f91cee13914503b6a593b056f3944c9d72fa376",
     "publisher/bundles.py": "19c54f314c02b5cc0074bd9d603e593906303801766cf9e2cf1d7eb45a08654b",
     "publisher/common.py": "6f72aa0007f0a98a314ebc0efce124cc33122b3b85f9a4556c2435cd48e8d025",
     "publisher/engine.py": "ec0098849ae81e0c34d60a94faa8972c902c7ab418920c5f4af861b0f1bf5976",
     "publisher/github.py": "15046cdc1e4a8c1ba144c6cb9203a9dcaca1f8bdbed19c202ca9b73512430edb",
-    "publisher/media.py": "998605b645cde4da2570a68f5b7c6ab275cf2f1f09db3f94f1df3c6fba49c0b0",
+    "publisher/media.py": "9a743a4e4066e785e6aa490ee49511ae46fbfc1a6230f178edf870c36421fd18",
     "publisher/__init__.py": "4eb371b112ab18e10d491a68ba1cf5def09eba5e97ecc48f431a0a041992cb40",
-    "publisher/__main__.py": "db6398a8ea1209acde9212a2e804be2791a3f03e99d66bd4920867dce9145bea",
+    "publisher/__main__.py": "6c918db68bf6f82dc89d6625426909bbcaf475c01633ce32625220f53225a105",
     "tests/test_publisher.py": "a7913f2b877ac1be4aff0b2a3965a7d00c7034c353abbc7d6ce6981ebc66d552",
-    "tests/test_r2_sdk.py": "cbae0fe5019282af6dfbc173bb94cebc2f53b991c975b1674e8aee1da8e64401"
+    "tests/test_r2_sdk.py": "e90dc7be1c346935f0d06568e0d27a4fe1bb3cccdaa02ecbd6973eea2e3ab971",
+    "tests/test_storage_guard.py": "003f582ec1b85174c274a885eda51b55a3d17b833745a112486a5c0f27875e7f"
   }
 }

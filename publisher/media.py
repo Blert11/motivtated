@@ -59,6 +59,9 @@ class PagesHost:
 
 
 class R2Host:
+    STORAGE_LIMIT_BYTES = 2_000_000_000
+    STORAGE_WARNING_BYTES = 1_500_000_000
+
     def __init__(self, client=None, bucket=None, base=None):
         self.bucket = bucket or env('R2_BUCKET')
         self.base = https_url(base or env('MEDIA_PUBLIC_BASE_URL'))
@@ -72,6 +75,36 @@ class R2Host:
                                   region_name='auto', config=Config(retries={'max_attempts': 2, 'mode': 'standard'},
                                   request_checksum_calculation='when_required', response_checksum_validation='when_required'))
         self.client = client
+
+    def usage(self):
+        """Bounded scan of this dedicated bucket, not a Cloudflare billing/spend cap."""
+        total = 0
+        objects = 0
+        continuation = None
+        seen = set()
+        for _ in range(10):
+            params = {'Bucket': self.bucket, 'MaxKeys': 1000}
+            if continuation:
+                params['ContinuationToken'] = continuation
+            try:
+                page = self.client.list_objects_v2(**params)
+            except Exception:
+                raise Stop('Cannot measure R2 storage; new uploads are stopped until the check succeeds.') from None
+            for item in page.get('Contents', []):
+                size = item.get('Size')
+                require(isinstance(size, int) and size >= 0, 'Invalid object size in R2 response; cannot establish usage.')
+                total += size
+                objects += 1
+            if not page.get('IsTruncated'):
+                return {'provider':'r2', 'bucket':self.bucket, 'storage_bytes':total, 'object_count':objects,
+                        'storage_limit_bytes':self.STORAGE_LIMIT_BYTES,
+                        'warning':total >= self.STORAGE_WARNING_BYTES,
+                        'stop_new_uploads':total >= self.STORAGE_LIMIT_BYTES,
+                        'billing_scope':'This bucket only; does not measure account spend or public read operations.'}
+            continuation = page.get('NextContinuationToken')
+            require(continuation and continuation not in seen, 'R2 pagination is incomplete; new uploads are stopped.')
+            seen.add(continuation)
+        raise Stop('R2 bucket has too many objects to audit safely in one run; new uploads are stopped.')
 
     def head(self, key):
         try:
@@ -89,6 +122,9 @@ class R2Host:
             require(existing.get('Metadata', {}).get('sha256') == digest and existing['ContentLength'] == path.stat().st_size,
                     'Existing R2 media differs; refusing overwrite.')
         else:
+            usage = self.usage()
+            require(usage['storage_bytes'] + path.stat().st_size <= self.STORAGE_LIMIT_BYTES,
+                    'Upload would exceed the 2 GB application storage ceiling. Retain pending videos; clean up only confirmed posts.')
             try:
                 with path.open('rb') as f:
                     self.client.put_object(Bucket=self.bucket, Key=key, Body=f, ContentType='video/mp4',
