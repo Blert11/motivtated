@@ -1,3 +1,5 @@
+> CURRENT PHASE: Blert authorized scheduled posting from video 10. SCHEDULER.md and posting-schedule.json supersede the historical manual-only requirements below. Both public API milestones are complete.
+
 > Current transfer setup: agents upload validated bundles to the private posting-inputs release using upload_bundles.py. Select bundle_source=github-release in the manual workflow. Drive is optional. See CODEX_NOTES.md.
 
 # Deployment handoff to Claude — manual milestone
@@ -97,7 +99,7 @@ From the Publisher/repository root:
 python -m unittest discover -s tests -v
 ```
 
-Expected after installing requirements: **54 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
+Expected after installing requirements: **68 tests**, no skips or failures, ending with `OK`, exit code 0. These tests exercise failure paths with fake services and botocore's real service model; they do NOT prove live provider credentials, Pages builds, R2 networking, or Buffer's current account behavior. Without boto3 installed, the two SDK tests skip. A separate real bundle round-trip is also checked locally before handoff.
 
 ## Manual workflow sequence
 

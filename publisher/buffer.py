@@ -1,6 +1,7 @@
+from datetime import datetime, timezone
 from .common import HTTP, Stop, env, require
 
-POST_FIELDS = '''id channelId channelService text status schedulingType externalLink sentAt
+POST_FIELDS = '''id channelId channelService text status schedulingType externalLink sentAt dueAt
  assets { source } metadata { ... on InstagramPostMetadata { type } }'''
 
 
@@ -24,7 +25,7 @@ class Buffer:
                           {'input': {'organizationId': org_id}})['channels']
 
     def channel(self, channel_id):
-        return self.query('query($input: ChannelInput!) { channel(input: $input) { id name service isDisconnected isLocked } }',
+        return self.query('query($input: ChannelInput!) { channel(input: $input) { id name service isDisconnected isLocked isQueuePaused } }',
                           {'input': {'id': channel_id}})['channel']
 
     def create(self, payload):
@@ -39,13 +40,26 @@ class Buffer:
         return self.query('query($input: PostInput!) { post(input: $input) { '+POST_FIELDS+' } }',
                           {'input': {'id': post_id}})['post']
 
+    def pending(self, organization_id, channel_ids):
+        result = self.query('query($input: PostsInput!) { posts(first: 100, input: $input) { '
+            'edges { node { id channelId status dueAt } } pageInfo { hasNextPage } } }',
+            {'input': {'organizationId': organization_id,
+                       'filter': {'channelIds': channel_ids, 'status': ['scheduled','sending','draft','needs_approval']}}})['posts']
+        require(not result['pageInfo']['hasNextPage'], 'Too many pending Buffer posts to audit safely.')
+        return [edge['node'] for edge in result['edges']]
 
-def payload(platform, channel_id, caption, media_url):
+
+def payload(platform, channel_id, caption, media_url, due_at=None):
     require(platform in ['tiktok', 'instagram'], 'Unsupported platform.')
     data = {'text': caption, 'channelId': channel_id, 'schedulingType': 'automatic',
             'mode': 'shareNow', 'needsApproval': False, 'saveToDraft': False,
             'assets': [{'video': {'url': media_url}}]}
     if platform == 'instagram':
         data['metadata'] = {'instagram': {'type': 'reel', 'shouldShareToFeed': True}}
+    if due_at:
+        due = datetime.fromisoformat(due_at.replace('Z','+00:00'))
+        require(due.tzinfo is not None and due > datetime.now(timezone.utc), 'Scheduled time must be in the future with a timezone.')
+        data['mode'] = 'customScheduled'
+        data['dueAt'] = due_at
     # The current API has no TikTok privacy input. Public visibility is checked after posting.
     return data

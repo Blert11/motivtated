@@ -19,3 +19,7 @@
 ## Direct GitHub transfer update
 
 54 tests passed. Added exact private release selection, remote/local hash verification, malformed/oversized download rejection, credential-safe subprocess errors, the completed-integration gate, and exclusions for Tate 1–5. M000006 package uploaded and verified against the GitHub asset digest.
+
+## Scheduled queue validation
+
+68 tests passed after adding the explicit timed queue, private package selection, six-post capacity guard, missed-slot stop, per-platform ambiguity handling, refill/reuse behavior, Budapest timezone offsets, Pages readiness retry, and autonomous both-sent + 48-hour cleanup. Scheduled workflow has only cron and manual dispatch and shares global concurrency with the manual workflow.

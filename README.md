@@ -1,19 +1,7 @@
-> Current transfer setup: agents upload validated bundles to the private posting-inputs release using upload_bundles.py. Select bundle_source=github-release in the manual workflow. Drive is optional. See CODEX_NOTES.md.
+# MOTIVTATED publisher
 
-# MOTIVTATED manual publisher
+Active cloud schedule for Tate videos 10-31, five daily slots per platform in Europe/Budapest. Read SCHEDULER.md for current operations and posting-schedule.json for exact dates.
 
-Publish one validated clip to one platform through Buffer. Python 3.12, ffprobe, optional R2 SDK in requirements.txt. Deployment belongs to Claude; operational credentials belong to Blert.
+Agents transfer private validated packages with upload_bundles.py; no manual Drive upload is required. GitHub Actions keeps a bounded queue in Buffer. Buffer publishes with the PC off. Explicit per-platform intent and IDs prevent automatic resubmission of uncertain posts.
 
-Read HANDOFF.md before deployment. No timed scheduler or folder watcher is enabled in this milestone. Ready/Posted folders and the local ID allocator are not modified.
-
-GitHub Pages is selected temporarily while R2 billing setup is blocked. Large MP4 uploads use git push with hash verification and no force push. The actual 55 MB M000032 upload succeeded. R2 support remains available for later. Read CODEX_NOTES.md for the current fix and safe resume instructions.
-
-```sh
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python -m publisher --help
-```
-
-State is persisted to the private repository's publisher-state branch before each Buffer call. Creating a post is never automatically retried. An uncertain result blocks resubmission until an existing post is found and reconciled. This favors avoiding duplicates over automatically recovering every failure; it is not an exactly-once guarantee from Buffer.
-
-The cloud runner downloads a private, hash-verified ZIP from Drive, validates its video/caption/metadata, uploads only the MP4 to the selected public host, verifies the public copy byte-for-byte, and submits to Buffer. After a post ID is saved, reconcile only reads that existing post. A human confirms public visibility separately.
+python -m unittest discover -s tests -v: 68 tests, no skips after dependency installation. python -m publisher.scheduler --dry-run validates the plan without posting. Manual one-clip tools remain available.

@@ -24,7 +24,7 @@ class Engine:
             result.extend(self.buffer.channels(org['id']))
         return result
 
-    def publish(self, manifest, directory, platform, channel_id, resume=False, confirmed_unposted=False):
+    def publish(self, manifest, directory, platform, channel_id, resume=False, confirmed_unposted=False, due_at=None):
         require(platform in ['tiktok','instagram'], 'Invalid platform.')
         identifier = clip_id(manifest['clip_id'])
         require(confirmed_unposted, 'Confirm this clip has not already been posted manually on this platform.')
@@ -53,6 +53,7 @@ class Engine:
                     'Existing intent/post blocks resubmission. Use reconcile; only pre-submission work can resume.')
             require(record['files'] == manifest['files'] and record['channel_id'] == channel_id,
                     'A reserved attempt cannot change files or channel.')
+            require(record.get('scheduled_at') == due_at, 'A reserved attempt cannot change its scheduled time.')
             record['state'] = 'preparing'
         else:
             record = {'clip_id': identifier, 'platform': platform, 'channel_id': channel_id,
@@ -60,16 +61,19 @@ class Engine:
                       'files': manifest['files'], 'caption': manifest['caption'],
                       'state': 'preparing', 'created_at': now()}
             records[key] = record
+        if due_at:
+            record['scheduled_at'] = due_at
         self.event(key, 'claim_before_media_or_buffer')
         try:
             self.event(key, 'before_buffer_channel_query')
             channel = self.buffer.channel(channel_id)
             require(channel['id'] == channel_id and channel['service'] == platform, 'Configured channel belongs to the wrong platform.')
             require(not channel['isDisconnected'] and not channel['isLocked'], 'Refresh or unlock this Buffer channel first.')
+            require(not due_at or not channel.get('isQueuePaused'), 'Buffer queue is paused; unpause it before scheduling.')
             record['media'] = self.host.upload(directory/'video.mp4', identifier, video_hash)
             self.event(key, 'media_uploaded_waiting_verification')
             self.verify(record['media'], manifest, directory)
-            request = payload(platform, channel_id, record['caption'], record['media']['url'])
+            request = payload(platform, channel_id, record['caption'], record['media']['url'], due_at)
         except Exception:
             record['state'] = 'failed_before_submit'
             self.event(key, 'pre_submission_failure')
@@ -102,6 +106,12 @@ class Engine:
         record['state'] = {'sent': 'posted', 'error': 'failed_at_buffer', 'draft': 'needs_attention',
                            'needs_approval': 'needs_attention', 'scheduled': 'submitted', 'sending': 'submitted'}.get(post['status'], 'needs_attention')
         self.event(key, 'buffer_status_recorded')
+        if record.get('scheduled_at') and post['status'] == 'scheduled':
+            matching = post.get('dueAt') and datetime.fromisoformat(post['dueAt'].replace('Z','+00:00')) == datetime.fromisoformat(record['scheduled_at'].replace('Z','+00:00'))
+            if not matching:
+                record['state'] = 'needs_attention'
+                self.event(key, 'buffer_schedule_time_mismatch')
+                raise Stop('Buffer scheduled time differs from the approved slot; inspect the saved post ID.')
 
     def reconcile(self, identifier, platform, post_id=None):
         key = clip_id(identifier)+':'+platform
@@ -129,9 +139,10 @@ class Engine:
         self.event(identifier+':'+platform, 'user_confirmed_public_visibility')
         return record
 
-    def cleanup(self, identifier):
+    def cleanup(self, identifier, provider_confirmed=False):
         records = [self.ledger.data['records'].get(clip_id(identifier)+':'+p) for p in ['tiktok','instagram']]
-        require(all(r and r['state'] == 'posted' and r.get('public_verified_at') for r in records),
+        require(all(r and r['state'] == 'posted' and (r.get('public_verified_at') or
+                    (provider_confirmed and r.get('buffer_status') == 'sent' and r.get('post_url'))) for r in records),
                 'Both platforms must be posted and publicly verified before media cleanup.')
         require(all(r.get('sent_at') for r in records), 'Missing publication time; retain media.')
         for r in records:
@@ -145,5 +156,6 @@ class Engine:
                 self.host.delete(media)
                 seen.add(media['url'])
             r['media_deleted_at'] = now()
+            r['cleanup_basis'] = 'buffer_sent_both_platforms' if provider_confirmed else 'user_public_confirmation'
         self.event(identifier, 'hosted_media_cleanup_complete')
         return {'clip_id': identifier, 'hosted_copies_removed': len(seen)}
