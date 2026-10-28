@@ -127,7 +127,7 @@ class Engine:
         self.accept_post(key, record, post, strict_source=not bool(known_id))
         return record
 
-    def reschedule(self, identifier, platform, previous_due, due_at):
+    def reschedule(self, identifier, platform, previous_due, due_at, allow_reviewed_retry=False):
         key = clip_id(identifier)+':'+platform
         record = self.ledger.data['records'].get(key)
         require(record and record['state'] == 'submitted' and record.get('buffer_post_id'),
@@ -146,11 +146,14 @@ class Engine:
         change = {'post_id': post_id, 'previous_due': previous_due, 'due_at': due_at}
         require(not intent or intent == change, 'An unresolved different schedule edit exists.')
         live_due = datetime.fromisoformat(post['dueAt'].replace('Z','+00:00'))
-        if intent:
+        if intent and not allow_reviewed_retry:
             require(live_due == target, 'Schedule edit outcome is unresolved; no automatic edit retry.')
-        else:
+        if not intent or (allow_reviewed_retry and live_due != target):
             require(live_due == datetime.fromisoformat(previous_due.replace('Z','+00:00')),
                     'Live schedule differs from the saved previous time.')
+            if intent:
+                record.setdefault('schedule_retry_history', []).append({**intent, 'reviewed_at': now()})
+                self.event(key, 'reviewed_schedule_retry_after_old_time_readback')
             record['reschedule_intent'] = change
             self.event(key, 'before_buffer_editPost')
             self.buffer.reschedule(post_id, due_at)

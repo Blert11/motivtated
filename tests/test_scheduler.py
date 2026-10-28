@@ -171,6 +171,27 @@ class SchedulerTests(unittest.TestCase):
         r=self.ledger.data['records']['M000011:tiktok']
         self.assertEqual(self.buffer.posts[r['buffer_post_id']]['dueAt'],row['previous_due_at'])
 
+    def test_reviewed_retry_only_edits_after_confirming_previous_time(self):
+        self.run_scheduler(); self.change_second_slot()
+        original=self.buffer.reschedule
+        self.buffer.reschedule=lambda *a:(_ for _ in ()).throw(Stop('rejected'))
+        with self.assertRaises(Stop): self.run_scheduler()
+        self.buffer.reschedule=original
+        self.scheduler.retry_edit='M000011:tiktok'
+        self.run_scheduler()
+        r=self.ledger.data['records']['M000011:tiktok']
+        self.assertEqual(len(r['schedule_retry_history']),1)
+        self.assertEqual(len(self.buffer.calls),12)
+
+    def test_edit_error_redacts_key_and_url(self):
+        b=Buffer(token='private-test-key')
+        b.query=lambda *a:{'editPost':{'__typename':'InvalidInputError',
+            'message':'bad private-test-key https://example.com/?private=value'}}
+        with self.assertRaises(Stop) as error: b.reschedule('known','2099-01-01T09:00:00+01:00')
+        self.assertNotIn('private-test-key',str(error.exception))
+        self.assertNotIn('example.com',str(error.exception))
+        self.assertIn('InvalidInputError',str(error.exception))
+
     def test_cannot_reschedule_a_sent_post(self):
         self.run_scheduler(); self.change_second_slot()
         r=self.ledger.data['records']['M000011:tiktok']

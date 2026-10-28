@@ -71,12 +71,13 @@ def load_package(row, directory):
 
 
 class Scheduler:
-    def __init__(self, plan, engine, channels, loader=load_package, clock=None):
+    def __init__(self, plan, engine, channels, loader=load_package, clock=None, retry_edit=None):
         self.plan = plan
         self.rows = validate_plan(plan)
         self.engine = engine
         self.channels = channels
         self.loader = loader
+        self.retry_edit = retry_edit
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.report = {'scheduled': [], 'reconciled': [], 'cleaned': [], 'errors': []}
 
@@ -105,7 +106,8 @@ class Scheduler:
                     continue
                 require(row.get('previous_due_at') == record.get('scheduled_at'),
                         'Changing an existing schedule requires its explicit previous time.')
-                self.engine.reschedule(row['clip_id'], platform, row['previous_due_at'], row['due_at'])
+                self.engine.reschedule(row['clip_id'], platform, row['previous_due_at'], row['due_at'],
+                    allow_reviewed_retry=self.retry_edit == row['clip_id']+':'+platform)
 
     def cleanup(self):
         if not self.plan.get('cleanup_after_both_sent'):
@@ -193,6 +195,11 @@ def main():
     parser.add_argument('--plan', type=Path, default=Path('posting-schedule.json'))
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
+    retry_edit = os.environ.get('REVIEWED_SCHEDULE_EDIT','').strip()
+    if retry_edit:
+        require(os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
+                and re.fullmatch(r'M\d{6}:(tiktok|instagram)',retry_edit),
+                'Reviewed schedule retries require a manual dispatch for one exact record.')
     plan = json.loads(args.plan.read_text(encoding='utf-8'))
     rows = validate_plan(plan)
     if args.dry_run:
@@ -201,7 +208,7 @@ def main():
     ledger = GitHubLedger.from_env()
     ledger.load()
     engine = Engine(ledger, Buffer(), host_from_env(), verify=wait_for_public)
-    scheduler = Scheduler(plan, engine, {p:env('BUFFER_'+p.upper()+'_CHANNEL_ID') for p in PLATFORMS})
+    scheduler = Scheduler(plan, engine, {p:env('BUFFER_'+p.upper()+'_CHANNEL_ID') for p in PLATFORMS},retry_edit=retry_edit)
     try:
         report = scheduler.run()
     except Exception as exc:

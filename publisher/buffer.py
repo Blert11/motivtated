@@ -1,4 +1,6 @@
 from datetime import datetime, timezone
+import os
+import re
 from .common import HTTP, Stop, env, require
 
 POST_FIELDS = '''id channelId channelService text status schedulingType externalLink sentAt dueAt
@@ -45,8 +47,15 @@ class Buffer:
             '... on PostActionSuccess { post { '+POST_FIELDS+' } } '
             '... on MutationError { message } } }',
             {'input': {'id': post_id, 'mode': 'customScheduled', 'dueAt': due_at}})['editPost']
-        require(result.get('__typename') == 'PostActionSuccess' and result.get('post', {}).get('id') == post_id,
-                'Buffer did not confirm the existing post edit; reconcile before retrying.')
+        if result.get('__typename') != 'PostActionSuccess' or result.get('post', {}).get('id') != post_id:
+            message = str(result.get('message', 'No error detail returned.'))
+            secrets = [self.token] + [v for k,v in os.environ.items()
+                if v and re.search('TOKEN|SECRET|PASSWORD|API_KEY|ACCESS_KEY',k,re.I)]
+            for secret in sorted(set(secrets),key=len,reverse=True):
+                message = message.replace(secret,'[REDACTED]')
+            message = re.sub(r'https?://\S+', '[URL]', message)
+            message = ' '.join(c if c.isprintable() else ' ' for c in message) if not message.isprintable() else message
+            raise Stop('Buffer edit rejected ('+re.sub('[^A-Za-z]','',str(result.get('__typename')))[:60]+'): '+message[:500])
         return result['post']
 
     def pending(self, organization_id, channel_ids):
