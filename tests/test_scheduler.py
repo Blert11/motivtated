@@ -214,7 +214,8 @@ class SchedulerTests(unittest.TestCase):
         b.reschedule('known','2099-01-01T10:30:00+01:00',record)
         self.assertEqual(captured[0]['id'],'known')
         self.assertEqual(captured[0]['text'],record['caption'])
-        self.assertEqual(captured[0]['assets'],[{'video':{'url':record['media']['url']}}])
+        self.assertEqual(captured[0]['assets'],[{'video':{'url':record['media']['url'],
+            'metadata':{'thumbnailOffset':1000}}}])
         self.assertEqual(captured[0]['metadata']['instagram']['type'],'reel')
         self.assertEqual(captured[0]['dueAt'],'2099-01-01T10:30:00+01:00')
         self.assertEqual(captured[0]['mode'],'customScheduled')

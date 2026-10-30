@@ -4,7 +4,10 @@ import re
 from .common import HTTP, Stop, env, require
 
 POST_FIELDS = '''id channelId channelService text status schedulingType externalLink sentAt dueAt
- assets { source } metadata { ... on InstagramPostMetadata { type } }'''
+ assets { source ... on VideoAsset { video { thumbnailOffset } } }
+ metadata { ... on InstagramPostMetadata { type } }'''
+
+COVER_OFFSET_MS = 1000
 
 
 class Buffer:
@@ -77,7 +80,7 @@ def payload(platform, channel_id, caption, media_url, due_at=None):
     require(platform in ['tiktok', 'instagram'], 'Unsupported platform.')
     data = {'text': caption, 'channelId': channel_id, 'schedulingType': 'automatic',
             'mode': 'shareNow', 'needsApproval': False, 'saveToDraft': False,
-            'assets': [{'video': {'url': media_url}}]}
+            'assets': [{'video': {'url': media_url, 'metadata': {'thumbnailOffset': COVER_OFFSET_MS}}}]}
     if platform == 'instagram':
         data['metadata'] = {'instagram': {'type': 'reel', 'shouldShareToFeed': True}}
     if due_at:
