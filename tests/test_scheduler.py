@@ -103,6 +103,17 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaisesRegex(Stop,'pending limit'): self.run_scheduler()
         self.assertEqual(self.buffer.calls,[])
 
+    def test_storage_deferral_leaves_no_new_intent_and_resumes_later(self):
+        before=set(self.ledger.data['records'])
+        self.host.can_fit=lambda *args:False
+        result=self.run_scheduler()
+        self.assertEqual(result['deferred_for_storage'],'M000010')
+        self.assertEqual(set(self.ledger.data['records']),before)
+        self.assertEqual(self.buffer.calls,[])
+        self.host.can_fit=lambda *args:True
+        self.run_scheduler()
+        self.assertEqual(len(self.buffer.calls),12)
+
     def test_missed_slot_stops_without_bursting(self):
         self.now=datetime(2099,1,2,tzinfo=timezone.utc)
         with self.assertRaisesRegex(Stop,'Missed scheduling'): self.run_scheduler()
@@ -131,6 +142,32 @@ class SchedulerTests(unittest.TestCase):
         row['previous_due_at']=row['due_at']
         row['due_at']='2099-01-01T10:30:00+01:00'
         return row
+
+    def test_batch5_extension_keeps_order_and_pending_limit(self):
+        self.plan.update(posts_per_day=10,max_pending_per_channel=10)
+        self.plan['clips'].extend({'clip_id':f'M{n:06d}','bundle_sha256':'b'*64} for n in range(66,108))
+        for n,row in enumerate(self.plan['clips']):
+            row['due_at']=(datetime(2099,1,1+n//10,9,tzinfo=ZoneInfo('Europe/Budapest'))
+                           +timedelta(minutes=90*(n%10))).isoformat()
+        self.assertEqual(len(validate_plan(self.plan)),64)
+        # Existing batch has finished; only new IDs should be submitted.
+        for row in self.plan['clips'][:22]:
+            for platform in ['tiktok','instagram']:
+                self.ledger.data['records'][row['clip_id']+':'+platform]={
+                    'clip_id':row['clip_id'],'platform':platform,'state':'posted',
+                    'channel_id':platform,'scheduled_at':row['due_at'],
+                    'video_sha256':row['clip_id'].zfill(64)}
+        self.run_scheduler();self.run_scheduler();self.run_scheduler()
+        self.assertEqual(len(self.buffer.calls),20)
+        self.assertEqual({r['clip_id'] for r in self.ledger.data['records'].values() if r['state']=='submitted'},
+                         {f'M{n:06d}' for n in range(66,76)})
+
+    def test_batch5_extension_rejects_duplicate_or_unapproved_ids(self):
+        self.plan['clips'].extend({'clip_id':f'M{n:06d}','bundle_sha256':'b'*64,
+                                  'due_at':'2099-02-01T09:00:00+01:00'} for n in range(66,108))
+        for wrong in ['M000032','M000066']:
+            self.plan['clips'][-1]['clip_id']=wrong
+            with self.assertRaisesRegex(Stop,'Approved order'): validate_plan(self.plan)
 
     def test_schedule_edit_preserves_ids_and_does_not_create_posts(self):
         self.run_scheduler(); ids=set(self.buffer.posts)
@@ -255,6 +292,22 @@ class SchedulerTests(unittest.TestCase):
 
 
 class ScheduledCleanupTests(unittest.TestCase):
+    def test_short_retention_never_deletes_recent_or_partial_publication(self):
+        fixture=fixtures.EngineTests();fixture.setUp()
+        fixture.publish();fixture.engine.confirm_public('M000032','tiktok','https://www.tiktok.com/test-post')
+        with self.assertRaises(Stop): fixture.engine.cleanup('M000032',provider_confirmed=True,grace_hours=2)
+        fixture.publish('instagram')
+        with self.assertRaises(Stop): fixture.engine.cleanup('M000032',provider_confirmed=True,grace_hours=2)
+        for r in fixture.ledger.data['records'].values():
+            r['sent_at']=(datetime.now(timezone.utc)-timedelta(hours=3)).isoformat()
+        with self.assertRaises(Stop): fixture.engine.cleanup('M000032',grace_hours=2)
+        ig=fixture.ledger.data['records']['M000032:instagram'];ig['state']='failed_at_buffer'
+        with self.assertRaises(Stop): fixture.engine.cleanup('M000032',provider_confirmed=True,grace_hours=2)
+        self.assertEqual(fixture.host.deletes,[])
+        ig['state']='posted'
+        fixture.engine.cleanup('M000032',provider_confirmed=True,grace_hours=2)
+        self.assertEqual(len(fixture.host.deletes),1)
+
     def test_provider_confirmed_cleanup_requires_both_sent_and_grace(self):
         fixture=fixtures.EngineTests();fixture.setUp()
         fixture.publish();fixture.engine.confirm_public('M000032','tiktok','https://www.tiktok.com/test-post')

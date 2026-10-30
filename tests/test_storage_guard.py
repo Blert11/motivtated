@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 from publisher.common import Stop
-from publisher.media import R2Host
+from publisher.media import R2Host, PagesHost
 
 
 class Client:
@@ -19,6 +19,20 @@ class Client:
 
 
 class StorageGuardTests(unittest.TestCase):
+    def test_pages_preflight_accounts_for_whole_site_and_existing_objects(self):
+        class FakeGitHub:
+            exists=False
+            truncated=False
+            def file(self,*args): return {'sha':'existing'} if self.exists else None
+            def request(self,*args): return {'truncated':self.truncated,'tree':[{'type':'blob','size':850_000_000}]}
+        host=PagesHost.__new__(PagesHost);host.gh=FakeGitHub();host.branch='main'
+        self.assertTrue(host.can_fit('M000066','a'*64,50_000_000))
+        self.assertFalse(host.can_fit('M000066','a'*64,50_000_001))
+        host.gh.exists=True
+        self.assertTrue(host.can_fit('M000066','a'*64,90_000_000))
+        host.gh.exists=False;host.gh.truncated=True
+        with self.assertRaises(Stop): host.can_fit('M000066','a'*64,1)
+
     def test_usage_counts_other_prefixes_and_all_pages(self):
         client=Client([{'Contents':[{'Key':'unrelated/file','Size':100}], 'IsTruncated':True,'NextContinuationToken':'next'},
                        {'Contents':[{'Size':200}], 'IsTruncated':False}])

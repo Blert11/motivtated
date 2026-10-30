@@ -180,7 +180,9 @@ class Engine:
         self.event(identifier+':'+platform, 'user_confirmed_public_visibility')
         return record
 
-    def cleanup(self, identifier, provider_confirmed=False):
+    def cleanup(self, identifier, provider_confirmed=False, grace_hours=48):
+        require(grace_hours in [2,48], 'Unsupported media retention period.')
+        require(grace_hours == 48 or provider_confirmed, 'Short retention requires both platform confirmations.')
         records = [self.ledger.data['records'].get(clip_id(identifier)+':'+p) for p in ['tiktok','instagram']]
         require(all(r and r['state'] == 'posted' and (r.get('public_verified_at') or
                     (provider_confirmed and r.get('buffer_status') == 'sent' and r.get('post_url'))) for r in records),
@@ -188,7 +190,8 @@ class Engine:
         require(all(r.get('sent_at') for r in records), 'Missing publication time; retain media.')
         for r in records:
             sent = datetime.fromisoformat(r['sent_at'].replace('Z','+00:00'))
-            require((datetime.now(timezone.utc)-sent).total_seconds() >= 48*3600, 'Keep media at least 48 hours after both posts publish.')
+            require((datetime.now(timezone.utc)-sent).total_seconds() >= grace_hours*3600,
+                    f'Keep media at least {grace_hours} hours after both posts publish.')
         seen = set()
         for r in records:
             media = r['media']

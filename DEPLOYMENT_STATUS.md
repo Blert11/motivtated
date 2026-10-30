@@ -1,3 +1,15 @@
+# Batch 5 extension — October 30, 2026
+
+Blert authorized scheduling the 42 corrected Tate clips after video 31. The plan now contains original IDs M000010–M000031 followed by M000066–M000107. Original due times are unchanged. New slots run October 31 at 10:30 through November 4 at 12:00, Europe/Budapest, on both platforms. Full days have ten posts.
+
+The agent prepares and verifies private release packages from validated staging. The hourly cloud scheduler keeps at most ten pending posts per platform and refills as capacity opens. No PC or manual Google Drive upload is required. This authorization does not include Claude IDs M000033–M000065 or any other unlisted clips.
+
+The current host remains GitHub Pages. This plan uses a two-hour grace after BOTH platforms report sent with links, with fresh status checks before deleting hosted copies. It retains private bundles and PC originals. New uploads defer without submitting anything if the site would exceed 900 MB; they are checked again next hour. Four old clips may be cleaned per run. Engine default retention remains 48 hours for other callers.
+
+89 offline tests pass, including extended-ID ordering, no duplicates, per-platform queue limits, partial failures, storage deferral, and cleanup guards. The opening correction and 1000 ms cover selection are included. Live refill confirmation is recorded separately after dispatch.
+
+## Previous deployment history
+
 # Current posting status - 2026-10-28
 
 The hourly cloud scheduler is enabled for Tate videos 10-31 (M000010-M000031), following Blert's latest authorization. Videos 1-9 and M000032 are excluded. Both platforms use ten slots per full day in Europe/Budapest: 09:00, 10:30, 12:00, 13:30, 15:00, 16:30, 18:00, 19:30, 21:00, 22:30. Video 10 starts October 28 at 21:00; video 31 ends October 31 at 09:00.

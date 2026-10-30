@@ -21,6 +21,13 @@ def verify_public(media, manifest, directory, http=None):
 
 
 class PagesHost:
+    def can_fit(self, identifier, digest, size):
+        if self.gh.file(key_for(identifier,digest),self.branch,True):
+            return True
+        tree = self.gh.request('GET', f'/git/trees/{urllib.parse.quote(self.branch, safe="")}?recursive=1')
+        require(not tree.get('truncated'), 'Cannot establish total Pages site size.')
+        return sum(item.get('size',0) for item in tree['tree'] if item['type']=='blob') + size <= 900_000_000
+
     def __init__(self, gh=None, base=None):
         self.gh = gh or GitHub(env('MEDIA_GITHUB_REPOSITORY'), env('MEDIA_GITHUB_TOKEN'))
         self.base = https_url(base or env('MEDIA_PUBLIC_BASE_URL'))

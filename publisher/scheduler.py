@@ -28,13 +28,16 @@ def parse_time(value):
 def validate_plan(plan):
     require(plan.get('version') == 1 and plan.get('timezone') == 'Europe/Budapest', 'Unsupported schedule plan.')
     require(plan.get('max_pending_per_channel') in [6,10], 'Queue capacity must be six or ten per channel.')
+    require(plan.get('cleanup_grace_hours',48) in [2,48], 'Unsupported cleanup retention period.')
     daily = plan.get('posts_per_day', 5)
     require(daily in [5,10], 'Unsupported daily posting count.')
     slots = [(9,0),(12,0),(15,0),(18,0),(21,0)] if daily == 5 else [
         (9+90*n//60,90*n%60) for n in range(10)]
     rows = plan['clips']
-    require([r['clip_id'] for r in rows] == [f'M{n:06d}' for n in range(10,32)],
-            'This approved queue must contain Tate videos 10-31 in order, exactly once.')
+    original = [f'M{n:06d}' for n in range(10,32)]
+    extended = original + [f'M{n:06d}' for n in range(66,108)]
+    require([r['clip_id'] for r in rows] in [original, extended],
+            'Approved order: Tate videos 10-31, optionally followed by batch 5 IDs M000066-M000107 exactly once.')
     previous = None
     days = {}
     for row in rows:
@@ -119,13 +122,14 @@ class Scheduler:
                 continue
             if all(r.get('media_deleted_at') for r in records):
                 continue
-            if any(self.clock()-parse_time(r['sent_at']) < timedelta(hours=48) for r in records):
+            grace = self.plan.get('cleanup_grace_hours',48)
+            if any(self.clock()-parse_time(r['sent_at']) < timedelta(hours=grace) for r in records):
                 continue
             for platform in PLATFORMS:
                 self.engine.reconcile(row['clip_id'], platform)
-            self.engine.cleanup(row['clip_id'], provider_confirmed=True)
+            self.engine.cleanup(row['clip_id'], provider_confirmed=True,grace_hours=grace)
             self.report['cleaned'].append(row['clip_id'])
-            if len(self.report['cleaned']) >= 2:
+            if len(self.report['cleaned']) >= 4:
                 break
 
     def candidates(self):
@@ -174,6 +178,12 @@ class Scheduler:
                         'Buffer has reached the configured pending limit; wait for capacity or inspect external posts.')
                 with tempfile.TemporaryDirectory(prefix='motivtated-scheduler-') as scratch:
                     manifest, content = self.loader(row, Path(scratch))
+                    host = self.engine.host
+                    if hasattr(host,'can_fit') and not host.can_fit(row['clip_id'],
+                            manifest['files']['video.mp4']['sha256'],manifest['files']['video.mp4']['size']):
+                        # Leave no reservation/Buffer intent; refill next hour after safe cleanup.
+                        self.report['deferred_for_storage'] = row['clip_id']
+                        break
                     for platform in platforms:
                         record = self.records.get(row['clip_id']+':'+platform)
                         posted = self.engine.publish(manifest, content, platform, self.channels[platform],
