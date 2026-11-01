@@ -319,3 +319,36 @@ class ScheduledCleanupTests(unittest.TestCase):
         self.assertEqual(len(fixture.host.deletes),1)
         self.assertNotIn('public_verified_at',fixture.ledger.data['records']['M000032:instagram'])
         self.assertEqual(fixture.ledger.data['records']['M000032:instagram']['cleanup_basis'],'buffer_sent_both_platforms')
+
+
+class PaceChangeTests(unittest.TestCase):
+    def plan(self):
+        import json
+        from pathlib import Path
+        return json.loads((Path(__file__).resolve().parents[1]/'posting-schedule.json').read_text(encoding='utf-8'))
+
+    def test_committed_plan_switches_to_seven_daily_from_november_2(self):
+        from publisher.scheduler import validate_plan, pace_for
+        from datetime import date
+        plan = self.plan()
+        validate_plan(plan)
+        self.assertEqual(pace_for(plan, date(2026, 11, 1)), 10)
+        self.assertEqual(pace_for(plan, date(2026, 11, 2)), 7)
+
+    def test_eighth_post_on_a_seven_post_day_is_rejected(self):
+        from publisher.scheduler import validate_plan
+        from publisher.common import Stop
+        plan = self.plan()
+        rows = {r['clip_id']: r for r in plan['clips']}
+        rows['M000092']['due_at'] = '2026-11-02T22:45:00+01:00'
+        with self.assertRaises(Stop):
+            validate_plan(plan)
+
+    def test_old_ten_slot_rejected_after_pace_change(self):
+        from publisher.scheduler import validate_plan
+        from publisher.common import Stop
+        plan = self.plan()
+        rows = {r['clip_id']: r for r in plan['clips']}
+        rows['M000086']['due_at'] = '2026-11-02T10:30:00+01:00'
+        with self.assertRaises(Stop):
+            validate_plan(plan)

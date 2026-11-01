@@ -347,190 +347,244 @@
     {
       "clip_id": "M000085",
       "source": "github-release",
-      "bundle_sha256": "f05a5a18dd7b0bfff7a98cbfce902895ea8c3e6a24c94de06881374b0c5585ca",
+      "bundle_sha256": "d1175b43879a2f8283937f6965e9938cc42b51443ad77d2f3063fb05a560a6d7",
       "due_at": "2026-11-02T09:00:00+01:00",
       "local_time": "2026-11-02T09:00:00+01:00",
-      "filename": "20. clip tate - difficulty protects the reward.mp4"
+      "filename": "20. clip tate - difficulty protects the reward.mp4",
+      "previous_bundle_sha256": "f05a5a18dd7b0bfff7a98cbfce902895ea8c3e6a24c94de06881374b0c5585ca",
+      "asset_name": "M000085.r2.zip"
     },
     {
       "clip_id": "M000086",
       "source": "github-release",
-      "bundle_sha256": "fc5a567fae9e765f9633da32e978b2941003aa5373153efa7d597aeab9ccce32",
-      "due_at": "2026-11-02T10:30:00+01:00",
-      "local_time": "2026-11-02T10:30:00+01:00",
-      "filename": "21. clip tate - keep working without applause.mp4"
+      "bundle_sha256": "21e94c811c9a81d4352581d95f602d6f6654275fb523687894c552a4a09517d9",
+      "due_at": "2026-11-02T11:00:00+01:00",
+      "local_time": "2026-11-02T11:00:00+01:00",
+      "filename": "21. clip tate - keep working without applause.mp4",
+      "previous_bundle_sha256": "fc5a567fae9e765f9633da32e978b2941003aa5373153efa7d597aeab9ccce32",
+      "asset_name": "M000086.r2.zip"
     },
     {
       "clip_id": "M000087",
       "source": "github-release",
-      "bundle_sha256": "9af4c1114c49899db405323815e00e847d629c748ed31171620474ea57090ddd",
-      "due_at": "2026-11-02T12:00:00+01:00",
-      "local_time": "2026-11-02T12:00:00+01:00",
-      "filename": "22. clip tate - wake up with responsibility.mp4"
+      "bundle_sha256": "f43584ec0bb40b5884d3c1636ce2b405fc34d1b2873e89c1b7e705a1d5c7528c",
+      "due_at": "2026-11-02T13:30:00+01:00",
+      "local_time": "2026-11-02T13:30:00+01:00",
+      "filename": "22. clip tate - wake up with responsibility.mp4",
+      "previous_bundle_sha256": "9af4c1114c49899db405323815e00e847d629c748ed31171620474ea57090ddd",
+      "asset_name": "M000087.r2.zip"
     },
     {
       "clip_id": "M000088",
       "source": "github-release",
-      "bundle_sha256": "2a2756cd2b22ca3db342c2f51608e2fa757e308d6c49184a45e7a70749580abf",
-      "due_at": "2026-11-02T13:30:00+01:00",
-      "local_time": "2026-11-02T13:30:00+01:00",
-      "filename": "23. clip tate - stop expecting easy.mp4"
+      "bundle_sha256": "ca5e4879915e9c37183975345ff03dbef1aa10dd1020da7e2354cee3841423f0",
+      "due_at": "2026-11-02T16:00:00+01:00",
+      "local_time": "2026-11-02T16:00:00+01:00",
+      "filename": "23. clip tate - stop expecting easy.mp4",
+      "previous_bundle_sha256": "2a2756cd2b22ca3db342c2f51608e2fa757e308d6c49184a45e7a70749580abf",
+      "asset_name": "M000088.r2.zip"
     },
     {
       "clip_id": "M000089",
       "source": "github-release",
-      "bundle_sha256": "2693c985be5ec2a091b8957159a39017b598e59ae29713c67eda6fa327dd6d76",
-      "due_at": "2026-11-02T15:00:00+01:00",
-      "local_time": "2026-11-02T15:00:00+01:00",
-      "filename": "24. clip tate - choose constructive discomfort.mp4"
+      "bundle_sha256": "8f4b7a3dbfaa037aad3ad5ce3a209d94055c96572d734fd4bf4b6bae0fc6bc6f",
+      "due_at": "2026-11-02T18:30:00+01:00",
+      "local_time": "2026-11-02T18:30:00+01:00",
+      "filename": "24. clip tate - choose constructive discomfort.mp4",
+      "previous_bundle_sha256": "2693c985be5ec2a091b8957159a39017b598e59ae29713c67eda6fa327dd6d76",
+      "asset_name": "M000089.r2.zip"
     },
     {
       "clip_id": "M000090",
       "source": "github-release",
-      "bundle_sha256": "6291f8c3202db428cbce87ec811989829300eeefab6ccec19d56f47b59cf2932",
-      "due_at": "2026-11-02T16:30:00+01:00",
-      "local_time": "2026-11-02T16:30:00+01:00",
-      "filename": "25. clip tate - be willing to learn.mp4"
+      "bundle_sha256": "ec6c6b72b2fcfeebba19ca69fd6726c336aac8c9b3102b7a3e300204e589e0b9",
+      "due_at": "2026-11-02T20:30:00+01:00",
+      "local_time": "2026-11-02T20:30:00+01:00",
+      "filename": "25. clip tate - be willing to learn.mp4",
+      "previous_bundle_sha256": "6291f8c3202db428cbce87ec811989829300eeefab6ccec19d56f47b59cf2932",
+      "asset_name": "M000090.r2.zip"
     },
     {
       "clip_id": "M000091",
       "source": "github-release",
-      "bundle_sha256": "bd5a8711f0bcba2d7dbb63e8dc2829885d8882d764ff0d507bdbe81b5af4fc7d",
-      "due_at": "2026-11-02T18:00:00+01:00",
-      "local_time": "2026-11-02T18:00:00+01:00",
-      "filename": "26. clip tate - the skill of persistence.mp4"
+      "bundle_sha256": "f6a0456d2f7d842dfd9ef9adb8bb317d98ce7c904180e71e7c2c14acf5187298",
+      "due_at": "2026-11-02T22:30:00+01:00",
+      "local_time": "2026-11-02T22:30:00+01:00",
+      "filename": "26. clip tate - the skill of persistence.mp4",
+      "previous_bundle_sha256": "bd5a8711f0bcba2d7dbb63e8dc2829885d8882d764ff0d507bdbe81b5af4fc7d",
+      "asset_name": "M000091.r2.zip"
     },
     {
       "clip_id": "M000092",
       "source": "github-release",
-      "bundle_sha256": "05554b959f6325cd576ec869a30e91a256b2715606af4cdf358ad539848e24aa",
-      "due_at": "2026-11-02T19:30:00+01:00",
-      "local_time": "2026-11-02T19:30:00+01:00",
-      "filename": "27. clip tate - upgrade your real life.mp4"
+      "bundle_sha256": "5c3510838478ae9420f7ca796cadae0be8c6d6d53f2c1508d568cb079cc3a297",
+      "due_at": "2026-11-03T09:00:00+01:00",
+      "local_time": "2026-11-03T09:00:00+01:00",
+      "filename": "27. clip tate - upgrade your real life.mp4",
+      "previous_bundle_sha256": "05554b959f6325cd576ec869a30e91a256b2715606af4cdf358ad539848e24aa",
+      "asset_name": "M000092.r2.zip"
     },
     {
       "clip_id": "M000093",
       "source": "github-release",
-      "bundle_sha256": "3951aea09a6062c9eefbe6cfb76dbce2e663bbe3e24db866ff513d8009d89ac4",
-      "due_at": "2026-11-02T21:00:00+01:00",
-      "local_time": "2026-11-02T21:00:00+01:00",
-      "filename": "28. clip tate - a dream needs a plan.mp4"
+      "bundle_sha256": "18ca435ecd317b7a57b1c8035658f49202694c16ff831ee62ee3026620f43aed",
+      "due_at": "2026-11-03T11:00:00+01:00",
+      "local_time": "2026-11-03T11:00:00+01:00",
+      "filename": "28. clip tate - a dream needs a plan.mp4",
+      "previous_bundle_sha256": "3951aea09a6062c9eefbe6cfb76dbce2e663bbe3e24db866ff513d8009d89ac4",
+      "asset_name": "M000093.r2.zip"
     },
     {
       "clip_id": "M000094",
       "source": "github-release",
-      "bundle_sha256": "a6166744ecc61cd235f3a87224d4c5d4a544bb1ed07bd3e2f7530f21f026fcf6",
-      "due_at": "2026-11-02T22:30:00+01:00",
-      "local_time": "2026-11-02T22:30:00+01:00",
-      "filename": "29. clip tate - hardship is relative.mp4"
+      "bundle_sha256": "ee495a9a9a0aaad53b5dd770ba99d84b08ddef408298a92bbb20bcc4f84600e5",
+      "due_at": "2026-11-03T13:30:00+01:00",
+      "local_time": "2026-11-03T13:30:00+01:00",
+      "filename": "29. clip tate - hardship is relative.mp4",
+      "previous_bundle_sha256": "a6166744ecc61cd235f3a87224d4c5d4a544bb1ed07bd3e2f7530f21f026fcf6",
+      "asset_name": "M000094.r2.zip"
     },
     {
       "clip_id": "M000095",
       "source": "github-release",
-      "bundle_sha256": "ee44b65a1a7a355a4cb45a81ca943617c5002254e47e4ea593e8830aa15f9a5a",
-      "due_at": "2026-11-03T09:00:00+01:00",
-      "local_time": "2026-11-03T09:00:00+01:00",
-      "filename": "30. clip tate - results outlast excuses.mp4"
+      "bundle_sha256": "2a3f0dc3e3ce51c67bfbe0de8e9ea72a10cfeb6bc338b1e9d932a3b5aabb7d40",
+      "due_at": "2026-11-03T16:00:00+01:00",
+      "local_time": "2026-11-03T16:00:00+01:00",
+      "filename": "30. clip tate - results outlast excuses.mp4",
+      "previous_bundle_sha256": "ee44b65a1a7a355a4cb45a81ca943617c5002254e47e4ea593e8830aa15f9a5a",
+      "asset_name": "M000095.r2.zip"
     },
     {
       "clip_id": "M000096",
       "source": "github-release",
-      "bundle_sha256": "08eb402f71b10f58f630be4d55c205920af29c32977fdbe8679716666f2becfb",
-      "due_at": "2026-11-03T10:30:00+01:00",
-      "local_time": "2026-11-03T10:30:00+01:00",
-      "filename": "31. clip tate - choose something to be proud of.mp4"
+      "bundle_sha256": "408c019daef61d8900da6c8621f0884c3c5a7f7ed77d976a5ecd39b6177854b3",
+      "due_at": "2026-11-03T18:30:00+01:00",
+      "local_time": "2026-11-03T18:30:00+01:00",
+      "filename": "31. clip tate - choose something to be proud of.mp4",
+      "previous_bundle_sha256": "08eb402f71b10f58f630be4d55c205920af29c32977fdbe8679716666f2becfb",
+      "asset_name": "M000096.r2.zip"
     },
     {
       "clip_id": "M000097",
       "source": "github-release",
-      "bundle_sha256": "273c1b026bc7fcb67b392a92e1aafa2017da1ad6a578df8cd9313c4637f43a98",
-      "due_at": "2026-11-03T12:00:00+01:00",
-      "local_time": "2026-11-03T12:00:00+01:00",
-      "filename": "32. clip tate - be shelter for the people you love.mp4"
+      "bundle_sha256": "5bc499987a7f79c62c2531c255d27474b967f2d4c6f69afa713e3d4867e48936",
+      "due_at": "2026-11-03T20:30:00+01:00",
+      "local_time": "2026-11-03T20:30:00+01:00",
+      "filename": "32. clip tate - be shelter for the people you love.mp4",
+      "previous_bundle_sha256": "273c1b026bc7fcb67b392a92e1aafa2017da1ad6a578df8cd9313c4637f43a98",
+      "asset_name": "M000097.r2.zip"
     },
     {
       "clip_id": "M000098",
       "source": "github-release",
-      "bundle_sha256": "4e913bf45837bbb40acbf7f3655cae5c85add71699748ba8616ae90aa9d99d4e",
-      "due_at": "2026-11-03T13:30:00+01:00",
-      "local_time": "2026-11-03T13:30:00+01:00",
-      "filename": "33. clip tate - take control of your attention.mp4"
+      "bundle_sha256": "411acd3a4229d49a7a0173392bf8423290b935ced38bb7b00db9e161e21a8c74",
+      "due_at": "2026-11-03T22:30:00+01:00",
+      "local_time": "2026-11-03T22:30:00+01:00",
+      "filename": "33. clip tate - take control of your attention.mp4",
+      "previous_bundle_sha256": "4e913bf45837bbb40acbf7f3655cae5c85add71699748ba8616ae90aa9d99d4e",
+      "asset_name": "M000098.r2.zip"
     },
     {
       "clip_id": "M000099",
       "source": "github-release",
-      "bundle_sha256": "23dbc1cb4608ccde475a59290ca311257218cca479200702675598faa8a34741",
-      "due_at": "2026-11-03T15:00:00+01:00",
-      "local_time": "2026-11-03T15:00:00+01:00",
-      "filename": "34. clip tate - turn setbacks into fuel.mp4"
+      "bundle_sha256": "eea5eb5598407f0682c4723371b18815575c699ee4fd66553410e1ab9e7683d1",
+      "due_at": "2026-11-04T09:00:00+01:00",
+      "local_time": "2026-11-04T09:00:00+01:00",
+      "filename": "34. clip tate - turn setbacks into fuel.mp4",
+      "previous_bundle_sha256": "23dbc1cb4608ccde475a59290ca311257218cca479200702675598faa8a34741",
+      "asset_name": "M000099.r2.zip"
     },
     {
       "clip_id": "M000100",
       "source": "github-release",
-      "bundle_sha256": "6aa5d0b13973b35766fd1e080fcb121773792e7623ab893da1a312294f664ba3",
-      "due_at": "2026-11-03T16:30:00+01:00",
-      "local_time": "2026-11-03T16:30:00+01:00",
-      "filename": "35. clip tate - focus on your own next step.mp4"
+      "bundle_sha256": "c81d1d2a1fbcba8b91250ea7bbe8ebc6aa9b7dd38e8fcc5800f413d00b70294e",
+      "due_at": "2026-11-04T11:00:00+01:00",
+      "local_time": "2026-11-04T11:00:00+01:00",
+      "filename": "35. clip tate - focus on your own next step.mp4",
+      "previous_bundle_sha256": "6aa5d0b13973b35766fd1e080fcb121773792e7623ab893da1a312294f664ba3",
+      "asset_name": "M000100.r2.zip"
     },
     {
       "clip_id": "M000101",
       "source": "github-release",
-      "bundle_sha256": "c3bec638622a7d547d5bcc2d0a536163f2018d4235e4caac241f2f1ce33dd07e",
-      "due_at": "2026-11-03T18:00:00+01:00",
-      "local_time": "2026-11-03T18:00:00+01:00",
-      "filename": "36. clip tate - work smart and work hard.mp4"
+      "bundle_sha256": "379a86b71553d85abb6a594b8828d3a1e716edfe737ced3b9261a4156fa8aa9a",
+      "due_at": "2026-11-04T13:30:00+01:00",
+      "local_time": "2026-11-04T13:30:00+01:00",
+      "filename": "36. clip tate - work smart and work hard.mp4",
+      "previous_bundle_sha256": "c3bec638622a7d547d5bcc2d0a536163f2018d4235e4caac241f2f1ce33dd07e",
+      "asset_name": "M000101.r2.zip"
     },
     {
       "clip_id": "M000102",
       "source": "github-release",
-      "bundle_sha256": "38ee0db653dbe44784dd36200e607850e1bf15cbeb7caa3f6360cedf6f32c711",
-      "due_at": "2026-11-03T19:30:00+01:00",
-      "local_time": "2026-11-03T19:30:00+01:00",
-      "filename": "37. clip tate - do good without chasing applause.mp4"
+      "bundle_sha256": "8657724452162f16592e6ce194b38501f558d6163a2857c5913cfc1908c1d584",
+      "due_at": "2026-11-04T16:00:00+01:00",
+      "local_time": "2026-11-04T16:00:00+01:00",
+      "filename": "37. clip tate - do good without chasing applause.mp4",
+      "previous_bundle_sha256": "38ee0db653dbe44784dd36200e607850e1bf15cbeb7caa3f6360cedf6f32c711",
+      "asset_name": "M000102.r2.zip"
     },
     {
       "clip_id": "M000103",
       "source": "github-release",
-      "bundle_sha256": "a5520812ee649b9959dee9b3e24071ca6ad8838c7aae54a74671a348cbefa354",
-      "due_at": "2026-11-03T21:00:00+01:00",
-      "local_time": "2026-11-03T21:00:00+01:00",
-      "filename": "38. clip tate - build skills that survive luck.mp4"
+      "bundle_sha256": "b2e6b8fad272ae06c31e32f7b4d0eddb2dd50278487d935f56cad7cf16502058",
+      "due_at": "2026-11-04T18:30:00+01:00",
+      "local_time": "2026-11-04T18:30:00+01:00",
+      "filename": "38. clip tate - build skills that survive luck.mp4",
+      "previous_bundle_sha256": "a5520812ee649b9959dee9b3e24071ca6ad8838c7aae54a74671a348cbefa354",
+      "asset_name": "M000103.r2.zip"
     },
     {
       "clip_id": "M000104",
       "source": "github-release",
-      "bundle_sha256": "e6587bd4223847d95f8d8d6d20a47c498965282d8e7a1bf0a5a9e1b772f92f5b",
-      "due_at": "2026-11-03T22:30:00+01:00",
-      "local_time": "2026-11-03T22:30:00+01:00",
-      "filename": "39. clip tate - focus your energy like a river.mp4"
+      "bundle_sha256": "2de4c700e38db7c683db988a44f7635bc73ef228e1ad4c741e4d7e408d32f102",
+      "due_at": "2026-11-04T20:30:00+01:00",
+      "local_time": "2026-11-04T20:30:00+01:00",
+      "filename": "39. clip tate - focus your energy like a river.mp4",
+      "previous_bundle_sha256": "e6587bd4223847d95f8d8d6d20a47c498965282d8e7a1bf0a5a9e1b772f92f5b",
+      "asset_name": "M000104.r2.zip"
     },
     {
       "clip_id": "M000105",
       "source": "github-release",
-      "bundle_sha256": "906b1b5837a1d47d71feb8ddf238125a3041949c1a8214e8a80c03ad75273d44",
-      "due_at": "2026-11-04T09:00:00+01:00",
-      "local_time": "2026-11-04T09:00:00+01:00",
-      "filename": "40. clip tate - there is always another level.mp4"
+      "bundle_sha256": "7ffac2469e23fda7911a69483b689152f925624993d8286dc59ca2d840111be5",
+      "due_at": "2026-11-04T22:30:00+01:00",
+      "local_time": "2026-11-04T22:30:00+01:00",
+      "filename": "40. clip tate - there is always another level.mp4",
+      "previous_bundle_sha256": "906b1b5837a1d47d71feb8ddf238125a3041949c1a8214e8a80c03ad75273d44",
+      "asset_name": "M000105.r2.zip"
     },
     {
       "clip_id": "M000106",
       "source": "github-release",
-      "bundle_sha256": "f6de6e96479e75f0785612300b877bc3b2147dda531809ca38d426583a4c0cac",
-      "due_at": "2026-11-04T10:30:00+01:00",
-      "local_time": "2026-11-04T10:30:00+01:00",
-      "filename": "41. clip tate - show what you are capable of.mp4"
+      "bundle_sha256": "4817979b1e8338ff25c65a1029e43990571241d1bef019f762c6c839c0a1d10e",
+      "due_at": "2026-11-05T09:00:00+01:00",
+      "local_time": "2026-11-05T09:00:00+01:00",
+      "filename": "41. clip tate - show what you are capable of.mp4",
+      "previous_bundle_sha256": "f6de6e96479e75f0785612300b877bc3b2147dda531809ca38d426583a4c0cac",
+      "asset_name": "M000106.r2.zip"
     },
     {
       "clip_id": "M000107",
       "source": "github-release",
-      "bundle_sha256": "b93bc05616f4ee0de404cfbe9c64b8e985bf974be818c20b63a395c41ac84a20",
-      "due_at": "2026-11-04T12:00:00+01:00",
-      "local_time": "2026-11-04T12:00:00+01:00",
-      "filename": "42. clip tate - expand your idea of possible.mp4"
+      "bundle_sha256": "fede147331585d603fb06f81950f53428408c5ae20ce8d1cc7bdb26db6cfb912",
+      "due_at": "2026-11-05T11:00:00+01:00",
+      "local_time": "2026-11-05T11:00:00+01:00",
+      "filename": "42. clip tate - expand your idea of possible.mp4",
+      "previous_bundle_sha256": "b93bc05616f4ee0de404cfbe9c64b8e985bf974be818c20b63a395c41ac84a20",
+      "asset_name": "M000107.r2.zip"
     }
   ],
   "posts_per_day": 10,
   "pace_authorized_on": "2026-10-28",
   "batch5_authorized_on": "2026-10-30",
-  "cleanup_grace_hours": 2
+  "cleanup_grace_hours": 2,
+  "pace_changes": [
+    {
+      "from": "2026-11-02",
+      "posts_per_day": 7
+    }
+  ],
+  "pace_change_authorized_on": "2026-11-01",
+  "batch5_revision": "M000085-M000107 replaced with Claude's louder-music audio + new captions (Blert, 2026-11-01); 7 posts/day from Nov 2"
 }

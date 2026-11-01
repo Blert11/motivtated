@@ -25,14 +25,29 @@ def parse_time(value):
     return result
 
 
+SLOTS = {5: [(9,0),(12,0),(15,0),(18,0),(21,0)],
+         7: [(9,0),(11,0),(13,30),(16,0),(18,30),(20,30),(22,30)],
+         10: [(9+90*n//60,90*n%60) for n in range(10)]}
+
+
+def pace_for(plan, day):
+    """Posts per day for a local date: the plan default, changed from a date onward by explicit pace entries."""
+    daily = plan.get('posts_per_day', 5)
+    for change in sorted(plan.get('pace_changes', []), key=lambda c: c['from']):
+        if day >= datetime.fromisoformat(change['from']).date():
+            daily = change['posts_per_day']
+    require(daily in SLOTS, 'Unsupported daily posting count.')
+    return daily
+
+
 def validate_plan(plan):
     require(plan.get('version') == 1 and plan.get('timezone') == 'Europe/Budapest', 'Unsupported schedule plan.')
     require(plan.get('max_pending_per_channel') in [6,10], 'Queue capacity must be six or ten per channel.')
     require(plan.get('cleanup_grace_hours',48) in [2,48], 'Unsupported cleanup retention period.')
-    daily = plan.get('posts_per_day', 5)
-    require(daily in [5,10], 'Unsupported daily posting count.')
-    slots = [(9,0),(12,0),(15,0),(18,0),(21,0)] if daily == 5 else [
-        (9+90*n//60,90*n%60) for n in range(10)]
+    pace_for(plan, datetime(2000, 1, 1).date())
+    for change in plan.get('pace_changes', []):
+        require(re.fullmatch(r'\d{4}-\d{2}-\d{2}', change.get('from', '')) and change.get('posts_per_day') in SLOTS,
+                'Invalid pace change.')
     rows = plan['clips']
     original = [f'M{n:06d}' for n in range(10,32)]
     extended = original + [f'M{n:06d}' for n in range(66,108)]
@@ -45,7 +60,8 @@ def validate_plan(plan):
         due = parse_time(row['due_at'])
         require(previous is None or due > previous, 'Clip times must strictly increase.')
         local = due.astimezone(ZoneInfo(plan['timezone']))
-        require((local.hour,local.minute) in slots and local.second == local.microsecond == 0, 'Unexpected posting slot.')
+        daily = pace_for(plan, local.date())
+        require((local.hour,local.minute) in SLOTS[daily] and local.second == local.microsecond == 0, 'Unexpected posting slot.')
         days[local.date()] = days.get(local.date(), 0)+1
         require(days[local.date()] <= daily, 'The plan exceeds its approved posts per local day.')
         previous = due
@@ -65,7 +81,7 @@ def wait_for_public(media, manifest, directory):
 
 def load_package(row, directory):
     bundle = directory/'input.zip'
-    download_github_release(row['clip_id'], bundle, row['bundle_sha256'])
+    download_github_release(row['clip_id'], bundle, row['bundle_sha256'], asset_name=row.get('asset_name'))
     content = directory/'content'
     content.mkdir()
     manifest = unpack(bundle, row['bundle_sha256'], content)

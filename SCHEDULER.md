@@ -17,3 +17,12 @@ Once all 64 clips are sent and their hosted copies cleaned, the workflow disable
 To pause future refills: disable the scheduled publisher workflow or set enabled=false in posting-schedule.json. Buffer posts already scheduled still publish unless paused/cancelled in Buffer. Never reset publisher-state or delete saved post IDs to recover a failure. Any schedule change for an existing Buffer ID needs an explicit update of that post, not a new submission.
 
 Latest pace authorization: ten posts daily starting October 29. M000010 is already sent and retains its original time. Existing future IDs are edited in place using editPost with the existing ID, new time, and preserved caption, video and Reel settings. The plan records previous_due_at; durable reschedule_intent is saved before editing. After an ambiguous response, a later run only accepts a verified new time and never blindly repeats the edit. Each run uploads at most six new clips to stay inside the workflow time budget; the total waiting queue is capped at ten per platform.
+
+## Revision 2026-11-01 (Claude, authorized by Blert)
+
+Clips 20-42 of the Tate batch (M000085-M000107) are replaced by Claude's louder-music versions (voice isolated from the source, new BG bed, video stream unchanged) with new captions, and post at seven per day from November 2: 09:00, 11:00, 13:30, 16:00, 18:30, 20:30, 22:30 Europe/Budapest, ending November 5 at 11:00. Earlier rows keep their ten-slot times.
+
+- `pace_changes` in posting-schedule.json switches posts per day from a local date onward; each row is validated against the slots of its own day.
+- Revised packages are separate release assets named `<ID>.r2.zip` (row field `asset_name`); the original `<ID>.zip` assets are kept, never deleted or overwritten. `previous_bundle_sha256` records the replaced digest.
+- None of these IDs had a Buffer post or ledger record when the plan changed, so no existing post is edited.
+- Revised packages are uploaded by the manual `Upload revised private bundles` workflow from the `claude-bundles` branch; it verifies each digest and refuses to overwrite an existing asset.

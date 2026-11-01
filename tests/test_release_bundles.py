@@ -71,6 +71,21 @@ class ReleaseDownloadTests(unittest.TestCase):
         self.assertNotIn('secret',str(caught.exception))
         run.assert_called_once()
 
+    def test_revision_asset_name_downloads_exact_revision(self):
+        self.asset['name'] = 'M000006.r2.zip'
+        def run(args, **kwargs):
+            self.assertIn('M000006.r2.zip', args)
+            self.target.write_bytes(b'package')
+            return SimpleNamespace(returncode=0)
+        with patch.dict('os.environ',{'GITHUB_TOKEN':'test-token'}), patch('publisher.bundles.subprocess.run',side_effect=run):
+            download_github_release('M000006',self.target,self.digest,self.gh,asset_name='M000006.r2.zip')
+
+    def test_revision_name_for_another_clip_is_rejected(self):
+        self.asset['name'] = 'M000007.r2.zip'
+        with patch('publisher.bundles.subprocess.run') as run, self.assertRaises(Stop):
+            download_github_release('M000006',self.target,self.digest,self.gh,asset_name='M000007.r2.zip')
+        run.assert_not_called()
+
 
 class MilestoneTests(unittest.TestCase):
     def test_completed_integration_allows_next_instagram_without_manual_per_clip_gate(self):
