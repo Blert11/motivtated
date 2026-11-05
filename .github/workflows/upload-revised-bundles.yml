@@ -1,8 +1,13 @@
 name: Upload revised private bundles
-# Adds revised packages (<ID>.rN.zip) from the claude-bundles branch to the private posting-inputs release.
+# Adds new packages (<ID>.zip) or revised ones (<ID>.rN.zip) from the claude-bundles branch to the private posting-inputs release.
 # Never deletes or overwrites an asset; an existing name must already have the identical digest.
 'on':
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch holding bundles/ and expected.json
+        type: string
+        default: claude-bundles
 permissions:
   contents: write
 concurrency:
@@ -16,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: claude-bundles
+          ref: ${{ inputs.ref || 'claude-bundles' }}
           persist-credentials: false
       - name: Verify and upload
         env:
@@ -30,7 +35,7 @@ jobs:
           import hashlib, json, pathlib, re
           exp = json.loads(pathlib.Path('expected.json').read_text())
           for name, digest in exp.items():
-              assert re.fullmatch(r'M\d{6}\.r[0-9]{1,2}\.zip', name), name
+              assert re.fullmatch(r'M\d{6}(\.r[0-9]{1,2})?\.zip', name), name
               h = hashlib.sha256(pathlib.Path('bundles', name).read_bytes()).hexdigest()
               assert h == digest, f'{name} digest mismatch'
           print('verified', len(exp))
