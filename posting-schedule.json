@@ -573,6 +573,566 @@
       "filename": "42. clip tate - expand your idea of possible.mp4",
       "previous_bundle_sha256": "b93bc05616f4ee0de404cfbe9c64b8e985bf974be818c20b63a395c41ac84a20",
       "asset_name": "M000107.r2.zip"
+    },
+    {
+      "clip_id": "M000108",
+      "source": "github-release",
+      "bundle_sha256": "f52fcb09c71318ac5ba2b06ecfa457de1e5a91f7ab8c8a4cc08b9ecedf305567",
+      "due_at": "2026-11-05T13:30:00+01:00",
+      "local_time": "2026-11-05T13:30:00+01:00",
+      "filename": "1. clip mcconaughey - sacrifice a plastic ring for a gold crown.mp4"
+    },
+    {
+      "clip_id": "M000033",
+      "source": "github-release",
+      "bundle_sha256": "3c23de9a53b9b8f1e76699990ec9f9567920a5fde42eee4466a4b4324e6f67ca",
+      "due_at": "2026-11-05T16:00:00+01:00",
+      "local_time": "2026-11-05T16:00:00+01:00",
+      "filename": "2. clip motivation - you got a dream protect it.mp4"
+    },
+    {
+      "clip_id": "M000109",
+      "source": "github-release",
+      "bundle_sha256": "f620b2de16df5dd73355ffaf6af332b9c905c880e58981d43b147a14063af4c1",
+      "due_at": "2026-11-05T18:30:00+01:00",
+      "local_time": "2026-11-05T18:30:00+01:00",
+      "filename": "2. clip jack ma - my advice to the young people.mp4"
+    },
+    {
+      "clip_id": "M000034",
+      "source": "github-release",
+      "bundle_sha256": "18a33ec2dc2764ce69d03749760495ba96d384643c7f6d8ab072008dff4ddbcc",
+      "due_at": "2026-11-05T20:30:00+01:00",
+      "local_time": "2026-11-05T20:30:00+01:00",
+      "filename": "3. clip motivation - you are greater than your feelings.mp4"
+    },
+    {
+      "clip_id": "M000110",
+      "source": "github-release",
+      "bundle_sha256": "f4b2b0cae2e8bcf9e639525a389d3ebafc907e78353177e8075ec94545228553",
+      "due_at": "2026-11-05T22:30:00+01:00",
+      "local_time": "2026-11-05T22:30:00+01:00",
+      "filename": "3. clip motivation - some of yall dont want it.mp4"
+    },
+    {
+      "clip_id": "M000035",
+      "source": "github-release",
+      "bundle_sha256": "0e139c55f647ff084d18d7b2e5bcfec00381e0f614d552bd39d5dcd1eb850975",
+      "due_at": "2026-11-06T09:00:00+01:00",
+      "local_time": "2026-11-06T09:00:00+01:00",
+      "filename": "4. clip motivation - control what you can control.mp4"
+    },
+    {
+      "clip_id": "M000111",
+      "source": "github-release",
+      "bundle_sha256": "53ba03da5c45f8aacc85af153e8014204e3290c3b5a0de502003ebd79037572f",
+      "due_at": "2026-11-06T11:00:00+01:00",
+      "local_time": "2026-11-06T11:00:00+01:00",
+      "filename": "4. clip dan pena - show me your friends.mp4"
+    },
+    {
+      "clip_id": "M000036",
+      "source": "github-release",
+      "bundle_sha256": "17693fd76265d642a458719ac9f2a2f48bddd5593f060307f68c3d9fb737b3bd",
+      "due_at": "2026-11-06T13:30:00+01:00",
+      "local_time": "2026-11-06T13:30:00+01:00",
+      "filename": "5. clip motivation - rome wasn't built in a day.mp4"
+    },
+    {
+      "clip_id": "M000112",
+      "source": "github-release",
+      "bundle_sha256": "038bcc968a7fd4337755f4e659351384c820464240cebb2e91707a0b26160f31",
+      "due_at": "2026-11-06T16:00:00+01:00",
+      "local_time": "2026-11-06T16:00:00+01:00",
+      "filename": "5. clip mcconaughey - if youre gonna do it do it.mp4"
+    },
+    {
+      "clip_id": "M000037",
+      "source": "github-release",
+      "bundle_sha256": "131a52cc4f7293e16ab8bd1e242aad41073c2c55a2997f0123459b5a2fd968d4",
+      "due_at": "2026-11-06T18:30:00+01:00",
+      "local_time": "2026-11-06T18:30:00+01:00",
+      "filename": "6. clip conor mcgregor - i only need one chance.mp4"
+    },
+    {
+      "clip_id": "M000144",
+      "source": "github-release",
+      "bundle_sha256": "81f3d0c7cdacdd5de915d45872f185d1eaf722943c00ee7c26ef63f15d31b86e",
+      "due_at": "2026-11-06T20:30:00+01:00",
+      "local_time": "2026-11-06T20:30:00+01:00",
+      "filename": "40. clip mcconaughey - be quick but dont be in a hurry.mp4"
+    },
+    {
+      "clip_id": "M000038",
+      "source": "github-release",
+      "bundle_sha256": "6e082fa5459bf29517d0005e91056a841f2639d8dcf76dcabc7b70113838020d",
+      "due_at": "2026-11-06T22:30:00+01:00",
+      "local_time": "2026-11-06T22:30:00+01:00",
+      "filename": "7. clip motivation - focus and fail fast.mp4"
+    },
+    {
+      "clip_id": "M000114",
+      "source": "github-release",
+      "bundle_sha256": "afbd3131708424143d58b13a25f25ab16e26003e8e4fa36768546187b72ad39d",
+      "due_at": "2026-11-07T09:00:00+01:00",
+      "local_time": "2026-11-07T09:00:00+01:00",
+      "filename": "8. clip motivation - before the enemy is awake.mp4"
+    },
+    {
+      "clip_id": "M000039",
+      "source": "github-release",
+      "bundle_sha256": "bf84b57119f34d368fb6bf4e85cebdfcd16cdf0e9c214cb258a76d10ad093b86",
+      "due_at": "2026-11-07T11:00:00+01:00",
+      "local_time": "2026-11-07T11:00:00+01:00",
+      "filename": "8. clip motivation - you don't quit.mp4"
+    },
+    {
+      "clip_id": "M000115",
+      "source": "github-release",
+      "bundle_sha256": "8e723149327068b61c454d5e48f84f1c825aa04681a3e2d3a0e2ccd99606589a",
+      "due_at": "2026-11-07T13:30:00+01:00",
+      "local_time": "2026-11-07T13:30:00+01:00",
+      "filename": "9. clip dan pena - they slept in the office.mp4"
+    },
+    {
+      "clip_id": "M000040",
+      "source": "github-release",
+      "bundle_sha256": "f4964732e9aeb2d9195a0b7487f2cf3e83782e5d6d9b208eb6f8cb26907e0c91",
+      "due_at": "2026-11-07T16:00:00+01:00",
+      "local_time": "2026-11-07T16:00:00+01:00",
+      "filename": "9. clip motivation - you can't fit in and be exceptional.mp4"
+    },
+    {
+      "clip_id": "M000116",
+      "source": "github-release",
+      "bundle_sha256": "06e0bf968c5db6a4b30455e8451e9a0b5778f271da14df8c817f116d631037dd",
+      "due_at": "2026-11-07T18:30:00+01:00",
+      "local_time": "2026-11-07T18:30:00+01:00",
+      "filename": "10. clip mcconaughey - who else am i supposed to be full of.mp4"
+    },
+    {
+      "clip_id": "M000041",
+      "source": "github-release",
+      "bundle_sha256": "6a7698a0dbb244aa48cd774ea9a9e4a714b1a6135021e3699b92eb02239126a5",
+      "due_at": "2026-11-07T20:30:00+01:00",
+      "local_time": "2026-11-07T20:30:00+01:00",
+      "filename": "10. clip motivation - unmade decisions.mp4"
+    },
+    {
+      "clip_id": "M000117",
+      "source": "github-release",
+      "bundle_sha256": "06fb2e7b99e9ac7ae0e24dd861a66638e4de3eb8fc3ac98a678743b228c6473e",
+      "due_at": "2026-11-07T22:30:00+01:00",
+      "local_time": "2026-11-07T22:30:00+01:00",
+      "filename": "11. clip jack ma - rejected thirty times.mp4"
+    },
+    {
+      "clip_id": "M000042",
+      "source": "github-release",
+      "bundle_sha256": "5d35f4a740f7be493720dc66e9dc53925b84cc31db35e8e0a066ef203d941224",
+      "due_at": "2026-11-08T09:00:00+01:00",
+      "local_time": "2026-11-08T09:00:00+01:00",
+      "filename": "11. clip motivation - stifled by fluorescent lights.mp4"
+    },
+    {
+      "clip_id": "M000118",
+      "source": "github-release",
+      "bundle_sha256": "c9acd45040844c6cec91bb6ea6caadc60b4202ad026d4e77ddd2ee8e13e9ede4",
+      "due_at": "2026-11-08T11:00:00+01:00",
+      "local_time": "2026-11-08T11:00:00+01:00",
+      "filename": "12. clip motivation - do what is hard.mp4"
+    },
+    {
+      "clip_id": "M000043",
+      "source": "github-release",
+      "bundle_sha256": "59bbabbec61af9743453d5ef3eef97105348e579bca4bbac242c46163c34a803",
+      "due_at": "2026-11-08T13:30:00+01:00",
+      "local_time": "2026-11-08T13:30:00+01:00",
+      "filename": "12. clip motivation - we're up here because of 4am.mp4"
+    },
+    {
+      "clip_id": "M000119",
+      "source": "github-release",
+      "bundle_sha256": "3ae81e9c48272800dcbae8a0e7eee968890c3e7f7e247f8b4122f52fe358ac4d",
+      "due_at": "2026-11-08T16:00:00+01:00",
+      "local_time": "2026-11-08T16:00:00+01:00",
+      "filename": "13. clip dan pena - discipline and focus.mp4"
+    },
+    {
+      "clip_id": "M000044",
+      "source": "github-release",
+      "bundle_sha256": "1bdb70740547f519080a9bf989e478a68d0b4619e52f48478720f76a4776eed8",
+      "due_at": "2026-11-08T18:30:00+01:00",
+      "local_time": "2026-11-08T18:30:00+01:00",
+      "filename": "13. clip hormozi - the price tag.mp4"
+    },
+    {
+      "clip_id": "M000120",
+      "source": "github-release",
+      "bundle_sha256": "75e1eaabbddde474f3caaa70596b7cdb95221d33b111830068d3cc2a8496a187",
+      "due_at": "2026-11-08T20:30:00+01:00",
+      "local_time": "2026-11-08T20:30:00+01:00",
+      "filename": "14. clip mcconaughey - you are the author of your life.mp4"
+    },
+    {
+      "clip_id": "M000045",
+      "source": "github-release",
+      "bundle_sha256": "1f4f61ae370a20bcd6c540899d9acfb887a0bd07be523adbd6acd5515f3693de",
+      "due_at": "2026-11-08T22:30:00+01:00",
+      "local_time": "2026-11-08T22:30:00+01:00",
+      "filename": "14. clip motivation - nothing changes if nothing changes.mp4"
+    },
+    {
+      "clip_id": "M000121",
+      "source": "github-release",
+      "bundle_sha256": "913d30b290986d4eae22c6e2661281e19000d59088797aa6bd8ca42a6385778b",
+      "due_at": "2026-11-09T09:00:00+01:00",
+      "local_time": "2026-11-09T09:00:00+01:00",
+      "filename": "15. clip jack ma - life is a box of chocolates.mp4"
+    },
+    {
+      "clip_id": "M000046",
+      "source": "github-release",
+      "bundle_sha256": "5ce21f39fa20da337a3ed5ac8d55031a7f0dda5823fa9b416607499f91ace55a",
+      "due_at": "2026-11-09T11:00:00+01:00",
+      "local_time": "2026-11-09T11:00:00+01:00",
+      "filename": "15. clip kobe bryant - confidence comes from preparation.mp4"
+    },
+    {
+      "clip_id": "M000122",
+      "source": "github-release",
+      "bundle_sha256": "3b12e968b3ba76768012539d4198cd139990100cf4822f84f7b93503661fc39d",
+      "due_at": "2026-11-09T13:30:00+01:00",
+      "local_time": "2026-11-09T13:30:00+01:00",
+      "filename": "17. clip motivation - what are you gaining by sleeping in.mp4"
+    },
+    {
+      "clip_id": "M000047",
+      "source": "github-release",
+      "bundle_sha256": "a8b7f5772c90537453a5a7b34ee782a122e536a5a072a33bde76aeee1173a865",
+      "due_at": "2026-11-09T16:00:00+01:00",
+      "local_time": "2026-11-09T16:00:00+01:00",
+      "filename": "16. clip hormozi - no one else will follow.mp4"
+    },
+    {
+      "clip_id": "M000123",
+      "source": "github-release",
+      "bundle_sha256": "d3cfc95f3ee261b7e123133b4cb0de3c1c49b27fd15821ae1526b9a39c20d1ec",
+      "due_at": "2026-11-09T18:30:00+01:00",
+      "local_time": "2026-11-09T18:30:00+01:00",
+      "filename": "18. clip dan pena - failure is just testing.mp4"
+    },
+    {
+      "clip_id": "M000048",
+      "source": "github-release",
+      "bundle_sha256": "87540acf0eb34fa02718fa924fdee78e6a1278116f4e126ac8ac83e6b26f45a0",
+      "due_at": "2026-11-09T20:30:00+01:00",
+      "local_time": "2026-11-09T20:30:00+01:00",
+      "filename": "17. clip motivation - stop waiting for life to be easy.mp4"
+    },
+    {
+      "clip_id": "M000124",
+      "source": "github-release",
+      "bundle_sha256": "53c1294aa2f33dc6bf18e6ace7aeb6921754f7c4d2443ef0c756b60384173db2",
+      "due_at": "2026-11-09T22:30:00+01:00",
+      "local_time": "2026-11-09T22:30:00+01:00",
+      "filename": "19. clip mcconaughey - great value in being alone.mp4"
+    },
+    {
+      "clip_id": "M000049",
+      "source": "github-release",
+      "bundle_sha256": "485c34b0867a9dc718a3c7a4a2d6f1e74dfbd53016a7911c416bccacf1dc387b",
+      "due_at": "2026-11-10T09:00:00+01:00",
+      "local_time": "2026-11-10T09:00:00+01:00",
+      "filename": "18. clip motivation - who are you in a year.mp4"
+    },
+    {
+      "clip_id": "M000125",
+      "source": "github-release",
+      "bundle_sha256": "e6a3e5ea5d3949aa1e0861ec2944889ed9704270847dcf7abcecf0c93d3e0bd3",
+      "due_at": "2026-11-10T11:00:00+01:00",
+      "local_time": "2026-11-10T11:00:00+01:00",
+      "filename": "20. clip jack ma - no rich father no powerful uncle.mp4"
+    },
+    {
+      "clip_id": "M000050",
+      "source": "github-release",
+      "bundle_sha256": "3a3638d12807fb8594a1b4e586d5017de9756e000ce773e702aa052b346dabd6",
+      "due_at": "2026-11-10T13:30:00+01:00",
+      "local_time": "2026-11-10T13:30:00+01:00",
+      "filename": "19. clip mel robbins - 400 trillion to one.mp4"
+    },
+    {
+      "clip_id": "M000126",
+      "source": "github-release",
+      "bundle_sha256": "541b7a70277ec5bea638cb4da8c7a0f03f05e6468c98e6f67724a9adae18b250",
+      "due_at": "2026-11-10T16:00:00+01:00",
+      "local_time": "2026-11-10T16:00:00+01:00",
+      "filename": "21. clip motivation - you also have 24 hours.mp4"
+    },
+    {
+      "clip_id": "M000051",
+      "source": "github-release",
+      "bundle_sha256": "ef92706994dd571ea00bac905abbc569efa897e3894332b97e3d60981af3ffd9",
+      "due_at": "2026-11-10T18:30:00+01:00",
+      "local_time": "2026-11-10T18:30:00+01:00",
+      "filename": "20. clip mcraven - make your bed.mp4"
+    },
+    {
+      "clip_id": "M000127",
+      "source": "github-release",
+      "bundle_sha256": "bbe7f32da03d4bc2f1ded645aecefe8ab31c39c811b54fa94e7e51707d968987",
+      "due_at": "2026-11-10T20:30:00+01:00",
+      "local_time": "2026-11-10T20:30:00+01:00",
+      "filename": "22. clip dan pena - practice being successful.mp4"
+    },
+    {
+      "clip_id": "M000052",
+      "source": "github-release",
+      "bundle_sha256": "8c8ddbe935510b2953caf696daeae7b3b0cb5479d4ed9606a6e416a6a0d127a8",
+      "due_at": "2026-11-10T22:30:00+01:00",
+      "local_time": "2026-11-10T22:30:00+01:00",
+      "filename": "21. clip motivation - have an iron will.mp4"
+    },
+    {
+      "clip_id": "M000128",
+      "source": "github-release",
+      "bundle_sha256": "b6fbd568b495a0665edc0414a111aa3b2389f1db4a97bc9152450407fa42a89a",
+      "due_at": "2026-11-11T09:00:00+01:00",
+      "local_time": "2026-11-11T09:00:00+01:00",
+      "filename": "23. clip mcconaughey - unbelievable is the stupidest word.mp4"
+    },
+    {
+      "clip_id": "M000053",
+      "source": "github-release",
+      "bundle_sha256": "ab06ad01fb7d0410dc818d010a8f5f057e77c5890bae36dd1fc2accca090edd7",
+      "due_at": "2026-11-11T11:00:00+01:00",
+      "local_time": "2026-11-11T11:00:00+01:00",
+      "filename": "22. clip goggins - the 300 pound guy.mp4"
+    },
+    {
+      "clip_id": "M000129",
+      "source": "github-release",
+      "bundle_sha256": "7a7954f9023977c9ce484a92eb76f22a1b0cb24ce8672885b5648cedf7c259cc",
+      "due_at": "2026-11-11T13:30:00+01:00",
+      "local_time": "2026-11-11T13:30:00+01:00",
+      "filename": "24. clip jack ma - crazy but not stupid.mp4"
+    },
+    {
+      "clip_id": "M000054",
+      "source": "github-release",
+      "bundle_sha256": "eb72194fdef95a48960a4d6ed2065e88a1fc40773f6b1560f2fd874ae89b7702",
+      "due_at": "2026-11-11T16:00:00+01:00",
+      "local_time": "2026-11-11T16:00:00+01:00",
+      "filename": "23. clip motivation - this is what hard feels like.mp4"
+    },
+    {
+      "clip_id": "M000130",
+      "source": "github-release",
+      "bundle_sha256": "30b4911d5210e54d26467eb14f232b02288b9b77b0e3af5a88933dd4d31c54c1",
+      "due_at": "2026-11-11T18:30:00+01:00",
+      "local_time": "2026-11-11T18:30:00+01:00",
+      "filename": "26. clip motivation - five years down the line.mp4"
+    },
+    {
+      "clip_id": "M000055",
+      "source": "github-release",
+      "bundle_sha256": "35c796ba69a93b3c44f9904f37baa4676522c89536be886b68d36805626c4fc2",
+      "due_at": "2026-11-11T20:30:00+01:00",
+      "local_time": "2026-11-11T20:30:00+01:00",
+      "filename": "24. clip motivation - if you quit now.mp4"
+    },
+    {
+      "clip_id": "M000131",
+      "source": "github-release",
+      "bundle_sha256": "14143fc53850971a3e0d44dfd32697719615cfd6664e7918a752dbfd3bce94da",
+      "due_at": "2026-11-11T22:30:00+01:00",
+      "local_time": "2026-11-11T22:30:00+01:00",
+      "filename": "27. clip dan pena - go to stores you cant afford.mp4"
+    },
+    {
+      "clip_id": "M000056",
+      "source": "github-release",
+      "bundle_sha256": "4803857077790c418ae30100632cc46a63f4192618c34b957abfd23b138924d4",
+      "due_at": "2026-11-12T09:00:00+01:00",
+      "local_time": "2026-11-12T09:00:00+01:00",
+      "filename": "25. clip goggins - you cannot change your life.mp4"
+    },
+    {
+      "clip_id": "M000132",
+      "source": "github-release",
+      "bundle_sha256": "b98d1161fc972059d8135fd256afca5aba8c410ca4a9ca2eaf01a657b4201185",
+      "due_at": "2026-11-12T11:00:00+01:00",
+      "local_time": "2026-11-12T11:00:00+01:00",
+      "filename": "28. clip mcconaughey - battery powered green light.mp4"
+    },
+    {
+      "clip_id": "M000057",
+      "source": "github-release",
+      "bundle_sha256": "52f7707094e389e9ccd1b8304792292239e71c1d6da5bbcdf79ff1a28be0c6d0",
+      "due_at": "2026-11-12T13:30:00+01:00",
+      "local_time": "2026-11-12T13:30:00+01:00",
+      "filename": "26. clip motivation - just show up.mp4"
+    },
+    {
+      "clip_id": "M000133",
+      "source": "github-release",
+      "bundle_sha256": "3b1513d9d8f71762800bff60542a08ba578008351f4e4fcb5e53574cdc289194",
+      "due_at": "2026-11-12T16:00:00+01:00",
+      "local_time": "2026-11-12T16:00:00+01:00",
+      "filename": "29. clip jack ma - opportunity is where people complain.mp4"
+    },
+    {
+      "clip_id": "M000058",
+      "source": "github-release",
+      "bundle_sha256": "f0f54b4c623a39392fbcdedacce34ad734433317f30952f77f480f2698248567",
+      "due_at": "2026-11-12T18:30:00+01:00",
+      "local_time": "2026-11-12T18:30:00+01:00",
+      "filename": "27. clip motivation - it takes what it takes.mp4"
+    },
+    {
+      "clip_id": "M000134",
+      "source": "github-release",
+      "bundle_sha256": "e5f2f1a8690d5e0d203a960ca427ccb753bdf72390093492fb06a0d83887a6b0",
+      "due_at": "2026-11-12T20:30:00+01:00",
+      "local_time": "2026-11-12T20:30:00+01:00",
+      "filename": "30. clip motivation - just one day wake up at 4 am.mp4"
+    },
+    {
+      "clip_id": "M000059",
+      "source": "github-release",
+      "bundle_sha256": "80f302bdd50c02b9511c0cde9e2cc598a9d4ff39c3d6f38a7f46537cbaec26fd",
+      "due_at": "2026-11-12T22:30:00+01:00",
+      "local_time": "2026-11-12T22:30:00+01:00",
+      "filename": "28. clip motivation - mediocrity feels so good.mp4"
+    },
+    {
+      "clip_id": "M000135",
+      "source": "github-release",
+      "bundle_sha256": "05d8253318a1e4cbf99b5bdde073c62918e258066a2928e53093d2f66984e9ce",
+      "due_at": "2026-11-13T09:00:00+01:00",
+      "local_time": "2026-11-13T09:00:00+01:00",
+      "filename": "31. clip dan pena - time costs lives.mp4"
+    },
+    {
+      "clip_id": "M000060",
+      "source": "github-release",
+      "bundle_sha256": "544c5e50bc141d1f26e98d9d8120501e22839cb07461aafb468fd2127cedf823",
+      "due_at": "2026-11-13T11:00:00+01:00",
+      "local_time": "2026-11-13T11:00:00+01:00",
+      "filename": "29. clip motivation - success boils down to this.mp4"
+    },
+    {
+      "clip_id": "M000136",
+      "source": "github-release",
+      "bundle_sha256": "432a4454edf773eeb12ad95e44302ec4c7da629eb9916720d2ded8633e08edbd",
+      "due_at": "2026-11-13T13:30:00+01:00",
+      "local_time": "2026-11-13T13:30:00+01:00",
+      "filename": "32. clip mcconaughey - life is not fair get over it.mp4"
+    },
+    {
+      "clip_id": "M000061",
+      "source": "github-release",
+      "bundle_sha256": "0b4511a92496df787ec0222693e7544af7a05fa4694845d40bef88d6b4367e54",
+      "due_at": "2026-11-13T16:00:00+01:00",
+      "local_time": "2026-11-13T16:00:00+01:00",
+      "filename": "30. clip motivation - zoom into the future.mp4"
+    },
+    {
+      "clip_id": "M000137",
+      "source": "github-release",
+      "bundle_sha256": "96fc374187a907960f2420bb231194d13dd928216de9df631dfd397326e96664",
+      "due_at": "2026-11-13T18:30:00+01:00",
+      "local_time": "2026-11-13T18:30:00+01:00",
+      "filename": "33. clip jack ma - respect yourself we have a chance.mp4"
+    },
+    {
+      "clip_id": "M000062",
+      "source": "github-release",
+      "bundle_sha256": "dc4425a1aa75fb7c6fc3bf57e9a142d515884e2fb90c4b59ecbdc5d9a00c2871",
+      "due_at": "2026-11-13T20:30:00+01:00",
+      "local_time": "2026-11-13T20:30:00+01:00",
+      "filename": "31. clip motivation - all your excuses are lies.mp4"
+    },
+    {
+      "clip_id": "M000138",
+      "source": "github-release",
+      "bundle_sha256": "bb6ad260f6cd221c6faa9f19e4b4d4eec5c120a251f5a59cfae27e37a3bf5d0d",
+      "due_at": "2026-11-13T22:30:00+01:00",
+      "local_time": "2026-11-13T22:30:00+01:00",
+      "filename": "34. clip mcconaughey - happiness vs joy.mp4"
+    },
+    {
+      "clip_id": "M000063",
+      "source": "github-release",
+      "bundle_sha256": "8554e2f3b6f5ea8707f6d21464682793045e8ce4a6bb2615819774e34b294efa",
+      "due_at": "2026-11-14T09:00:00+01:00",
+      "local_time": "2026-11-14T09:00:00+01:00",
+      "filename": "32. clip motivation - no one is watching.mp4"
+    },
+    {
+      "clip_id": "M000139",
+      "source": "github-release",
+      "bundle_sha256": "cf74ba9999e118805b3392659aa53d048be0653b1b694937db2be562cdf837ae",
+      "due_at": "2026-11-14T11:00:00+01:00",
+      "local_time": "2026-11-14T11:00:00+01:00",
+      "filename": "35. clip mcconaughey - the empty money column.mp4"
+    },
+    {
+      "clip_id": "M000064",
+      "source": "github-release",
+      "bundle_sha256": "066ed21791c8d3fbe984bff8d986eba5b5348e26fbecc73c83e5c91354fcce70",
+      "due_at": "2026-11-14T13:30:00+01:00",
+      "local_time": "2026-11-14T13:30:00+01:00",
+      "filename": "33. clip hormozi - people want you to do well not better.mp4"
+    },
+    {
+      "clip_id": "M000140",
+      "source": "github-release",
+      "bundle_sha256": "1fb6b14bb5163c2e927588354582d0fedce961888af1fa6ff0ac5d800c275b7c",
+      "due_at": "2026-11-14T16:00:00+01:00",
+      "local_time": "2026-11-14T16:00:00+01:00",
+      "filename": "36. clip mcconaughey - what is success to you.mp4"
+    },
+    {
+      "clip_id": "M000065",
+      "source": "github-release",
+      "bundle_sha256": "fccd4b83765e97bd868e3f8a6c8c8b532628b17a581e0a778d5061138a3bd474",
+      "due_at": "2026-11-14T18:30:00+01:00",
+      "local_time": "2026-11-14T18:30:00+01:00",
+      "filename": "34. clip motivation - ordinary plus a little extra.mp4"
+    },
+    {
+      "clip_id": "M000141",
+      "source": "github-release",
+      "bundle_sha256": "ee296f4221e11c0044d488a7f9d723814440abf89b9e05e8c14db28739761329",
+      "due_at": "2026-11-14T20:30:00+01:00",
+      "local_time": "2026-11-14T20:30:00+01:00",
+      "filename": "37. clip mcconaughey - one way ticket out of hollywood.mp4"
+    },
+    {
+      "clip_id": "M000142",
+      "source": "github-release",
+      "bundle_sha256": "0a568b36b6071d9160ac93c317faacf8d8abb37c99e3b5945148035de597cb10",
+      "due_at": "2026-11-14T22:30:00+01:00",
+      "local_time": "2026-11-14T22:30:00+01:00",
+      "filename": "38. clip steven bartlett - comfort is a long term enemy.mp4"
+    },
+    {
+      "clip_id": "M000143",
+      "source": "github-release",
+      "bundle_sha256": "97a3490868b59a9dd5427a54e74df02e5c32438c74787605baceea713b4df7b9",
+      "due_at": "2026-11-15T09:00:00+01:00",
+      "local_time": "2026-11-15T09:00:00+01:00",
+      "filename": "39. clip mcconaughey - take a hundred risks.mp4"
+    },
+    {
+      "clip_id": "M000113",
+      "source": "github-release",
+      "bundle_sha256": "6133b1382b7662a03e0075add6efef2e9c84da0db25e0f97b543d0dd40bb08d0",
+      "due_at": "2026-11-15T11:00:00+01:00",
+      "local_time": "2026-11-15T11:00:00+01:00",
+      "filename": "6. clip jack ma - the competition of creativity.mp4"
     }
   ],
   "posts_per_day": 10,
@@ -586,5 +1146,7 @@
     }
   ],
   "pace_change_authorized_on": "2026-11-01",
-  "batch5_revision": "M000085-M000107 replaced with Claude's louder-music audio + new captions (Blert, 2026-11-01); 7 posts/day from Nov 2"
+  "batch5_revision": "M000085-M000107 replaced with Claude's louder-music audio + new captions (Blert, 2026-11-01); 7 posts/day from Nov 2",
+  "additional_authorized_on": "2026-11-05",
+  "additional_note": "Blert 2026-11-05: mix non-Tate clips after the last Tate posts — batch 4 Limitless Drive M000033-M000065 and batch 6 M000108-M000144, 7/day"
 }

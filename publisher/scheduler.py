@@ -51,8 +51,14 @@ def validate_plan(plan):
     rows = plan['clips']
     original = [f'M{n:06d}' for n in range(10,32)]
     extended = original + [f'M{n:06d}' for n in range(66,108)]
-    require([r['clip_id'] for r in rows] in [original, extended],
-            'Approved order: Tate videos 10-31, optionally followed by batch 5 IDs M000066-M000107 exactly once.')
+    ids = [r['clip_id'] for r in rows]
+    require(ids == original or ids[:len(extended)] == extended,
+            'Approved order: Tate videos 10-31, then batch 5 IDs M000066-M000107, then any further approved IDs.')
+    more = ids[len(extended):] if len(ids) > len(original) else []
+    require(len(set(ids)) == len(ids) and all(re.fullmatch(r'M\d{6}', i) for i in more)
+            and not set(more) & set(plan.get('excluded_ids', [])),
+            'Additional clips must be unique, valid IDs that are not excluded.')
+    require(not more or plan.get('additional_authorized_on'), 'Additional clips need an explicit authorization date.')
     previous = None
     days = {}
     for row in rows:

@@ -26,3 +26,10 @@ Clips 20-42 of the Tate batch (M000085-M000107) are replaced by Claude's louder-
 - Revised packages are separate release assets named `<ID>.r2.zip` (row field `asset_name`); the original `<ID>.zip` assets are kept, never deleted or overwritten. `previous_bundle_sha256` records the replaced digest.
 - None of these IDs had a Buffer post or ledger record when the plan changed, so no existing post is edited.
 - Revised packages are uploaded by the manual `Upload revised private bundles` workflow from the `claude-bundles` branch; it verifies each digest and refuses to overwrite an existing asset.
+
+## Revision 2026-11-05 (Claude, authorized by Blert)
+
+After the last two Tate posts (Nov 5 09:00 and 11:00), the plan continues with a mix of non-Tate clips at seven per day, Nov 5 13:30 to Nov 15 11:00: batch 4 Limitless Drive M000033-M000065 (already staged, never posted) interleaved with batch 6 M000108-M000144 (McConaughey, Jack Ma, Dan Pena, 4 AM; IDs reserved in Control/registry.json). Batch 6's three 4:3 compilations are not scheduled (publisher requires 1080x1920).
+
+- validate_plan accepts further unique IDs after the approved Tate order when `additional_authorized_on` is set.
+- Packages are `<ID>.zip` release assets uploaded from the `claude-bundles-b6` branch by the upload workflow (input `ref`).
