@@ -77,11 +77,12 @@ def validate_plan(plan):
 
 def wait_for_public(media, manifest, directory):
     # Retry only the read-only availability check, never a Buffer create mutation.
-    for attempt in range(13):
+    # Pages deploys can queue for several minutes, so allow about 12 minutes.
+    for attempt in range(49):
         try:
             return verify_public(media, manifest, directory)
         except Stop as exc:
-            if attempt == 12 or not str(exc).startswith('Download failed;'):
+            if attempt == 48 or not str(exc).startswith('Download failed;'):
                 raise
             time.sleep(15)
 

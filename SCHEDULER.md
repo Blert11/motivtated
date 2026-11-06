@@ -41,3 +41,8 @@ Every row due at or after `facebook_from` (Nov 6 09:00) is also scheduled to the
 ## Revision 2026-11-06b (Claude, authorized by Blert)
 
 After Nov 15 11:00 the plan continues Nov 15 13:30 to Nov 24 16:00 at seven per day on TikTok, Instagram and Facebook: the new Tate batch 7 (M000145-M000174, B-roll only) alternating with batch 5 clips 17-51 remixed with louder music (M000175-M000209; voice isolated from the delivered clips, video unchanged). Batch 7's three 4:3 compilations are not scheduled. Packages uploaded from `claude-bundles-b7`.
+
+## Revision: media host compaction and longer public check (2026-11-06)
+- The media hosting repo (Blert11/motivtated-media) had grown to ~3.45 GB of git history although only 12 files (~360 MB) were live, so Pages deploys lagged past the 3-minute public check and runs failed with `failed_before_submit` (nothing was submitted to Buffer).
+- Its `main` was replaced by a single orphan commit holding exactly the current tree (same paths and file contents, so every ledger media URL is unchanged).
+- `wait_for_public` now retries for about 12 minutes (49 × 15 s) and the workflow timeout is 60 minutes.
