@@ -352,3 +352,50 @@ class PaceChangeTests(unittest.TestCase):
         rows['M000086']['due_at'] = '2026-11-02T10:30:00+01:00'
         with self.assertRaises(Stop):
             validate_plan(plan)
+
+
+class FacebookTests(SchedulerTests):
+    """Facebook is an isolated third platform: problems pause only Facebook."""
+    def fb(self, start):
+        self.plan['facebook_from'] = start
+        orig = self.buffer.create
+        def create(p):
+            post = orig(p)
+            if p['channelId'] == 'facebook':
+                post['metadata'] = {'type': 'reel'}
+            return post
+        self.buffer.create = create
+        orig_ch = self.buffer.channel
+        self.buffer.channel = lambda i: orig_ch(i)
+        self.scheduler = Scheduler(self.plan, self.engine, {'tiktok':'tiktok','instagram':'instagram','facebook':'facebook'},
+                                   self.scheduler.loader, lambda: self.now)
+
+    def test_facebook_payload_is_reel(self):
+        self.assertEqual(payload('facebook','fb','Hi #motivtated 👑','https://x/v.mp4')['metadata'], {'facebook': {'type': 'reel'}})
+
+    def test_rows_from_start_get_facebook(self):
+        self.fb(self.plan['clips'][2]['due_at'])
+        self.scheduler.run()
+        r = self.ledger.data['records']
+        self.assertNotIn('M000010:facebook', r)
+        self.assertEqual(r['M000012:facebook']['state'], 'submitted')
+        self.assertEqual(r['M000012:tiktok']['state'], 'submitted')
+
+    def test_facebook_failure_pauses_only_facebook(self):
+        self.fb(self.plan['clips'][0]['due_at'])
+        orig = self.buffer.create
+        def create(p):
+            if p['channelId'] == 'facebook':
+                from publisher.buffer import SchemaRejected
+                raise SchemaRejected('Buffer rejected the request: bad type')
+            return orig(p)
+        self.buffer.create = create
+        report = self.scheduler.run()
+        r = self.ledger.data['records']
+        self.assertTrue(self.ledger.data.get('facebook_paused'))
+        self.assertEqual(r['M000010:facebook']['state'], 'failed_before_submit')
+        self.assertTrue(any(x['platform']=='tiktok' for x in report['scheduled']))
+        # a later run keeps TikTok/Instagram going and does not retry Facebook
+        self.now += timedelta(minutes=1)
+        self.scheduler.run()
+        self.assertNotIn('M000011:facebook', self.ledger.data['records'])

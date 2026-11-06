@@ -2,7 +2,7 @@ import hashlib
 from datetime import datetime, timezone
 from urllib.parse import urlsplit
 
-from .buffer import payload
+from .buffer import SchemaRejected, payload
 from .common import Stop, clip_id, json_bytes, now, require
 from .media import verify_public
 
@@ -25,7 +25,7 @@ class Engine:
         return result
 
     def publish(self, manifest, directory, platform, channel_id, resume=False, confirmed_unposted=False, due_at=None):
-        require(platform in ['tiktok','instagram'], 'Invalid platform.')
+        require(platform in ['tiktok','instagram','facebook'], 'Invalid platform.')
         identifier = clip_id(manifest['clip_id'])
         require(confirmed_unposted, 'Confirm this clip has not already been posted manually on this platform.')
         # M000001 was supplied for the previous manual tests. Do not risk reusing it.
@@ -83,7 +83,15 @@ class Engine:
         self.event(key, 'before_buffer_createPost')
         # Never wrap this mutation in a retry. An uncertain result remains blocked permanently
         # until an existing post is located and reconciled. State-save failure is also uncertain.
-        post = self.buffer.create(request)
+        try:
+            post = self.buffer.create(request)
+        except SchemaRejected as exc:
+            # Rejected by Buffer's schema before execution: provably nothing was created.
+            record['state'] = 'failed_before_submit'
+            record['schema_rejected_at'] = now()
+            record['schema_error'] = str(exc)[:600]
+            self.event(key, 'buffer_rejected_request_before_execution')
+            raise
         record['buffer_post_id'] = post['id']
         record['state'] = 'submitted'
         self.event(key, 'buffer_post_id_received')
@@ -97,8 +105,8 @@ class Engine:
         if strict_source:
             require(record['media']['url'] in [a.get('source') for a in post.get('assets', [])],
                     'Cannot match this post to the recorded media URL. Manual investigation required; do not resubmit.')
-        if record['platform'] == 'instagram':
-            require((post.get('metadata') or {}).get('type') == 'reel', 'Instagram post is not a Reel.')
+        if record['platform'] in ('instagram', 'facebook'):
+            require((post.get('metadata') or {}).get('type') == 'reel', record['platform'].title()+' post is not a Reel.')
         record['buffer_post_id'] = post['id']
         record['buffer_status'] = post['status']
         record['post_url'] = post.get('externalLink')
@@ -172,7 +180,7 @@ class Engine:
         record = self.reconcile(identifier, platform)
         require(record['state'] == 'posted', 'Buffer has not confirmed publication yet.')
         parsed = urlsplit(url)
-        domain = 'tiktok.com' if platform == 'tiktok' else 'instagram.com'
+        domain = {'tiktok': 'tiktok.com', 'instagram': 'instagram.com', 'facebook': 'facebook.com'}[platform]
         require(parsed.scheme == 'https' and (parsed.hostname == domain or (parsed.hostname or '').endswith('.'+domain)), 'Use the actual platform post URL.')
         require(not parsed.username and not parsed.password and not parsed.query and not parsed.fragment, 'Use a clean post URL without tracking parameters.')
         require(record.get('post_url') and url.rstrip('/') == record['post_url'].rstrip('/'), 'URL must match Buffer externalLink; inspect the post before confirming.')
@@ -180,10 +188,10 @@ class Engine:
         self.event(identifier+':'+platform, 'user_confirmed_public_visibility')
         return record
 
-    def cleanup(self, identifier, provider_confirmed=False, grace_hours=48):
+    def cleanup(self, identifier, provider_confirmed=False, grace_hours=48, platforms=('tiktok','instagram')):
         require(grace_hours in [2,48], 'Unsupported media retention period.')
         require(grace_hours == 48 or provider_confirmed, 'Short retention requires both platform confirmations.')
-        records = [self.ledger.data['records'].get(clip_id(identifier)+':'+p) for p in ['tiktok','instagram']]
+        records = [self.ledger.data['records'].get(clip_id(identifier)+':'+p) for p in platforms]
         require(all(r and r['state'] == 'posted' and (r.get('public_verified_at') or
                     (provider_confirmed and r.get('buffer_status') == 'sent' and r.get('post_url'))) for r in records),
                 'Both platforms must be posted and publicly verified before media cleanup.')

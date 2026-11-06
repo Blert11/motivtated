@@ -5,9 +5,13 @@ from .common import HTTP, Stop, env, require
 
 POST_FIELDS = '''id channelId channelService text status schedulingType externalLink sentAt dueAt
  assets { source ... on VideoAsset { video { thumbnailOffset } } }
- metadata { ... on InstagramPostMetadata { type } }'''
+ metadata { ... on InstagramPostMetadata { type } ... on FacebookPostMetadata { type } }'''
 
 COVER_OFFSET_MS = 1000
+
+
+class SchemaRejected(Stop):
+    """Buffer rejected the request itself (GraphQL errors, no data): nothing was executed."""
 
 
 class Buffer:
@@ -16,8 +20,16 @@ class Buffer:
         self.http = http or HTTP()
 
     def query(self, query, variables=None):
-        result = self.http.json('POST', 'https://api.buffer.com', {'Authorization': f'Bearer {self.token}'},
-                                {'query': query, 'variables': variables or {}})
+        try:
+            result = self.http.json('POST', 'https://api.buffer.com', {'Authorization': f'Bearer {self.token}'},
+                                    {'query': query, 'variables': variables or {}})
+        except Stop as exc:
+            if str(exc).startswith('HTTP 400 '):
+                raise SchemaRejected(str(exc)[:600]) from None   # validation failure: nothing executed
+            raise
+        if result.get('errors') and not result.get('data'):
+            text = '; '.join(str(e.get('message', ''))[:200] for e in result['errors'][:3])
+            raise SchemaRejected('Buffer rejected the request: ' + re.sub(r'https?://\S+', '[URL]', text))
         if result.get('errors') or not result.get('data'):
             raise Stop('Buffer returned GraphQL errors. Check permissions/schema; mutation outcomes must be reconciled, not blindly retried.')
         return result['data']
@@ -77,12 +89,14 @@ class Buffer:
 
 
 def payload(platform, channel_id, caption, media_url, due_at=None):
-    require(platform in ['tiktok', 'instagram'], 'Unsupported platform.')
+    require(platform in ['tiktok', 'instagram', 'facebook'], 'Unsupported platform.')
     data = {'text': caption, 'channelId': channel_id, 'schedulingType': 'automatic',
             'mode': 'shareNow', 'needsApproval': False, 'saveToDraft': False,
             'assets': [{'video': {'url': media_url, 'metadata': {'thumbnailOffset': COVER_OFFSET_MS}}}]}
     if platform == 'instagram':
         data['metadata'] = {'instagram': {'type': 'reel', 'shouldShareToFeed': True}}
+    if platform == 'facebook':
+        data['metadata'] = {'facebook': {'type': 'reel'}}
     if due_at:
         due = datetime.fromisoformat(due_at.replace('Z','+00:00'))
         require(due.tzinfo is not None and due > datetime.now(timezone.utc), 'Scheduled time must be in the future with a timezone.')

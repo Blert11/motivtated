@@ -17,6 +17,7 @@ from .github import GitHubLedger
 from .media import host_from_env, verify_public
 
 PLATFORMS = ('tiktok', 'instagram')
+OPTIONAL = ('facebook',)   # added 2026-11-06; isolated: a Facebook problem pauses only Facebook
 
 
 def parse_time(value):
@@ -110,17 +111,45 @@ class Scheduler:
     def records(self):
         return self.engine.ledger.data['records']
 
+    def fb_paused(self):
+        return bool(self.engine.ledger.data.get('facebook_paused'))
+
+    def platforms_for(self, row, include_paused=False):
+        result = list(PLATFORMS)
+        start = self.plan.get('facebook_from')
+        if 'facebook' in self.channels and start and parse_time(row['due_at']) >= parse_time(start):
+            if include_paused or not self.fb_paused():
+                result.append('facebook')
+        return result
+
+    def pause_facebook(self, row, exc):
+        self.engine.ledger.data['facebook_paused'] = {'at': datetime.now(timezone.utc).isoformat(), 'clip_id': row['clip_id'],
+                                                      'error': str(exc)[:600] if isinstance(exc, Stop) else type(exc).__name__}
+        self.engine.event(row['clip_id']+':facebook', 'facebook_paused_after_failure')
+        self.report['facebook_paused'] = self.engine.ledger.data['facebook_paused']
+
     def reconcile_due(self):
         for row in self.rows:
-            for platform in PLATFORMS:
+            for platform in self.platforms_for(row, include_paused=True):
                 record = self.records.get(row['clip_id']+':'+platform)
                 if not record or record['state'] == 'posted':
+                    continue
+                if platform == 'facebook' and record['state'] in ['submit_intent','failed_at_buffer','needs_attention','failed_before_submit']:
+                    self.report.setdefault('facebook_attention', []).append(row['clip_id'])
                     continue
                 require(record['state'] not in ['submit_intent','failed_at_buffer','needs_attention'],
                         f"{row['clip_id']} {platform} needs investigation; no automatic resubmission.")
                 if record.get('buffer_post_id') and parse_time(row['due_at']) <= self.clock():
-                    refreshed = self.engine.reconcile(row['clip_id'], platform)
-                    require(refreshed['state'] in ['submitted','posted'], 'Buffer post failed; inspect its existing ID.')
+                    if platform == 'facebook':
+                        try:
+                            refreshed = self.engine.reconcile(row['clip_id'], platform)
+                        except Stop:
+                            self.report.setdefault('facebook_attention', []).append(row['clip_id']); continue
+                        if refreshed['state'] not in ['submitted','posted']:
+                            self.report.setdefault('facebook_attention', []).append(row['clip_id']); continue
+                    else:
+                        refreshed = self.engine.reconcile(row['clip_id'], platform)
+                        require(refreshed['state'] in ['submitted','posted'], 'Buffer post failed; inspect its existing ID.')
                     self.report['reconciled'].append(row['clip_id']+':'+platform)
 
     def apply_schedule_changes(self):
@@ -139,7 +168,11 @@ class Scheduler:
             return
         # Only the approved queue; originals and private bundles are always retained.
         for row in self.rows:
-            records = [self.records.get(row['clip_id']+':'+p) for p in PLATFORMS]
+            plats = list(PLATFORMS)
+            fb = self.records.get(row['clip_id']+':facebook')
+            if fb and fb['state'] in ('submitted', 'posted', 'preparing') and fb.get('media'):
+                plats.append('facebook')   # keep the hosted video until Facebook has it too
+            records = [self.records.get(row['clip_id']+':'+p) for p in plats]
             if not all(r and r['state'] == 'posted' and r.get('post_url') and r.get('sent_at') for r in records):
                 continue
             if all(r.get('media_deleted_at') for r in records):
@@ -147,23 +180,25 @@ class Scheduler:
             grace = self.plan.get('cleanup_grace_hours',48)
             if any(self.clock()-parse_time(r['sent_at']) < timedelta(hours=grace) for r in records):
                 continue
-            for platform in PLATFORMS:
+            for platform in plats:
                 self.engine.reconcile(row['clip_id'], platform)
-            self.engine.cleanup(row['clip_id'], provider_confirmed=True,grace_hours=grace)
+            self.engine.cleanup(row['clip_id'], provider_confirmed=True,grace_hours=grace, platforms=tuple(plats))
             self.report['cleaned'].append(row['clip_id'])
             if len(self.report['cleaned']) >= 4:
                 break
 
     def candidates(self):
-        pending = {p:sum(r['platform'] == p and r['state'] != 'posted'
-                         for r in self.records.values()) for p in PLATFORMS}
+        pending = {p:sum(r['platform'] == p and r['state'] != 'posted' and not (p == 'facebook' and r['state'] == 'failed_before_submit')
+                         for r in self.records.values()) for p in list(PLATFORMS) + list(OPTIONAL)}
         result = []
         for row in self.rows:
             missing = []
-            for platform in PLATFORMS:
+            for platform in self.platforms_for(row):
                 record = self.records.get(row['clip_id']+':'+platform)
                 if record and record['state'] not in ['preparing','failed_before_submit']:
                     continue
+                if platform == 'facebook' and record:
+                    continue   # never auto-retry a failed Facebook attempt
                 # Pre-submit reservations already occupy one local queue slot.
                 if not record and pending[platform] >= self.plan['max_pending_per_channel']:
                     continue
@@ -196,6 +231,7 @@ class Scheduler:
         if candidates:
             counts = self.pending_counts()
             for row, platforms in candidates:
+                platforms = [p for p in platforms if p != 'facebook' or counts.get(p, 0) < self.plan['max_pending_per_channel']]
                 require(all(counts[p] < self.plan['max_pending_per_channel'] for p in platforms),
                         'Buffer has reached the configured pending limit; wait for capacity or inspect external posts.')
                 with tempfile.TemporaryDirectory(prefix='motivtated-scheduler-') as scratch:
@@ -208,6 +244,22 @@ class Scheduler:
                         break
                     for platform in platforms:
                         record = self.records.get(row['clip_id']+':'+platform)
+                        if platform == 'facebook':
+                            if self.fb_paused():
+                                continue
+                            try:
+                                posted = self.engine.publish(manifest, content, platform, self.channels[platform],
+                                    resume=False, confirmed_unposted=True, due_at=row['due_at'])
+                                require(posted['state'] == 'submitted' and posted['buffer_status'] == 'scheduled',
+                                        'Expected a scheduled Facebook post.')
+                            except Exception as exc:
+                                self.pause_facebook(row, exc)
+                                self.engine.ledger.save()
+                                continue
+                            self.report['scheduled'].append({'clip_id':row['clip_id'], 'platform':platform,
+                                'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
+                            counts[platform] += 1
+                            continue
                         posted = self.engine.publish(manifest, content, platform, self.channels[platform],
                             resume=bool(record), confirmed_unposted=True, due_at=row['due_at'])
                         require(posted['state'] == 'submitted' and posted['buffer_status'] == 'scheduled',
@@ -216,7 +268,7 @@ class Scheduler:
                             'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
                         counts[platform] += 1
         self.report['complete'] = all(self.records.get(row['clip_id']+':'+p, {}).get('state') == 'posted'
-                                      for row in self.rows for p in PLATFORMS)
+                                      for row in self.rows for p in self.platforms_for(row))
         self.report['finished'] = self.report['complete'] and all(
             self.records[row['clip_id']+':'+p].get('media_deleted_at') for row in self.rows for p in PLATFORMS)
         return self.report
@@ -240,7 +292,26 @@ def main():
     ledger = GitHubLedger.from_env()
     ledger.load()
     engine = Engine(ledger, Buffer(), host_from_env(), verify=wait_for_public)
-    scheduler = Scheduler(plan, engine, {p:env('BUFFER_'+p.upper()+'_CHANNEL_ID') for p in PLATFORMS},retry_edit=retry_edit)
+    channels = {p:env('BUFFER_'+p.upper()+'_CHANNEL_ID') for p in PLATFORMS}
+    if plan.get('facebook_from'):
+        fb = os.environ.get('BUFFER_FACEBOOK_CHANNEL_ID','').strip() or ledger.data.get('facebook_channel_id')
+        if not fb:
+            try:
+                engine.event(None, 'before_buffer_facebook_channel_discovery')
+                found = [c for o in engine.buffer.organizations() for c in engine.buffer.channels(o['id'])
+                         if c['service'] == 'facebook' and not c['isDisconnected'] and not c['isLocked']]
+                if len(found) == 1:
+                    fb = found[0]['id']; ledger.data['facebook_channel_id'] = fb
+                    ledger.data['facebook_channel_name'] = found[0].get('name')
+                    engine.event(None, 'facebook_channel_discovered')
+                else:
+                    ledger.data['facebook_discovery'] = f'{len(found)} usable Facebook channels found'
+                    ledger.save()
+            except Stop:
+                fb = None
+        if fb:
+            channels['facebook'] = fb
+    scheduler = Scheduler(plan, engine, channels,retry_edit=retry_edit)
     try:
         report = scheduler.run()
     except Exception as exc:

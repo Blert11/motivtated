@@ -33,3 +33,7 @@ After the last two Tate posts (Nov 5 09:00 and 11:00), the plan continues with a
 
 - validate_plan accepts further unique IDs after the approved Tate order when `additional_authorized_on` is set.
 - Packages are `<ID>.zip` release assets uploaded from the `claude-bundles-b6` branch by the upload workflow (input `ref`).
+
+## Facebook (2026-11-06, Claude, authorized by Blert)
+
+Every row due at or after `facebook_from` (Nov 6 09:00) is also scheduled to the Facebook page as a Reel, same caption and time. The channel ID comes from the optional `BUFFER_FACEBOOK_CHANNEL_ID` variable, otherwise it is discovered once (the single connected, unlocked Facebook channel) and saved in the ledger. Facebook is isolated: any Facebook failure records `facebook_paused` in the ledger and only Facebook stops; TikTok/Instagram continue. A Buffer request rejected by schema validation (GraphQL errors without data, or HTTP 400) is recorded as `failed_before_submit` with the error text, since nothing was created. Media cleanup waits for Facebook too when it has a post for that clip.

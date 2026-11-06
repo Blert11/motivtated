@@ -98,6 +98,15 @@ class HTTP:
             hostname = urllib.parse.urlsplit(url).hostname
             message = github_error_message(exc, headers) if hostname == 'api.github.com' else ''
             detail = f' GitHub message: {message}' if message else ''
+            if hostname == 'api.buffer.com' and exc.code == 400:
+                # GraphQL request rejected before execution; keep Buffer's (non-secret) validation text.
+                try:
+                    errs = json.loads(exc.read(65536) or b'{}').get('errors') or []
+                    text = '; '.join(str(e.get('message', ''))[:200] for e in errs[:3])
+                except Exception:
+                    text = ''
+                text = re.sub(r'https?://\S+', '[URL]', text)
+                detail = f' Buffer message: {text}' if text else ''
             raise Stop(f'HTTP {exc.code} from {hostname}; no automatic retry.{detail}') from None
         except (urllib.error.URLError, TimeoutError, OSError, ValueError):
             raise Stop('Network/JSON response failure; no automatic mutation retry.') from None
