@@ -3,8 +3,8 @@
  "enabled": true,
  "timezone": "Europe/Budapest",
  "authorized_on": "2026-11-07",
- "note": "Second Buffer account: Motivtated YouTube Shorts + X (all clips), Imanivated YouTube Shorts; 4 a day each at 10:00, 14:00, 18:00, 21:30.",
- "max_pending_per_channel": 6,
+ "note": "Second Buffer account: Motivtated YouTube Shorts + X (all clips) 6 a day at 10:00, 12:00, 14:00, 16:00, 18:00, 21:30; Imanivated YouTube Shorts 4 a day at 10:00, 14:00, 18:00, 21:30.",
+ "max_pending_per_channel": 10,
  "rows": [
   {
    "key": "imanivated:I000001",
@@ -32,6 +32,19 @@
    "title": "Sacrifice a plastic ring for a gold crown | Matthew McConaughey"
   },
   {
+   "key": "motivtated:M000034",
+   "page": "motivtated",
+   "clip_id": "M000034",
+   "asset_name": "M000034.zip",
+   "bundle_sha256": "18a33ec2dc2764ce69d03749760495ba96d384643c7f6d8ab072008dff4ddbcc",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-08T12:00:00+01:00",
+   "title": "You are greater than your feelings | Motivation"
+  },
+  {
    "key": "imanivated:I000002",
    "page": "imanivated",
    "clip_id": "I000002",
@@ -54,6 +67,19 @@
     "twitter"
    ],
    "due_at": "2026-11-08T14:00:00+01:00",
+   "title": null
+  },
+  {
+   "key": "motivtated:M000009",
+   "page": "motivtated",
+   "clip_id": "M000009",
+   "asset_name": "M000009.zip",
+   "bundle_sha256": "007f700d3add9e70f4de563f1b93b097b83a6d089c097db36a60a93f4040b353",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-08T16:00:00+01:00",
    "title": null
   },
   {
@@ -132,6 +158,19 @@
    "title": "My advice to the young people | Jack Ma"
   },
   {
+   "key": "motivtated:M000110",
+   "page": "motivtated",
+   "clip_id": "M000110",
+   "asset_name": "M000110.zip",
+   "bundle_sha256": "f4b2b0cae2e8bcf9e639525a389d3ebafc907e78353177e8075ec94545228553",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-09T12:00:00+01:00",
+   "title": "Some of yall dont want it | Motivation"
+  },
+  {
    "key": "imanivated:I000006",
    "page": "imanivated",
    "clip_id": "I000006",
@@ -157,6 +196,19 @@
    "title": null
   },
   {
+   "key": "motivtated:M000010",
+   "page": "motivtated",
+   "clip_id": "M000010",
+   "asset_name": "M000010.zip",
+   "bundle_sha256": "0c0f0c56b939a56d786f2e59fa16fc8a404eb8096c0d620bc3c4e35a85767c61",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-09T16:00:00+01:00",
+   "title": "Lose until you find your strength | Andrew Tate"
+  },
+  {
    "key": "imanivated:I000007",
    "page": "imanivated",
    "clip_id": "I000007",
@@ -169,17 +221,17 @@
    "title": "When Fajr goes well, your whole day goes well. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000034",
+   "key": "motivtated:M000035",
    "page": "motivtated",
-   "clip_id": "M000034",
-   "asset_name": "M000034.zip",
-   "bundle_sha256": "18a33ec2dc2764ce69d03749760495ba96d384643c7f6d8ab072008dff4ddbcc",
+   "clip_id": "M000035",
+   "asset_name": "M000035.zip",
+   "bundle_sha256": "0e139c55f647ff084d18d7b2e5bcfec00381e0f614d552bd39d5dcd1eb850975",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-09T18:00:00+01:00",
-   "title": "You are greater than your feelings | Motivation"
+   "title": "Control what you can control | Motivation"
   },
   {
    "key": "imanivated:I000008",
@@ -194,17 +246,17 @@
    "title": "One door of Jannah closes when you lose your mother. | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000009",
+   "key": "motivtated:M000011",
    "page": "motivtated",
-   "clip_id": "M000009",
-   "asset_name": "M000009.zip",
-   "bundle_sha256": "007f700d3add9e70f4de563f1b93b097b83a6d089c097db36a60a93f4040b353",
+   "clip_id": "M000011",
+   "asset_name": "M000011.zip",
+   "bundle_sha256": "b88e0de3e18b7422d1d65bcfc46f75e2c443d9883aefccae00f4a3b0ca9c2a62",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-09T21:30:00+01:00",
-   "title": null
+   "title": "Act before the problem grows | Andrew Tate"
   },
   {
    "key": "imanivated:I000009",
@@ -219,17 +271,30 @@
    "title": "Stop blaming everything else. Take accountability. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000110",
+   "key": "motivtated:M000111",
    "page": "motivtated",
-   "clip_id": "M000110",
-   "asset_name": "M000110.zip",
-   "bundle_sha256": "f4b2b0cae2e8bcf9e639525a389d3ebafc907e78353177e8075ec94545228553",
+   "clip_id": "M000111",
+   "asset_name": "M000111.zip",
+   "bundle_sha256": "53ba03da5c45f8aacc85af153e8014204e3290c3b5a0de502003ebd79037572f",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-10T10:00:00+01:00",
-   "title": "Some of yall dont want it | Motivation"
+   "title": "Show me your friends | Dan Pena"
+  },
+  {
+   "key": "motivtated:M000012",
+   "page": "motivtated",
+   "clip_id": "M000012",
+   "asset_name": "M000012.zip",
+   "bundle_sha256": "83ccfc11e979bc477a26a0defe084f69d8a2698ddb107b93d78b46d29866f94c",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-10T12:00:00+01:00",
+   "title": "Never miss your lucky day | Andrew Tate"
   },
   {
    "key": "imanivated:I000010",
@@ -244,17 +309,30 @@
    "title": "A gaming room vs. \"I want my dad back\". | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000010",
+   "key": "motivtated:M000036",
    "page": "motivtated",
-   "clip_id": "M000010",
-   "asset_name": "M000010.zip",
-   "bundle_sha256": "0c0f0c56b939a56d786f2e59fa16fc8a404eb8096c0d620bc3c4e35a85767c61",
+   "clip_id": "M000036",
+   "asset_name": "M000036.zip",
+   "bundle_sha256": "17693fd76265d642a458719ac9f2a2f48bddd5593f060307f68c3d9fb737b3bd",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-10T14:00:00+01:00",
-   "title": "Lose until you find your strength | Andrew Tate"
+   "title": "Rome wasn't built in a day | Motivation"
+  },
+  {
+   "key": "motivtated:M000013",
+   "page": "motivtated",
+   "clip_id": "M000013",
+   "asset_name": "M000013.zip",
+   "bundle_sha256": "6f653b057967aad08bbce8ec53e47e3602cf0fb9decfb0afbc706dd0933afeb1",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-10T16:00:00+01:00",
+   "title": "Leave a mark | Andrew Tate"
   },
   {
    "key": "imanivated:I000011",
@@ -269,17 +347,17 @@
    "title": "Two coffins, my father and a stranger. | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000035",
+   "key": "motivtated:M000112",
    "page": "motivtated",
-   "clip_id": "M000035",
-   "asset_name": "M000035.zip",
-   "bundle_sha256": "0e139c55f647ff084d18d7b2e5bcfec00381e0f614d552bd39d5dcd1eb850975",
+   "clip_id": "M000112",
+   "asset_name": "M000112.zip",
+   "bundle_sha256": "038bcc968a7fd4337755f4e659351384c820464240cebb2e91707a0b26160f31",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-10T18:00:00+01:00",
-   "title": "Control what you can control | Motivation"
+   "title": "If youre gonna do it do it | Matthew McConaughey"
   },
   {
    "key": "imanivated:I000012",
@@ -294,17 +372,17 @@
    "title": "Admit you're weak, but never twist the deen. | Mohamed Hoblos"
   },
   {
-   "key": "motivtated:M000011",
+   "key": "motivtated:M000014",
    "page": "motivtated",
-   "clip_id": "M000011",
-   "asset_name": "M000011.zip",
-   "bundle_sha256": "b88e0de3e18b7422d1d65bcfc46f75e2c443d9883aefccae00f4a3b0ca9c2a62",
+   "clip_id": "M000014",
+   "asset_name": "M000014.zip",
+   "bundle_sha256": "204e044736307182a5cc9b84c34b0642a8a831655bfbd930ca7a854e847b91b8",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-10T21:30:00+01:00",
-   "title": "Act before the problem grows | Andrew Tate"
+   "title": "Wanting is different from wishing | Andrew Tate"
   },
   {
    "key": "imanivated:I000013",
@@ -319,17 +397,30 @@
    "title": "The moment that changed everything for him. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000111",
+   "key": "motivtated:M000037",
    "page": "motivtated",
-   "clip_id": "M000111",
-   "asset_name": "M000111.zip",
-   "bundle_sha256": "53ba03da5c45f8aacc85af153e8014204e3290c3b5a0de502003ebd79037572f",
+   "clip_id": "M000037",
+   "asset_name": "M000037.zip",
+   "bundle_sha256": "131a52cc4f7293e16ab8bd1e242aad41073c2c55a2997f0123459b5a2fd968d4",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-11T10:00:00+01:00",
-   "title": "Show me your friends | Dan Pena"
+   "title": "I only need one chance | Conor McGregor"
+  },
+  {
+   "key": "motivtated:M000015",
+   "page": "motivtated",
+   "clip_id": "M000015",
+   "asset_name": "M000015.zip",
+   "bundle_sha256": "f5e6d01f5a141f88d13b4654b462e0a389966f8c75dd306d14d84eef3ebdba0f",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-11T12:00:00+01:00",
+   "title": "Your starting point is not your finish | Andrew Tate"
   },
   {
    "key": "imanivated:I000014",
@@ -344,17 +435,30 @@
    "title": "Why has your Quran got dust on it? | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000012",
+   "key": "motivtated:M000144",
    "page": "motivtated",
-   "clip_id": "M000012",
-   "asset_name": "M000012.zip",
-   "bundle_sha256": "83ccfc11e979bc477a26a0defe084f69d8a2698ddb107b93d78b46d29866f94c",
+   "clip_id": "M000144",
+   "asset_name": "M000144.zip",
+   "bundle_sha256": "81f3d0c7cdacdd5de915d45872f185d1eaf722943c00ee7c26ef63f15d31b86e",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-11T14:00:00+01:00",
-   "title": "Never miss your lucky day | Andrew Tate"
+   "title": "Be quick but dont be in a hurry | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000016",
+   "page": "motivtated",
+   "clip_id": "M000016",
+   "asset_name": "M000016.zip",
+   "bundle_sha256": "8286a3f540aa2f919575481951ddc957dddd24f0fd03ebad59b27438d908ac2d",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-11T16:00:00+01:00",
+   "title": "There are no shortcuts | Andrew Tate"
   },
   {
    "key": "imanivated:I000015",
@@ -369,17 +473,17 @@
    "title": "He went shopping a week earlier... | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000036",
+   "key": "motivtated:M000038",
    "page": "motivtated",
-   "clip_id": "M000036",
-   "asset_name": "M000036.zip",
-   "bundle_sha256": "17693fd76265d642a458719ac9f2a2f48bddd5593f060307f68c3d9fb737b3bd",
+   "clip_id": "M000038",
+   "asset_name": "M000038.zip",
+   "bundle_sha256": "6e082fa5459bf29517d0005e91056a841f2639d8dcf76dcabc7b70113838020d",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-11T18:00:00+01:00",
-   "title": "Rome wasn't built in a day | Motivation"
+   "title": "Focus and fail fast | Motivation"
   },
   {
    "key": "imanivated:I000016",
@@ -394,17 +498,17 @@
    "title": "Allah calls you His servant, even after you sinned. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000013",
+   "key": "motivtated:M000017",
    "page": "motivtated",
-   "clip_id": "M000013",
-   "asset_name": "M000013.zip",
-   "bundle_sha256": "6f653b057967aad08bbce8ec53e47e3602cf0fb9decfb0afbc706dd0933afeb1",
+   "clip_id": "M000017",
+   "asset_name": "M000017.zip",
+   "bundle_sha256": "a67ecb1e70da6af89bc2b74c8096041dff464caa2573affa8e332ecbf5024cf8",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-11T21:30:00+01:00",
-   "title": "Leave a mark | Andrew Tate"
+   "title": "Study your own mistakes | Andrew Tate"
   },
   {
    "key": "imanivated:I000017",
@@ -419,17 +523,30 @@
    "title": "Come back with a mountain of sins. There's hope. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000112",
+   "key": "motivtated:M000114",
    "page": "motivtated",
-   "clip_id": "M000112",
-   "asset_name": "M000112.zip",
-   "bundle_sha256": "038bcc968a7fd4337755f4e659351384c820464240cebb2e91707a0b26160f31",
+   "clip_id": "M000114",
+   "asset_name": "M000114.zip",
+   "bundle_sha256": "afbd3131708424143d58b13a25f25ab16e26003e8e4fa36768546187b72ad39d",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-12T10:00:00+01:00",
-   "title": "If youre gonna do it do it | Matthew McConaughey"
+   "title": "Before the enemy is awake | Motivation"
+  },
+  {
+   "key": "motivtated:M000018",
+   "page": "motivtated",
+   "clip_id": "M000018",
+   "asset_name": "M000018.zip",
+   "bundle_sha256": "01344f559724be9897e68acb025a96fd751782d321624a1af06ba14fab0c9d8c",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-12T12:00:00+01:00",
+   "title": "When excuses run out | Andrew Tate"
   },
   {
    "key": "imanivated:I000018",
@@ -444,17 +561,30 @@
    "title": "Alhamdulillah, I am a Muslim. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000014",
+   "key": "motivtated:M000039",
    "page": "motivtated",
-   "clip_id": "M000014",
-   "asset_name": "M000014.zip",
-   "bundle_sha256": "204e044736307182a5cc9b84c34b0642a8a831655bfbd930ca7a854e847b91b8",
+   "clip_id": "M000039",
+   "asset_name": "M000039.zip",
+   "bundle_sha256": "bf84b57119f34d368fb6bf4e85cebdfcd16cdf0e9c214cb258a76d10ad093b86",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-12T14:00:00+01:00",
-   "title": "Wanting is different from wishing | Andrew Tate"
+   "title": "You don't quit | Motivation"
+  },
+  {
+   "key": "motivtated:M000019",
+   "page": "motivtated",
+   "clip_id": "M000019",
+   "asset_name": "M000019.zip",
+   "bundle_sha256": "0724650fdb082a451d5526deb7dd48f7246f53dcbef07fc96e5217b4e93cfffe",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-12T16:00:00+01:00",
+   "title": "Appreciate the milestones | Andrew Tate"
   },
   {
    "key": "imanivated:I000019",
@@ -469,17 +599,17 @@
    "title": "One moment laughing, the next moment gone. | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000037",
+   "key": "motivtated:M000115",
    "page": "motivtated",
-   "clip_id": "M000037",
-   "asset_name": "M000037.zip",
-   "bundle_sha256": "131a52cc4f7293e16ab8bd1e242aad41073c2c55a2997f0123459b5a2fd968d4",
+   "clip_id": "M000115",
+   "asset_name": "M000115.zip",
+   "bundle_sha256": "8e723149327068b61c454d5e48f84f1c825aa04681a3e2d3a0e2ccd99606589a",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-12T18:00:00+01:00",
-   "title": "I only need one chance | Conor McGregor"
+   "title": "They slept in the office | Dan Pena"
   },
   {
    "key": "imanivated:I000020",
@@ -494,17 +624,17 @@
    "title": "\"Ya Ayman, have you forgotten about me already?\" | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000015",
+   "key": "motivtated:M000020",
    "page": "motivtated",
-   "clip_id": "M000015",
-   "asset_name": "M000015.zip",
-   "bundle_sha256": "f5e6d01f5a141f88d13b4654b462e0a389966f8c75dd306d14d84eef3ebdba0f",
+   "clip_id": "M000020",
+   "asset_name": "M000020.zip",
+   "bundle_sha256": "2d62767b666345124dccdcc8c142f4e8e8d391804fbc1a2e9d43994eb195aedc",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-12T21:30:00+01:00",
-   "title": "Your starting point is not your finish | Andrew Tate"
+   "title": "Learn something from everyone | Andrew Tate"
   },
   {
    "key": "imanivated:I000021",
@@ -519,17 +649,30 @@
    "title": "Home isn't a place. It's a feeling. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000144",
+   "key": "motivtated:M000040",
    "page": "motivtated",
-   "clip_id": "M000144",
-   "asset_name": "M000144.zip",
-   "bundle_sha256": "81f3d0c7cdacdd5de915d45872f185d1eaf722943c00ee7c26ef63f15d31b86e",
+   "clip_id": "M000040",
+   "asset_name": "M000040.zip",
+   "bundle_sha256": "f4964732e9aeb2d9195a0b7487f2cf3e83782e5d6d9b208eb6f8cb26907e0c91",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-13T10:00:00+01:00",
-   "title": "Be quick but dont be in a hurry | Matthew McConaughey"
+   "title": "You can't fit in and be exceptional | Motivation"
+  },
+  {
+   "key": "motivtated:M000021",
+   "page": "motivtated",
+   "clip_id": "M000021",
+   "asset_name": "M000021.zip",
+   "bundle_sha256": "547491822964da6a512cd5d8f4900848c0441db5d897c320e39519a758891b84",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-13T12:00:00+01:00",
+   "title": "Make time for what you want | Andrew Tate"
   },
   {
    "key": "imanivated:I000022",
@@ -544,17 +687,30 @@
    "title": "The ones they write \"unknown\" on. | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000016",
+   "key": "motivtated:M000116",
    "page": "motivtated",
-   "clip_id": "M000016",
-   "asset_name": "M000016.zip",
-   "bundle_sha256": "8286a3f540aa2f919575481951ddc957dddd24f0fd03ebad59b27438d908ac2d",
+   "clip_id": "M000116",
+   "asset_name": "M000116.zip",
+   "bundle_sha256": "06e0bf968c5db6a4b30455e8451e9a0b5778f271da14df8c817f116d631037dd",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-13T14:00:00+01:00",
-   "title": "There are no shortcuts | Andrew Tate"
+   "title": "Who else am i supposed to be full of | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000022",
+   "page": "motivtated",
+   "clip_id": "M000022",
+   "asset_name": "M000022.zip",
+   "bundle_sha256": "5e401be7136e1d252c49c13d50ebfc21fb301a9055a8d0ad636b58ace9111841",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-13T16:00:00+01:00",
+   "title": "Your mood does not decide | Andrew Tate"
   },
   {
    "key": "imanivated:I000023",
@@ -569,17 +725,17 @@
    "title": "Three questions in your grave. Do you know the answers? | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000038",
+   "key": "motivtated:M000041",
    "page": "motivtated",
-   "clip_id": "M000038",
-   "asset_name": "M000038.zip",
-   "bundle_sha256": "6e082fa5459bf29517d0005e91056a841f2639d8dcf76dcabc7b70113838020d",
+   "clip_id": "M000041",
+   "asset_name": "M000041.zip",
+   "bundle_sha256": "6a7698a0dbb244aa48cd774ea9a9e4a714b1a6135021e3699b92eb02239126a5",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-13T18:00:00+01:00",
-   "title": "Focus and fail fast | Motivation"
+   "title": "Unmade decisions | Motivation"
   },
   {
    "key": "imanivated:I000024",
@@ -594,17 +750,17 @@
    "title": "Logic leads you to Allah. Then you submit. | Mohamed Hoblos"
   },
   {
-   "key": "motivtated:M000017",
+   "key": "motivtated:M000023",
    "page": "motivtated",
-   "clip_id": "M000017",
-   "asset_name": "M000017.zip",
-   "bundle_sha256": "a67ecb1e70da6af89bc2b74c8096041dff464caa2573affa8e332ecbf5024cf8",
+   "clip_id": "M000023",
+   "asset_name": "M000023.zip",
+   "bundle_sha256": "2d9e103724f219a0be8e9185541befd2113b876ba6778e305cab9826fcb5864c",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-13T21:30:00+01:00",
-   "title": "Study your own mistakes | Andrew Tate"
+   "title": "Speaking is a superpower | Andrew Tate"
   },
   {
    "key": "imanivated:I000025",
@@ -619,17 +775,30 @@
    "title": "The ummah is bleeding. Come back to the house of Allah. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000114",
+   "key": "motivtated:M000117",
    "page": "motivtated",
-   "clip_id": "M000114",
-   "asset_name": "M000114.zip",
-   "bundle_sha256": "afbd3131708424143d58b13a25f25ab16e26003e8e4fa36768546187b72ad39d",
+   "clip_id": "M000117",
+   "asset_name": "M000117.zip",
+   "bundle_sha256": "06fb2e7b99e9ac7ae0e24dd861a66638e4de3eb8fc3ac98a678743b228c6473e",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-14T10:00:00+01:00",
-   "title": "Before the enemy is awake | Motivation"
+   "title": "Rejected thirty times | Jack Ma"
+  },
+  {
+   "key": "motivtated:M000024",
+   "page": "motivtated",
+   "clip_id": "M000024",
+   "asset_name": "M000024.zip",
+   "bundle_sha256": "f780b735ed5f45495a61e69a85ef3852195a30dc35a3d8f0f44353237aa65222",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-14T12:00:00+01:00",
+   "title": "Build a stronger version of yourself | Andrew Tate"
   },
   {
    "key": "imanivated:I000026",
@@ -644,17 +813,30 @@
    "title": "His last words were to make peace with his brother. | The Muslim Undertaker"
   },
   {
-   "key": "motivtated:M000018",
+   "key": "motivtated:M000042",
    "page": "motivtated",
-   "clip_id": "M000018",
-   "asset_name": "M000018.zip",
-   "bundle_sha256": "01344f559724be9897e68acb025a96fd751782d321624a1af06ba14fab0c9d8c",
+   "clip_id": "M000042",
+   "asset_name": "M000042.zip",
+   "bundle_sha256": "5d35f4a740f7be493720dc66e9dc53925b84cc31db35e8e0a066ef203d941224",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-14T14:00:00+01:00",
-   "title": "When excuses run out | Andrew Tate"
+   "title": "Stifled by fluorescent lights | Motivation"
+  },
+  {
+   "key": "motivtated:M000025",
+   "page": "motivtated",
+   "clip_id": "M000025",
+   "asset_name": "M000025.zip",
+   "bundle_sha256": "b12359b92393eca4e24e5cb11a33afc87dc848a0b090ae6ec1a3a45752637481",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-14T16:00:00+01:00",
+   "title": "The reward of giving | Andrew Tate"
   },
   {
    "key": "imanivated:I000027",
@@ -669,17 +851,17 @@
    "title": "Are you the clown of your circle, or the one bringing people to Islam? | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000039",
+   "key": "motivtated:M000118",
    "page": "motivtated",
-   "clip_id": "M000039",
-   "asset_name": "M000039.zip",
-   "bundle_sha256": "bf84b57119f34d368fb6bf4e85cebdfcd16cdf0e9c214cb258a76d10ad093b86",
+   "clip_id": "M000118",
+   "asset_name": "M000118.zip",
+   "bundle_sha256": "c9acd45040844c6cec91bb6ea6caadc60b4202ad026d4e77ddd2ee8e13e9ede4",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-14T18:00:00+01:00",
-   "title": "You don't quit | Motivation"
+   "title": "Do what is hard | Motivation"
   },
   {
    "key": "imanivated:I000028",
@@ -694,17 +876,17 @@
    "title": "You can never repay your mother. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000019",
+   "key": "motivtated:M000026",
    "page": "motivtated",
-   "clip_id": "M000019",
-   "asset_name": "M000019.zip",
-   "bundle_sha256": "0724650fdb082a451d5526deb7dd48f7246f53dcbef07fc96e5217b4e93cfffe",
+   "clip_id": "M000026",
+   "asset_name": "M000026.zip",
+   "bundle_sha256": "9915f1be201e97452cd4326630a65097dc039113fed169512c2e22c5e2b1facf",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-14T21:30:00+01:00",
-   "title": "Appreciate the milestones | Andrew Tate"
+   "title": "The hardest thing to sell | Andrew Tate"
   },
   {
    "key": "imanivated:I000029",
@@ -719,17 +901,30 @@
    "title": "Fix yourself first. Leave the rest to Allah. | Akhi Ayman"
   },
   {
-   "key": "motivtated:M000115",
+   "key": "motivtated:M000043",
    "page": "motivtated",
-   "clip_id": "M000115",
-   "asset_name": "M000115.zip",
-   "bundle_sha256": "8e723149327068b61c454d5e48f84f1c825aa04681a3e2d3a0e2ccd99606589a",
+   "clip_id": "M000043",
+   "asset_name": "M000043.zip",
+   "bundle_sha256": "59bbabbec61af9743453d5ef3eef97105348e579bca4bbac242c46163c34a803",
    "platforms": [
     "youtube",
     "twitter"
    ],
    "due_at": "2026-11-15T10:00:00+01:00",
-   "title": "They slept in the office | Dan Pena"
+   "title": "We're up here because of 4am | Motivation"
+  },
+  {
+   "key": "motivtated:M000027",
+   "page": "motivtated",
+   "clip_id": "M000027",
+   "asset_name": "M000027.zip",
+   "bundle_sha256": "bdaa0c7b58ae27b6b96250aa0d8bd9264e8c16d7dc3aa4b0ae08eb00f6b11923",
+   "platforms": [
+    "youtube",
+    "twitter"
+   ],
+   "due_at": "2026-11-15T12:00:00+01:00",
+   "title": "Momentum changes your energy | Andrew Tate"
   },
   {
    "key": "imanivated:I000030",
@@ -744,201 +939,6 @@
    "title": "Ask to strengthen your faith, never to doubt. | Mohamed Hoblos"
   },
   {
-   "key": "motivtated:M000020",
-   "page": "motivtated",
-   "clip_id": "M000020",
-   "asset_name": "M000020.zip",
-   "bundle_sha256": "2d62767b666345124dccdcc8c142f4e8e8d391804fbc1a2e9d43994eb195aedc",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-15T14:00:00+01:00",
-   "title": "Learn something from everyone | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000040",
-   "page": "motivtated",
-   "clip_id": "M000040",
-   "asset_name": "M000040.zip",
-   "bundle_sha256": "f4964732e9aeb2d9195a0b7487f2cf3e83782e5d6d9b208eb6f8cb26907e0c91",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-15T18:00:00+01:00",
-   "title": "You can't fit in and be exceptional | Motivation"
-  },
-  {
-   "key": "motivtated:M000021",
-   "page": "motivtated",
-   "clip_id": "M000021",
-   "asset_name": "M000021.zip",
-   "bundle_sha256": "547491822964da6a512cd5d8f4900848c0441db5d897c320e39519a758891b84",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-15T21:30:00+01:00",
-   "title": "Make time for what you want | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000116",
-   "page": "motivtated",
-   "clip_id": "M000116",
-   "asset_name": "M000116.zip",
-   "bundle_sha256": "06e0bf968c5db6a4b30455e8451e9a0b5778f271da14df8c817f116d631037dd",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-16T10:00:00+01:00",
-   "title": "Who else am i supposed to be full of | Matthew McConaughey"
-  },
-  {
-   "key": "motivtated:M000022",
-   "page": "motivtated",
-   "clip_id": "M000022",
-   "asset_name": "M000022.zip",
-   "bundle_sha256": "5e401be7136e1d252c49c13d50ebfc21fb301a9055a8d0ad636b58ace9111841",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-16T14:00:00+01:00",
-   "title": "Your mood does not decide | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000041",
-   "page": "motivtated",
-   "clip_id": "M000041",
-   "asset_name": "M000041.zip",
-   "bundle_sha256": "6a7698a0dbb244aa48cd774ea9a9e4a714b1a6135021e3699b92eb02239126a5",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-16T18:00:00+01:00",
-   "title": "Unmade decisions | Motivation"
-  },
-  {
-   "key": "motivtated:M000023",
-   "page": "motivtated",
-   "clip_id": "M000023",
-   "asset_name": "M000023.zip",
-   "bundle_sha256": "2d9e103724f219a0be8e9185541befd2113b876ba6778e305cab9826fcb5864c",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-16T21:30:00+01:00",
-   "title": "Speaking is a superpower | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000117",
-   "page": "motivtated",
-   "clip_id": "M000117",
-   "asset_name": "M000117.zip",
-   "bundle_sha256": "06fb2e7b99e9ac7ae0e24dd861a66638e4de3eb8fc3ac98a678743b228c6473e",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-17T10:00:00+01:00",
-   "title": "Rejected thirty times | Jack Ma"
-  },
-  {
-   "key": "motivtated:M000024",
-   "page": "motivtated",
-   "clip_id": "M000024",
-   "asset_name": "M000024.zip",
-   "bundle_sha256": "f780b735ed5f45495a61e69a85ef3852195a30dc35a3d8f0f44353237aa65222",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-17T14:00:00+01:00",
-   "title": "Build a stronger version of yourself | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000042",
-   "page": "motivtated",
-   "clip_id": "M000042",
-   "asset_name": "M000042.zip",
-   "bundle_sha256": "5d35f4a740f7be493720dc66e9dc53925b84cc31db35e8e0a066ef203d941224",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-17T18:00:00+01:00",
-   "title": "Stifled by fluorescent lights | Motivation"
-  },
-  {
-   "key": "motivtated:M000025",
-   "page": "motivtated",
-   "clip_id": "M000025",
-   "asset_name": "M000025.zip",
-   "bundle_sha256": "b12359b92393eca4e24e5cb11a33afc87dc848a0b090ae6ec1a3a45752637481",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-17T21:30:00+01:00",
-   "title": "The reward of giving | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000118",
-   "page": "motivtated",
-   "clip_id": "M000118",
-   "asset_name": "M000118.zip",
-   "bundle_sha256": "c9acd45040844c6cec91bb6ea6caadc60b4202ad026d4e77ddd2ee8e13e9ede4",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-18T10:00:00+01:00",
-   "title": "Do what is hard | Motivation"
-  },
-  {
-   "key": "motivtated:M000026",
-   "page": "motivtated",
-   "clip_id": "M000026",
-   "asset_name": "M000026.zip",
-   "bundle_sha256": "9915f1be201e97452cd4326630a65097dc039113fed169512c2e22c5e2b1facf",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-18T14:00:00+01:00",
-   "title": "The hardest thing to sell | Andrew Tate"
-  },
-  {
-   "key": "motivtated:M000043",
-   "page": "motivtated",
-   "clip_id": "M000043",
-   "asset_name": "M000043.zip",
-   "bundle_sha256": "59bbabbec61af9743453d5ef3eef97105348e579bca4bbac242c46163c34a803",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-18T18:00:00+01:00",
-   "title": "We're up here because of 4am | Motivation"
-  },
-  {
-   "key": "motivtated:M000027",
-   "page": "motivtated",
-   "clip_id": "M000027",
-   "asset_name": "M000027.zip",
-   "bundle_sha256": "bdaa0c7b58ae27b6b96250aa0d8bd9264e8c16d7dc3aa4b0ae08eb00f6b11923",
-   "platforms": [
-    "youtube",
-    "twitter"
-   ],
-   "due_at": "2026-11-18T21:30:00+01:00",
-   "title": "Momentum changes your energy | Andrew Tate"
-  },
-  {
    "key": "motivtated:M000119",
    "page": "motivtated",
    "clip_id": "M000119",
@@ -948,7 +948,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-19T10:00:00+01:00",
+   "due_at": "2026-11-15T14:00:00+01:00",
    "title": "Discipline and focus | Dan Pena"
   },
   {
@@ -961,7 +961,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-19T14:00:00+01:00",
+   "due_at": "2026-11-15T16:00:00+01:00",
    "title": "Live a life worth talking about | Andrew Tate"
   },
   {
@@ -974,7 +974,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-19T18:00:00+01:00",
+   "due_at": "2026-11-15T18:00:00+01:00",
    "title": "The price tag | Alex Hormozi"
   },
   {
@@ -987,7 +987,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-19T21:30:00+01:00",
+   "due_at": "2026-11-15T21:30:00+01:00",
    "title": "What the ring teaches you | Andrew Tate"
   },
   {
@@ -1000,7 +1000,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-20T10:00:00+01:00",
+   "due_at": "2026-11-16T10:00:00+01:00",
    "title": "You are the author of your life | Matthew McConaughey"
   },
   {
@@ -1013,7 +1013,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-20T14:00:00+01:00",
+   "due_at": "2026-11-16T12:00:00+01:00",
    "title": "Make your own luck | Andrew Tate"
   },
   {
@@ -1026,7 +1026,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-20T18:00:00+01:00",
+   "due_at": "2026-11-16T14:00:00+01:00",
    "title": "Nothing changes if nothing changes | Motivation"
   },
   {
@@ -1039,7 +1039,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-20T21:30:00+01:00",
+   "due_at": "2026-11-16T16:00:00+01:00",
    "title": "Use the time you have | Andrew Tate"
   },
   {
@@ -1052,7 +1052,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-21T10:00:00+01:00",
+   "due_at": "2026-11-16T18:00:00+01:00",
    "title": "Life is a box of chocolates | Jack Ma"
   },
   {
@@ -1065,7 +1065,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-21T14:00:00+01:00",
+   "due_at": "2026-11-16T21:30:00+01:00",
    "title": "Take responsibility for your life | Andrew Tate"
   },
   {
@@ -1078,7 +1078,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-21T18:00:00+01:00",
+   "due_at": "2026-11-17T10:00:00+01:00",
    "title": "Confidence comes from preparation | Kobe Bryant"
   },
   {
@@ -1091,7 +1091,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-21T21:30:00+01:00",
+   "due_at": "2026-11-17T12:00:00+01:00",
    "title": "Turn frustration into a decision | Andrew Tate"
   },
   {
@@ -1104,7 +1104,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-22T10:00:00+01:00",
+   "due_at": "2026-11-17T14:00:00+01:00",
    "title": "What are you gaining by sleeping in | Motivation"
   },
   {
@@ -1117,7 +1117,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-22T14:00:00+01:00",
+   "due_at": "2026-11-17T16:00:00+01:00",
    "title": "Give your anger a useful outlet | Andrew Tate"
   },
   {
@@ -1130,7 +1130,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-22T18:00:00+01:00",
+   "due_at": "2026-11-17T18:00:00+01:00",
    "title": "No one else will follow | Alex Hormozi"
   },
   {
@@ -1143,7 +1143,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-22T21:30:00+01:00",
+   "due_at": "2026-11-17T21:30:00+01:00",
    "title": "Raw action beats waiting | Andrew Tate"
   },
   {
@@ -1156,7 +1156,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-23T10:00:00+01:00",
+   "due_at": "2026-11-18T10:00:00+01:00",
    "title": "Failure is just testing | Dan Pena"
   },
   {
@@ -1169,7 +1169,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-23T14:00:00+01:00",
+   "due_at": "2026-11-18T12:00:00+01:00",
    "title": "Discipline moves you forward | Andrew Tate"
   },
   {
@@ -1182,7 +1182,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-23T18:00:00+01:00",
+   "due_at": "2026-11-18T14:00:00+01:00",
    "title": "Stop waiting for life to be easy | Motivation"
   },
   {
@@ -1195,7 +1195,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-23T21:30:00+01:00",
+   "due_at": "2026-11-18T16:00:00+01:00",
    "title": "Answer doubt with progress | Andrew Tate"
   },
   {
@@ -1208,7 +1208,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-24T10:00:00+01:00",
+   "due_at": "2026-11-18T18:00:00+01:00",
    "title": "Great value in being alone | Matthew McConaughey"
   },
   {
@@ -1221,7 +1221,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-24T14:00:00+01:00",
+   "due_at": "2026-11-18T21:30:00+01:00",
    "title": "Stop settling for ordinary | Andrew Tate"
   },
   {
@@ -1234,7 +1234,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-24T18:00:00+01:00",
+   "due_at": "2026-11-19T10:00:00+01:00",
    "title": "Who are you in a year | Motivation"
   },
   {
@@ -1247,7 +1247,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-24T21:30:00+01:00",
+   "due_at": "2026-11-19T12:00:00+01:00",
    "title": "Ask how it can be done | Andrew Tate"
   },
   {
@@ -1260,7 +1260,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-25T10:00:00+01:00",
+   "due_at": "2026-11-19T14:00:00+01:00",
    "title": "No rich father no powerful uncle | Jack Ma"
   },
   {
@@ -1273,7 +1273,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-25T14:00:00+01:00",
+   "due_at": "2026-11-19T16:00:00+01:00",
    "title": "Discipline does not wait for a mood | Andrew Tate"
   },
   {
@@ -1286,7 +1286,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-25T18:00:00+01:00",
+   "due_at": "2026-11-19T18:00:00+01:00",
    "title": "400 trillion to one | Mel Robbins"
   },
   {
@@ -1299,7 +1299,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-25T21:30:00+01:00",
+   "due_at": "2026-11-19T21:30:00+01:00",
    "title": "Improve the person behind the plan | Andrew Tate"
   },
   {
@@ -1312,7 +1312,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-26T10:00:00+01:00",
+   "due_at": "2026-11-20T10:00:00+01:00",
    "title": "You also have 24 hours | Motivation"
   },
   {
@@ -1325,7 +1325,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-26T14:00:00+01:00",
+   "due_at": "2026-11-20T12:00:00+01:00",
    "title": "Find strength in your name | Andrew Tate"
   },
   {
@@ -1338,7 +1338,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-26T18:00:00+01:00",
+   "due_at": "2026-11-20T14:00:00+01:00",
    "title": "Make your bed | Admiral McRaven"
   },
   {
@@ -1351,7 +1351,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-26T21:30:00+01:00",
+   "due_at": "2026-11-20T16:00:00+01:00",
    "title": "Honor the people who raised you | Andrew Tate"
   },
   {
@@ -1364,7 +1364,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-27T10:00:00+01:00",
+   "due_at": "2026-11-20T18:00:00+01:00",
    "title": "Practice being successful | Dan Pena"
   },
   {
@@ -1377,7 +1377,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-27T14:00:00+01:00",
+   "due_at": "2026-11-20T21:30:00+01:00",
    "title": "Money is a tool | Andrew Tate"
   },
   {
@@ -1390,7 +1390,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-27T18:00:00+01:00",
+   "due_at": "2026-11-21T10:00:00+01:00",
    "title": "Have an iron will | Motivation"
   },
   {
@@ -1403,7 +1403,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-27T21:30:00+01:00",
+   "due_at": "2026-11-21T12:00:00+01:00",
    "title": "Stop rehearsing defeat | Andrew Tate"
   },
   {
@@ -1416,7 +1416,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-28T10:00:00+01:00",
+   "due_at": "2026-11-21T14:00:00+01:00",
    "title": "Unbelievable is the stupidest word | Matthew McConaughey"
   },
   {
@@ -1429,7 +1429,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-28T14:00:00+01:00",
+   "due_at": "2026-11-21T16:00:00+01:00",
    "title": "Build systems that outlast motivation | Andrew Tate"
   },
   {
@@ -1442,7 +1442,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-28T18:00:00+01:00",
+   "due_at": "2026-11-21T18:00:00+01:00",
    "title": "The 300 pound guy | David Goggins"
   },
   {
@@ -1455,7 +1455,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-28T21:30:00+01:00",
+   "due_at": "2026-11-21T21:30:00+01:00",
    "title": "Invest in your ability | Andrew Tate"
   },
   {
@@ -1468,7 +1468,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-29T10:00:00+01:00",
+   "due_at": "2026-11-22T10:00:00+01:00",
    "title": "Crazy but not stupid | Jack Ma"
   },
   {
@@ -1481,7 +1481,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-29T14:00:00+01:00",
+   "due_at": "2026-11-22T12:00:00+01:00",
    "title": "Stand firm under criticism | Andrew Tate"
   },
   {
@@ -1494,7 +1494,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-29T18:00:00+01:00",
+   "due_at": "2026-11-22T14:00:00+01:00",
    "title": "This is what hard feels like | Motivation"
   },
   {
@@ -1507,7 +1507,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-29T21:30:00+01:00",
+   "due_at": "2026-11-22T16:00:00+01:00",
    "title": "Let competition make you stronger | Andrew Tate"
   },
   {
@@ -1520,7 +1520,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-30T10:00:00+01:00",
+   "due_at": "2026-11-22T18:00:00+01:00",
    "title": "Five years down the line | Motivation"
   },
   {
@@ -1533,7 +1533,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-30T14:00:00+01:00",
+   "due_at": "2026-11-22T21:30:00+01:00",
    "title": "Study why people buy | Andrew Tate"
   },
   {
@@ -1546,7 +1546,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-30T18:00:00+01:00",
+   "due_at": "2026-11-23T10:00:00+01:00",
    "title": "If you quit now | Motivation"
   },
   {
@@ -1559,7 +1559,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-11-30T21:30:00+01:00",
+   "due_at": "2026-11-23T12:00:00+01:00",
    "title": "Difficulty protects the reward | Andrew Tate"
   },
   {
@@ -1572,7 +1572,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-01T10:00:00+01:00",
+   "due_at": "2026-11-23T14:00:00+01:00",
    "title": "Go to stores you cant afford | Dan Pena"
   },
   {
@@ -1585,7 +1585,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-01T14:00:00+01:00",
+   "due_at": "2026-11-23T16:00:00+01:00",
    "title": "Keep working without applause | Andrew Tate"
   },
   {
@@ -1598,7 +1598,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-01T18:00:00+01:00",
+   "due_at": "2026-11-23T18:00:00+01:00",
    "title": "You cannot change your life | David Goggins"
   },
   {
@@ -1611,7 +1611,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-01T21:30:00+01:00",
+   "due_at": "2026-11-23T21:30:00+01:00",
    "title": "Wake up with responsibility | Andrew Tate"
   },
   {
@@ -1624,7 +1624,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-02T10:00:00+01:00",
+   "due_at": "2026-11-24T10:00:00+01:00",
    "title": "Battery powered green light | Matthew McConaughey"
   },
   {
@@ -1637,7 +1637,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-02T14:00:00+01:00",
+   "due_at": "2026-11-24T12:00:00+01:00",
    "title": "Stop expecting easy | Andrew Tate"
   },
   {
@@ -1650,7 +1650,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-02T18:00:00+01:00",
+   "due_at": "2026-11-24T14:00:00+01:00",
    "title": "Just show up | Motivation"
   },
   {
@@ -1663,7 +1663,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-02T21:30:00+01:00",
+   "due_at": "2026-11-24T16:00:00+01:00",
    "title": "Choose constructive discomfort | Andrew Tate"
   },
   {
@@ -1676,7 +1676,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-03T10:00:00+01:00",
+   "due_at": "2026-11-24T18:00:00+01:00",
    "title": "Opportunity is where people complain | Jack Ma"
   },
   {
@@ -1689,7 +1689,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-03T14:00:00+01:00",
+   "due_at": "2026-11-24T21:30:00+01:00",
    "title": "Be willing to learn | Andrew Tate"
   },
   {
@@ -1702,7 +1702,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-03T18:00:00+01:00",
+   "due_at": "2026-11-25T10:00:00+01:00",
    "title": "It takes what it takes | Motivation"
   },
   {
@@ -1715,7 +1715,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-03T21:30:00+01:00",
+   "due_at": "2026-11-25T12:00:00+01:00",
    "title": "The skill of persistence | Andrew Tate"
   },
   {
@@ -1728,7 +1728,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-04T10:00:00+01:00",
+   "due_at": "2026-11-25T14:00:00+01:00",
    "title": "Just one day wake up at 4 am | Motivation"
   },
   {
@@ -1741,7 +1741,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-04T14:00:00+01:00",
+   "due_at": "2026-11-25T16:00:00+01:00",
    "title": "Upgrade your real life | Andrew Tate"
   },
   {
@@ -1754,7 +1754,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-04T18:00:00+01:00",
+   "due_at": "2026-11-25T18:00:00+01:00",
    "title": "Mediocrity feels so good | Motivation"
   },
   {
@@ -1767,7 +1767,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-04T21:30:00+01:00",
+   "due_at": "2026-11-25T21:30:00+01:00",
    "title": "A dream needs a plan | Andrew Tate"
   },
   {
@@ -1780,7 +1780,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-05T10:00:00+01:00",
+   "due_at": "2026-11-26T10:00:00+01:00",
    "title": "Time costs lives | Dan Pena"
   },
   {
@@ -1793,7 +1793,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-05T14:00:00+01:00",
+   "due_at": "2026-11-26T12:00:00+01:00",
    "title": "Hardship is relative | Andrew Tate"
   },
   {
@@ -1806,7 +1806,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-05T18:00:00+01:00",
+   "due_at": "2026-11-26T14:00:00+01:00",
    "title": "Success boils down to this | Motivation"
   },
   {
@@ -1819,7 +1819,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-05T21:30:00+01:00",
+   "due_at": "2026-11-26T16:00:00+01:00",
    "title": "Results outlast excuses | Andrew Tate"
   },
   {
@@ -1832,7 +1832,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-06T10:00:00+01:00",
+   "due_at": "2026-11-26T18:00:00+01:00",
    "title": "Life is not fair get over it | Matthew McConaughey"
   },
   {
@@ -1845,7 +1845,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-06T14:00:00+01:00",
+   "due_at": "2026-11-26T21:30:00+01:00",
    "title": "Choose something to be proud of | Andrew Tate"
   },
   {
@@ -1858,7 +1858,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-06T18:00:00+01:00",
+   "due_at": "2026-11-27T10:00:00+01:00",
    "title": "Zoom into the future | Motivation"
   },
   {
@@ -1871,7 +1871,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-06T21:30:00+01:00",
+   "due_at": "2026-11-27T12:00:00+01:00",
    "title": "Be shelter for the people you love | Andrew Tate"
   },
   {
@@ -1884,7 +1884,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-07T10:00:00+01:00",
+   "due_at": "2026-11-27T14:00:00+01:00",
    "title": "Respect yourself we have a chance | Jack Ma"
   },
   {
@@ -1897,7 +1897,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-07T14:00:00+01:00",
+   "due_at": "2026-11-27T16:00:00+01:00",
    "title": "Take control of your attention | Andrew Tate"
   },
   {
@@ -1910,7 +1910,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-07T18:00:00+01:00",
+   "due_at": "2026-11-27T18:00:00+01:00",
    "title": "All your excuses are lies | Motivation"
   },
   {
@@ -1923,7 +1923,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-07T21:30:00+01:00",
+   "due_at": "2026-11-27T21:30:00+01:00",
    "title": "Turn setbacks into fuel | Andrew Tate"
   },
   {
@@ -1936,7 +1936,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-08T10:00:00+01:00",
+   "due_at": "2026-11-28T10:00:00+01:00",
    "title": "Happiness vs joy | Matthew McConaughey"
   },
   {
@@ -1949,7 +1949,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-08T14:00:00+01:00",
+   "due_at": "2026-11-28T12:00:00+01:00",
    "title": "Focus on your own next step | Andrew Tate"
   },
   {
@@ -1962,7 +1962,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-08T18:00:00+01:00",
+   "due_at": "2026-11-28T14:00:00+01:00",
    "title": "No one is watching | Motivation"
   },
   {
@@ -1975,7 +1975,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-08T21:30:00+01:00",
+   "due_at": "2026-11-28T16:00:00+01:00",
    "title": "Work smart and work hard | Andrew Tate"
   },
   {
@@ -1988,7 +1988,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-09T10:00:00+01:00",
+   "due_at": "2026-11-28T18:00:00+01:00",
    "title": "The empty money column | Matthew McConaughey"
   },
   {
@@ -2001,7 +2001,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-09T14:00:00+01:00",
+   "due_at": "2026-11-28T21:30:00+01:00",
    "title": "Do good without chasing applause | Andrew Tate"
   },
   {
@@ -2014,7 +2014,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-09T18:00:00+01:00",
+   "due_at": "2026-11-29T10:00:00+01:00",
    "title": "People want you to do well not better | Alex Hormozi"
   },
   {
@@ -2027,7 +2027,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-09T21:30:00+01:00",
+   "due_at": "2026-11-29T12:00:00+01:00",
    "title": "Build skills that survive luck | Andrew Tate"
   },
   {
@@ -2040,7 +2040,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-10T10:00:00+01:00",
+   "due_at": "2026-11-29T14:00:00+01:00",
    "title": "What is success to you | Matthew McConaughey"
   },
   {
@@ -2053,7 +2053,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-10T14:00:00+01:00",
+   "due_at": "2026-11-29T16:00:00+01:00",
    "title": "Focus your energy like a river | Andrew Tate"
   },
   {
@@ -2066,7 +2066,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-10T18:00:00+01:00",
+   "due_at": "2026-11-29T18:00:00+01:00",
    "title": "Ordinary plus a little extra | Motivation"
   },
   {
@@ -2079,7 +2079,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-10T21:30:00+01:00",
+   "due_at": "2026-11-29T21:30:00+01:00",
    "title": "There is always another level | Andrew Tate"
   },
   {
@@ -2092,7 +2092,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-11T10:00:00+01:00",
+   "due_at": "2026-11-30T10:00:00+01:00",
    "title": "One way ticket out of hollywood | Matthew McConaughey"
   },
   {
@@ -2105,7 +2105,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-11T14:00:00+01:00",
+   "due_at": "2026-11-30T12:00:00+01:00",
    "title": "Show what you are capable of | Andrew Tate"
   },
   {
@@ -2118,7 +2118,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-11T18:00:00+01:00",
+   "due_at": "2026-11-30T14:00:00+01:00",
    "title": "Comfort is a long term enemy | Steven Bartlett"
   },
   {
@@ -2131,7 +2131,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-11T21:30:00+01:00",
+   "due_at": "2026-11-30T16:00:00+01:00",
    "title": "Expand your idea of possible | Andrew Tate"
   },
   {
@@ -2144,7 +2144,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-12T10:00:00+01:00",
+   "due_at": "2026-11-30T18:00:00+01:00",
    "title": "Take a hundred risks | Matthew McConaughey"
   },
   {
@@ -2157,7 +2157,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-12T14:00:00+01:00",
+   "due_at": "2026-11-30T21:30:00+01:00",
    "title": "Success is the ultimate revenge | Andrew Tate"
   },
   {
@@ -2170,7 +2170,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-12T18:00:00+01:00",
+   "due_at": "2026-12-01T10:00:00+01:00",
    "title": "The competition of creativity | Jack Ma"
   },
   {
@@ -2183,7 +2183,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-12T21:30:00+01:00",
+   "due_at": "2026-12-01T12:00:00+01:00",
    "title": "Youre not tired youre undisciplined | Andrew Tate"
   },
   {
@@ -2196,7 +2196,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-13T10:00:00+01:00",
+   "due_at": "2026-12-01T14:00:00+01:00",
    "title": "I could be oprah | Motivation"
   },
   {
@@ -2209,7 +2209,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-13T14:00:00+01:00",
+   "due_at": "2026-12-01T16:00:00+01:00",
    "title": "Contentment comes from giving | Andrew Tate"
   },
   {
@@ -2222,7 +2222,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-13T18:00:00+01:00",
+   "due_at": "2026-12-01T18:00:00+01:00",
    "title": "Where attention goes energy flows | Joe Dispenza"
   },
   {
@@ -2235,7 +2235,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-13T21:30:00+01:00",
+   "due_at": "2026-12-01T21:30:00+01:00",
    "title": "That version of you is waiting | Andrew Tate"
   },
   {
@@ -2248,7 +2248,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-14T10:00:00+01:00",
+   "due_at": "2026-12-02T10:00:00+01:00",
    "title": "Stop being defined by your past | Joe Dispenza"
   },
   {
@@ -2261,7 +2261,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-14T14:00:00+01:00",
+   "due_at": "2026-12-02T12:00:00+01:00",
    "title": "Nobody is coming to save you | Andrew Tate"
   },
   {
@@ -2274,7 +2274,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-14T18:00:00+01:00",
+   "due_at": "2026-12-02T14:00:00+01:00",
    "title": "Be the useful person at the funeral | Jordan Peterson"
   },
   {
@@ -2287,7 +2287,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-14T21:30:00+01:00",
+   "due_at": "2026-12-02T16:00:00+01:00",
    "title": "Own your first hour | Andrew Tate"
   },
   {
@@ -2300,7 +2300,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-15T10:00:00+01:00",
+   "due_at": "2026-12-02T18:00:00+01:00",
    "title": "An awful lot of it is self taught | Warren Buffett"
   },
   {
@@ -2313,7 +2313,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-15T14:00:00+01:00",
+   "due_at": "2026-12-02T21:30:00+01:00",
    "title": "You were born to be remembered | Andrew Tate"
   },
   {
@@ -2326,7 +2326,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-15T18:00:00+01:00",
+   "due_at": "2026-12-03T10:00:00+01:00",
    "title": "A habits crisis | Jay Shetty"
   },
   {
@@ -2339,7 +2339,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-15T21:30:00+01:00",
+   "due_at": "2026-12-03T12:00:00+01:00",
    "title": "Discipline is the key to success | Andrew Tate"
   },
   {
@@ -2352,7 +2352,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-16T10:00:00+01:00",
+   "due_at": "2026-12-03T14:00:00+01:00",
    "title": "Living in the past | Joe Dispenza"
   },
   {
@@ -2365,7 +2365,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-16T14:00:00+01:00",
+   "due_at": "2026-12-03T16:00:00+01:00",
    "title": "The second best time is now | Andrew Tate"
   },
   {
@@ -2378,7 +2378,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-16T18:00:00+01:00",
+   "due_at": "2026-12-03T18:00:00+01:00",
    "title": "Be a fool before you can be a master | Jordan Peterson"
   },
   {
@@ -2391,7 +2391,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-16T21:30:00+01:00",
+   "due_at": "2026-12-03T21:30:00+01:00",
    "title": "Your schedule is your self respect | Andrew Tate"
   },
   {
@@ -2404,7 +2404,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-17T10:00:00+01:00",
+   "due_at": "2026-12-04T10:00:00+01:00",
    "title": "Do it badly but do it | Motivation"
   },
   {
@@ -2417,7 +2417,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-17T14:00:00+01:00",
+   "due_at": "2026-12-04T12:00:00+01:00",
    "title": "Do what you are supposed to do | Andrew Tate"
   },
   {
@@ -2430,7 +2430,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-17T18:00:00+01:00",
+   "due_at": "2026-12-04T14:00:00+01:00",
    "title": "College is an insurance policy | Motivation"
   },
   {
@@ -2443,7 +2443,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-17T21:30:00+01:00",
+   "due_at": "2026-12-04T16:00:00+01:00",
    "title": "You are guaranteed death | Andrew Tate"
   },
   {
@@ -2456,7 +2456,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-18T10:00:00+01:00",
+   "due_at": "2026-12-04T18:00:00+01:00",
    "title": "Get into the operating system | Joe Dispenza"
   },
   {
@@ -2469,7 +2469,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-18T14:00:00+01:00",
+   "due_at": "2026-12-04T21:30:00+01:00",
    "title": "Self reflection makes winners | Andrew Tate"
   },
   {
@@ -2482,7 +2482,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-18T18:00:00+01:00",
+   "due_at": "2026-12-05T10:00:00+01:00",
    "title": "Stress blocks change | Jay Shetty"
   },
   {
@@ -2495,7 +2495,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-18T21:30:00+01:00",
+   "due_at": "2026-12-05T12:00:00+01:00",
    "title": "Every man has a comeback moment | Andrew Tate"
   },
   {
@@ -2508,7 +2508,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-19T10:00:00+01:00",
+   "due_at": "2026-12-05T14:00:00+01:00",
    "title": "Better to do it badly | Jordan Peterson"
   },
   {
@@ -2521,7 +2521,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-19T14:00:00+01:00",
+   "due_at": "2026-12-05T16:00:00+01:00",
    "title": "Men who perform regardless | Andrew Tate"
   },
   {
@@ -2534,7 +2534,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-19T18:00:00+01:00",
+   "due_at": "2026-12-05T18:00:00+01:00",
    "title": "I hated school | Motivation"
   },
   {
@@ -2547,7 +2547,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-19T21:30:00+01:00",
+   "due_at": "2026-12-05T21:30:00+01:00",
    "title": "Why dont you look like a superhero | Andrew Tate"
   },
   {
@@ -2560,7 +2560,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-20T10:00:00+01:00",
+   "due_at": "2026-12-06T10:00:00+01:00",
    "title": "I cant meditate is just a thought | Joe Dispenza"
   },
   {
@@ -2573,7 +2573,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-20T14:00:00+01:00",
+   "due_at": "2026-12-06T12:00:00+01:00",
    "title": "She would want you back | Andrew Tate"
   },
   {
@@ -2586,7 +2586,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-20T18:00:00+01:00",
+   "due_at": "2026-12-06T14:00:00+01:00",
    "title": "Lose your free will to programs | Joe Dispenza"
   },
   {
@@ -2599,7 +2599,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-20T21:30:00+01:00",
+   "due_at": "2026-12-06T16:00:00+01:00",
    "title": "The billionaire who schedules like a surgeon | Andrew Tate"
   },
   {
@@ -2612,7 +2612,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-21T10:00:00+01:00",
+   "due_at": "2026-12-06T18:00:00+01:00",
    "title": "Full of faults but keep moving | Jordan Peterson"
   },
   {
@@ -2625,7 +2625,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-21T14:00:00+01:00",
+   "due_at": "2026-12-06T21:30:00+01:00",
    "title": "The men on the titanic | Andrew Tate"
   },
   {
@@ -2638,7 +2638,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-21T18:00:00+01:00",
+   "due_at": "2026-12-07T10:00:00+01:00",
    "title": "Learn from mistakes not punishment | Motivation"
   },
   {
@@ -2651,7 +2651,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-21T21:30:00+01:00",
+   "due_at": "2026-12-07T12:00:00+01:00",
    "title": "The race nobody runs | Andrew Tate"
   },
   {
@@ -2664,7 +2664,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-22T10:00:00+01:00",
+   "due_at": "2026-12-07T14:00:00+01:00",
    "title": "It comes from within | Joe Dispenza"
   },
   {
@@ -2677,7 +2677,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-22T14:00:00+01:00",
+   "due_at": "2026-12-07T16:00:00+01:00",
    "title": "The golden tap | Andrew Tate"
   },
   {
@@ -2690,7 +2690,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-22T18:00:00+01:00",
+   "due_at": "2026-12-07T18:00:00+01:00",
    "title": "Show up for yourself every day | Joe Dispenza"
   },
   {
@@ -2703,7 +2703,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-22T21:30:00+01:00",
+   "due_at": "2026-12-07T21:30:00+01:00",
    "title": "Nobody wakes up thinking about you | Andrew Tate"
   },
   {
@@ -2716,7 +2716,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-23T10:00:00+01:00",
+   "due_at": "2026-12-08T10:00:00+01:00",
    "title": "Youre the thing that confronts the obstacle | Jordan Peterson"
   },
   {
@@ -2729,7 +2729,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-23T14:00:00+01:00",
+   "due_at": "2026-12-08T12:00:00+01:00",
    "title": "You just wasted five years | Andrew Tate"
   },
   {
@@ -2742,7 +2742,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-23T18:00:00+01:00",
+   "due_at": "2026-12-08T14:00:00+01:00",
    "title": "Just a set of habits | Joe Dispenza"
   },
   {
@@ -2755,7 +2755,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-23T21:30:00+01:00",
+   "due_at": "2026-12-08T16:00:00+01:00",
    "title": "What is your love worth | Andrew Tate"
   },
   {
@@ -2768,7 +2768,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-24T10:00:00+01:00",
+   "due_at": "2026-12-08T18:00:00+01:00",
    "title": "A trillion dollars of lies | Motivation"
   },
   {
@@ -2781,7 +2781,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-24T14:00:00+01:00",
+   "due_at": "2026-12-08T21:30:00+01:00",
    "title": "Discipline beats motivation | Andrew Tate"
   },
   {
@@ -2794,7 +2794,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-24T18:00:00+01:00",
+   "due_at": "2026-12-09T10:00:00+01:00",
    "title": "Dont live in emergency mode | Joe Dispenza"
   },
   {
@@ -2807,7 +2807,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-24T21:30:00+01:00",
+   "due_at": "2026-12-09T12:00:00+01:00",
    "title": "Comfort without conquest | Andrew Tate"
   },
   {
@@ -2820,7 +2820,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-25T10:00:00+01:00",
+   "due_at": "2026-12-09T14:00:00+01:00",
    "title": "Victim or creator | Joe Dispenza"
   },
   {
@@ -2833,7 +2833,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-25T14:00:00+01:00",
+   "due_at": "2026-12-09T16:00:00+01:00",
    "title": "The mountain keeps growing | Andrew Tate"
   },
   {
@@ -2846,7 +2846,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-25T18:00:00+01:00",
+   "due_at": "2026-12-09T18:00:00+01:00",
    "title": "Nobody is coming to save you | Motivation"
   },
   {
@@ -2859,7 +2859,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-25T21:30:00+01:00",
+   "due_at": "2026-12-09T21:30:00+01:00",
    "title": "Ill start tomorrow is a lie | Andrew Tate"
   },
   {
@@ -2872,7 +2872,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-26T10:00:00+01:00",
+   "due_at": "2026-12-10T10:00:00+01:00",
    "title": "Become a bigger bag of tricks | Jordan Peterson"
   },
   {
@@ -2885,7 +2885,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-26T14:00:00+01:00",
+   "due_at": "2026-12-10T12:00:00+01:00",
    "title": "Youve heard enough | Andrew Tate"
   },
   {
@@ -2898,7 +2898,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-26T18:00:00+01:00",
+   "due_at": "2026-12-10T14:00:00+01:00",
    "title": "You have to save yourself | Motivation"
   },
   {
@@ -2911,7 +2911,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-26T21:30:00+01:00",
+   "due_at": "2026-12-10T16:00:00+01:00",
    "title": "I killed him with a calendar | Andrew Tate"
   },
   {
@@ -2924,7 +2924,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-27T10:00:00+01:00",
+   "due_at": "2026-12-10T18:00:00+01:00",
    "title": "A day worth living | Joe Dispenza"
   },
   {
@@ -2937,7 +2937,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-27T14:00:00+01:00",
+   "due_at": "2026-12-10T21:30:00+01:00",
    "title": "You didnt fail you forgot | Joe Dispenza"
   },
   {
@@ -2950,7 +2950,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-27T18:00:00+01:00",
+   "due_at": "2026-12-11T10:00:00+01:00",
    "title": "Dont attack their whole character | Jordan Peterson"
   },
   {
@@ -2963,7 +2963,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-27T21:30:00+01:00",
+   "due_at": "2026-12-11T12:00:00+01:00",
    "title": "You cant tell me youre too old | Joe Dispenza"
   },
   {
@@ -2976,7 +2976,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-28T10:00:00+01:00",
+   "due_at": "2026-12-11T14:00:00+01:00",
    "title": "Your presence bleeds | Jay Shetty"
   },
   {
@@ -2989,7 +2989,7 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-28T14:00:00+01:00",
+   "due_at": "2026-12-11T16:00:00+01:00",
    "title": "It is possible to change | Joe Dispenza"
   },
   {
@@ -3002,8 +3002,9 @@
     "youtube",
     "twitter"
    ],
-   "due_at": "2026-12-28T18:00:00+01:00",
+   "due_at": "2026-12-11T18:00:00+01:00",
    "title": "We are wired to give | Joe Dispenza"
   }
- ]
+ ],
+ "pace_changed_on": "2026-11-07"
 }

@@ -30,7 +30,7 @@ class Lane2Tests(unittest.TestCase):
     def test_rejects_five_a_day(self):
         plan = json.loads(Path('lane2-schedule.json').read_text(encoding='utf-8'))
         rows = [r for r in plan['rows'] if r['page'] == 'imanivated'][:5]
-        rows[4] = dict(rows[4], due_at=rows[0]['due_at'].replace('10:00', '11:00'))
+        rows[4] = dict(rows[4], due_at=rows[0]['due_at'].replace('10:00', '12:00'))
         with self.assertRaises(Stop):
             lane2.validate_plan({**plan, 'rows': rows})
 

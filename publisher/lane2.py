@@ -27,7 +27,8 @@ from .github import GitHub, GitHubLedger
 from .media import verify_public
 
 TZ = ZoneInfo('Europe/Budapest')
-SLOTS = [(10, 0), (14, 0), (18, 0), (21, 30)]
+SLOTS = {'motivtated': [(10, 0), (12, 0), (14, 0), (16, 0), (18, 0), (21, 30)],   # 6 a day from Nov 8 (2026-11-07)
+         'imanivated': [(10, 0), (14, 0), (18, 0), (21, 30)]}
 PAGES = {'motivtated': ('youtube', 'twitter'), 'imanivated': ('youtube',)}
 RELEASES = {'motivtated': 'posting-inputs', 'imanivated': 'imanivated-inputs'}
 ID_RE = {'motivtated': r'M\d{6}', 'imanivated': r'I\d{6}'}
@@ -60,11 +61,11 @@ def validate_plan(plan):
         require(re.fullmatch(re.escape(row['clip_id'])+r'(\.r[0-9]{1,2})?\.zip', row['asset_name']), 'Bad asset name.')
         require(set(row['platforms']) <= set(PAGES[page]) and row['platforms'], 'Bad platforms.')
         due = parse_time(row['due_at']).astimezone(TZ)
-        require((due.hour, due.minute) in SLOTS and due.second == 0, 'Unexpected slot.')
+        require((due.hour, due.minute) in SLOTS[page] and due.second == 0, 'Unexpected slot.')
         require(page not in last or due > last[page], 'Times must increase per page.')
         last[page] = due
         per_day[(page, due.date())] = per_day.get((page, due.date()), 0)+1
-        require(per_day[(page, due.date())] <= len(SLOTS), 'More than 4 posts a day for one page.')
+        require(per_day[(page, due.date())] <= len(SLOTS[page]), 'Too many posts in one day for this page.')
         require(len(row.get('title') or '') <= 100, 'YouTube title too long.')
     return plan['rows']
 

@@ -59,3 +59,6 @@ A separate scheduler (`publisher/lane2.py`, workflow `lane2-publisher.yml`, hour
 - Queue: at most 6 pending per channel, at most 4 new clips per run. A missed slot is recorded as `skipped_missed`, never posted late. A create is never retried; Buffer refusals are recorded as `failed_before_submit`.
 - Media: uploaded as assets of the public `lane2-media` release in the media repo (public as soon as the upload returns, no Pages deploy wait or hourly build limit), deleted 2 h after all of the row's platforms have sent. The first clips (Nov 7) were hosted under `media2/` on Pages and are cleaned the same way.
 - Pause: set `enabled` to false in `lane2-schedule.json` or disable the workflow. Push any commit to branch `lane2-kick` to run it immediately.
+
+### Lane 2 pace change (2026-11-07, authorized by Blert)
+Motivtated (YouTube + X) moves to 6 posts a day at 10:00, 12:00, 14:00, 16:00, 18:00, 21:30 from Nov 8, ending Dec 11. The six posts already in Buffer keep their times; the other clips fill the free slots in the same order. Imanivated stays at 4 a day. The lane-2 queue now holds up to 10 posts per channel (Buffer free maximum).
