@@ -14,6 +14,7 @@ import re
 import subprocess
 import tempfile
 import urllib.parse
+import urllib.request
 import zipfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -126,38 +127,58 @@ def download_asset(gh, release, name, destination, expected_hash):
 
 
 class Media:
-    """Hosts clips under media2/ in the public Pages repo (separate from lane 1's media/)."""
+    """Hosts lane-2 clips as assets of a public release in the media repo.
+
+    GitHub Pages deploys lagged (and have an hourly build limit), so lane 2 no
+    longer pushes files to Pages: a release asset is public as soon as the
+    upload returns. Older records hosted on Pages (media2/) are still cleaned.
+    """
+    TAG = 'lane2-media'
+
     def __init__(self, gh, base):
         self.gh, self.base = gh, base.rstrip('/')
         repo = gh.request('GET')
         require(repo.get('private') is False, 'Media repo must be public.')
         self.branch = repo['default_branch']
+        self._release = None
 
-    @staticmethod
-    def key(cid, digest):
-        return f'media2/{cid}-{digest}.mp4'
-
-    def site_size(self):
-        tree = self.gh.request('GET', f'/git/trees/{urllib.parse.quote(self.branch, safe="")}?recursive=1')
-        require(not tree.get('truncated'), 'Cannot size the Pages site.')
-        return sum(i.get('size', 0) for i in tree['tree'] if i['type'] == 'blob')
+    def release(self):
+        if not self._release:
+            rel = self.gh.request('GET', f'/releases/tags/{self.TAG}', missing_ok=True)
+            if not rel:
+                rel = self.gh.request('POST', '/releases', {'tag_name': self.TAG, 'target_commitish': self.branch,
+                                      'name': 'Lane 2 media (temporary)', 'body': 'Clips waiting to post; removed after posting.',
+                                      'draft': False, 'prerelease': True})
+            self._release = rel
+        return self._release
 
     def ensure(self, path, cid, digest):
-        key = self.key(cid, digest)
-        raw = path.read_bytes()
-        git_sha = hashlib.sha1(f'blob {len(raw)}\0'.encode()+raw).hexdigest()
-        existing = self.gh.file(key, self.branch, True)
-        if existing:
-            require(existing.get('sha') == git_sha, 'Hosted file differs; refusing.')
+        name = f'{cid}-{digest[:16]}.mp4'
+        rel = self.release()
+        assets = self.gh.request('GET', f"/releases/{rel['id']}/assets?per_page=100")
+        found = [a for a in assets if a['name'] == name]
+        if not found:
+            raw = path.read_bytes()
+            require(hashlib.sha256(raw).hexdigest() == digest, 'Video changed before upload.')
+            url = f"https://uploads.github.com/repos/{self.gh.repo}/releases/{rel['id']}/assets?name={name}"
+            req = urllib.request.Request(url, data=raw, method='POST', headers={
+                **self.gh.headers, 'Content-Type': 'video/mp4', 'Content-Length': str(len(raw))})
+            try:
+                with urllib.request.urlopen(req, timeout=600) as r:
+                    asset = json.loads(r.read())
+            except Exception:
+                raise Stop('Release asset upload failed; nothing was posted.') from None
         else:
-            if self.site_size()+len(raw) > PAGES_CAP:
-                return None
-            self.gh.push_file(key, path, self.branch, f'Host lane-2 clip {cid}')
-            hosted = self.gh.file(key, self.branch, True)
-            require(hosted and hosted.get('sha') == git_sha, 'Pushed media mismatch.')
-        return {'key': key, 'url': self.base+'/'+key, 'git_sha': git_sha}
+            asset = found[0]
+        require(asset.get('state') == 'uploaded' and asset.get('size') == path.stat().st_size, 'Uploaded asset incomplete.')
+        if asset.get('digest'):
+            require(asset['digest'] == 'sha256:'+digest, 'Uploaded asset digest mismatch.')
+        return {'kind': 'release', 'asset_id': asset['id'], 'name': name, 'url': asset['browser_download_url']}
 
     def delete(self, media):
+        if media.get('kind') == 'release':
+            self.gh.request('DELETE', f"/releases/assets/{media['asset_id']}", missing_ok=True)
+            return
         existing = self.gh.file(media['key'], self.branch, True)
         if existing and existing.get('sha') == media['git_sha']:
             self.gh.request('DELETE', '/contents/'+media['key'],

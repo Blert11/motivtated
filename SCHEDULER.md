@@ -57,5 +57,5 @@ A separate scheduler (`publisher/lane2.py`, workflow `lane2-publisher.yml`, hour
 - YouTube posts carry `metadata.youtube` with a title (topic | speaker, max 100 chars), category 22 and madeForKids=false; the caption is the description.
 - Ledger: `lane2-state.json` on `publisher-state` (records, channels, `last_run`). Channels are discovered once: the YouTube channel whose name contains "iman" is Imanivated, the other YouTube channel and the X channel are Motivtated.
 - Queue: at most 6 pending per channel, at most 4 new clips per run. A missed slot is recorded as `skipped_missed`, never posted late. A create is never retried; Buffer refusals are recorded as `failed_before_submit`.
-- Media: hosted under `media2/` in the shared Pages repo (900 MB cap checked first), removed 2 h after all of the row's platforms have sent.
+- Media: uploaded as assets of the public `lane2-media` release in the media repo (public as soon as the upload returns, no Pages deploy wait or hourly build limit), deleted 2 h after all of the row's platforms have sent. The first clips (Nov 7) were hosted under `media2/` on Pages and are cleaned the same way.
 - Pause: set `enabled` to false in `lane2-schedule.json` or disable the workflow. Push any commit to branch `lane2-kick` to run it immediately.
