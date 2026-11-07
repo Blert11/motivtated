@@ -46,3 +46,16 @@ After Nov 15 11:00 the plan continues Nov 15 13:30 to Nov 24 16:00 at seven per 
 - The media hosting repo (Blert11/motivtated-media) had grown to ~3.45 GB of git history although only 12 files (~360 MB) were live, so Pages deploys lagged past the 3-minute public check and runs failed with `failed_before_submit` (nothing was submitted to Buffer).
 - Its `main` was replaced by a single orphan commit holding exactly the current tree (same paths and file contents, so every ledger media URL is unchanged).
 - `wait_for_public` now retries for about 12 minutes (49 × 15 s) and the workflow timeout is 60 minutes.
+
+## Lane 2: YouTube Shorts + X on the second Buffer account (2026-11-07, Claude, authorized by Blert)
+
+A separate scheduler (`publisher/lane2.py`, workflow `lane2-publisher.yml`, hourly at minute 47) posts through the SECOND Buffer account (secret `BUFFER_API_KEY_2`). It does not touch the TikTok/Instagram/Facebook scheduler, its plan or its ledger.
+
+- Plan: `lane2-schedule.json`. 4 posts a day per page at 10:00, 14:00, 18:00, 21:30 Europe/Budapest from Nov 8.
+  - Motivtated: every clip in the `posting-inputs` release (M000006-M000209, revised `.r2` packages where they exist), Tate alternating with the other speakers, to YouTube Shorts and X. Ends Dec 28.
+  - Imanivated: 30 vertical clips (batch 2 plus batch 1 clips 15-19) as `I000001`-`I000030` packages in the private `imanivated-inputs` release, to YouTube Shorts only. Ends Nov 15.
+- YouTube posts carry `metadata.youtube` with a title (topic | speaker, max 100 chars), category 22 and madeForKids=false; the caption is the description.
+- Ledger: `lane2-state.json` on `publisher-state` (records, channels, `last_run`). Channels are discovered once: the YouTube channel whose name contains "iman" is Imanivated, the other YouTube channel and the X channel are Motivtated.
+- Queue: at most 6 pending per channel, at most 4 new clips per run. A missed slot is recorded as `skipped_missed`, never posted late. A create is never retried; Buffer refusals are recorded as `failed_before_submit`.
+- Media: hosted under `media2/` in the shared Pages repo (900 MB cap checked first), removed 2 h after all of the row's platforms have sent.
+- Pause: set `enabled` to false in `lane2-schedule.json` or disable the workflow. Push any commit to branch `lane2-kick` to run it immediately.

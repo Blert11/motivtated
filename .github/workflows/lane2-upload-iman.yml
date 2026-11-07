@@ -1,0 +1,50 @@
+name: Upload Imanivated bundles
+# Pushing bundles/ + expected.json to claude-bundles-iman uploads them to the private imanivated-inputs release.
+# Never deletes or overwrites an asset.
+'on':
+  push:
+    branches: [claude-bundles-iman]
+permissions:
+  contents: write
+concurrency:
+  group: motivtated-bundle-upload
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Verify and upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$(gh api repos/$REPO --jq .private)" = "true"
+          gh api repos/$REPO/releases/tags/imanivated-inputs >/dev/null 2>&1 || \
+            gh api repos/$REPO/releases -f tag_name=imanivated-inputs -f target_commitish=main \
+              -f name='Imanivated posting inputs' -f body='Private bundles for lane 2' -F draft=false -F prerelease=true >/dev/null
+          python3 - <<'PY'
+          import hashlib, json, pathlib, re
+          exp = json.loads(pathlib.Path('expected.json').read_text())
+          for name, digest in exp.items():
+              assert re.fullmatch(r'I\d{6}\.zip', name), name
+              assert hashlib.sha256(pathlib.Path('bundles', name).read_bytes()).hexdigest() == digest, name
+          print('verified', len(exp))
+          PY
+          existing=$(gh api repos/$REPO/releases/tags/imanivated-inputs --jq '.assets[] | "\(.name) \(.digest)"')
+          for f in $(python3 -c "import json;print(' '.join(json.load(open('expected.json'))))"); do
+            want="sha256:$(python3 -c "import json;print(json.load(open('expected.json'))['$f'])")"
+            have=$(echo "$existing" | awk -v n="$f" '$1==n{print $2}')
+            if [ -n "$have" ]; then
+              test "$have" = "$want" || { echo "$f exists with a different digest"; exit 1; }
+              echo "$f already uploaded"; continue
+            fi
+            gh release upload imanivated-inputs "bundles/$f" --repo "$REPO"
+            got=$(gh api repos/$REPO/releases/tags/imanivated-inputs --jq ".assets[] | select(.name==\"$f\") | .digest")
+            test "$got" = "$want" || { echo "$f verification failed"; exit 1; }
+            echo "$f uploaded and verified"
+          done
