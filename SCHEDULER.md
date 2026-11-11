@@ -62,3 +62,6 @@ A separate scheduler (`publisher/lane2.py`, workflow `lane2-publisher.yml`, hour
 
 ### Lane 2 pace change (2026-11-07, authorized by Blert)
 Motivtated (YouTube + X) moves to 6 posts a day at 10:00, 12:00, 14:00, 16:00, 18:00, 21:30 from Nov 8, ending Dec 11. The six posts already in Buffer keep their times; the other clips fill the free slots in the same order. Imanivated stays at 4 a day. The lane-2 queue now holds up to 10 posts per channel (Buffer free maximum).
+
+### Lane 2: Imanivated batch 3 (2026-11-11, authorized by Blert)
+47 new Akhi Ayman clips (I000031-I000077, private `imanivated-inputs` release) go to Imanivated YouTube Shorts at 5 a day (10:00, 12:00, 14:00, 18:00, 21:30), from Nov 15 18:00 to Nov 24. Imanivated clips may run up to 90 s (YouTube Shorts limit is 3 min); Motivtated keeps the 76 s check.

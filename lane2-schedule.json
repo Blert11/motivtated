@@ -3,7 +3,7 @@
  "enabled": true,
  "timezone": "Europe/Budapest",
  "authorized_on": "2026-11-07",
- "note": "Second Buffer account: Motivtated YouTube Shorts + X (all clips) 6 a day at 10:00, 12:00, 14:00, 16:00, 18:00, 21:30; Imanivated YouTube Shorts 4 a day at 10:00, 14:00, 18:00, 21:30.",
+ "note": "Second Buffer account: Motivtated YouTube Shorts + X (all clips) 6 a day at 10:00, 12:00, 14:00, 16:00, 18:00, 21:30; Imanivated YouTube Shorts 4 a day at 10:00, 14:00, 18:00, 21:30. Imanivated batch 3 (I000031-I000077, Akhi Ayman) added 2026-11-11 at 5 a day (10:00, 12:00, 14:00, 18:00, 21:30) from Nov 15 18:00 to Nov 24.",
  "max_pending_per_channel": 10,
  "rows": [
   {
@@ -965,6 +965,18 @@
    "title": "Live a life worth talking about | Andrew Tate"
   },
   {
+   "key": "imanivated:I000031",
+   "page": "imanivated",
+   "clip_id": "I000031",
+   "asset_name": "I000031.zip",
+   "bundle_sha256": "51788b6bf31ea3fac16c142363df4450ae25d9848b6e8ddceaafd53cd3d48ffd",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-15T18:00:00+01:00",
+   "title": "Your phone updates every night. When did your heart? | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000044",
    "page": "motivtated",
    "clip_id": "M000044",
@@ -976,6 +988,18 @@
    ],
    "due_at": "2026-11-15T18:00:00+01:00",
    "title": "The price tag | Alex Hormozi"
+  },
+  {
+   "key": "imanivated:I000032",
+   "page": "imanivated",
+   "clip_id": "I000032",
+   "asset_name": "I000032.zip",
+   "bundle_sha256": "d6fca10362d7bc3ee3a82b69728b71ae3934d1855917afc5c2eb4ac3b3a8ed83",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-15T21:30:00+01:00",
+   "title": "The day he saw his mother searched at the prison gate | Akhi Ayman"
   },
   {
    "key": "motivtated:M000029",
@@ -991,6 +1015,18 @@
    "title": "What the ring teaches you | Andrew Tate"
   },
   {
+   "key": "imanivated:I000033",
+   "page": "imanivated",
+   "clip_id": "I000033",
+   "asset_name": "I000033.zip",
+   "bundle_sha256": "6283ef4eb98815cceab2f5ddb8d93cb6cac997869edd5fd1464568c38800c8b2",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-16T10:00:00+01:00",
+   "title": "Allah is unlimited. Stop making small duas | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000120",
    "page": "motivtated",
    "clip_id": "M000120",
@@ -1004,6 +1040,18 @@
    "title": "You are the author of your life | Matthew McConaughey"
   },
   {
+   "key": "imanivated:I000034",
+   "page": "imanivated",
+   "clip_id": "I000034",
+   "asset_name": "I000034.zip",
+   "bundle_sha256": "da6266c109237a18c67c5b4f21f13f3f2056919b0d7729c7ea85c427a44e092d",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-16T12:00:00+01:00",
+   "title": "The difference between us and them is salah | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000030",
    "page": "motivtated",
    "clip_id": "M000030",
@@ -1015,6 +1063,18 @@
    ],
    "due_at": "2026-11-16T12:00:00+01:00",
    "title": "Make your own luck | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000035",
+   "page": "imanivated",
+   "clip_id": "I000035",
+   "asset_name": "I000035.zip",
+   "bundle_sha256": "3f97fa1cf8517cb1f57dc1c0f5509fcdb7e60453bbb2ccbe951ad1ba00e4f8ff",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-16T14:00:00+01:00",
+   "title": "He lost his mother. Don't wait to love yours | Akhi Ayman"
   },
   {
    "key": "motivtated:M000045",
@@ -1043,6 +1103,18 @@
    "title": "Use the time you have | Andrew Tate"
   },
   {
+   "key": "imanivated:I000036",
+   "page": "imanivated",
+   "clip_id": "I000036",
+   "asset_name": "I000036.zip",
+   "bundle_sha256": "6f70f404a27cd8d8a78858e76a6336ff48e4b1727ab7726fa063feb46f185d61",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-16T18:00:00+01:00",
+   "title": "Hafiz of the Quran, but too dark for your daughter? | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000121",
    "page": "motivtated",
    "clip_id": "M000121",
@@ -1054,6 +1126,18 @@
    ],
    "due_at": "2026-11-16T18:00:00+01:00",
    "title": "Life is a box of chocolates | Jack Ma"
+  },
+  {
+   "key": "imanivated:I000037",
+   "page": "imanivated",
+   "clip_id": "I000037",
+   "asset_name": "I000037.zip",
+   "bundle_sha256": "0d2379490d6094c40181db0acbe33d1d8ae67bd915c235435687ce865a576eba",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-16T21:30:00+01:00",
+   "title": "One phone call from his mother changed his whole life | Akhi Ayman"
   },
   {
    "key": "motivtated:M000066",
@@ -1069,6 +1153,18 @@
    "title": "Take responsibility for your life | Andrew Tate"
   },
   {
+   "key": "imanivated:I000038",
+   "page": "imanivated",
+   "clip_id": "I000038",
+   "asset_name": "I000038.zip",
+   "bundle_sha256": "d6506f0c34421a99060854dda803cb6694e5d44cb7d2acf20e2a7205d361697f",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-17T10:00:00+01:00",
+   "title": "Give it up for Allah and watch the doors open | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000046",
    "page": "motivtated",
    "clip_id": "M000046",
@@ -1082,6 +1178,18 @@
    "title": "Confidence comes from preparation | Kobe Bryant"
   },
   {
+   "key": "imanivated:I000039",
+   "page": "imanivated",
+   "clip_id": "I000039",
+   "asset_name": "I000039.zip",
+   "bundle_sha256": "71fd88f90c315e188335f8dbb10d8c4bbeddbaf982f7ef02dedd815d07a81bcb",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-17T12:00:00+01:00",
+   "title": "Five appointments a day. Would you miss them for money? | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000067",
    "page": "motivtated",
    "clip_id": "M000067",
@@ -1093,6 +1201,18 @@
    ],
    "due_at": "2026-11-17T12:00:00+01:00",
    "title": "Turn frustration into a decision | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000040",
+   "page": "imanivated",
+   "clip_id": "I000040",
+   "asset_name": "I000040.zip",
+   "bundle_sha256": "0e265774062bc4ffc67ad9232beca39c08c9507ecead934caf473975e18da9ab",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-17T14:00:00+01:00",
+   "title": "Music and the Quran can't live in the same heart | Akhi Ayman"
   },
   {
    "key": "motivtated:M000122",
@@ -1121,6 +1241,18 @@
    "title": "Give your anger a useful outlet | Andrew Tate"
   },
   {
+   "key": "imanivated:I000041",
+   "page": "imanivated",
+   "clip_id": "I000041",
+   "asset_name": "I000041.zip",
+   "bundle_sha256": "a69ef89918a7554468d4b4a4d2c612fbb2a4b80f14be3289a8bfa242499c00c7",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-17T18:00:00+01:00",
+   "title": "Pause this. Message your mum and dad right now | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000047",
    "page": "motivtated",
    "clip_id": "M000047",
@@ -1132,6 +1264,18 @@
    ],
    "due_at": "2026-11-17T18:00:00+01:00",
    "title": "No one else will follow | Alex Hormozi"
+  },
+  {
+   "key": "imanivated:I000042",
+   "page": "imanivated",
+   "clip_id": "I000042",
+   "asset_name": "I000042.zip",
+   "bundle_sha256": "40c8443531587409334851e5282e8ceb229ab9e3d235bdde117c034bd6e9a988",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-17T21:30:00+01:00",
+   "title": "There is no place you can sin where Allah can't see you | Akhi Ayman"
   },
   {
    "key": "motivtated:M000069",
@@ -1147,6 +1291,18 @@
    "title": "Raw action beats waiting | Andrew Tate"
   },
   {
+   "key": "imanivated:I000043",
+   "page": "imanivated",
+   "clip_id": "I000043",
+   "asset_name": "I000043.zip",
+   "bundle_sha256": "3630db8c35514475caa298fba177ed6ee3b12bf2ed614356a86e979ba64ddf5a",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-18T10:00:00+01:00",
+   "title": "The money, the fame, the cars. Still miserable | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000123",
    "page": "motivtated",
    "clip_id": "M000123",
@@ -1160,6 +1316,18 @@
    "title": "Failure is just testing | Dan Pena"
   },
   {
+   "key": "imanivated:I000044",
+   "page": "imanivated",
+   "clip_id": "I000044",
+   "asset_name": "I000044.zip",
+   "bundle_sha256": "0483092973463b8a8740ac26a55cd7123e8cbba24697c5aed7bed50b06fc842e",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-18T12:00:00+01:00",
+   "title": "Rejected four years in a row. Allah had a bigger plan | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000070",
    "page": "motivtated",
    "clip_id": "M000070",
@@ -1171,6 +1339,18 @@
    ],
    "due_at": "2026-11-18T12:00:00+01:00",
    "title": "Discipline moves you forward | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000045",
+   "page": "imanivated",
+   "clip_id": "I000045",
+   "asset_name": "I000045.zip",
+   "bundle_sha256": "cc53c5401143a9a65320e8b4e4f08a054dfc4e4d740a35d5ef6e86935f704a89",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-18T14:00:00+01:00",
+   "title": "You come to the talks, but you don't pray? | Akhi Ayman"
   },
   {
    "key": "motivtated:M000048",
@@ -1199,6 +1379,18 @@
    "title": "Answer doubt with progress | Andrew Tate"
   },
   {
+   "key": "imanivated:I000046",
+   "page": "imanivated",
+   "clip_id": "I000046",
+   "asset_name": "I000046.zip",
+   "bundle_sha256": "eefc00d4acd7947de705f26db0d8e2d6e33354c395b1d1f0095450c603a8e844",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-18T18:00:00+01:00",
+   "title": "He was on his way to sin. Then he prayed Isha | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000124",
    "page": "motivtated",
    "clip_id": "M000124",
@@ -1210,6 +1402,18 @@
    ],
    "due_at": "2026-11-18T18:00:00+01:00",
    "title": "Great value in being alone | Matthew McConaughey"
+  },
+  {
+   "key": "imanivated:I000047",
+   "page": "imanivated",
+   "clip_id": "I000047",
+   "asset_name": "I000047.zip",
+   "bundle_sha256": "a7e22f406042464c5bd0e0e9a4162c35840800fdcfb51a61e85324509c21676b",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-18T21:30:00+01:00",
+   "title": "Nine months she carried you. Pick up her call | Akhi Ayman"
   },
   {
    "key": "motivtated:M000072",
@@ -1225,6 +1429,18 @@
    "title": "Stop settling for ordinary | Andrew Tate"
   },
   {
+   "key": "imanivated:I000048",
+   "page": "imanivated",
+   "clip_id": "I000048",
+   "asset_name": "I000048.zip",
+   "bundle_sha256": "d231c34ba9e750e7337ba5110c9d0ef1353b78cf73f7341a3c1ad57a7b534b8c",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-19T10:00:00+01:00",
+   "title": "Stabbed over 100 times. Tahajjud is his weapon | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000049",
    "page": "motivtated",
    "clip_id": "M000049",
@@ -1238,6 +1454,18 @@
    "title": "Who are you in a year | Motivation"
   },
   {
+   "key": "imanivated:I000049",
+   "page": "imanivated",
+   "clip_id": "I000049",
+   "asset_name": "I000049.zip",
+   "bundle_sha256": "154570160b1c5d2e62fdbaacb5d92e892bc9c9a896537abb78c9b9c11ccc1f18",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-19T12:00:00+01:00",
+   "title": "Smiling for the photo, strangers at the table | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000073",
    "page": "motivtated",
    "clip_id": "M000073",
@@ -1249,6 +1477,18 @@
    ],
    "due_at": "2026-11-19T12:00:00+01:00",
    "title": "Ask how it can be done | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000050",
+   "page": "imanivated",
+   "clip_id": "I000050",
+   "asset_name": "I000050.zip",
+   "bundle_sha256": "ec24b127dc47fb7225337f2fdadc0c143b4b3be6f82fe05e9c4ba61f6427353d",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-19T14:00:00+01:00",
+   "title": "Is it a test, or is it your own sins? | Akhi Ayman"
   },
   {
    "key": "motivtated:M000125",
@@ -1277,6 +1517,18 @@
    "title": "Discipline does not wait for a mood | Andrew Tate"
   },
   {
+   "key": "imanivated:I000051",
+   "page": "imanivated",
+   "clip_id": "I000051",
+   "asset_name": "I000051.zip",
+   "bundle_sha256": "a6572bced0f1d7ede98259f3269a8125a6c393a19f5339421a21335ad2049491",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-19T18:00:00+01:00",
+   "title": "Trying to save others, don't lose yourself | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000050",
    "page": "motivtated",
    "clip_id": "M000050",
@@ -1288,6 +1540,18 @@
    ],
    "due_at": "2026-11-19T18:00:00+01:00",
    "title": "400 trillion to one | Mel Robbins"
+  },
+  {
+   "key": "imanivated:I000052",
+   "page": "imanivated",
+   "clip_id": "I000052",
+   "asset_name": "I000052.zip",
+   "bundle_sha256": "ced27232ded08b1b6b9b1c2d41e57ae9a540f0d4487b24818b98e2911f254500",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-19T21:30:00+01:00",
+   "title": "Raise the next Muhammad al-Fatih, not an iPad kid | Akhi Ayman"
   },
   {
    "key": "motivtated:M000075",
@@ -1303,6 +1567,18 @@
    "title": "Improve the person behind the plan | Andrew Tate"
   },
   {
+   "key": "imanivated:I000053",
+   "page": "imanivated",
+   "clip_id": "I000053",
+   "asset_name": "I000053.zip",
+   "bundle_sha256": "2daf1ade573e803b2a5f0ffc25858528a443957255ea840aa3a11b3981b30ee2",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-20T10:00:00+01:00",
+   "title": "His dad can't walk. Yours can. Go out with him | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000126",
    "page": "motivtated",
    "clip_id": "M000126",
@@ -1316,6 +1592,18 @@
    "title": "You also have 24 hours | Motivation"
   },
   {
+   "key": "imanivated:I000054",
+   "page": "imanivated",
+   "clip_id": "I000054",
+   "asset_name": "I000054.zip",
+   "bundle_sha256": "65b75faf553e3ae6a8b68efd27c0fd7a43d8c2888301791cd3850ed6f25dbedc",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-20T12:00:00+01:00",
+   "title": "My heart is good isn't a reason not to pray | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000076",
    "page": "motivtated",
    "clip_id": "M000076",
@@ -1327,6 +1615,18 @@
    ],
    "due_at": "2026-11-20T12:00:00+01:00",
    "title": "Find strength in your name | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000055",
+   "page": "imanivated",
+   "clip_id": "I000055",
+   "asset_name": "I000055.zip",
+   "bundle_sha256": "06d67cea9ac553d9e394e21867ff927d4bccd17fb385dac0e4af464c45f70409",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-20T14:00:00+01:00",
+   "title": "Reflect. Repent. Return | Akhi Ayman"
   },
   {
    "key": "motivtated:M000051",
@@ -1355,6 +1655,18 @@
    "title": "Honor the people who raised you | Andrew Tate"
   },
   {
+   "key": "imanivated:I000056",
+   "page": "imanivated",
+   "clip_id": "I000056",
+   "asset_name": "I000056.zip",
+   "bundle_sha256": "d9b9cd862cfa1ae6aac35f571d70f436c31a177b9f92975ffac5efed29a42294",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-20T18:00:00+01:00",
+   "title": "Whatever you've done, don't lose hope in His mercy | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000127",
    "page": "motivtated",
    "clip_id": "M000127",
@@ -1366,6 +1678,18 @@
    ],
    "due_at": "2026-11-20T18:00:00+01:00",
    "title": "Practice being successful | Dan Pena"
+  },
+  {
+   "key": "imanivated:I000057",
+   "page": "imanivated",
+   "clip_id": "I000057",
+   "asset_name": "I000057.zip",
+   "bundle_sha256": "ed27ec815a987617b72543cbb59f12c43e46b631983fae06bda830a7b3ee45d0",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-20T21:30:00+01:00",
+   "title": "Allah rewards you even for not doing the sin | Akhi Ayman"
   },
   {
    "key": "motivtated:M000078",
@@ -1381,6 +1705,18 @@
    "title": "Money is a tool | Andrew Tate"
   },
   {
+   "key": "imanivated:I000058",
+   "page": "imanivated",
+   "clip_id": "I000058",
+   "asset_name": "I000058.zip",
+   "bundle_sha256": "124718eb132f89ba2fcc439bcc4bb8b606f4682b8fc62f14a383dc1aa707e7c5",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-21T10:00:00+01:00",
+   "title": "Her last dua: before I become a burden on my kids. | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000052",
    "page": "motivtated",
    "clip_id": "M000052",
@@ -1394,6 +1730,18 @@
    "title": "Have an iron will | Motivation"
   },
   {
+   "key": "imanivated:I000059",
+   "page": "imanivated",
+   "clip_id": "I000059",
+   "asset_name": "I000059.zip",
+   "bundle_sha256": "89f5fa098e834be917fc92d19e649d4f8ce64e49d2c134d64c5f97a148326503",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-21T12:00:00+01:00",
+   "title": "Baby steps are better than no steps | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000079",
    "page": "motivtated",
    "clip_id": "M000079",
@@ -1405,6 +1753,18 @@
    ],
    "due_at": "2026-11-21T12:00:00+01:00",
    "title": "Stop rehearsing defeat | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000060",
+   "page": "imanivated",
+   "clip_id": "I000060",
+   "asset_name": "I000060.zip",
+   "bundle_sha256": "94ccb3c07f266d749c04432c610bf828c42054e3f157b02e55331df84a418979",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-21T14:00:00+01:00",
+   "title": "Stop blaming the imam. Start with yourself | Akhi Ayman"
   },
   {
    "key": "motivtated:M000128",
@@ -1433,6 +1793,18 @@
    "title": "Build systems that outlast motivation | Andrew Tate"
   },
   {
+   "key": "imanivated:I000061",
+   "page": "imanivated",
+   "clip_id": "I000061",
+   "asset_name": "I000061.zip",
+   "bundle_sha256": "a3643c8b9724ec7a2cd30b918ce6ef69f2a653182aa452fe37ae660b2a508a7c",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-21T18:00:00+01:00",
+   "title": "He led prayers in the prison yard. They moved him out | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000053",
    "page": "motivtated",
    "clip_id": "M000053",
@@ -1444,6 +1816,18 @@
    ],
    "due_at": "2026-11-21T18:00:00+01:00",
    "title": "The 300 pound guy | David Goggins"
+  },
+  {
+   "key": "imanivated:I000062",
+   "page": "imanivated",
+   "clip_id": "I000062",
+   "asset_name": "I000062.zip",
+   "bundle_sha256": "ce22c820c7162e4ea4e0bdf155c8ec72cc56778664c2f982d264741c2493e632",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-21T21:30:00+01:00",
+   "title": "One sincere dua and Allah calls you ya ibadi | Akhi Ayman"
   },
   {
    "key": "motivtated:M000081",
@@ -1459,6 +1843,18 @@
    "title": "Invest in your ability | Andrew Tate"
   },
   {
+   "key": "imanivated:I000063",
+   "page": "imanivated",
+   "clip_id": "I000063",
+   "asset_name": "I000063.zip",
+   "bundle_sha256": "966de8bd59ad358525a01f6c43b9046d160f7beea0f2b31d32d624bde53823cc",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-22T10:00:00+01:00",
+   "title": "Want to change the world? Put Allah first | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000129",
    "page": "motivtated",
    "clip_id": "M000129",
@@ -1472,6 +1868,18 @@
    "title": "Crazy but not stupid | Jack Ma"
   },
   {
+   "key": "imanivated:I000064",
+   "page": "imanivated",
+   "clip_id": "I000064",
+   "asset_name": "I000064.zip",
+   "bundle_sha256": "7d7b4d01ad68633b2dcd0690dc35a8dc22352a54472049f964aaf3ec35d83fea",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-22T12:00:00+01:00",
+   "title": "You don't see your father's struggle | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000082",
    "page": "motivtated",
    "clip_id": "M000082",
@@ -1483,6 +1891,18 @@
    ],
    "due_at": "2026-11-22T12:00:00+01:00",
    "title": "Stand firm under criticism | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000065",
+   "page": "imanivated",
+   "clip_id": "I000065",
+   "asset_name": "I000065.zip",
+   "bundle_sha256": "1bb5c5ee217eaa5bcf53e1c023e3f3a79391babfb38ae2c98648c877dfc381ec",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-22T14:00:00+01:00",
+   "title": "Compare yourself only with who you were yesterday | Akhi Ayman"
   },
   {
    "key": "motivtated:M000054",
@@ -1511,6 +1931,18 @@
    "title": "Let competition make you stronger | Andrew Tate"
   },
   {
+   "key": "imanivated:I000066",
+   "page": "imanivated",
+   "clip_id": "I000066",
+   "asset_name": "I000066.zip",
+   "bundle_sha256": "78d6c5196342daf8507925f9dae203581d1efb9fbbce7e64dcd7bcc6b2048bda",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-22T18:00:00+01:00",
+   "title": "He started praying at work. His boss respected him more | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000130",
    "page": "motivtated",
    "clip_id": "M000130",
@@ -1522,6 +1954,18 @@
    ],
    "due_at": "2026-11-22T18:00:00+01:00",
    "title": "Five years down the line | Motivation"
+  },
+  {
+   "key": "imanivated:I000067",
+   "page": "imanivated",
+   "clip_id": "I000067",
+   "asset_name": "I000067.zip",
+   "bundle_sha256": "32f7471c54ba0cd3dd8f32e27bb3e9199b7cc615e15fd7f85cf1a0e72d5871a4",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-22T21:30:00+01:00",
+   "title": "Reverts memorise more Quran than we do | Akhi Ayman"
   },
   {
    "key": "motivtated:M000084",
@@ -1537,6 +1981,18 @@
    "title": "Study why people buy | Andrew Tate"
   },
   {
+   "key": "imanivated:I000068",
+   "page": "imanivated",
+   "clip_id": "I000068",
+   "asset_name": "I000068.zip",
+   "bundle_sha256": "1e67225afa2931b150e210028867a0d6aadc67d6960962f0358fbc43a38aede0",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-23T10:00:00+01:00",
+   "title": "Stop giving pieces of yourself when you're broken | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000055",
    "page": "motivtated",
    "clip_id": "M000055",
@@ -1550,6 +2006,18 @@
    "title": "If you quit now | Motivation"
   },
   {
+   "key": "imanivated:I000069",
+   "page": "imanivated",
+   "clip_id": "I000069",
+   "asset_name": "I000069.zip",
+   "bundle_sha256": "9ae436ee9e2070686ad6b34789216f25fca98b316970d5e456e9edfec7e14eea",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-23T12:00:00+01:00",
+   "title": "Find peace in one salah and you'll want them all | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000085",
    "page": "motivtated",
    "clip_id": "M000085",
@@ -1561,6 +2029,18 @@
    ],
    "due_at": "2026-11-23T12:00:00+01:00",
    "title": "Difficulty protects the reward | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000070",
+   "page": "imanivated",
+   "clip_id": "I000070",
+   "asset_name": "I000070.zip",
+   "bundle_sha256": "e8a31bf3eb3a7b76591c787890af482dcdbf12bc333735e431f8a55101b07f03",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-23T14:00:00+01:00",
+   "title": "Maybe your friends aren't the problem. Maybe it's you | Akhi Ayman"
   },
   {
    "key": "motivtated:M000131",
@@ -1589,6 +2069,18 @@
    "title": "Keep working without applause | Andrew Tate"
   },
   {
+   "key": "imanivated:I000071",
+   "page": "imanivated",
+   "clip_id": "I000071",
+   "asset_name": "I000071.zip",
+   "bundle_sha256": "6e5211f1f8c7ad52c33f6131de08ebb332ea6ccfb2e629126ef2d63bf23ce4a6",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-23T18:00:00+01:00",
+   "title": "Football for hours, but salah feels long? | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000056",
    "page": "motivtated",
    "clip_id": "M000056",
@@ -1600,6 +2092,18 @@
    ],
    "due_at": "2026-11-23T18:00:00+01:00",
    "title": "You cannot change your life | David Goggins"
+  },
+  {
+   "key": "imanivated:I000072",
+   "page": "imanivated",
+   "clip_id": "I000072",
+   "asset_name": "I000072.zip",
+   "bundle_sha256": "f148574d69e28fdc22c995e36fa09350d5df6338f568178a8f24b7e73f1284ed",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-23T21:30:00+01:00",
+   "title": "The Quran is the high that gets you to Jannah | Akhi Ayman"
   },
   {
    "key": "motivtated:M000087",
@@ -1615,6 +2119,18 @@
    "title": "Wake up with responsibility | Andrew Tate"
   },
   {
+   "key": "imanivated:I000073",
+   "page": "imanivated",
+   "clip_id": "I000073",
+   "asset_name": "I000073.zip",
+   "bundle_sha256": "3ea33d6e57a35f850f8966219a98186dc09735bd85a49c53834b9764e5076374",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-24T10:00:00+01:00",
+   "title": "Go home and wash your mother's feet tonight | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000132",
    "page": "motivtated",
    "clip_id": "M000132",
@@ -1628,6 +2144,18 @@
    "title": "Battery powered green light | Matthew McConaughey"
   },
   {
+   "key": "imanivated:I000074",
+   "page": "imanivated",
+   "clip_id": "I000074",
+   "asset_name": "I000074.zip",
+   "bundle_sha256": "a0a83d177badf1f2c745e8d1ef3769d35f0e81e1b9b90f7ab950c66e591e0b53",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-24T12:00:00+01:00",
+   "title": "Don't walk to Allah. Run | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000088",
    "page": "motivtated",
    "clip_id": "M000088",
@@ -1639,6 +2167,18 @@
    ],
    "due_at": "2026-11-24T12:00:00+01:00",
    "title": "Stop expecting easy | Andrew Tate"
+  },
+  {
+   "key": "imanivated:I000075",
+   "page": "imanivated",
+   "clip_id": "I000075",
+   "asset_name": "I000075.zip",
+   "bundle_sha256": "300f8ffc3e69d2e2b45eb809b2d16d818d662e2f86ef55164a2e4268783184ec",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-24T14:00:00+01:00",
+   "title": "The worst evil eye is your own | Akhi Ayman"
   },
   {
    "key": "motivtated:M000057",
@@ -1667,6 +2207,18 @@
    "title": "Choose constructive discomfort | Andrew Tate"
   },
   {
+   "key": "imanivated:I000076",
+   "page": "imanivated",
+   "clip_id": "I000076",
+   "asset_name": "I000076.zip",
+   "bundle_sha256": "f35d5e8494eb3766dec5cfb7177ad5ff625f85e408b66cd61df4942a610213d2",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-24T18:00:00+01:00",
+   "title": "They had men like me. I have men like you. | Akhi Ayman"
+  },
+  {
    "key": "motivtated:M000133",
    "page": "motivtated",
    "clip_id": "M000133",
@@ -1678,6 +2230,18 @@
    ],
    "due_at": "2026-11-24T18:00:00+01:00",
    "title": "Opportunity is where people complain | Jack Ma"
+  },
+  {
+   "key": "imanivated:I000077",
+   "page": "imanivated",
+   "clip_id": "I000077",
+   "asset_name": "I000077.zip",
+   "bundle_sha256": "0063496366618db1eee52351158e39a7ec3bf707a27915686dabbb147506aebc",
+   "platforms": [
+    "youtube"
+   ],
+   "due_at": "2026-11-24T21:30:00+01:00",
+   "title": "Deleting your history doesn't delete it with Allah | Akhi Ayman"
   },
   {
    "key": "motivtated:M000090",

@@ -20,7 +20,7 @@ def validate_caption(raw):
     return text
 
 
-def probe(video):
+def probe(video, max_seconds=76):
     try:
         p = subprocess.run(['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(video)],
                            capture_output=True, text=True, encoding='utf-8', timeout=60, check=True)
@@ -32,7 +32,7 @@ def probe(video):
         raise Stop('ffprobe failed or media lacks video/audio. Install ffmpeg and inspect the clip.') from None
     require(v['codec_name'] == 'h264' and a['codec_name'] == 'aac', 'Posting requires H.264 video and AAC audio.')
     require((v['width'], v['height']) == (1080, 1920), 'Expected a 1080x1920 portrait export.')
-    require(3 <= duration <= 76, 'Expected clip duration between 3 and approximately 75 seconds.')
+    require(3 <= duration <= max_seconds, f'Expected clip duration between 3 and {max_seconds} seconds.')
     return {'duration_seconds': duration, 'video': 'h264', 'audio': 'aac', 'width': 1080, 'height': 1920}
 
 
