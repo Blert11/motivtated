@@ -29,10 +29,15 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
       - name: Ensure ffprobe is installed
+        timeout-minutes: 12
         run: |
           if ! command -v ffprobe >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
+            # apt mirrors have hung for over an hour on some runners; fall back to a static build
+            if ! (timeout 240 sudo apt-get update -o Acquire::Retries=2 && timeout 300 sudo apt-get install -y --no-install-recommends ffmpeg); then
+              python -m pip install static-ffmpeg
+              dir=$(python -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[1]))")
+              echo "$dir" >> "$GITHUB_PATH"
+            fi
           fi
       - name: Offline regression tests
         run: python -m unittest discover -s tests -v

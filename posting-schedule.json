@@ -922,736 +922,736 @@
       "clip_id": "M000054",
       "source": "github-release",
       "bundle_sha256": "eb72194fdef95a48960a4d6ed2065e88a1fc40773f6b1560f2fd874ae89b7702",
-      "due_at": "2026-11-11T16:00:00+01:00",
-      "local_time": "2026-11-11T16:00:00+01:00",
+      "due_at": "2026-11-11T18:30:00+01:00",
+      "local_time": "2026-11-11T18:30:00+01:00",
       "filename": "23. clip motivation - this is what hard feels like.mp4"
     },
     {
       "clip_id": "M000130",
       "source": "github-release",
       "bundle_sha256": "30b4911d5210e54d26467eb14f232b02288b9b77b0e3af5a88933dd4d31c54c1",
-      "due_at": "2026-11-11T18:30:00+01:00",
-      "local_time": "2026-11-11T18:30:00+01:00",
+      "due_at": "2026-11-11T20:30:00+01:00",
+      "local_time": "2026-11-11T20:30:00+01:00",
       "filename": "26. clip motivation - five years down the line.mp4"
     },
     {
       "clip_id": "M000055",
       "source": "github-release",
       "bundle_sha256": "35c796ba69a93b3c44f9904f37baa4676522c89536be886b68d36805626c4fc2",
-      "due_at": "2026-11-11T20:30:00+01:00",
-      "local_time": "2026-11-11T20:30:00+01:00",
+      "due_at": "2026-11-11T22:30:00+01:00",
+      "local_time": "2026-11-11T22:30:00+01:00",
       "filename": "24. clip motivation - if you quit now.mp4"
     },
     {
       "clip_id": "M000131",
       "source": "github-release",
       "bundle_sha256": "14143fc53850971a3e0d44dfd32697719615cfd6664e7918a752dbfd3bce94da",
-      "due_at": "2026-11-11T22:30:00+01:00",
-      "local_time": "2026-11-11T22:30:00+01:00",
+      "due_at": "2026-11-12T09:00:00+01:00",
+      "local_time": "2026-11-12T09:00:00+01:00",
       "filename": "27. clip dan pena - go to stores you cant afford.mp4"
     },
     {
       "clip_id": "M000056",
       "source": "github-release",
       "bundle_sha256": "4803857077790c418ae30100632cc46a63f4192618c34b957abfd23b138924d4",
-      "due_at": "2026-11-12T09:00:00+01:00",
-      "local_time": "2026-11-12T09:00:00+01:00",
+      "due_at": "2026-11-12T11:00:00+01:00",
+      "local_time": "2026-11-12T11:00:00+01:00",
       "filename": "25. clip goggins - you cannot change your life.mp4"
     },
     {
       "clip_id": "M000132",
       "source": "github-release",
       "bundle_sha256": "b98d1161fc972059d8135fd256afca5aba8c410ca4a9ca2eaf01a657b4201185",
-      "due_at": "2026-11-12T11:00:00+01:00",
-      "local_time": "2026-11-12T11:00:00+01:00",
+      "due_at": "2026-11-12T13:30:00+01:00",
+      "local_time": "2026-11-12T13:30:00+01:00",
       "filename": "28. clip mcconaughey - battery powered green light.mp4"
     },
     {
       "clip_id": "M000057",
       "source": "github-release",
       "bundle_sha256": "52f7707094e389e9ccd1b8304792292239e71c1d6da5bbcdf79ff1a28be0c6d0",
-      "due_at": "2026-11-12T13:30:00+01:00",
-      "local_time": "2026-11-12T13:30:00+01:00",
+      "due_at": "2026-11-12T16:00:00+01:00",
+      "local_time": "2026-11-12T16:00:00+01:00",
       "filename": "26. clip motivation - just show up.mp4"
     },
     {
       "clip_id": "M000133",
       "source": "github-release",
       "bundle_sha256": "3b1513d9d8f71762800bff60542a08ba578008351f4e4fcb5e53574cdc289194",
-      "due_at": "2026-11-12T16:00:00+01:00",
-      "local_time": "2026-11-12T16:00:00+01:00",
+      "due_at": "2026-11-12T18:30:00+01:00",
+      "local_time": "2026-11-12T18:30:00+01:00",
       "filename": "29. clip jack ma - opportunity is where people complain.mp4"
     },
     {
       "clip_id": "M000058",
       "source": "github-release",
       "bundle_sha256": "f0f54b4c623a39392fbcdedacce34ad734433317f30952f77f480f2698248567",
-      "due_at": "2026-11-12T18:30:00+01:00",
-      "local_time": "2026-11-12T18:30:00+01:00",
+      "due_at": "2026-11-12T20:30:00+01:00",
+      "local_time": "2026-11-12T20:30:00+01:00",
       "filename": "27. clip motivation - it takes what it takes.mp4"
     },
     {
       "clip_id": "M000134",
       "source": "github-release",
       "bundle_sha256": "e5f2f1a8690d5e0d203a960ca427ccb753bdf72390093492fb06a0d83887a6b0",
-      "due_at": "2026-11-12T20:30:00+01:00",
-      "local_time": "2026-11-12T20:30:00+01:00",
+      "due_at": "2026-11-12T22:30:00+01:00",
+      "local_time": "2026-11-12T22:30:00+01:00",
       "filename": "30. clip motivation - just one day wake up at 4 am.mp4"
     },
     {
       "clip_id": "M000059",
       "source": "github-release",
       "bundle_sha256": "80f302bdd50c02b9511c0cde9e2cc598a9d4ff39c3d6f38a7f46537cbaec26fd",
-      "due_at": "2026-11-12T22:30:00+01:00",
-      "local_time": "2026-11-12T22:30:00+01:00",
+      "due_at": "2026-11-13T09:00:00+01:00",
+      "local_time": "2026-11-13T09:00:00+01:00",
       "filename": "28. clip motivation - mediocrity feels so good.mp4"
     },
     {
       "clip_id": "M000135",
       "source": "github-release",
       "bundle_sha256": "05d8253318a1e4cbf99b5bdde073c62918e258066a2928e53093d2f66984e9ce",
-      "due_at": "2026-11-13T09:00:00+01:00",
-      "local_time": "2026-11-13T09:00:00+01:00",
+      "due_at": "2026-11-13T11:00:00+01:00",
+      "local_time": "2026-11-13T11:00:00+01:00",
       "filename": "31. clip dan pena - time costs lives.mp4"
     },
     {
       "clip_id": "M000060",
       "source": "github-release",
       "bundle_sha256": "544c5e50bc141d1f26e98d9d8120501e22839cb07461aafb468fd2127cedf823",
-      "due_at": "2026-11-13T11:00:00+01:00",
-      "local_time": "2026-11-13T11:00:00+01:00",
+      "due_at": "2026-11-13T13:30:00+01:00",
+      "local_time": "2026-11-13T13:30:00+01:00",
       "filename": "29. clip motivation - success boils down to this.mp4"
     },
     {
       "clip_id": "M000136",
       "source": "github-release",
       "bundle_sha256": "432a4454edf773eeb12ad95e44302ec4c7da629eb9916720d2ded8633e08edbd",
-      "due_at": "2026-11-13T13:30:00+01:00",
-      "local_time": "2026-11-13T13:30:00+01:00",
+      "due_at": "2026-11-13T16:00:00+01:00",
+      "local_time": "2026-11-13T16:00:00+01:00",
       "filename": "32. clip mcconaughey - life is not fair get over it.mp4"
     },
     {
       "clip_id": "M000061",
       "source": "github-release",
       "bundle_sha256": "0b4511a92496df787ec0222693e7544af7a05fa4694845d40bef88d6b4367e54",
-      "due_at": "2026-11-13T16:00:00+01:00",
-      "local_time": "2026-11-13T16:00:00+01:00",
+      "due_at": "2026-11-13T18:30:00+01:00",
+      "local_time": "2026-11-13T18:30:00+01:00",
       "filename": "30. clip motivation - zoom into the future.mp4"
     },
     {
       "clip_id": "M000137",
       "source": "github-release",
       "bundle_sha256": "96fc374187a907960f2420bb231194d13dd928216de9df631dfd397326e96664",
-      "due_at": "2026-11-13T18:30:00+01:00",
-      "local_time": "2026-11-13T18:30:00+01:00",
+      "due_at": "2026-11-13T20:30:00+01:00",
+      "local_time": "2026-11-13T20:30:00+01:00",
       "filename": "33. clip jack ma - respect yourself we have a chance.mp4"
     },
     {
       "clip_id": "M000062",
       "source": "github-release",
       "bundle_sha256": "dc4425a1aa75fb7c6fc3bf57e9a142d515884e2fb90c4b59ecbdc5d9a00c2871",
-      "due_at": "2026-11-13T20:30:00+01:00",
-      "local_time": "2026-11-13T20:30:00+01:00",
+      "due_at": "2026-11-13T22:30:00+01:00",
+      "local_time": "2026-11-13T22:30:00+01:00",
       "filename": "31. clip motivation - all your excuses are lies.mp4"
     },
     {
       "clip_id": "M000138",
       "source": "github-release",
       "bundle_sha256": "bb6ad260f6cd221c6faa9f19e4b4d4eec5c120a251f5a59cfae27e37a3bf5d0d",
-      "due_at": "2026-11-13T22:30:00+01:00",
-      "local_time": "2026-11-13T22:30:00+01:00",
+      "due_at": "2026-11-14T09:00:00+01:00",
+      "local_time": "2026-11-14T09:00:00+01:00",
       "filename": "34. clip mcconaughey - happiness vs joy.mp4"
     },
     {
       "clip_id": "M000063",
       "source": "github-release",
       "bundle_sha256": "8554e2f3b6f5ea8707f6d21464682793045e8ce4a6bb2615819774e34b294efa",
-      "due_at": "2026-11-14T09:00:00+01:00",
-      "local_time": "2026-11-14T09:00:00+01:00",
+      "due_at": "2026-11-14T11:00:00+01:00",
+      "local_time": "2026-11-14T11:00:00+01:00",
       "filename": "32. clip motivation - no one is watching.mp4"
     },
     {
       "clip_id": "M000139",
       "source": "github-release",
       "bundle_sha256": "cf74ba9999e118805b3392659aa53d048be0653b1b694937db2be562cdf837ae",
-      "due_at": "2026-11-14T11:00:00+01:00",
-      "local_time": "2026-11-14T11:00:00+01:00",
+      "due_at": "2026-11-14T13:30:00+01:00",
+      "local_time": "2026-11-14T13:30:00+01:00",
       "filename": "35. clip mcconaughey - the empty money column.mp4"
     },
     {
       "clip_id": "M000064",
       "source": "github-release",
       "bundle_sha256": "066ed21791c8d3fbe984bff8d986eba5b5348e26fbecc73c83e5c91354fcce70",
-      "due_at": "2026-11-14T13:30:00+01:00",
-      "local_time": "2026-11-14T13:30:00+01:00",
+      "due_at": "2026-11-14T16:00:00+01:00",
+      "local_time": "2026-11-14T16:00:00+01:00",
       "filename": "33. clip hormozi - people want you to do well not better.mp4"
     },
     {
       "clip_id": "M000140",
       "source": "github-release",
       "bundle_sha256": "1fb6b14bb5163c2e927588354582d0fedce961888af1fa6ff0ac5d800c275b7c",
-      "due_at": "2026-11-14T16:00:00+01:00",
-      "local_time": "2026-11-14T16:00:00+01:00",
+      "due_at": "2026-11-14T18:30:00+01:00",
+      "local_time": "2026-11-14T18:30:00+01:00",
       "filename": "36. clip mcconaughey - what is success to you.mp4"
     },
     {
       "clip_id": "M000065",
       "source": "github-release",
       "bundle_sha256": "fccd4b83765e97bd868e3f8a6c8c8b532628b17a581e0a778d5061138a3bd474",
-      "due_at": "2026-11-14T18:30:00+01:00",
-      "local_time": "2026-11-14T18:30:00+01:00",
+      "due_at": "2026-11-14T20:30:00+01:00",
+      "local_time": "2026-11-14T20:30:00+01:00",
       "filename": "34. clip motivation - ordinary plus a little extra.mp4"
     },
     {
       "clip_id": "M000141",
       "source": "github-release",
       "bundle_sha256": "ee296f4221e11c0044d488a7f9d723814440abf89b9e05e8c14db28739761329",
-      "due_at": "2026-11-14T20:30:00+01:00",
-      "local_time": "2026-11-14T20:30:00+01:00",
+      "due_at": "2026-11-14T22:30:00+01:00",
+      "local_time": "2026-11-14T22:30:00+01:00",
       "filename": "37. clip mcconaughey - one way ticket out of hollywood.mp4"
     },
     {
       "clip_id": "M000142",
       "source": "github-release",
       "bundle_sha256": "0a568b36b6071d9160ac93c317faacf8d8abb37c99e3b5945148035de597cb10",
-      "due_at": "2026-11-14T22:30:00+01:00",
-      "local_time": "2026-11-14T22:30:00+01:00",
+      "due_at": "2026-11-15T09:00:00+01:00",
+      "local_time": "2026-11-15T09:00:00+01:00",
       "filename": "38. clip steven bartlett - comfort is a long term enemy.mp4"
     },
     {
       "clip_id": "M000143",
       "source": "github-release",
       "bundle_sha256": "97a3490868b59a9dd5427a54e74df02e5c32438c74787605baceea713b4df7b9",
-      "due_at": "2026-11-15T09:00:00+01:00",
-      "local_time": "2026-11-15T09:00:00+01:00",
+      "due_at": "2026-11-15T11:00:00+01:00",
+      "local_time": "2026-11-15T11:00:00+01:00",
       "filename": "39. clip mcconaughey - take a hundred risks.mp4"
     },
     {
       "clip_id": "M000113",
       "source": "github-release",
       "bundle_sha256": "6133b1382b7662a03e0075add6efef2e9c84da0db25e0f97b543d0dd40bb08d0",
-      "due_at": "2026-11-15T11:00:00+01:00",
-      "local_time": "2026-11-15T11:00:00+01:00",
+      "due_at": "2026-11-15T13:30:00+01:00",
+      "local_time": "2026-11-15T13:30:00+01:00",
       "filename": "6. clip jack ma - the competition of creativity.mp4"
     },
     {
       "clip_id": "M000175",
       "source": "github-release",
       "bundle_sha256": "12d00244eff8c923b944b6d7bd8b10db8afb7439be39f0df5672c24f92c4c573",
-      "due_at": "2026-11-15T13:30:00+01:00",
-      "local_time": "2026-11-15T13:30:00+01:00",
+      "due_at": "2026-11-15T16:00:00+01:00",
+      "local_time": "2026-11-15T16:00:00+01:00",
       "filename": "17. clip motivation - i could be oprah.mp4"
     },
     {
       "clip_id": "M000145",
       "source": "github-release",
       "bundle_sha256": "ac4e19f064429d1233de6294af38e2fe181a42e925ed3b0d770a5f3fe18bf434",
-      "due_at": "2026-11-15T16:00:00+01:00",
-      "local_time": "2026-11-15T16:00:00+01:00",
+      "due_at": "2026-11-15T18:30:00+01:00",
+      "local_time": "2026-11-15T18:30:00+01:00",
       "filename": "1. clip tate - success is the ultimate revenge.mp4"
     },
     {
       "clip_id": "M000176",
       "source": "github-release",
       "bundle_sha256": "8899e47cee22c8261f5a8e1729d88275ea8f78f57d6d4a6276666f5075b4f16b",
-      "due_at": "2026-11-15T18:30:00+01:00",
-      "local_time": "2026-11-15T18:30:00+01:00",
+      "due_at": "2026-11-15T20:30:00+01:00",
+      "local_time": "2026-11-15T20:30:00+01:00",
       "filename": "18. clip joe dispenza - where attention goes energy flows.mp4"
     },
     {
       "clip_id": "M000146",
       "source": "github-release",
       "bundle_sha256": "ae0f9eec2b67a08ef16259bee9f0c1829e3b5ec11ebad63e29df68cffc7cec45",
-      "due_at": "2026-11-15T20:30:00+01:00",
-      "local_time": "2026-11-15T20:30:00+01:00",
+      "due_at": "2026-11-15T22:30:00+01:00",
+      "local_time": "2026-11-15T22:30:00+01:00",
       "filename": "2. clip tate - youre not tired youre undisciplined.mp4"
     },
     {
       "clip_id": "M000177",
       "source": "github-release",
       "bundle_sha256": "04a340a96e960e72fb0ffe0e95186b4a72cc7e341e106bc9bb13e14449c5eada",
-      "due_at": "2026-11-15T22:30:00+01:00",
-      "local_time": "2026-11-15T22:30:00+01:00",
+      "due_at": "2026-11-16T09:00:00+01:00",
+      "local_time": "2026-11-16T09:00:00+01:00",
       "filename": "19. clip joe dispenza - stop being defined by your past.mp4"
     },
     {
       "clip_id": "M000147",
       "source": "github-release",
       "bundle_sha256": "799fe3fb2eac1f320294803b4a55fd54dae4ec7eed2ee327d6b90d03bd68655b",
-      "due_at": "2026-11-16T09:00:00+01:00",
-      "local_time": "2026-11-16T09:00:00+01:00",
+      "due_at": "2026-11-16T11:00:00+01:00",
+      "local_time": "2026-11-16T11:00:00+01:00",
       "filename": "3. clip tate - contentment comes from giving.mp4"
     },
     {
       "clip_id": "M000178",
       "source": "github-release",
       "bundle_sha256": "085f8235a3c8925900fb4ab52e81055cb1bb86f07c08d7dc49dd6fe8d48e1394",
-      "due_at": "2026-11-16T11:00:00+01:00",
-      "local_time": "2026-11-16T11:00:00+01:00",
+      "due_at": "2026-11-16T13:30:00+01:00",
+      "local_time": "2026-11-16T13:30:00+01:00",
       "filename": "20. clip jordan peterson - be the useful person at the funeral.mp4"
     },
     {
       "clip_id": "M000148",
       "source": "github-release",
       "bundle_sha256": "81f38af74fd13d37f4561eaa773dfc22ccf18272aeacc557c255c6c2fc46d123",
-      "due_at": "2026-11-16T13:30:00+01:00",
-      "local_time": "2026-11-16T13:30:00+01:00",
+      "due_at": "2026-11-16T16:00:00+01:00",
+      "local_time": "2026-11-16T16:00:00+01:00",
       "filename": "4. clip tate - that version of you is waiting.mp4"
     },
     {
       "clip_id": "M000179",
       "source": "github-release",
       "bundle_sha256": "c9d808f5eceb5270f288f907d14bad9eda5503acc92abf45e22c6fc1ff6b14db",
-      "due_at": "2026-11-16T16:00:00+01:00",
-      "local_time": "2026-11-16T16:00:00+01:00",
+      "due_at": "2026-11-16T18:30:00+01:00",
+      "local_time": "2026-11-16T18:30:00+01:00",
       "filename": "21. clip warren buffett - an awful lot of it is self taught.mp4"
     },
     {
       "clip_id": "M000149",
       "source": "github-release",
       "bundle_sha256": "846ecaaf6868ca08a4bf24760f123d7a7d4d08ceb8b13559514a69b59606e020",
-      "due_at": "2026-11-16T18:30:00+01:00",
-      "local_time": "2026-11-16T18:30:00+01:00",
+      "due_at": "2026-11-16T20:30:00+01:00",
+      "local_time": "2026-11-16T20:30:00+01:00",
       "filename": "5. clip tate - nobody is coming to save you.mp4"
     },
     {
       "clip_id": "M000180",
       "source": "github-release",
       "bundle_sha256": "014bdd077a3b396d67fd2df59d58f06e1e1a9ca6d3c07851462137d1457e15e5",
-      "due_at": "2026-11-16T20:30:00+01:00",
-      "local_time": "2026-11-16T20:30:00+01:00",
+      "due_at": "2026-11-16T22:30:00+01:00",
+      "local_time": "2026-11-16T22:30:00+01:00",
       "filename": "22. clip jay shetty - a habits crisis.mp4"
     },
     {
       "clip_id": "M000150",
       "source": "github-release",
       "bundle_sha256": "29833dc42ab4c7580abb5a8711d423cceab28fe58e15ce1dcba6a86ac6000938",
-      "due_at": "2026-11-16T22:30:00+01:00",
-      "local_time": "2026-11-16T22:30:00+01:00",
+      "due_at": "2026-11-17T09:00:00+01:00",
+      "local_time": "2026-11-17T09:00:00+01:00",
       "filename": "6. clip tate - own your first hour.mp4"
     },
     {
       "clip_id": "M000181",
       "source": "github-release",
       "bundle_sha256": "9bedf60827d6f7f912bfcd54721804ca39ed1675d1647597b306195a34779f70",
-      "due_at": "2026-11-17T09:00:00+01:00",
-      "local_time": "2026-11-17T09:00:00+01:00",
+      "due_at": "2026-11-17T11:00:00+01:00",
+      "local_time": "2026-11-17T11:00:00+01:00",
       "filename": "23. clip joe dispenza - living in the past.mp4"
     },
     {
       "clip_id": "M000151",
       "source": "github-release",
       "bundle_sha256": "49f0a7fed74cd62ccd77e93be8951c0d3e7f982dac4c1f2c5a60f858b025ecdb",
-      "due_at": "2026-11-17T11:00:00+01:00",
-      "local_time": "2026-11-17T11:00:00+01:00",
+      "due_at": "2026-11-17T13:30:00+01:00",
+      "local_time": "2026-11-17T13:30:00+01:00",
       "filename": "7. clip tate - you were born to be remembered.mp4"
     },
     {
       "clip_id": "M000182",
       "source": "github-release",
       "bundle_sha256": "f16f8d0d35df0c44aa75bf21465eb67a909624a254c643b6461ab7458a61ab39",
-      "due_at": "2026-11-17T13:30:00+01:00",
-      "local_time": "2026-11-17T13:30:00+01:00",
+      "due_at": "2026-11-17T16:00:00+01:00",
+      "local_time": "2026-11-17T16:00:00+01:00",
       "filename": "24. clip jordan peterson - be a fool before you can be a master.mp4"
     },
     {
       "clip_id": "M000152",
       "source": "github-release",
       "bundle_sha256": "12a5ebbeb13d655d1c288be1807b1e4d592956d40000d5730042e21db30a48e9",
-      "due_at": "2026-11-17T16:00:00+01:00",
-      "local_time": "2026-11-17T16:00:00+01:00",
+      "due_at": "2026-11-17T18:30:00+01:00",
+      "local_time": "2026-11-17T18:30:00+01:00",
       "filename": "9. clip tate - discipline is the key to success.mp4"
     },
     {
       "clip_id": "M000183",
       "source": "github-release",
       "bundle_sha256": "25bdedfff74fed5962b1b524af801577631b475bcdfbb30bc05e20be62db5137",
-      "due_at": "2026-11-17T18:30:00+01:00",
-      "local_time": "2026-11-17T18:30:00+01:00",
+      "due_at": "2026-11-17T20:30:00+01:00",
+      "local_time": "2026-11-17T20:30:00+01:00",
       "filename": "25. clip compilation - do it badly but do it.mp4"
     },
     {
       "clip_id": "M000153",
       "source": "github-release",
       "bundle_sha256": "ea50dbe88ec583f28df213837b3ef0c163fcac8e074e4fc888daf6fe4932b2cf",
-      "due_at": "2026-11-17T20:30:00+01:00",
-      "local_time": "2026-11-17T20:30:00+01:00",
+      "due_at": "2026-11-17T22:30:00+01:00",
+      "local_time": "2026-11-17T22:30:00+01:00",
       "filename": "10. clip tate - the second best time is now.mp4"
     },
     {
       "clip_id": "M000184",
       "source": "github-release",
       "bundle_sha256": "c37cd8f8848b0207380debfcc53c9ca05ab890e31eed1584a33a6f587242a993",
-      "due_at": "2026-11-17T22:30:00+01:00",
-      "local_time": "2026-11-17T22:30:00+01:00",
+      "due_at": "2026-11-18T09:00:00+01:00",
+      "local_time": "2026-11-18T09:00:00+01:00",
       "filename": "26. clip motivation - college is an insurance policy.mp4"
     },
     {
       "clip_id": "M000154",
       "source": "github-release",
       "bundle_sha256": "2f8b8f27789aadfd80e112b1d9c2046907b3c0ea0cb7e2c2a5d1c6f49ea7ed4c",
-      "due_at": "2026-11-18T09:00:00+01:00",
-      "local_time": "2026-11-18T09:00:00+01:00",
+      "due_at": "2026-11-18T11:00:00+01:00",
+      "local_time": "2026-11-18T11:00:00+01:00",
       "filename": "11. clip tate - your schedule is your self respect.mp4"
     },
     {
       "clip_id": "M000185",
       "source": "github-release",
       "bundle_sha256": "5873f71de5d523dc10bfc8d131303ee5aeb42df3f5cb7d9af0f357c61da4c2b5",
-      "due_at": "2026-11-18T11:00:00+01:00",
-      "local_time": "2026-11-18T11:00:00+01:00",
+      "due_at": "2026-11-18T13:30:00+01:00",
+      "local_time": "2026-11-18T13:30:00+01:00",
       "filename": "27. clip joe dispenza - get into the operating system.mp4"
     },
     {
       "clip_id": "M000155",
       "source": "github-release",
       "bundle_sha256": "d8cd11164fbe84a83c7823f946cac27befb9a37d1e5e5d20431f5409bfcbb693",
-      "due_at": "2026-11-18T13:30:00+01:00",
-      "local_time": "2026-11-18T13:30:00+01:00",
+      "due_at": "2026-11-18T16:00:00+01:00",
+      "local_time": "2026-11-18T16:00:00+01:00",
       "filename": "12. clip tate - do what you are supposed to do.mp4"
     },
     {
       "clip_id": "M000186",
       "source": "github-release",
       "bundle_sha256": "9bc62199095bfa19c90f3b6eb5dcb4ec1d077986223c197d335af4b795423a96",
-      "due_at": "2026-11-18T16:00:00+01:00",
-      "local_time": "2026-11-18T16:00:00+01:00",
+      "due_at": "2026-11-18T18:30:00+01:00",
+      "local_time": "2026-11-18T18:30:00+01:00",
       "filename": "28. clip jay shetty - stress blocks change.mp4"
     },
     {
       "clip_id": "M000156",
       "source": "github-release",
       "bundle_sha256": "0769fff1d9e173841ec9282649ad4fc11d67e87d536e51d91aa7bd14d6caf226",
-      "due_at": "2026-11-18T18:30:00+01:00",
-      "local_time": "2026-11-18T18:30:00+01:00",
+      "due_at": "2026-11-18T20:30:00+01:00",
+      "local_time": "2026-11-18T20:30:00+01:00",
       "filename": "13. clip tate - you are guaranteed death.mp4"
     },
     {
       "clip_id": "M000187",
       "source": "github-release",
       "bundle_sha256": "669f6d8571773789964aff8d3c38fedcb09159a2e772c5ec71270db1098a4d83",
-      "due_at": "2026-11-18T20:30:00+01:00",
-      "local_time": "2026-11-18T20:30:00+01:00",
+      "due_at": "2026-11-18T22:30:00+01:00",
+      "local_time": "2026-11-18T22:30:00+01:00",
       "filename": "29. clip jordan peterson - better to do it badly.mp4"
     },
     {
       "clip_id": "M000157",
       "source": "github-release",
       "bundle_sha256": "891d7b09f2c9e7ad29c102459482fb8a4b8a500083b815ba8acb51d800ed1790",
-      "due_at": "2026-11-18T22:30:00+01:00",
-      "local_time": "2026-11-18T22:30:00+01:00",
+      "due_at": "2026-11-19T09:00:00+01:00",
+      "local_time": "2026-11-19T09:00:00+01:00",
       "filename": "14. clip tate - self reflection makes winners.mp4"
     },
     {
       "clip_id": "M000188",
       "source": "github-release",
       "bundle_sha256": "2d7037d3babb1b7632f0531d5e876cb4c60dd2c63d2d7306f049899adb50cb58",
-      "due_at": "2026-11-19T09:00:00+01:00",
-      "local_time": "2026-11-19T09:00:00+01:00",
+      "due_at": "2026-11-19T11:00:00+01:00",
+      "local_time": "2026-11-19T11:00:00+01:00",
       "filename": "30. clip motivation - i hated school.mp4"
     },
     {
       "clip_id": "M000158",
       "source": "github-release",
       "bundle_sha256": "7f8614e6653292a5cede21c3127c5628ae5c5a53d949aa02141302f6695da963",
-      "due_at": "2026-11-19T11:00:00+01:00",
-      "local_time": "2026-11-19T11:00:00+01:00",
+      "due_at": "2026-11-19T13:30:00+01:00",
+      "local_time": "2026-11-19T13:30:00+01:00",
       "filename": "15. clip tate - every man has a comeback moment.mp4"
     },
     {
       "clip_id": "M000189",
       "source": "github-release",
       "bundle_sha256": "5c48ebfbb28c96d8cb5a8beaf1903c188b0440b91a06d2175f6ffdf267229313",
-      "due_at": "2026-11-19T13:30:00+01:00",
-      "local_time": "2026-11-19T13:30:00+01:00",
+      "due_at": "2026-11-19T16:00:00+01:00",
+      "local_time": "2026-11-19T16:00:00+01:00",
       "filename": "31. clip joe dispenza - i cant meditate is just a thought.mp4"
     },
     {
       "clip_id": "M000159",
       "source": "github-release",
       "bundle_sha256": "0ada0baca441fb42d1ce171c282aa4f196ffed904462d330bce76fe3f3d3db9f",
-      "due_at": "2026-11-19T16:00:00+01:00",
-      "local_time": "2026-11-19T16:00:00+01:00",
+      "due_at": "2026-11-19T18:30:00+01:00",
+      "local_time": "2026-11-19T18:30:00+01:00",
       "filename": "16. clip tate - men who perform regardless.mp4"
     },
     {
       "clip_id": "M000190",
       "source": "github-release",
       "bundle_sha256": "52e820e23f30dffe49b71debf43d3f1b84eb1c0402ae5974c01b9971b16c4dcc",
-      "due_at": "2026-11-19T18:30:00+01:00",
-      "local_time": "2026-11-19T18:30:00+01:00",
+      "due_at": "2026-11-19T20:30:00+01:00",
+      "local_time": "2026-11-19T20:30:00+01:00",
       "filename": "32. clip joe dispenza - lose your free will to programs.mp4"
     },
     {
       "clip_id": "M000160",
       "source": "github-release",
       "bundle_sha256": "1763dc638f197620d33748678da5951d3df299c475fa45456fa2c38ac6ccf54e",
-      "due_at": "2026-11-19T20:30:00+01:00",
-      "local_time": "2026-11-19T20:30:00+01:00",
+      "due_at": "2026-11-19T22:30:00+01:00",
+      "local_time": "2026-11-19T22:30:00+01:00",
       "filename": "17. clip tate - why dont you look like a superhero.mp4"
     },
     {
       "clip_id": "M000191",
       "source": "github-release",
       "bundle_sha256": "43ea4b8d3cf755560d862349ad59c079ec1155079e07f189a60f79e1bae4af88",
-      "due_at": "2026-11-19T22:30:00+01:00",
-      "local_time": "2026-11-19T22:30:00+01:00",
+      "due_at": "2026-11-20T09:00:00+01:00",
+      "local_time": "2026-11-20T09:00:00+01:00",
       "filename": "33. clip jordan peterson - full of faults but keep moving.mp4"
     },
     {
       "clip_id": "M000161",
       "source": "github-release",
       "bundle_sha256": "ba9c3cd1fa972512a0f19daeb500cf9d37328a8cc6df38d7699f935076ceabf6",
-      "due_at": "2026-11-20T09:00:00+01:00",
-      "local_time": "2026-11-20T09:00:00+01:00",
+      "due_at": "2026-11-20T11:00:00+01:00",
+      "local_time": "2026-11-20T11:00:00+01:00",
       "filename": "18. clip tate - she would want you back.mp4"
     },
     {
       "clip_id": "M000192",
       "source": "github-release",
       "bundle_sha256": "71294d10a4918ae1f3f2ed50d0d8aa430f9cd41567e3d8484ffaf818b107f8f3",
-      "due_at": "2026-11-20T11:00:00+01:00",
-      "local_time": "2026-11-20T11:00:00+01:00",
+      "due_at": "2026-11-20T13:30:00+01:00",
+      "local_time": "2026-11-20T13:30:00+01:00",
       "filename": "34. clip motivation - learn from mistakes not punishment.mp4"
     },
     {
       "clip_id": "M000162",
       "source": "github-release",
       "bundle_sha256": "a4afa5d212ade25ebbf8e96c7062fb20a24a45269d124b8a4f19d71dc926fea9",
-      "due_at": "2026-11-20T13:30:00+01:00",
-      "local_time": "2026-11-20T13:30:00+01:00",
+      "due_at": "2026-11-20T16:00:00+01:00",
+      "local_time": "2026-11-20T16:00:00+01:00",
       "filename": "20. clip tate - the billionaire who schedules like a surgeon.mp4"
     },
     {
       "clip_id": "M000193",
       "source": "github-release",
       "bundle_sha256": "36a2e6a740a56254ae39ca5cbd6a7bb251b4a50414f0ff0d9bd81f884ef5f7ac",
-      "due_at": "2026-11-20T16:00:00+01:00",
-      "local_time": "2026-11-20T16:00:00+01:00",
+      "due_at": "2026-11-20T18:30:00+01:00",
+      "local_time": "2026-11-20T18:30:00+01:00",
       "filename": "35. clip joe dispenza - it comes from within.mp4"
     },
     {
       "clip_id": "M000163",
       "source": "github-release",
       "bundle_sha256": "1d8a9d1d7fa16328343be2d158f762da94e1b7b4c3e04d50328b4a5b4617e2c0",
-      "due_at": "2026-11-20T18:30:00+01:00",
-      "local_time": "2026-11-20T18:30:00+01:00",
+      "due_at": "2026-11-20T20:30:00+01:00",
+      "local_time": "2026-11-20T20:30:00+01:00",
       "filename": "21. clip tate - the men on the titanic.mp4"
     },
     {
       "clip_id": "M000194",
       "source": "github-release",
       "bundle_sha256": "91cfe4a562c33aa852d411c64b48d5ff6d7b5b639df2a280f3ddcb3c7cee996e",
-      "due_at": "2026-11-20T20:30:00+01:00",
-      "local_time": "2026-11-20T20:30:00+01:00",
+      "due_at": "2026-11-20T22:30:00+01:00",
+      "local_time": "2026-11-20T22:30:00+01:00",
       "filename": "36. clip joe dispenza - show up for yourself every day.mp4"
     },
     {
       "clip_id": "M000164",
       "source": "github-release",
       "bundle_sha256": "a36dcc4678af27d2316e59ab15026604b1f192dc6164834d106676c6ec071d41",
-      "due_at": "2026-11-20T22:30:00+01:00",
-      "local_time": "2026-11-20T22:30:00+01:00",
+      "due_at": "2026-11-21T09:00:00+01:00",
+      "local_time": "2026-11-21T09:00:00+01:00",
       "filename": "22. clip tate - the race nobody runs.mp4"
     },
     {
       "clip_id": "M000195",
       "source": "github-release",
       "bundle_sha256": "f1cb453af54d9e0972489188e15b8187ad6a9bca928a435ce25f1c91a04eee3e",
-      "due_at": "2026-11-21T09:00:00+01:00",
-      "local_time": "2026-11-21T09:00:00+01:00",
+      "due_at": "2026-11-21T11:00:00+01:00",
+      "local_time": "2026-11-21T11:00:00+01:00",
       "filename": "37. clip jordan peterson - youre the thing that confronts the obstacle.mp4"
     },
     {
       "clip_id": "M000208",
       "source": "github-release",
       "bundle_sha256": "5f2a0dacfcc1c78cb85132a3a3b81d1bef7ab000176a6173a69bdb0a17f49907",
-      "due_at": "2026-11-21T11:00:00+01:00",
-      "local_time": "2026-11-21T11:00:00+01:00",
+      "due_at": "2026-11-21T13:30:00+01:00",
+      "local_time": "2026-11-21T13:30:00+01:00",
       "filename": "50. clip joe dispenza - just a set of habits.mp4"
     },
     {
       "clip_id": "M000196",
       "source": "github-release",
       "bundle_sha256": "bf2b9d19ddaeadd3ff0c6c3d01980d29d38039cb0b55071c4f13a13293bf2d16",
-      "due_at": "2026-11-21T13:30:00+01:00",
-      "local_time": "2026-11-21T13:30:00+01:00",
+      "due_at": "2026-11-21T16:00:00+01:00",
+      "local_time": "2026-11-21T16:00:00+01:00",
       "filename": "38. clip motivation - a trillion dollars of lies.mp4"
     },
     {
       "clip_id": "M000166",
       "source": "github-release",
       "bundle_sha256": "5a66a422294c32596bbe53a66e0ce53abce08eb52dbe69ec83bb4dad8e4d9088",
-      "due_at": "2026-11-21T16:00:00+01:00",
-      "local_time": "2026-11-21T16:00:00+01:00",
+      "due_at": "2026-11-21T18:30:00+01:00",
+      "local_time": "2026-11-21T18:30:00+01:00",
       "filename": "24. clip tate - the golden tap.mp4"
     },
     {
       "clip_id": "M000197",
       "source": "github-release",
       "bundle_sha256": "9a88e31fea430e5117ee115472624b5efc669e2cbb516d079963a7ed795a5374",
-      "due_at": "2026-11-21T18:30:00+01:00",
-      "local_time": "2026-11-21T18:30:00+01:00",
+      "due_at": "2026-11-21T20:30:00+01:00",
+      "local_time": "2026-11-21T20:30:00+01:00",
       "filename": "39. clip joe dispenza - dont live in emergency mode.mp4"
     },
     {
       "clip_id": "M000167",
       "source": "github-release",
       "bundle_sha256": "e8c674a3314946ecab0337558a17e802c04baf8aa93f0d1570b61975a0ee3adc",
-      "due_at": "2026-11-21T20:30:00+01:00",
-      "local_time": "2026-11-21T20:30:00+01:00",
+      "due_at": "2026-11-21T22:30:00+01:00",
+      "local_time": "2026-11-21T22:30:00+01:00",
       "filename": "25. clip tate - nobody wakes up thinking about you.mp4"
     },
     {
       "clip_id": "M000198",
       "source": "github-release",
       "bundle_sha256": "8e17292c1b357579528783b99914958b6a95b4aa3d87b2b84021b7f9744f462d",
-      "due_at": "2026-11-21T22:30:00+01:00",
-      "local_time": "2026-11-21T22:30:00+01:00",
+      "due_at": "2026-11-22T09:00:00+01:00",
+      "local_time": "2026-11-22T09:00:00+01:00",
       "filename": "40. clip joe dispenza - victim or creator.mp4"
     },
     {
       "clip_id": "M000168",
       "source": "github-release",
       "bundle_sha256": "85d10773ece6cfea4fe4811ace9a445edb137a4d0da70daeb5f0c87de0a78df8",
-      "due_at": "2026-11-22T09:00:00+01:00",
-      "local_time": "2026-11-22T09:00:00+01:00",
+      "due_at": "2026-11-22T11:00:00+01:00",
+      "local_time": "2026-11-22T11:00:00+01:00",
       "filename": "26. clip tate - you just wasted five years.mp4"
     },
     {
       "clip_id": "M000199",
       "source": "github-release",
       "bundle_sha256": "b12b15f25ae9dbf4f3846c55344e2f3e17265e69cbdc0fe2b5bca0848918450c",
-      "due_at": "2026-11-22T11:00:00+01:00",
-      "local_time": "2026-11-22T11:00:00+01:00",
+      "due_at": "2026-11-22T13:30:00+01:00",
+      "local_time": "2026-11-22T13:30:00+01:00",
       "filename": "41. clip compilation - nobody is coming to save you.mp4"
     },
     {
       "clip_id": "M000169",
       "source": "github-release",
       "bundle_sha256": "a31f50c32b69a2bfe6d9c32c58256b8a269c6a2a33fe08b6bd55ada4d39fc2ec",
-      "due_at": "2026-11-22T13:30:00+01:00",
-      "local_time": "2026-11-22T13:30:00+01:00",
+      "due_at": "2026-11-22T16:00:00+01:00",
+      "local_time": "2026-11-22T16:00:00+01:00",
       "filename": "27. clip tate - what is your love worth.mp4"
     },
     {
       "clip_id": "M000200",
       "source": "github-release",
       "bundle_sha256": "e943a221b6e1a4e22d3298b688004f6b8f75d2ddea8d6bc1a6f7c65421f4f160",
-      "due_at": "2026-11-22T16:00:00+01:00",
-      "local_time": "2026-11-22T16:00:00+01:00",
+      "due_at": "2026-11-22T18:30:00+01:00",
+      "local_time": "2026-11-22T18:30:00+01:00",
       "filename": "42. clip jordan peterson - become a bigger bag of tricks.mp4"
     },
     {
       "clip_id": "M000170",
       "source": "github-release",
       "bundle_sha256": "e87d6fee4bcbdd73bbc5dc7891786bab2691a4f4bb6cf1d2e311a99b18e83049",
-      "due_at": "2026-11-22T18:30:00+01:00",
-      "local_time": "2026-11-22T18:30:00+01:00",
+      "due_at": "2026-11-22T20:30:00+01:00",
+      "local_time": "2026-11-22T20:30:00+01:00",
       "filename": "28. clip tate - discipline beats motivation.mp4"
     },
     {
       "clip_id": "M000201",
       "source": "github-release",
       "bundle_sha256": "ba2fda4cd4c61363b862e42d3c0242548f457ef01079dddc510ec637bdcfa4a7",
-      "due_at": "2026-11-22T20:30:00+01:00",
-      "local_time": "2026-11-22T20:30:00+01:00",
+      "due_at": "2026-11-22T22:30:00+01:00",
+      "local_time": "2026-11-22T22:30:00+01:00",
       "filename": "43. clip motivation - you have to save yourself.mp4"
     },
     {
       "clip_id": "M000171",
       "source": "github-release",
       "bundle_sha256": "4a525ccd1d757494def98b8f95dc7910bbefc0932306f50ed3ca3dcaa71c7062",
-      "due_at": "2026-11-22T22:30:00+01:00",
-      "local_time": "2026-11-22T22:30:00+01:00",
+      "due_at": "2026-11-23T09:00:00+01:00",
+      "local_time": "2026-11-23T09:00:00+01:00",
       "filename": "29. clip tate - comfort without conquest.mp4"
     },
     {
       "clip_id": "M000202",
       "source": "github-release",
       "bundle_sha256": "6d45aeee0e8e5c9cacf3c4a78cb4a8170ebb28f13780740bb63ec2facb87b8db",
-      "due_at": "2026-11-23T09:00:00+01:00",
-      "local_time": "2026-11-23T09:00:00+01:00",
+      "due_at": "2026-11-23T11:00:00+01:00",
+      "local_time": "2026-11-23T11:00:00+01:00",
       "filename": "44. clip joe dispenza - a day worth living.mp4"
     },
     {
       "clip_id": "M000172",
       "source": "github-release",
       "bundle_sha256": "ccf02ff1510a75da602beec7877e08fa005b9190885769e32ef5519aedff4483",
-      "due_at": "2026-11-23T11:00:00+01:00",
-      "local_time": "2026-11-23T11:00:00+01:00",
+      "due_at": "2026-11-23T13:30:00+01:00",
+      "local_time": "2026-11-23T13:30:00+01:00",
       "filename": "31. clip tate - the mountain keeps growing.mp4"
     },
     {
       "clip_id": "M000203",
       "source": "github-release",
       "bundle_sha256": "01ae5ecda4382952d4a94680b3afe6c7844de205c345ba8e106f8d968bb2f345",
-      "due_at": "2026-11-23T13:30:00+01:00",
-      "local_time": "2026-11-23T13:30:00+01:00",
+      "due_at": "2026-11-23T16:00:00+01:00",
+      "local_time": "2026-11-23T16:00:00+01:00",
       "filename": "45. clip joe dispenza - you didnt fail you forgot.mp4"
     },
     {
       "clip_id": "M000173",
       "source": "github-release",
       "bundle_sha256": "5bfea6c6aaaa284ba83daf0bfc76ec8f9c23c54304a94b6cb00593f1bd1dfabe",
-      "due_at": "2026-11-23T16:00:00+01:00",
-      "local_time": "2026-11-23T16:00:00+01:00",
+      "due_at": "2026-11-23T18:30:00+01:00",
+      "local_time": "2026-11-23T18:30:00+01:00",
       "filename": "32. clip tate - ill start tomorrow is a lie.mp4"
     },
     {
       "clip_id": "M000204",
       "source": "github-release",
       "bundle_sha256": "a466023c9e41020fda64bb834833b6e7edab3d9846ed337b0f93f1d35fa69c09",
-      "due_at": "2026-11-23T18:30:00+01:00",
-      "local_time": "2026-11-23T18:30:00+01:00",
+      "due_at": "2026-11-23T20:30:00+01:00",
+      "local_time": "2026-11-23T20:30:00+01:00",
       "filename": "46. clip jordan peterson - dont attack their whole character.mp4"
     },
     {
       "clip_id": "M000174",
       "source": "github-release",
       "bundle_sha256": "07d2158db850daa88d80162ed0798fcde2546803bcd2313be58c041b143b8d8a",
-      "due_at": "2026-11-23T20:30:00+01:00",
-      "local_time": "2026-11-23T20:30:00+01:00",
+      "due_at": "2026-11-23T22:30:00+01:00",
+      "local_time": "2026-11-23T22:30:00+01:00",
       "filename": "33. clip tate - youve heard enough.mp4"
     },
     {
       "clip_id": "M000205",
       "source": "github-release",
       "bundle_sha256": "9cda67c2bf130965bae65ba00e95a0816bd13307c98c6f0ea90eab3462bf2186",
-      "due_at": "2026-11-23T22:30:00+01:00",
-      "local_time": "2026-11-23T22:30:00+01:00",
+      "due_at": "2026-11-24T09:00:00+01:00",
+      "local_time": "2026-11-24T09:00:00+01:00",
       "filename": "47. clip joe dispenza - you cant tell me youre too old.mp4"
     },
     {
       "clip_id": "M000206",
       "source": "github-release",
       "bundle_sha256": "337ab89b40f12e84e0cd06269861cfec01a9b5941100a18a414f452a58593312",
-      "due_at": "2026-11-24T09:00:00+01:00",
-      "local_time": "2026-11-24T09:00:00+01:00",
+      "due_at": "2026-11-24T11:00:00+01:00",
+      "local_time": "2026-11-24T11:00:00+01:00",
       "filename": "48. clip jay shetty - your presence bleeds.mp4"
     },
     {
       "clip_id": "M000207",
       "source": "github-release",
       "bundle_sha256": "ad565871d0dbf88ba29e4ded52e82d1c61bc2dfb90de23a57da9eae67e4b3270",
-      "due_at": "2026-11-24T11:00:00+01:00",
-      "local_time": "2026-11-24T11:00:00+01:00",
+      "due_at": "2026-11-24T13:30:00+01:00",
+      "local_time": "2026-11-24T13:30:00+01:00",
       "filename": "49. clip joe dispenza - it is possible to change.mp4"
     },
     {
       "clip_id": "M000165",
       "source": "github-release",
       "bundle_sha256": "5ad5465e0077f55cd4f96d5f2f04aea216a6e31479fdc72c1f70f0b66179d488",
-      "due_at": "2026-11-24T13:30:00+01:00",
-      "local_time": "2026-11-24T13:30:00+01:00",
+      "due_at": "2026-11-24T16:00:00+01:00",
+      "local_time": "2026-11-24T16:00:00+01:00",
       "filename": "23. clip tate - i killed him with a calendar.mp4"
     },
     {
       "clip_id": "M000209",
       "source": "github-release",
       "bundle_sha256": "a6d1f1a2d5864b698865eb89fbbb41399a785ae8ed65a99a503bcd0124dd0520",
-      "due_at": "2026-11-24T16:00:00+01:00",
-      "local_time": "2026-11-24T16:00:00+01:00",
+      "due_at": "2026-11-24T18:30:00+01:00",
+      "local_time": "2026-11-24T18:30:00+01:00",
       "filename": "51. clip joe dispenza - we are wired to give.mp4"
     }
   ],
@@ -1670,5 +1670,6 @@
   "additional_authorized_on": "2026-11-06",
   "additional_note": "Blert 2026-11-05: mix non-Tate clips after the last Tate posts — batch 4 Limitless Drive M000033-M000065 and batch 6 M000108-M000144, 7/day | Blert 2026-11-06: then new Tate batch 7 (M000145-M000174) mixed with louder batch 5 clips 17-51 (M000175-M000209), 7/day, TikTok+Instagram+Facebook",
   "facebook_from": "2026-11-06T09:00:00+01:00",
-  "facebook_note": "Blert 2026-11-06: also post the same clips to his Facebook page (Reels) from Nov 6 09:00; Facebook failures pause only Facebook"
+  "facebook_note": "Blert 2026-11-06: also post the same clips to his Facebook page (Reels) from Nov 6 09:00; Facebook failures pause only Facebook",
+  "schedule_shift_note": "Blert 2026-11-11: skip rejected M000050 TikTok post and move every unposted clip one slot later (missed Nov 11 16:00), still 7/day; now ends Nov 24 18:30"
 }

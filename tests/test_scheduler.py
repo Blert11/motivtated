@@ -87,6 +87,21 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaises(Stop): self.run_scheduler()
         self.assertEqual(len(self.buffer.calls),1)
 
+    def test_owner_skipped_failure_is_not_resubmitted_and_frees_its_slot(self):
+        self.run_scheduler()
+        record=self.ledger.data['records']['M000010:tiktok']
+        record['state']='failed_at_buffer'
+        self.buffer.posts[record['buffer_post_id']]['status']='error'
+        with self.assertRaises(Stop): self.run_scheduler()
+        record['state']='skipped'
+        calls=len(self.buffer.calls)
+        self.run_scheduler()
+        self.assertEqual(record['state'],'skipped')
+        made=[c for c in self.buffer.calls[calls:]]
+        self.assertEqual(len(made),1)   # only the slot the skipped post freed is refilled, with a new clip
+        self.assertNotIn('M000010:tiktok',[r['clip_id']+':'+r['platform'] for r in self.ledger.data['records'].values()
+                                             if r['state']=='submitted' and r['clip_id']=='M000010' and r['platform']=='tiktok'])
+
     def test_refill_only_after_saved_posts_finish(self):
         self.run_scheduler()
         for platform in ['tiktok','instagram']:

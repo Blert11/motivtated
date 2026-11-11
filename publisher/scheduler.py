@@ -133,8 +133,8 @@ class Scheduler:
         for row in self.rows:
             for platform in self.platforms_for(row, include_paused=True):
                 record = self.records.get(row['clip_id']+':'+platform)
-                if not record or record['state'] == 'posted':
-                    continue
+                if not record or record['state'] in ('posted', 'skipped'):
+                    continue   # 'skipped' = owner-approved permanent skip of a rejected post
                 if platform == 'facebook' and record['state'] in ['submit_intent','failed_at_buffer','needs_attention','failed_before_submit']:
                     self.report.setdefault('facebook_attention', []).append(row['clip_id'])
                     continue
@@ -189,7 +189,7 @@ class Scheduler:
                 break
 
     def candidates(self):
-        pending = {p:sum(r['platform'] == p and r['state'] != 'posted' and not (p == 'facebook' and r['state'] == 'failed_before_submit')
+        pending = {p:sum(r['platform'] == p and r['state'] not in ('posted', 'skipped') and not (p == 'facebook' and r['state'] == 'failed_before_submit')
                          for r in self.records.values()) for p in list(PLATFORMS) + list(OPTIONAL)}
         result = []
         for row in self.rows:
@@ -268,10 +268,11 @@ class Scheduler:
                         self.report['scheduled'].append({'clip_id':row['clip_id'], 'platform':platform,
                             'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
                         counts[platform] += 1
-        self.report['complete'] = all(self.records.get(row['clip_id']+':'+p, {}).get('state') == 'posted'
+        self.report['complete'] = all(self.records.get(row['clip_id']+':'+p, {}).get('state') in ('posted', 'skipped')
                                       for row in self.rows for p in self.platforms_for(row))
         self.report['finished'] = self.report['complete'] and all(
-            self.records[row['clip_id']+':'+p].get('media_deleted_at') for row in self.rows for p in PLATFORMS)
+            self.records[row['clip_id']+':'+p].get('media_deleted_at') or self.records[row['clip_id']+':'+p]['state'] == 'skipped'
+            for row in self.rows for p in PLATFORMS)
         return self.report
 
 
