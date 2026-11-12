@@ -65,3 +65,7 @@ Motivtated (YouTube + X) moves to 6 posts a day at 10:00, 12:00, 14:00, 16:00, 1
 
 ### Lane 2: Imanivated batch 3 (2026-11-11, authorized by Blert)
 47 new Akhi Ayman clips (I000031-I000077, private `imanivated-inputs` release) go to Imanivated YouTube Shorts at 5 a day (10:00, 12:00, 14:00, 18:00, 21:30), from Nov 15 18:00 to Nov 24. Imanivated clips may run up to 90 s (YouTube Shorts limit is 3 min); Motivtated keeps the 76 s check.
+
+## Revision 2026-11-12 (Claude, authorized by Blert)
+- Batch 8 (M000210-M000331, 122 vertical clips: Denzel Washington, Arnold Schwarzenegger, Admiral McRaven, Robert Kiyosaki, BE THAT 1% / YOU GOTTA WORK compilations and four B-roll-only videos) follows the existing plan: TikTok/Instagram/Facebook at 7 a day after Nov 24 (to Dec 12), YouTube Shorts + X on lane 2 at 6 a day after Dec 11 (to Jan 1). The five 4:3 compilations are not scheduled. Packages come from the `claude-bundles-b8-*` branches.
+- Owner rule: one speaker's name never appears in anything posted. Lane-2 titles no longer carry that name, and `Lane2.retitle()` edits the YouTube titles of posts already waiting in Buffer (only those due more than 20 minutes ahead; a refusal is recorded as `retitle_error` and not retried). Already-published YouTube titles have to be changed in YouTube Studio.

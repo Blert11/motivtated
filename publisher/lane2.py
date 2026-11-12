@@ -335,6 +335,39 @@ class Lane2:
                     self.report['scheduled'].append({'key': key, 'due_at': row['due_at'], 'post_id': post['id']})
             new += 1
 
+    def retitle(self):
+        """Bring pending YouTube titles in line with the plan (2026-11-12: the owner asked that one speaker's
+        name never appears in anything posted). Edits only scheduled posts due later than 20 minutes from now,
+        resending the recorded caption and video with the new title; a refusal is recorded and never retried."""
+        rows = {r['key']: r for r in self.rows}
+        self.report['retitled'] = []
+        for key, rec in self.records.items():
+            row = rows.get(rec.get('row'))
+            if not row or rec.get('platform') != 'youtube' or rec.get('state') != 'submitted' or rec.get('retitle_error'):
+                continue
+            want = youtube_title(row, rec.get('caption') or '')
+            if not rec.get('buffer_post_id') or not rec.get('media') or want == rec.get('title'):
+                continue
+            if parse_time(rec['due_at']) <= self.clock() + timedelta(minutes=20):
+                continue
+            edit = build_payload('youtube', rec['channel_id'], rec['caption'], rec['media']['url'], rec['due_at'], want)
+            edit.pop('channelId'); edit['id'] = rec['buffer_post_id']
+            try:
+                res = self.buffer.query('mutation($input: EditPostInput!) { editPost(input: $input) { __typename '
+                                        '... on PostActionSuccess { post { id status dueAt } } '
+                                        '... on MutationError { message } } }', {'input': edit})['editPost']
+            except Exception as exc:
+                rec['retitle_error'] = type(exc).__name__ + ': ' + str(exc)[:300]
+                self.report['problems'].append(f'{key}: retitle failed')
+                continue
+            if res.get('__typename') == 'PostActionSuccess':
+                rec['previous_title'], rec['title'] = rec.get('title'), want
+                self.event(key, 'youtube_title_edited')
+                self.report['retitled'].append(key)
+            else:
+                rec['retitle_error'] = str(res.get('message'))[:300]
+                self.report['problems'].append(f'{key}: retitle refused')
+
     def run(self):
         self.report = {'scheduled': [], 'posted': [], 'cleaned': [], 'skipped_missed': [], 'problems': []}
         if not self.plan.get('enabled'):
@@ -345,6 +378,7 @@ class Lane2:
             self.ledger.save()
         self.report['channels'] = channels
         self.reconcile()
+        self.retitle()
         self.cleanup()
         self.fill(channels)
         return self.report
