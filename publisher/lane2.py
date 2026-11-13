@@ -27,7 +27,7 @@ from .github import GitHub, GitHubLedger
 from .media import verify_public
 
 TZ = ZoneInfo('Europe/Budapest')
-SLOTS = {'motivtated': [(10, 0), (12, 0), (14, 0), (16, 0), (18, 0), (21, 30)],   # 6 a day from Nov 8 (2026-11-07)
+SLOTS = {'motivtated': [(10, 0), (12, 0), (14, 0), (16, 0), (18, 0), (20, 0), (21, 30)],   # 7 a day from Nov 14 (2026-11-13; was 6)
          'imanivated': [(10, 0), (12, 0), (14, 0), (18, 0), (21, 30)]}   # 5 a day from Nov 16 (2026-11-11)
 PAGES = {'motivtated': ('youtube', 'twitter'), 'imanivated': ('youtube',)}
 RELEASES = {'motivtated': 'posting-inputs', 'imanivated': 'imanivated-inputs'}
