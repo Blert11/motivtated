@@ -1,0 +1,41 @@
+name: Delete uploaded bundle branches
+# Deletes claude-bundles* transfer branches only after every package listed in the branch's
+# expected.json is confirmed in the posting-inputs release with the identical digest.
+'on':
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  clean:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - name: Verify and delete
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api --paginate repos/$REPO/releases/tags/posting-inputs --jq '.assets[] | "\(.name) \(.digest)"' > assets.txt
+          for br in $(gh api --paginate repos/$REPO/branches --jq '.[].name' | grep '^claude-bundles'); do
+            if ! gh api "repos/$REPO/contents/expected.json?ref=$br" -H "Accept: application/vnd.github.raw" > exp.json 2>/dev/null; then
+              echo "$br: no expected.json, kept"; continue
+            fi
+            if python3 - <<'PY'
+          import json, sys
+          have = dict(l.split() for l in open('assets.txt') if l.strip())
+          exp = json.load(open('exp.json'))
+          bad = [n for n, d in exp.items() if have.get(n) != 'sha256:' + d]
+          print(len(exp), 'packages,', len(bad), 'missing')
+          sys.exit(1 if bad else 0)
+          PY
+            then
+              gh api -X DELETE "repos/$REPO/git/refs/heads/$br" && echo "$br deleted"
+            else
+              echo "$br: not all packages are in the release, kept"
+            fi
+          done
