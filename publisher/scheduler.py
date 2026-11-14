@@ -113,7 +113,7 @@ class Scheduler:
         return self.engine.ledger.data['records']
 
     def fb_paused(self):
-        return bool(self.engine.ledger.data.get('facebook_paused'))
+        return False   # 2026-11-14: a Facebook failure skips only that post; the channel keeps posting
 
     def platforms_for(self, row, include_paused=False):
         result = list(PLATFORMS)
@@ -129,13 +129,26 @@ class Scheduler:
         self.engine.event(row['clip_id']+':facebook', 'facebook_paused_after_failure')
         self.report['facebook_paused'] = self.engine.ledger.data['facebook_paused']
 
-    def auto_skip(self, row, platform, record):
+    MAX_ATTEMPTS = 3
+
+    def auto_skip(self, row, platform, record=None, reason='buffer_reported_error'):
+        """Owner rule (2026-11-14): one failing post never stops the queue -- not on other platforms and not on
+        the same platform. The failing post is recorded as skipped (never resubmitted) and everything else goes on."""
+        key = row['clip_id']+':'+platform
+        if record is None:
+            record = self.records.setdefault(key, {'clip_id': row['clip_id'], 'platform': platform,
+                                                   'channel_id': self.channels.get(platform), 'created_at': datetime.now(timezone.utc).isoformat()})
         record['state'] = 'skipped'
-        record['skip_reason'] = 'buffer_reported_error'
+        record['skip_reason'] = reason
         record['skipped_at'] = datetime.now(timezone.utc).isoformat()
-        self.engine.event(row['clip_id']+':'+platform, 'auto_skipped_after_buffer_error')
+        record.setdefault('scheduled_at', row['due_at'])
+        self.engine.event(key, 'auto_skipped_'+reason)
         self.engine.ledger.save()
-        self.report.setdefault('auto_skipped', []).append(row['clip_id']+':'+platform)
+        self.report.setdefault('auto_skipped', []).append(f'{key} ({reason})')
+
+    def note_error(self, where, exc):
+        msg = str(exc)[:300] if isinstance(exc, Stop) else type(exc).__name__+': '+str(exc)[:200]
+        self.report['errors'].append(f'{where}: {msg}')
 
     def reconcile_due(self):
         for row in self.rows:
@@ -147,13 +160,13 @@ class Scheduler:
                     self.report.setdefault('facebook_attention', []).append(row['clip_id'])
                     continue
                 if record['state'] == 'failed_at_buffer':
-                    # Buffer accepted the post but the network rejected it (nothing was published). Record it as a
-                    # permanent skip for this platform and keep the rest of the queue moving (owner rule 2026-11-14:
-                    # one rejected post must never stop TikTok/Instagram/Facebook for days). Never resubmitted.
+                    # Buffer accepted the post but the network rejected it (nothing was published). Never resubmitted.
                     self.auto_skip(row, platform, record)
                     continue
-                require(record['state'] not in ['submit_intent','needs_attention'],
-                        f"{row['clip_id']} {platform} needs investigation; no automatic resubmission.")
+                if record['state'] in ['submit_intent','needs_attention']:
+                    # Outcome unknown or not scheduled: never resubmit (no duplicates), but don't hold the queue either.
+                    self.auto_skip(row, platform, record, 'uncertain_'+record['state'])
+                    continue
                 if record.get('buffer_post_id') and parse_time(row['due_at']) <= self.clock():
                     if platform == 'facebook':
                         try:
@@ -163,11 +176,16 @@ class Scheduler:
                         if refreshed['state'] not in ['submitted','posted']:
                             self.report.setdefault('facebook_attention', []).append(row['clip_id']); continue
                     else:
-                        refreshed = self.engine.reconcile(row['clip_id'], platform)
+                        try:
+                            refreshed = self.engine.reconcile(row['clip_id'], platform)
+                        except Exception as exc:          # lookup trouble: try again next run
+                            self.note_error(row['clip_id']+':'+platform+' reconcile', exc); continue
                         if refreshed['state'] == 'failed_at_buffer':
                             self.auto_skip(row, platform, refreshed)
                             continue
-                        require(refreshed['state'] in ['submitted','posted'], 'Buffer post failed; inspect its existing ID.')
+                        if refreshed['state'] not in ['submitted','posted']:
+                            self.auto_skip(row, platform, refreshed, 'buffer_status_'+str(refreshed.get('buffer_status')))
+                            continue
                     self.report['reconciled'].append(row['clip_id']+':'+platform)
 
     def apply_schedule_changes(self):
@@ -176,6 +194,9 @@ class Scheduler:
                 record = self.records.get(row['clip_id']+':'+platform)
                 if not record or record.get('scheduled_at') == row['due_at']:
                     continue
+                if record.get('state') == 'skipped':
+                    continue
+                # Deliberate manual re-times keep their strict checks (they only run when the plan is edited by hand).
                 require(row.get('previous_due_at') == record.get('scheduled_at'),
                         'Changing an existing schedule requires its explicit previous time.')
                 self.engine.reschedule(row['clip_id'], platform, row['previous_due_at'], row['due_at'],
@@ -198,9 +219,12 @@ class Scheduler:
             grace = self.plan.get('cleanup_grace_hours',48)
             if any(self.clock()-parse_time(r['sent_at']) < timedelta(hours=grace) for r in records):
                 continue
-            for platform in plats:
-                self.engine.reconcile(row['clip_id'], platform)
-            self.engine.cleanup(row['clip_id'], provider_confirmed=True,grace_hours=grace, platforms=tuple(plats))
+            try:
+                for platform in plats:
+                    self.engine.reconcile(row['clip_id'], platform)
+                self.engine.cleanup(row['clip_id'], provider_confirmed=True,grace_hours=grace, platforms=tuple(plats))
+            except Exception as exc:
+                self.note_error(row['clip_id']+' cleanup', exc); continue
             self.report['cleaned'].append(row['clip_id'])
             if len(self.report['cleaned']) >= 4:
                 break
@@ -215,19 +239,49 @@ class Scheduler:
                 record = self.records.get(row['clip_id']+':'+platform)
                 if record and record['state'] not in ['preparing','failed_before_submit']:
                     continue
+                if record and record.get('attempts', 1) >= self.MAX_ATTEMPTS:
+                    self.auto_skip(row, platform, record, 'failed_3_attempts')
+                    continue
                 if platform == 'facebook' and record:
                     continue   # never auto-retry a failed Facebook attempt
                 # Pre-submit reservations already occupy one local queue slot.
                 if not record and pending[platform] >= self.plan['max_pending_per_channel']:
                     continue
-                require(parse_time(row['due_at']) > self.clock()+timedelta(minutes=5),
-                        f"Missed scheduling window for {row['clip_id']}; stop rather than publish a backlog in a burst.")
+                if parse_time(row['due_at']) <= self.clock()+timedelta(minutes=5):
+                    # Never publish a backlog in a burst, and never stop the queue: record the missed slot and go on.
+                    self.auto_skip(row, platform, record, 'missed_slot')
+                    continue
                 missing.append(platform)
                 if not record:
                     pending[platform] += 1
             if missing:
                 result.append((row, missing))
         return result[:6]
+
+    def publish_one(self, row, platform, manifest, content, counts):
+        key = row['clip_id']+':'+platform
+        record = self.records.get(key)
+        try:
+            posted = self.engine.publish(manifest, content, platform, self.channels[platform],
+                resume=bool(record), confirmed_unposted=True, due_at=row['due_at'])
+        except Exception as exc:
+            self.note_error(key, exc)
+            rec = self.records.get(key)
+            if rec is not None:
+                if rec.get('state') == 'failed_before_submit':
+                    rec['attempts'] = rec.get('attempts', 0) + 1     # retried next run, skipped after 3 tries
+                    if platform == 'facebook' or rec['attempts'] >= self.MAX_ATTEMPTS:
+                        self.auto_skip(row, platform, rec, 'failed_before_submit')
+                elif rec.get('state') in ('submit_intent', 'needs_attention', 'preparing'):
+                    self.auto_skip(row, platform, rec, 'uncertain_'+rec['state'])   # never resubmitted
+            self.engine.ledger.save()
+            return
+        if posted['state'] != 'submitted' or posted.get('buffer_status') != 'scheduled':
+            self.auto_skip(row, platform, posted, 'buffer_status_'+str(posted.get('buffer_status')))
+            return
+        self.report['scheduled'].append({'clip_id':row['clip_id'], 'platform':platform,
+            'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
+        counts[platform] = counts.get(platform, 0) + 1
 
     def pending_counts(self):
         self.engine.event(None, 'before_buffer_scheduler_organizations')
@@ -249,42 +303,28 @@ class Scheduler:
         if candidates:
             counts = self.pending_counts()
             for row, platforms in candidates:
-                platforms = [p for p in platforms if p != 'facebook' or counts.get(p, 0) < self.plan['max_pending_per_channel']]
-                require(all(counts[p] < self.plan['max_pending_per_channel'] for p in platforms),
-                        'Buffer has reached the configured pending limit; wait for capacity or inspect external posts.')
-                with tempfile.TemporaryDirectory(prefix='motivtated-scheduler-') as scratch:
-                    manifest, content = self.loader(row, Path(scratch))
-                    host = self.engine.host
-                    if hasattr(host,'can_fit') and not host.can_fit(row['clip_id'],
-                            manifest['files']['video.mp4']['sha256'],manifest['files']['video.mp4']['size']):
-                        # Leave no reservation/Buffer intent; refill next hour after safe cleanup.
-                        self.report['deferred_for_storage'] = row['clip_id']
-                        break
+                # A full Buffer queue only defers that platform to a later run; it never stops the others.
+                platforms = [p for p in platforms if counts.get(p, 0) < self.plan['max_pending_per_channel']]
+                if not platforms:
+                    continue
+                try:
+                    with tempfile.TemporaryDirectory(prefix='motivtated-scheduler-') as scratch:
+                        manifest, content = self.loader(row, Path(scratch))
+                        host = self.engine.host
+                        if hasattr(host,'can_fit') and not host.can_fit(row['clip_id'],
+                                manifest['files']['video.mp4']['sha256'],manifest['files']['video.mp4']['size']):
+                            # Leave no reservation/Buffer intent; refill next hour after safe cleanup.
+                            self.report['deferred_for_storage'] = row['clip_id']
+                            break
+                        for platform in platforms:
+                            self.publish_one(row, platform, manifest, content, counts)
+                except Exception as exc:     # package/download trouble for this clip: retried next run, others go on
+                    self.note_error(row['clip_id']+' package', exc)
                     for platform in platforms:
-                        record = self.records.get(row['clip_id']+':'+platform)
-                        if platform == 'facebook':
-                            if self.fb_paused():
-                                continue
-                            try:
-                                posted = self.engine.publish(manifest, content, platform, self.channels[platform],
-                                    resume=False, confirmed_unposted=True, due_at=row['due_at'])
-                                require(posted['state'] == 'submitted' and posted['buffer_status'] == 'scheduled',
-                                        'Expected a scheduled Facebook post.')
-                            except Exception as exc:
-                                self.pause_facebook(row, exc)
-                                self.engine.ledger.save()
-                                continue
-                            self.report['scheduled'].append({'clip_id':row['clip_id'], 'platform':platform,
-                                'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
-                            counts[platform] += 1
-                            continue
-                        posted = self.engine.publish(manifest, content, platform, self.channels[platform],
-                            resume=bool(record), confirmed_unposted=True, due_at=row['due_at'])
-                        require(posted['state'] == 'submitted' and posted['buffer_status'] == 'scheduled',
-                                'Expected a scheduled Buffer post; inspect the saved post ID.')
-                        self.report['scheduled'].append({'clip_id':row['clip_id'], 'platform':platform,
-                            'due_at':row['due_at'], 'buffer_post_id':posted['buffer_post_id']})
-                        counts[platform] += 1
+                        rec = self.records.get(row['clip_id']+':'+platform)
+                        if rec and rec.get('state') in ('preparing', 'failed_before_submit'):
+                            rec['state'] = 'failed_before_submit'
+                    self.engine.ledger.save()
         self.report['complete'] = all(self.records.get(row['clip_id']+':'+p, {}).get('state') in ('posted', 'skipped')
                                       for row in self.rows for p in self.platforms_for(row))
         self.report['finished'] = self.report['complete'] and all(

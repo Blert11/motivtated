@@ -250,7 +250,7 @@ class Lane2:
             if not media or any(r.get('media_deleted_at') for r in recs):
                 continue
             row = next((r for r in self.rows if r['key'] == row_key), None)
-            done = row and all(any(r['platform'] == p and r['state'] in ('posted', 'failed_at_buffer', 'failed_before_submit')
+            done = row and all(any(r['platform'] == p and r['state'] in ('posted', 'failed_at_buffer', 'failed_before_submit', 'needs_attention', 'skipped_missed')
                                    for r in recs) for p in row['platforms'])
             sent = [parse_time(r['sent_at']) for r in recs if r.get('sent_at')]
             if done and all(self.clock()-s > timedelta(hours=2) for s in sent):
@@ -285,8 +285,9 @@ class Lane2:
                 if not ch:
                     continue
                 key = row['key']+':'+p
-                if key in self.records:
-                    continue
+                old = self.records.get(key)
+                if old and not (old['state'] == 'failed_before_submit' and old.get('attempts', 1) < 3):
+                    continue   # one post's failure is retried up to 3 times, then left alone; others carry on
                 if parse_time(row['due_at']) <= self.clock()+timedelta(minutes=15):
                     # Never post a backlog in a burst: a missed slot is skipped and recorded.
                     self.records[key] = {'row': row['key'], 'platform': p, 'channel_id': ch, 'state': 'skipped_missed',
@@ -298,42 +299,63 @@ class Lane2:
                 todo.append((p, ch, key))
             if not todo:
                 continue
-            with tempfile.TemporaryDirectory(prefix='lane2-') as scratch:
-                manifest, content = self.load(row, Path(scratch))
-                vid = manifest['files']['video.mp4']
-                media = next((r['media'] for r in self.records.values() if r['row'] == row['key'] and r.get('media')
-                              and not r.get('media_deleted_at')), None)
-                if not media:
-                    media = self.media.ensure(content/'video.mp4', row['clip_id'], vid['sha256'])
-                    if media is None:
-                        self.report['deferred_for_storage'] = row['key']
-                        break
-                    verify_wait(media, manifest, content)
-                caption = manifest['caption']
+            try:
+                self.fill_row(row, todo, counts)
+            except Exception as exc:
+                # Owner rule (2026-11-14): one failing post never stops the others, on any platform or page.
+                if self.report.get('deferred_for_storage') == row['key']:
+                    break                    # media host full: not a failure, refill next hour
+                msg = str(exc)[:300] if isinstance(exc, Stop) else type(exc).__name__
                 for p, ch, key in todo:
-                    title = youtube_title(row, caption) if p == 'youtube' else None
-                    rec = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': p,
-                           'channel_id': ch, 'due_at': row['due_at'], 'caption': caption, 'title': title,
-                           'media': media, 'state': 'submit_intent', 'created_at': now()}
-                    self.records[key] = rec
-                    self.event(key, 'before_buffer_createPost')
-                    try:
-                        post = create_post(self.buffer, build_payload(p, ch, caption, media['url'], row['due_at'], title))
-                    except SchemaRejected as exc:
-                        rec['state'], rec['error'] = 'failed_before_submit', str(exc)[:600]
-                        self.event(key, 'buffer_rejected_before_execution')
-                        self.report['problems'].append(f'{key}: {str(exc)[:200]}')
+                    rec = self.records.get(key)
+                    if rec and rec.get('state') not in ('failed_before_submit', None):
                         continue
-                    except Stop as exc:
-                        rec['state'], rec['error'] = 'needs_attention', str(exc)[:600]
-                        self.event(key, 'uncertain_create_outcome')
-                        raise
-                    rec['buffer_post_id'], rec['buffer_status'] = post['id'], post['status']
-                    rec['state'] = 'submitted' if post['status'] in ('scheduled', 'sending') else 'needs_attention'
-                    self.event(key, 'buffer_post_id_received')
-                    counts[ch] += 1
-                    self.report['scheduled'].append({'key': key, 'due_at': row['due_at'], 'post_id': post['id']})
+                    prev = (rec or {}).get('attempts', 0)
+                    self.records[key] = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': p,
+                                         'channel_id': ch, 'due_at': row['due_at'], 'state': 'failed_before_submit',
+                                         'attempts': prev + 1, 'error': msg, 'created_at': now()}
+                    self.event(key, 'failed_before_submit')
+                self.report['problems'].append(f"{row['key']}: {msg[:200]}")
             new += 1
+
+    def fill_row(self, row, todo, counts):
+        with tempfile.TemporaryDirectory(prefix='lane2-') as scratch:
+            manifest, content = self.load(row, Path(scratch))
+            vid = manifest['files']['video.mp4']
+            media = next((r['media'] for r in self.records.values() if r['row'] == row['key'] and r.get('media')
+                          and not r.get('media_deleted_at')), None)
+            if not media:
+                media = self.media.ensure(content/'video.mp4', row['clip_id'], vid['sha256'])
+                if media is None:
+                    self.report['deferred_for_storage'] = row['key']
+                    raise Stop('Media host full; deferred.')
+                verify_wait(media, manifest, content)
+            caption = manifest['caption']
+            for p, ch, key in todo:
+                title = youtube_title(row, caption) if p == 'youtube' else None
+                rec = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': p,
+                       'channel_id': ch, 'due_at': row['due_at'], 'caption': caption, 'title': title,
+                       'media': media, 'state': 'submit_intent', 'created_at': now()}
+                self.records[key] = rec
+                self.event(key, 'before_buffer_createPost')
+                try:
+                    post = create_post(self.buffer, build_payload(p, ch, caption, media['url'], row['due_at'], title))
+                except SchemaRejected as exc:
+                    rec['state'], rec['error'] = 'failed_before_submit', str(exc)[:600]
+                    self.event(key, 'buffer_rejected_before_execution')
+                    self.report['problems'].append(f'{key}: {str(exc)[:200]}')
+                    continue
+                except Stop as exc:
+                    # Outcome unknown: never resubmitted (no duplicates), but the queue keeps going.
+                    rec['state'], rec['error'] = 'needs_attention', str(exc)[:600]
+                    self.event(key, 'uncertain_create_outcome')
+                    self.report['problems'].append(f'{key}: uncertain create, left for review')
+                    continue
+                rec['buffer_post_id'], rec['buffer_status'] = post['id'], post['status']
+                rec['state'] = 'submitted' if post['status'] in ('scheduled', 'sending') else 'needs_attention'
+                self.event(key, 'buffer_post_id_received')
+                counts[ch] += 1
+                self.report['scheduled'].append({'key': key, 'due_at': row['due_at'], 'post_id': post['id']})
 
     def retitle(self):
         """Bring pending YouTube titles in line with the plan (2026-11-12: the owner asked that one speaker's

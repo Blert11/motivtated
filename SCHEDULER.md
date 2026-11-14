@@ -75,3 +75,8 @@ Motivtated (YouTube + X) moves to 6 posts a day at 10:00, 12:00, 14:00, 16:00, 1
 - TikTok/Instagram/Facebook stopped scheduling after Nov 12: Buffer reported an error on M000055 Instagram (the reel was rejected, nothing posted), and the scheduler refused to continue while that record was `failed_at_buffer`. Nov 13 therefore had no posts.
 - `Scheduler.auto_skip()` now records such a post as `skipped` (`skip_reason: buffer_reported_error`, event `auto_skipped_after_buffer_error`) and keeps the queue moving. It is never resubmitted; the other platforms of that clip are unaffected.
 - The 204 rows without any Buffer record were re-timed from Nov 14 09:00 at 7 a day (order unchanged); the plan now ends Dec 13.
+- Keep-going rule, all pages (TikTok/Instagram/Facebook lane and the YouTube/X lane for @motivtated and @imanivated): one failing post never stops other posts, on other platforms or on the same platform.
+  - Rejected by the network after scheduling (`failed_at_buffer`), uncertain create (`submit_intent`/`needs_attention`) or an unexpected Buffer status: recorded as `skipped` with a `skip_reason`, never resubmitted (no duplicates).
+  - Failed before anything reached Buffer (package, media hosting, channel check, Buffer refusal): retried on the next runs, at most 3 attempts, then `skipped` (`failed_before_submit`). Facebook is not retried and no longer pauses the whole Facebook channel.
+  - Missed slots are recorded as `skipped` (`missed_slot`) instead of stopping, still never posted late in a burst. A full Buffer queue only defers that platform.
+  - Manual schedule edits (`previous_due_at`) keep their strict checks.

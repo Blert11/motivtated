@@ -81,11 +81,34 @@ class SchedulerTests(unittest.TestCase):
             if p['channelId']=='instagram': raise Stop('ambiguous submission')
             return original(p)
         self.buffer.create=create
-        with self.assertRaises(Stop): self.run_scheduler()
-        self.assertEqual(self.ledger.data['records']['M000010:tiktok']['state'],'submitted')
-        self.assertEqual(self.ledger.data['records']['M000010:instagram']['state'],'submit_intent')
-        with self.assertRaises(Stop): self.run_scheduler()
-        self.assertEqual(len(self.buffer.calls),1)
+        self.run_scheduler()
+        records=self.ledger.data['records']
+        self.assertEqual(records['M000010:tiktok']['state'],'submitted')
+        self.assertEqual(records['M000010:instagram']['state'],'skipped')     # uncertain: never resubmitted
+        self.assertEqual(records['M000010:instagram']['skip_reason'],'uncertain_submit_intent')
+        self.assertTrue(records['M000011:tiktok']['state']=='submitted')       # later posts keep going
+        before=len(self.buffer.calls)
+        self.run_scheduler()
+        self.assertFalse(any(c['channelId']=='instagram' for c in self.buffer.calls))
+        self.assertEqual(records['M000010:instagram']['state'],'skipped')
+
+    def test_one_failed_post_does_not_stop_the_same_platform(self):
+        from publisher.buffer import SchemaRejected
+        original=self.buffer.create
+        def create(p):
+            if p['channelId']=='tiktok' and 'M000010' in json.dumps(p): raise SchemaRejected('rejected')
+            return original(p)
+        self.buffer.create=create
+        result=self.run_scheduler()
+        records=self.ledger.data['records']
+        self.assertEqual(records['M000010:tiktok']['state'],'failed_before_submit')
+        self.assertEqual(records['M000011:tiktok']['state'],'submitted')
+        self.assertEqual(records['M000010:instagram']['state'],'submitted')
+        self.assertTrue(result['errors'])
+        for _ in range(3):
+            self.now += timedelta(minutes=1); self.run_scheduler()
+        self.assertEqual(records['M000010:tiktok']['state'],'skipped')     # gave up after 3 tries
+        self.assertEqual(records['M000010:tiktok']['skip_reason'],'failed_before_submit')
 
     def test_owner_skipped_failure_is_not_resubmitted_and_frees_its_slot(self):
         self.run_scheduler()
@@ -114,7 +137,7 @@ class SchedulerTests(unittest.TestCase):
 
     def test_external_queue_capacity_blocks_new_submissions(self):
         self.buffer.pending=lambda *args:[{'id':str(i),'channelId':p,'status':'scheduled'} for i in range(6) for p in ['tiktok','instagram']]
-        with self.assertRaisesRegex(Stop,'pending limit'): self.run_scheduler()
+        self.run_scheduler()   # a full queue defers new posts without stopping the run
         self.assertEqual(self.buffer.calls,[])
 
     def test_storage_deferral_leaves_no_new_intent_and_resumes_later(self):
@@ -130,12 +153,15 @@ class SchedulerTests(unittest.TestCase):
 
     def test_missed_slot_stops_without_bursting(self):
         self.now=datetime(2099,1,2,tzinfo=timezone.utc)
-        with self.assertRaisesRegex(Stop,'Missed scheduling'): self.run_scheduler()
+        result=self.run_scheduler()   # missed slots are recorded and skipped, never posted late in a burst
         self.assertEqual(self.buffer.calls,[])
+        self.assertTrue(all('missed_slot' in x for x in result['auto_skipped']))
+        self.assertEqual(self.ledger.data['records']['M000010:tiktok']['skip_reason'],'missed_slot')
 
     def test_modified_schedule_cannot_resume_existing_intent(self):
         self.buffer.disconnected=True
-        with self.assertRaises(Stop): self.run_scheduler()
+        self.run_scheduler()   # pre-submission failure is recorded per post; the run itself carries on
+        self.assertEqual(self.ledger.data['records']['M000010:tiktok']['state'],'failed_before_submit')
         self.buffer.disconnected=False
         self.scheduler.rows[0]['due_at']='2099-01-01T10:00:00+01:00'
         with self.assertRaisesRegex(Stop,'previous time'): self.run_scheduler()
@@ -406,10 +432,12 @@ class FacebookTests(SchedulerTests):
         self.buffer.create = create
         report = self.scheduler.run()
         r = self.ledger.data['records']
-        self.assertTrue(self.ledger.data.get('facebook_paused'))
-        self.assertEqual(r['M000010:facebook']['state'], 'failed_before_submit')
+        self.assertFalse(self.ledger.data.get('facebook_paused'))   # only that Facebook post is skipped
+        self.assertEqual(r['M000010:facebook']['state'], 'skipped')
+        self.assertEqual(r['M000010:facebook']['skip_reason'], 'failed_before_submit')
         self.assertTrue(any(x['platform']=='tiktok' for x in report['scheduled']))
         # a later run keeps TikTok/Instagram going and does not retry Facebook
         self.now += timedelta(minutes=1)
         self.scheduler.run()
-        self.assertNotIn('M000011:facebook', self.ledger.data['records'])
+        fb_calls = [c for c in self.buffer.calls if c['channelId'] == 'facebook']
+        self.assertEqual(r['M000010:facebook']['state'], 'skipped')   # never retried
