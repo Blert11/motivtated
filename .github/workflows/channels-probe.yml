@@ -1,0 +1,32 @@
+name: Channels probe (read-only)
+'on':
+  push:
+    branches: [channels-probe]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - name: List channels on both Buffer accounts
+        env:
+          K1: ${{ secrets.BUFFER_API_KEY }}
+          K2: ${{ secrets.BUFFER_API_KEY_2 }}
+        run: |
+          python - <<'PY'
+          import os
+          from publisher.buffer import Buffer
+          for n in ('K1','K2'):
+              b = Buffer(token=os.environ[n])
+              for o in b.organizations():
+                  for c in b.channels(o['id']):
+                      print(n, o['name'], c['service'], c['name'], c['id'], 'disc' if c['isDisconnected'] else '', 'locked' if c['isLocked'] else '')
+          PY
