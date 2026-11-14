@@ -80,3 +80,13 @@ Motivtated (YouTube + X) moves to 6 posts a day at 10:00, 12:00, 14:00, 16:00, 1
   - Failed before anything reached Buffer (package, media hosting, channel check, Buffer refusal): retried on the next runs, at most 3 attempts, then `skipped` (`failed_before_submit`). Facebook is not retried and no longer pauses the whole Facebook channel.
   - Missed slots are recorded as `skipped` (`missed_slot`) instead of stopping, still never posted late in a burst. A full Buffer queue only defers that platform.
   - Manual schedule edits (`previous_due_at`) keep their strict checks.
+
+## Lane 3: Pinterest on the third Buffer account (2026-11-14, Claude, authorized by Blert)
+
+A third scheduler (`publisher/lane3.py`, workflow `lane3-publisher.yml`, hourly at minute 23) posts video pins through the THIRD Buffer account (secret `BUFFER_API_KEY_3`). It reuses lane 2's code and safety rules but has its own plan, ledger and media release, and does not touch lanes 1 or 2.
+
+- Plan: `lane3-schedule.json`. Every Motivtated clip (M000006-M000331, same order and titles as lane 2) and every Imanivated clip (I000001-I000077), 7 pins a day per page at 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00 Europe/Budapest from Nov 15. Motivtated ends Dec 31, Imanivated Nov 25.
+- Each pin: title = the lane-2 title (no title names one speaker), description = the clip caption, destination link = the page's TikTok profile, board = picked by keywords from the page's boards, otherwise rotated across all of them. Boards are read from the channel each run.
+- Channels discovered once: the Pinterest channel whose name contains "iman" is Imanivated, the one containing "moti" is Motivtated.
+- Ledger: `lane3-state.json` on `publisher-state`. Media: public release `lane3-media` in the media repo, removed 2 h after the pin is sent.
+- Without the `BUFFER_API_KEY_3` secret the workflow does nothing. Pause: set `enabled` to false in `lane3-schedule.json`. Push any commit to branch `lane3-kick` to run it immediately.
