@@ -14,7 +14,10 @@ import argparse
 import json
 import os
 import re
-from datetime import datetime, timezone
+import subprocess
+import tempfile
+import urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from . import lane2
@@ -98,10 +101,32 @@ def pick_board(row, caption, boards, counter):
     return boards[names[counter[row['page']] % len(names)]]
 
 
-def build_payload(channel_id, caption, url, due_at, title, board, link):
+COVER_TIMES = (2.0, 3.0, 4.5, 6.0, 8.0, 10.0, 13.0)   # seconds; many clips open with a fade from black
+
+
+def frame_luma(video, t):
+    r = subprocess.run(['ffmpeg', '-v', 'error', '-ss', str(t), '-i', str(video), '-frames:v', '1',
+                        '-vf', 'scale=48:-2,format=gray', '-f', 'rawvideo', '-'], capture_output=True, timeout=60)
+    return sum(r.stdout)/len(r.stdout) if r.returncode == 0 and r.stdout else -1
+
+
+def pick_cover_ms(video):
+    """Earliest frame at least 2 s in that is about as bright as the clip gets (the graded clips are dark
+    overall, so brightness is judged against the clip itself, never a fixed level). Falls back to 3 s."""
+    lumas = [(t, frame_luma(video, t)) for t in COVER_TIMES]
+    top = max(l for _, l in lumas)
+    if top < 0:
+        return 3000
+    for t, l in lumas:
+        if l >= max(0.75*top, 8):
+            return int(t*1000)
+    return 3000
+
+
+def build_payload(channel_id, caption, url, due_at, title, board, link, cover_ms=3000):
     return {'text': caption, 'channelId': channel_id, 'schedulingType': 'automatic',
             'mode': 'customScheduled', 'dueAt': due_at, 'saveToDraft': False,
-            'assets': [{'video': {'url': url}}],
+            'assets': [{'video': {'url': url, 'metadata': {'thumbnailOffset': cover_ms}}}],
             'metadata': {'pinterest': {'title': title, 'url': link, 'boardServiceId': board}}}
 
 
@@ -150,18 +175,19 @@ class Lane3(lane2.Lane2):
                 lane2.verify_wait(media, manifest, content)
             caption = manifest['caption']
             title = lane2.youtube_title(row, caption)
+            cover = pick_cover_ms(content/'video.mp4')
             for p, ch, key in todo:
                 if ch not in self.boards:
                     self.boards[ch] = fetch_boards(self.buffer, ch)
                 board = pick_board(row, caption, self.boards[ch], self.counter)
                 rec = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': p,
                        'channel_id': ch, 'due_at': row['due_at'], 'caption': caption, 'title': title, 'board': board,
-                       'media': media, 'state': 'submit_intent', 'created_at': now()}
+                       'cover_ms': cover, 'media': media, 'state': 'submit_intent', 'created_at': now()}
                 self.records[key] = rec
                 self.event(key, 'before_buffer_createPost')
                 try:
                     post = lane2.create_post(self.buffer, build_payload(ch, caption, media['url'], row['due_at'],
-                                                                        title, board, LINKS[row['page']]))
+                                                                        title, board, LINKS[row['page']], cover))
                 except lane2.SchemaRejected as exc:
                     rec['state'], rec['error'] = 'failed_before_submit', str(exc)[:600]
                     self.event(key, 'buffer_rejected_before_execution')
@@ -178,6 +204,40 @@ class Lane3(lane2.Lane2):
                 counts[ch] += 1
                 self.report['scheduled'].append({'key': key, 'due_at': row['due_at'], 'post_id': post['id']})
 
+    def fix_covers(self):
+        """Pins queued before covers were chosen (2026-11-14) showed the black first frame on Pinterest: set the
+        cover on those still waiting more than 20 minutes ahead. Same post ID, caption, video, board and time;
+        a refusal is recorded and never retried."""
+        self.report['covers_fixed'] = []
+        for key, rec in self.records.items():
+            if rec.get('state') != 'submitted' or rec.get('cover_ms') or rec.get('cover_error') or not rec.get('buffer_post_id'):
+                continue
+            if lane2.parse_time(rec['due_at']) <= self.clock() + timedelta(minutes=20):
+                continue
+            try:
+                with tempfile.TemporaryDirectory(prefix='cover-') as d:
+                    video = Path(d)/'v.mp4'
+                    with urllib.request.urlopen(rec['media']['url'], timeout=300) as r:
+                        video.write_bytes(r.read())
+                    cover = pick_cover_ms(video)
+                edit = build_payload(rec['channel_id'], rec['caption'], rec['media']['url'], rec['due_at'], rec['title'],
+                                     rec['board'], LINKS[rec['page']], cover)
+                edit.pop('channelId'); edit['id'] = rec['buffer_post_id']
+                res = self.buffer.query('mutation($input: EditPostInput!) { editPost(input: $input) { __typename '
+                                        '... on PostActionSuccess { post { id status dueAt } } '
+                                        '... on MutationError { message } } }', {'input': edit})['editPost']
+            except Exception as exc:
+                rec['cover_error'] = type(exc).__name__ + ': ' + str(exc)[:300]
+                self.report['problems'].append(f'{key}: cover fix failed')
+                continue
+            if res.get('__typename') == 'PostActionSuccess':
+                rec['cover_ms'] = cover
+                self.event(key, 'cover_set')
+                self.report['covers_fixed'].append(key)
+            else:
+                rec['cover_error'] = str(res.get('message'))[:300]
+                self.report['problems'].append(f'{key}: cover fix refused')
+
     def run(self):
         self.report = {'scheduled': [], 'posted': [], 'cleaned': [], 'skipped_missed': [], 'problems': []}
         if not self.plan.get('enabled'):
@@ -193,6 +253,7 @@ class Lane3(lane2.Lane2):
                     and str(r.get('error', '')).startswith('No Pinterest boards')]:
             del self.records[key]
         self.reconcile()
+        self.fix_covers()
         self.cleanup()
         ready = {}
         for name, ch in channels.items():

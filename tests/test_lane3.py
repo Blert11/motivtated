@@ -89,6 +89,38 @@ class Lane3Tests(unittest.TestCase):
         self.assertEqual(lane.records, {})
         self.assertEqual(rep['boards'], {'imanivated:pinterest': 0, 'motivtated:pinterest': 0})
 
+    def test_fix_covers_edits_waiting_pins_once(self):
+        plan = {'version': 1, 'enabled': True, 'rows': []}
+        rec = {'state': 'submitted', 'buffer_post_id': 'B1', 'channel_id': 'P', 'page': 'imanivated',
+               'due_at': '2099-01-01T09:00:00+01:00', 'caption': 'c', 'title': 't', 'board': 'b',
+               'media': {'url': 'https://example.invalid/v.mp4'}}
+
+        class Ledger:
+            data = {'records': {'imanivated:I000001:pinterest': rec}}
+            def save(self): pass
+
+        class Buffer:
+            edits = []
+            def query(s, q, v):
+                s.edits.append(v['input'])
+                return {'editPost': {'__typename': 'PostActionSuccess', 'post': {'id': 'B1'}}}
+
+        class Resp:
+            def __enter__(s): return s
+            def __exit__(s, *a): pass
+            def read(s): return b''
+        lane = lane3.Lane3(plan, Ledger(), Buffer(), None, None, clock=lambda: datetime(2098, 12, 31, tzinfo=timezone.utc))
+        uo, pc = lane3.urllib.request.urlopen, lane3.pick_cover_ms
+        lane3.urllib.request.urlopen, lane3.pick_cover_ms = (lambda *a, **k: Resp()), (lambda v: 4500)
+        try:
+            lane.fix_covers(); lane.fix_covers()
+        finally:
+            lane3.urllib.request.urlopen, lane3.pick_cover_ms = uo, pc
+        self.assertEqual(len(Buffer.edits), 1)
+        self.assertEqual(Buffer.edits[0]['id'], 'B1')
+        self.assertEqual(Buffer.edits[0]['assets'][0]['video']['metadata']['thumbnailOffset'], 4500)
+        self.assertEqual(rec['cover_ms'], 4500)
+
 
 if __name__ == '__main__':
     unittest.main()
