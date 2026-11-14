@@ -92,11 +92,10 @@ class SchedulerTests(unittest.TestCase):
         record=self.ledger.data['records']['M000010:tiktok']
         record['state']='failed_at_buffer'
         self.buffer.posts[record['buffer_post_id']]['status']='error'
-        with self.assertRaises(Stop): self.run_scheduler()
-        record['state']='skipped'
         calls=len(self.buffer.calls)
-        self.run_scheduler()
+        self.run_scheduler()   # a Buffer-rejected post is auto-skipped instead of halting the queue
         self.assertEqual(record['state'],'skipped')
+        self.assertEqual(record['skip_reason'],'buffer_reported_error')
         made=[c for c in self.buffer.calls[calls:]]
         self.assertEqual(len(made),1)   # only the slot the skipped post freed is refilled, with a new clip
         self.assertNotIn('M000010:tiktok',[r['clip_id']+':'+r['platform'] for r in self.ledger.data['records'].values()

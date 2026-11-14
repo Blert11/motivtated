@@ -129,6 +129,14 @@ class Scheduler:
         self.engine.event(row['clip_id']+':facebook', 'facebook_paused_after_failure')
         self.report['facebook_paused'] = self.engine.ledger.data['facebook_paused']
 
+    def auto_skip(self, row, platform, record):
+        record['state'] = 'skipped'
+        record['skip_reason'] = 'buffer_reported_error'
+        record['skipped_at'] = datetime.now(timezone.utc).isoformat()
+        self.engine.event(row['clip_id']+':'+platform, 'auto_skipped_after_buffer_error')
+        self.engine.ledger.save()
+        self.report.setdefault('auto_skipped', []).append(row['clip_id']+':'+platform)
+
     def reconcile_due(self):
         for row in self.rows:
             for platform in self.platforms_for(row, include_paused=True):
@@ -138,7 +146,13 @@ class Scheduler:
                 if platform == 'facebook' and record['state'] in ['submit_intent','failed_at_buffer','needs_attention','failed_before_submit']:
                     self.report.setdefault('facebook_attention', []).append(row['clip_id'])
                     continue
-                require(record['state'] not in ['submit_intent','failed_at_buffer','needs_attention'],
+                if record['state'] == 'failed_at_buffer':
+                    # Buffer accepted the post but the network rejected it (nothing was published). Record it as a
+                    # permanent skip for this platform and keep the rest of the queue moving (owner rule 2026-11-14:
+                    # one rejected post must never stop TikTok/Instagram/Facebook for days). Never resubmitted.
+                    self.auto_skip(row, platform, record)
+                    continue
+                require(record['state'] not in ['submit_intent','needs_attention'],
                         f"{row['clip_id']} {platform} needs investigation; no automatic resubmission.")
                 if record.get('buffer_post_id') and parse_time(row['due_at']) <= self.clock():
                     if platform == 'facebook':
@@ -150,6 +164,9 @@ class Scheduler:
                             self.report.setdefault('facebook_attention', []).append(row['clip_id']); continue
                     else:
                         refreshed = self.engine.reconcile(row['clip_id'], platform)
+                        if refreshed['state'] == 'failed_at_buffer':
+                            self.auto_skip(row, platform, refreshed)
+                            continue
                         require(refreshed['state'] in ['submitted','posted'], 'Buffer post failed; inspect its existing ID.')
                     self.report['reconciled'].append(row['clip_id']+':'+platform)
 
