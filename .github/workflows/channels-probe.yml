@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt
-      - name: Inspect Pinterest metadata on account 3
+      - name: Read back pin cover offsets (account 3)
         env:
           K3: ${{ secrets.BUFFER_API_KEY_3 }}
         run: |
@@ -24,12 +24,6 @@ jobs:
           import os, json
           from publisher.buffer import Buffer
           b = Buffer(token=os.environ['K3'])
-          def q(s, v=None):
-              try: return b.query(s, v)
-              except Exception as e: return 'ERR '+str(e)[:400]
-          print(json.dumps(q('{ __type(name: "PinterestMetadata") { fields { name type { name kind ofType { name kind ofType { name } } } } } }')))
-          print(json.dumps(q('{ __type(name: "PinterestBoard") { fields { name } } }')))
-          print(json.dumps(q('{ __type(name: "Channel") { fields { name } } }')))
-          for cid in ('6af8c55c62b70b94b032ae68','6af8c5c962b70b94b032b22e'):
-              print(cid, json.dumps(q('query($i: ChannelInput!) { channel(input: $i) { name service metadata { __typename ... on PinterestMetadata { boards { serviceId name } } } } }', {'i': {'id': cid}})))
+          for pid in ('6af8cbccc5b364e062174306','6af8cbd4b9a106584c6c460d'):
+              print(json.dumps(b.post(pid))[:900])
           PY
