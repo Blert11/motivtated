@@ -70,6 +70,25 @@ class Lane3Tests(unittest.TestCase):
         self.assertEqual(Buffer.made[0]['metadata']['pinterest']['boardServiceId'], 'B1')
         self.assertEqual(Buffer.made[0]['metadata']['pinterest']['url'], 'https://www.tiktok.com/@imanivated')
 
+    def test_waits_without_boards_and_clears_board_failures(self):
+        plan = {'version': 1, 'enabled': True, 'max_pending_per_channel': 10, 'rows': [
+            {'key': 'imanivated:I000001', 'page': 'imanivated', 'clip_id': 'I000001', 'asset_name': 'I000001.zip',
+             'bundle_sha256': '0' * 64, 'platforms': ['pinterest'], 'title': 'x', 'due_at': '2099-01-01T09:00:00+01:00'}]}
+
+        class Ledger:
+            data = {'channels': {'imanivated:pinterest': 'P', 'motivtated:pinterest': 'Q'}, 'records': {
+                'imanivated:I000001:pinterest': {'state': 'failed_before_submit', 'attempts': 1,
+                                                 'error': 'No Pinterest boards on the imanivated channel.', 'channel_id': 'P'}}}
+            def save(self): pass
+
+        class Buffer:
+            def query(s, q, v):
+                return {'channel': {'metadata': {'boards': []}}}
+        lane = lane3.Lane3(plan, Ledger(), Buffer(), None, None, clock=lambda: datetime(2098, 12, 31, tzinfo=timezone.utc))
+        rep = lane.run()
+        self.assertEqual(lane.records, {})
+        self.assertEqual(rep['boards'], {'imanivated:pinterest': 0, 'motivtated:pinterest': 0})
+
 
 if __name__ == '__main__':
     unittest.main()

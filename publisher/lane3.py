@@ -185,9 +185,22 @@ class Lane3(lane2.Lane2):
             channels = discover_channels(self.buffer, self.ledger)
             self.ledger.save()
         self.report['channels'] = channels
+        # A pin that failed only because Buffer had no boards yet never reached Buffer: clear it so it is not
+        # counted against its 3 attempts.
+        for key in [k for k, r in self.records.items() if r.get('state') == 'failed_before_submit'
+                    and str(r.get('error', '')).startswith('No Pinterest boards')]:
+            del self.records[key]
         self.reconcile()
         self.cleanup()
-        self.fill(channels)
+        ready = {}
+        for name, ch in channels.items():
+            self.boards[ch] = fetch_boards(self.buffer, ch)
+            if self.boards[ch]:
+                ready[name] = ch
+            else:
+                self.report['problems'].append(f'{name}: Buffer has no boards for this channel yet; waiting.')
+        self.report['boards'] = {name: len(self.boards[ch]) for name, ch in channels.items()}
+        self.fill(ready)
         return self.report
 
 
