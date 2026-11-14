@@ -134,6 +134,8 @@ class Lane3(lane2.Lane2):
         self.ledger, self.buffer, self.media, self.gh = ledger, buffer, media, gh
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.boards, self.counter = {}, {}
+        # GitHub runs scheduled workflows only every few hours, so each run fills the queue up to Buffer's 10 per page.
+        self.max_new = 20
         self.report = {'scheduled': [], 'posted': [], 'cleaned': [], 'skipped_missed': [], 'problems': []}
 
     def fill_row(self, row, todo, counts):

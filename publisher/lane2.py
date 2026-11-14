@@ -277,7 +277,7 @@ class Lane2:
         counts = {cid: self.pending(cid) for cid in channels.values()}
         new = 0
         for row in self.rows:
-            if new >= MAX_NEW_PER_RUN:
+            if new >= getattr(self, 'max_new', MAX_NEW_PER_RUN):
                 break
             todo = []
             for p in row['platforms']:

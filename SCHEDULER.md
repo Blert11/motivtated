@@ -90,3 +90,4 @@ A third scheduler (`publisher/lane3.py`, workflow `lane3-publisher.yml`, hourly 
 - Channels discovered once: the Pinterest channel whose name contains "iman" is Imanivated, the one containing "moti" is Motivtated.
 - Ledger: `lane3-state.json` on `publisher-state`. Media: public release `lane3-media` in the media repo, removed 2 h after the pin is sent.
 - Without the `BUFFER_API_KEY_3` secret the workflow does nothing. Pause: set `enabled` to false in `lane3-schedule.json`. Push any commit to branch `lane3-kick` to run it immediately.
+- 2026-11-14: GitHub was starting the hourly workflows only every few hours, so each lane-3 run now fills each Pinterest queue up to 10 pins (up to 20 clips per run) instead of 4.
