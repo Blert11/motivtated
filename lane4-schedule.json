@@ -85,6 +85,19 @@
       ]
     },
     {
+      "key": "imanivated:I000078",
+      "page": "imanivated",
+      "clip_id": "I000078",
+      "asset_name": "I000078.zip",
+      "bundle_sha256": "3e5143822f2a10aba3ef208eda6464c2e24bae77973d01d84078fc98d3b4a628",
+      "due_at": "2026-11-19T20:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
       "key": "imanivated:I000052",
       "page": "imanivated",
       "clip_id": "I000052",
@@ -143,6 +156,19 @@
       "asset_name": "I000056.zip",
       "bundle_sha256": "d9b9cd862cfa1ae6aac35f571d70f436c31a177b9f92975ffac5efed29a42294",
       "due_at": "2026-11-20T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000079",
+      "page": "imanivated",
+      "clip_id": "I000079",
+      "asset_name": "I000079.zip",
+      "bundle_sha256": "1ffe3d50e84123bd7861184162890c6e90e5b67c32b8c659e54c733bbcc6dba8",
+      "due_at": "2026-11-20T20:00:00+01:00",
       "platforms": [
         "tiktok",
         "instagram",
@@ -215,6 +241,19 @@
       ]
     },
     {
+      "key": "imanivated:I000080",
+      "page": "imanivated",
+      "clip_id": "I000080",
+      "asset_name": "I000080.zip",
+      "bundle_sha256": "c2c8bf36d57883575b5eacdd20f3bb2dcfbe949af290a9b3e2a5a7108e9b105b",
+      "due_at": "2026-11-21T20:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
       "key": "imanivated:I000062",
       "page": "imanivated",
       "clip_id": "I000062",
@@ -273,6 +312,19 @@
       "asset_name": "I000066.zip",
       "bundle_sha256": "78d6c5196342daf8507925f9dae203581d1efb9fbbce7e64dcd7bcc6b2048bda",
       "due_at": "2026-11-22T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000081",
+      "page": "imanivated",
+      "clip_id": "I000081",
+      "asset_name": "I000081.zip",
+      "bundle_sha256": "5d87b7e14e192abd1ebccbe1cba8698516feb2a0511fdd79fb5fa6a98943e28d",
+      "due_at": "2026-11-22T20:00:00+01:00",
       "platforms": [
         "tiktok",
         "instagram",
@@ -422,5 +474,8 @@
         "facebook"
       ]
     }
+  ],
+  "notes": [
+    "2026-11-18: dhikr videos I000078-I000081 added at 20:00 on Nov 19-22, mixed between the regular clips (authorized by Blert)."
   ]
 }

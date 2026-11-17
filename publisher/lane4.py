@@ -64,7 +64,7 @@ def validate_plan(plan):
     return plan['rows']
 
 
-def build_payload(platform, channel_id, caption, url, due_at, cover_ms):
+def build_payload(platform, channel_id, caption, url, due_at, cover_ms, seconds=0):
     require(platform in PLATFORMS, 'Unsupported lane-4 platform.')
     data = {'text': caption, 'channelId': channel_id, 'schedulingType': 'automatic',
             'mode': 'customScheduled', 'dueAt': due_at, 'saveToDraft': False,
@@ -72,7 +72,8 @@ def build_payload(platform, channel_id, caption, url, due_at, cover_ms):
     if platform == 'instagram':
         data['metadata'] = {'instagram': {'type': 'reel', 'shouldShareToFeed': True}}
     if platform == 'facebook':
-        data['metadata'] = {'facebook': {'type': 'reel'}}
+        # Facebook Reels are limited to 90 s; the longer dhikr videos go up as a normal video post.
+        data['metadata'] = {'facebook': {'type': 'reel' if seconds <= 90 else 'post'}}
     return data
 
 
@@ -110,6 +111,7 @@ class Lane4(lane2.Lane2):
                 lane2.verify_wait(media, manifest, content)
             caption = manifest['caption']
             cover = pick_cover_ms(content/'video.mp4')
+            seconds = lane2.probe(content/'video.mp4', max_seconds=175)['duration_seconds']
             for p, ch, key in todo:
                 rec = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': p,
                        'channel_id': ch, 'due_at': row['due_at'], 'caption': caption, 'cover_ms': cover,
@@ -117,7 +119,7 @@ class Lane4(lane2.Lane2):
                 self.records[key] = rec
                 self.event(key, 'before_buffer_createPost')
                 try:
-                    post = lane2.create_post(self.buffer, build_payload(p, ch, caption, media['url'], row['due_at'], cover))
+                    post = lane2.create_post(self.buffer, build_payload(p, ch, caption, media['url'], row['due_at'], cover, seconds))
                 except lane2.SchemaRejected as exc:
                     rec['state'], rec['error'] = 'failed_before_submit', str(exc)[:600]
                     self.event(key, 'buffer_rejected_before_execution')

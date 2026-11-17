@@ -28,7 +28,7 @@ from .media import verify_public
 
 TZ = ZoneInfo('Europe/Budapest')
 SLOTS = {'motivtated': [(10, 0), (12, 0), (14, 0), (16, 0), (18, 0), (20, 0), (21, 30)],   # 7 a day from Nov 14 (2026-11-13; was 6)
-         'imanivated': [(10, 0), (12, 0), (14, 0), (18, 0), (21, 30)]}   # 5 a day from Nov 16 (2026-11-11)
+         'imanivated': [(10, 0), (12, 0), (14, 0), (18, 0), (20, 0), (21, 30)]}   # 5 a day from Nov 16 (2026-11-11); 20:00 only for the dhikr videos (2026-11-18)
 PAGES = {'motivtated': ('youtube', 'twitter'), 'imanivated': ('youtube',)}
 RELEASES = {'motivtated': 'posting-inputs', 'imanivated': 'imanivated-inputs'}
 ID_RE = {'motivtated': r'M\d{6}', 'imanivated': r'I\d{6}'}
@@ -109,7 +109,7 @@ def unpack_iman(bundle, expected_hash, directory):
         require(p.stat().st_size == exp['size'] and sha256(p) == exp['sha256'], f'{name} hash mismatch.')
     caption = (directory/'caption.txt').read_text(encoding='utf-8').strip()
     require(caption == manifest['caption'] and re.findall(r'#\w+', caption) == ['#imanivated'], 'Bad Imanivated caption.')
-    probe(directory/'video.mp4', max_seconds=90)   # YouTube Shorts allow up to 3 min; Imanivated clips run to ~80 s with the outro
+    probe(directory/'video.mp4', max_seconds=175)   # YouTube Shorts allow up to 3 min; the dhikr videos (2026-11-18) run 128 s
     return manifest
 
 
