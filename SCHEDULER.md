@@ -92,3 +92,9 @@ A third scheduler (`publisher/lane3.py`, workflow `lane3-publisher.yml`, hourly 
 - Without the `BUFFER_API_KEY_3` secret the workflow does nothing. Pause: set `enabled` to false in `lane3-schedule.json`. Push any commit to branch `lane3-kick` to run it immediately.
 - 2026-11-14: GitHub was starting the hourly workflows only every few hours, so each lane-3 run now fills each Pinterest queue up to 10 pins (up to 20 clips per run) instead of 4.
 - 2026-11-14: Pins showed the clip's black opening frame. Each pin now sets a cover frame (`thumbnailOffset`): the earliest frame from 2 s on that is about as bright as the clip gets (checked with ffmpeg), default 3 s. `Lane3.fix_covers()` edits pins already waiting in Buffer (same post ID, caption, video, board and time; only those due more than 20 minutes ahead; a refusal is recorded as `cover_error` and not retried).
+
+## Lane 4: Imanivated TikTok + Instagram + Facebook on the fourth Buffer account (2026-11-18, Claude, authorized by Blert)
+- `publisher/lane4.py`, workflow `lane4-publisher.yml` (hourly at minute 37, `lane4-kick` branch or manual dispatch), secret `BUFFER_API_KEY_4`, ledger `lane4-state.json`, media release `lane4-media`.
+- Plan `lane4-schedule.json`: the same Imanivated clips and times as the YouTube lane (lane 2), from I000046 (Nov 18 18:00) to I000077 (Nov 24 21:30), 5 a day. Blert had posted up to I000045 by hand on Nov 16 (checked on the TikTok profile by clip length), plus batch-4 clips 1, 2 and 3; those are not repeated.
+- Instagram and Facebook post as Reels; covers use lane 3's bright-frame picker. Channels are discovered once (exactly one TikTok, Instagram and Facebook channel on that account).
+- Same rules as lanes 2/3: no automatic resubmission, missed slots skipped, one failing post never stops the others.

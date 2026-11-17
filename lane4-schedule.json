@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "enabled": true,
+  "timezone": "Europe/Budapest",
+  "authorized_on": "2026-11-18",
+  "note": "Imanivated TikTok/Instagram/Facebook on the fourth Buffer account. Same clips and times as the Imanivated YouTube lane, starting after I000045 (the last clip Blert posted by hand on Nov 16).",
+  "max_pending_per_channel": 10,
+  "rows": [
+    {
+      "key": "imanivated:I000046",
+      "page": "imanivated",
+      "clip_id": "I000046",
+      "asset_name": "I000046.zip",
+      "bundle_sha256": "eefc00d4acd7947de705f26db0d8e2d6e33354c395b1d1f0095450c603a8e844",
+      "due_at": "2026-11-18T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000047",
+      "page": "imanivated",
+      "clip_id": "I000047",
+      "asset_name": "I000047.zip",
+      "bundle_sha256": "a7e22f406042464c5bd0e0e9a4162c35840800fdcfb51a61e85324509c21676b",
+      "due_at": "2026-11-18T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000048",
+      "page": "imanivated",
+      "clip_id": "I000048",
+      "asset_name": "I000048.zip",
+      "bundle_sha256": "d231c34ba9e750e7337ba5110c9d0ef1353b78cf73f7341a3c1ad57a7b534b8c",
+      "due_at": "2026-11-19T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000049",
+      "page": "imanivated",
+      "clip_id": "I000049",
+      "asset_name": "I000049.zip",
+      "bundle_sha256": "154570160b1c5d2e62fdbaacb5d92e892bc9c9a896537abb78c9b9c11ccc1f18",
+      "due_at": "2026-11-19T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000050",
+      "page": "imanivated",
+      "clip_id": "I000050",
+      "asset_name": "I000050.zip",
+      "bundle_sha256": "ec24b127dc47fb7225337f2fdadc0c143b4b3be6f82fe05e9c4ba61f6427353d",
+      "due_at": "2026-11-19T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000051",
+      "page": "imanivated",
+      "clip_id": "I000051",
+      "asset_name": "I000051.zip",
+      "bundle_sha256": "a6572bced0f1d7ede98259f3269a8125a6c393a19f5339421a21335ad2049491",
+      "due_at": "2026-11-19T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000052",
+      "page": "imanivated",
+      "clip_id": "I000052",
+      "asset_name": "I000052.zip",
+      "bundle_sha256": "ced27232ded08b1b6b9b1c2d41e57ae9a540f0d4487b24818b98e2911f254500",
+      "due_at": "2026-11-19T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000053",
+      "page": "imanivated",
+      "clip_id": "I000053",
+      "asset_name": "I000053.zip",
+      "bundle_sha256": "2daf1ade573e803b2a5f0ffc25858528a443957255ea840aa3a11b3981b30ee2",
+      "due_at": "2026-11-20T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000054",
+      "page": "imanivated",
+      "clip_id": "I000054",
+      "asset_name": "I000054.zip",
+      "bundle_sha256": "65b75faf553e3ae6a8b68efd27c0fd7a43d8c2888301791cd3850ed6f25dbedc",
+      "due_at": "2026-11-20T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000055",
+      "page": "imanivated",
+      "clip_id": "I000055",
+      "asset_name": "I000055.zip",
+      "bundle_sha256": "06d67cea9ac553d9e394e21867ff927d4bccd17fb385dac0e4af464c45f70409",
+      "due_at": "2026-11-20T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000056",
+      "page": "imanivated",
+      "clip_id": "I000056",
+      "asset_name": "I000056.zip",
+      "bundle_sha256": "d9b9cd862cfa1ae6aac35f571d70f436c31a177b9f92975ffac5efed29a42294",
+      "due_at": "2026-11-20T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000057",
+      "page": "imanivated",
+      "clip_id": "I000057",
+      "asset_name": "I000057.zip",
+      "bundle_sha256": "ed27ec815a987617b72543cbb59f12c43e46b631983fae06bda830a7b3ee45d0",
+      "due_at": "2026-11-20T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000058",
+      "page": "imanivated",
+      "clip_id": "I000058",
+      "asset_name": "I000058.zip",
+      "bundle_sha256": "124718eb132f89ba2fcc439bcc4bb8b606f4682b8fc62f14a383dc1aa707e7c5",
+      "due_at": "2026-11-21T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000059",
+      "page": "imanivated",
+      "clip_id": "I000059",
+      "asset_name": "I000059.zip",
+      "bundle_sha256": "89f5fa098e834be917fc92d19e649d4f8ce64e49d2c134d64c5f97a148326503",
+      "due_at": "2026-11-21T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000060",
+      "page": "imanivated",
+      "clip_id": "I000060",
+      "asset_name": "I000060.zip",
+      "bundle_sha256": "94ccb3c07f266d749c04432c610bf828c42054e3f157b02e55331df84a418979",
+      "due_at": "2026-11-21T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000061",
+      "page": "imanivated",
+      "clip_id": "I000061",
+      "asset_name": "I000061.zip",
+      "bundle_sha256": "a3643c8b9724ec7a2cd30b918ce6ef69f2a653182aa452fe37ae660b2a508a7c",
+      "due_at": "2026-11-21T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000062",
+      "page": "imanivated",
+      "clip_id": "I000062",
+      "asset_name": "I000062.zip",
+      "bundle_sha256": "ce22c820c7162e4ea4e0bdf155c8ec72cc56778664c2f982d264741c2493e632",
+      "due_at": "2026-11-21T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000063",
+      "page": "imanivated",
+      "clip_id": "I000063",
+      "asset_name": "I000063.zip",
+      "bundle_sha256": "966de8bd59ad358525a01f6c43b9046d160f7beea0f2b31d32d624bde53823cc",
+      "due_at": "2026-11-22T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000064",
+      "page": "imanivated",
+      "clip_id": "I000064",
+      "asset_name": "I000064.zip",
+      "bundle_sha256": "7d7b4d01ad68633b2dcd0690dc35a8dc22352a54472049f964aaf3ec35d83fea",
+      "due_at": "2026-11-22T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000065",
+      "page": "imanivated",
+      "clip_id": "I000065",
+      "asset_name": "I000065.zip",
+      "bundle_sha256": "1bb5c5ee217eaa5bcf53e1c023e3f3a79391babfb38ae2c98648c877dfc381ec",
+      "due_at": "2026-11-22T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000066",
+      "page": "imanivated",
+      "clip_id": "I000066",
+      "asset_name": "I000066.zip",
+      "bundle_sha256": "78d6c5196342daf8507925f9dae203581d1efb9fbbce7e64dcd7bcc6b2048bda",
+      "due_at": "2026-11-22T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000067",
+      "page": "imanivated",
+      "clip_id": "I000067",
+      "asset_name": "I000067.zip",
+      "bundle_sha256": "32f7471c54ba0cd3dd8f32e27bb3e9199b7cc615e15fd7f85cf1a0e72d5871a4",
+      "due_at": "2026-11-22T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000068",
+      "page": "imanivated",
+      "clip_id": "I000068",
+      "asset_name": "I000068.zip",
+      "bundle_sha256": "1e67225afa2931b150e210028867a0d6aadc67d6960962f0358fbc43a38aede0",
+      "due_at": "2026-11-23T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000069",
+      "page": "imanivated",
+      "clip_id": "I000069",
+      "asset_name": "I000069.zip",
+      "bundle_sha256": "9ae436ee9e2070686ad6b34789216f25fca98b316970d5e456e9edfec7e14eea",
+      "due_at": "2026-11-23T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000070",
+      "page": "imanivated",
+      "clip_id": "I000070",
+      "asset_name": "I000070.zip",
+      "bundle_sha256": "e8a31bf3eb3a7b76591c787890af482dcdbf12bc333735e431f8a55101b07f03",
+      "due_at": "2026-11-23T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000071",
+      "page": "imanivated",
+      "clip_id": "I000071",
+      "asset_name": "I000071.zip",
+      "bundle_sha256": "6e5211f1f8c7ad52c33f6131de08ebb332ea6ccfb2e629126ef2d63bf23ce4a6",
+      "due_at": "2026-11-23T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000072",
+      "page": "imanivated",
+      "clip_id": "I000072",
+      "asset_name": "I000072.zip",
+      "bundle_sha256": "f148574d69e28fdc22c995e36fa09350d5df6338f568178a8f24b7e73f1284ed",
+      "due_at": "2026-11-23T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000073",
+      "page": "imanivated",
+      "clip_id": "I000073",
+      "asset_name": "I000073.zip",
+      "bundle_sha256": "3ea33d6e57a35f850f8966219a98186dc09735bd85a49c53834b9764e5076374",
+      "due_at": "2026-11-24T10:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000074",
+      "page": "imanivated",
+      "clip_id": "I000074",
+      "asset_name": "I000074.zip",
+      "bundle_sha256": "a0a83d177badf1f2c745e8d1ef3769d35f0e81e1b9b90f7ab950c66e591e0b53",
+      "due_at": "2026-11-24T12:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000075",
+      "page": "imanivated",
+      "clip_id": "I000075",
+      "asset_name": "I000075.zip",
+      "bundle_sha256": "300f8ffc3e69d2e2b45eb809b2d16d818d662e2f86ef55164a2e4268783184ec",
+      "due_at": "2026-11-24T14:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000076",
+      "page": "imanivated",
+      "clip_id": "I000076",
+      "asset_name": "I000076.zip",
+      "bundle_sha256": "f35d5e8494eb3766dec5cfb7177ad5ff625f85e408b66cd61df4942a610213d2",
+      "due_at": "2026-11-24T18:00:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    },
+    {
+      "key": "imanivated:I000077",
+      "page": "imanivated",
+      "clip_id": "I000077",
+      "asset_name": "I000077.zip",
+      "bundle_sha256": "0063496366618db1eee52351158e39a7ec3bf707a27915686dabbb147506aebc",
+      "due_at": "2026-11-24T21:30:00+01:00",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook"
+      ]
+    }
+  ]
+}
