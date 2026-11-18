@@ -99,3 +99,9 @@ A third scheduler (`publisher/lane3.py`, workflow `lane3-publisher.yml`, hourly 
 - Instagram and Facebook post as Reels; covers use lane 3's bright-frame picker. Channels are discovered once (exactly one TikTok, Instagram and Facebook channel on that account).
 - Same rules as lanes 2/3: no automatic resubmission, missed slots skipped, one failing post never stops the others.
 - 2026-11-18 (authorized by Blert): the four dhikr reminder videos (I000078-I000081, 128 s each) are mixed into the Imanivated days at 20:00 on Nov 19, 20, 21 and 22, on YouTube (lane 2) and TikTok/Instagram/Facebook (lane 4). 20:00 is a slot used only by them. Imanivated bundles may now run to 175 s (YouTube Shorts allow 3 min). On Facebook, videos over 90 s go up as a normal video post (Reels max 90 s).
+
+## 2026-11-18 — one-off "post it now" clip (M000332)
+Blert sent a new video and asked for it to be posted now. Rows may carry `extra_post: true` with an `extra_note`;
+such a row may use any whole minute and does not count toward the day's slots, but must still keep the per-page time order.
+M000332 ("Real cars, not game cars", B-roll only, follow outro) is set for 23:45 on 2026-11-18 on TikTok, Instagram,
+Facebook, YouTube and X. Both publishers were run by hand right after the push.

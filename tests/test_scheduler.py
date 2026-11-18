@@ -393,6 +393,16 @@ class PaceChangeTests(unittest.TestCase):
         with self.assertRaises(Stop):
             validate_plan(plan)
 
+    def test_extra_post_allowed_only_with_note(self):
+        from publisher.scheduler import validate_plan
+        from publisher.common import Stop
+        plan = json.loads(Path('posting-schedule.json').read_text(encoding='utf-8'))
+        self.assertTrue(validate_plan(plan))
+        r = next(r for r in plan['clips'] if r.get('extra_post'))
+        del r['extra_note']
+        with self.assertRaises(Stop):
+            validate_plan(plan)
+
 
 class FacebookTests(SchedulerTests):
     """Facebook is an isolated third platform: problems pause only Facebook."""

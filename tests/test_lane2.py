@@ -34,6 +34,14 @@ class Lane2Tests(unittest.TestCase):
         with self.assertRaises(Stop):
             lane2.validate_plan({**plan, 'rows': rows})
 
+    def test_extra_post_needs_note(self):
+        plan = json.loads(Path('lane2-schedule.json').read_text(encoding='utf-8'))
+        rows = [dict(r) for r in plan['rows']]
+        r = next(r for r in rows if r.get('extra_post'))
+        del r['extra_note']
+        with self.assertRaises(Stop):
+            lane2.validate_plan({**plan, 'rows': rows})
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -68,9 +68,12 @@ def validate_plan(plan):
         require(previous is None or due > previous, 'Clip times must strictly increase.')
         local = due.astimezone(ZoneInfo(plan['timezone']))
         daily = pace_for(plan, local.date())
-        require((local.hour,local.minute) in SLOTS[daily] and local.second == local.microsecond == 0, 'Unexpected posting slot.')
-        days[local.date()] = days.get(local.date(), 0)+1
-        require(days[local.date()] <= daily, 'The plan exceeds its approved posts per local day.')
+        if row.get('extra_post'):   # one-off "post it now" clip Blert asked for: any minute, outside the daily count
+            require(local.second == local.microsecond == 0 and row.get('extra_note'), 'Extra posts need a whole-minute time and a note.')
+        else:
+            require((local.hour,local.minute) in SLOTS[daily] and local.second == local.microsecond == 0, 'Unexpected posting slot.')
+            days[local.date()] = days.get(local.date(), 0)+1
+            require(days[local.date()] <= daily, 'The plan exceeds its approved posts per local day.')
         previous = due
     return rows
 

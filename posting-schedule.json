@@ -1279,6 +1279,16 @@
       "filename": "10. clip tate - the second best time is now.mp4"
     },
     {
+      "clip_id": "M000332",
+      "source": "github-release",
+      "bundle_sha256": "02a9edd137f6213244b61e436c10a5c87ab3a63c146a92ff789dd7cb9c1da346",
+      "due_at": "2026-11-18T23:45:00+01:00",
+      "local_time": "2026-11-18T23:45:00+01:00",
+      "filename": "real cars not game cars.mp4",
+      "extra_post": true,
+      "extra_note": "Blert asked on 2026-11-18 to post this new video now"
+    },
+    {
       "clip_id": "M000184",
       "source": "github-release",
       "bundle_sha256": "c37cd8f8848b0207380debfcc53c9ca05ab890e31eed1584a33a6f587242a993",

@@ -61,11 +61,13 @@ def validate_plan(plan):
         require(re.fullmatch(re.escape(row['clip_id'])+r'(\.r[0-9]{1,2})?\.zip', row['asset_name']), 'Bad asset name.')
         require(set(row['platforms']) <= set(PAGES[page]) and row['platforms'], 'Bad platforms.')
         due = parse_time(row['due_at']).astimezone(TZ)
-        require((due.hour, due.minute) in SLOTS[page] and due.second == 0, 'Unexpected slot.')
+        extra = row.get('extra_post')   # one-off "post it now" clip: any minute, outside the daily count
+        require(due.second == 0 and (extra and row.get('extra_note') or (due.hour, due.minute) in SLOTS[page]), 'Unexpected slot.')
         require(page not in last or due > last[page], 'Times must increase per page.')
         last[page] = due
-        per_day[(page, due.date())] = per_day.get((page, due.date()), 0)+1
-        require(per_day[(page, due.date())] <= len(SLOTS[page]), 'Too many posts in one day for this page.')
+        if not extra:
+            per_day[(page, due.date())] = per_day.get((page, due.date()), 0)+1
+            require(per_day[(page, due.date())] <= len(SLOTS[page]), 'Too many posts in one day for this page.')
         require(len(row.get('title') or '') <= 100, 'YouTube title too long.')
     return plan['rows']
 
