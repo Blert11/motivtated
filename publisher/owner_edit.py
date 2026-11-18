@@ -46,7 +46,7 @@ def main():
                 r['media'] = {**r['media'], 'url': url, 'replaced_by_owner_at': now()}
             r['owner_edit_at'] = now(); changed = True
             out.append({k: post.get('dueAt')})
-        if changed:
+        if changed and not (isinstance(L, GitHubLedger) and type(L) is GitHubLedger and os.environ.get('INPUT_KEEP_MAIN_LEDGER') == 'true'):
             L.data.setdefault('events', []).append({'action': 'owner_edit', 'at': now(), 'record': cid})
             L.save()
     print(json.dumps(out, indent=1))

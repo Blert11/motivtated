@@ -5,6 +5,7 @@ name: Owner edit of a queued clip
       clip_id: {description: Clip ID, type: string, required: true}
       due_at: {description: New time (ISO with offset), type: string, required: true}
       media_url: {description: Optional replacement video URL, type: string}
+      keep_main_ledger: {description: Do not write the main-lane ledger (a main run is active; time unchanged), type: boolean, default: false}
 permissions:
   contents: write
 jobs:
@@ -25,3 +26,4 @@ jobs:
           INPUT_CLIP_ID: ${{ inputs.clip_id }}
           INPUT_DUE_AT: ${{ inputs.due_at }}
           INPUT_MEDIA_URL: ${{ inputs.media_url }}
+          INPUT_KEEP_MAIN_LEDGER: ${{ inputs.keep_main_ledger }}
