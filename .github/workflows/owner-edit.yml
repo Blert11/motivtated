@@ -1,0 +1,27 @@
+name: Owner edit of a queued clip
+'on':
+  workflow_dispatch:
+    inputs:
+      clip_id: {description: Clip ID, type: string, required: true}
+      due_at: {description: New time (ISO with offset), type: string, required: true}
+      media_url: {description: Optional replacement video URL, type: string}
+permissions:
+  contents: write
+jobs:
+  edit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with: {persist-credentials: false}
+      - uses: actions/setup-python@v7
+        with: {python-version: '3.12'}
+      - run: python -m pip install -r requirements.txt
+      - run: python -m publisher.owner_edit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          INPUT_CLIP_ID: ${{ inputs.clip_id }}
+          INPUT_DUE_AT: ${{ inputs.due_at }}
+          INPUT_MEDIA_URL: ${{ inputs.media_url }}
