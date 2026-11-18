@@ -107,3 +107,9 @@ M000332 ("Real cars, not game cars", B-roll only, follow outro) is set for 23:45
 Facebook, YouTube and X. Both publishers were run by hand right after the push.
 Also fixed: from 2026-11-18 04:25 the main lane stopped because its ledger passed 1 MB, where GitHub's contents API
 returns no file body. Ledgers over 1 MB are now read through the git blob API (works up to 100 MB).
+
+## 2026-11-19 — five GTA 6 clips (M000333-M000337) as extra posts on Nov 19
+10:45 M000334, 12:30 M000336, 15:00 M000335, 17:15 M000333, 19:45 M000337, on TikTok, Instagram, Facebook, YouTube and X,
+in between the normal slots. Every caption mentions GTA 6. The Motivtated length check is now 90 s (Reels limit); M000337 is 89.3 s.
+Queues were full through Nov 20, so the three latest Nov 20 posts per channel were deleted from Buffer and their records dropped
+(owner_free); the lanes schedule them again later. The rest of the extras get room as the morning posts go out.

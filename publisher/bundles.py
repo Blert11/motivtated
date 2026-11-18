@@ -20,7 +20,7 @@ def validate_caption(raw):
     return text
 
 
-def probe(video, max_seconds=76):
+def probe(video, max_seconds=90):   # Reels and Facebook Reels take up to 90 s (was 76, raised 2026-11-19)
     try:
         p = subprocess.run(['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', str(video)],
                            capture_output=True, text=True, encoding='utf-8', timeout=60, check=True)
