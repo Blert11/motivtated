@@ -105,3 +105,5 @@ Blert sent a new video and asked for it to be posted now. Rows may carry `extra_
 such a row may use any whole minute and does not count toward the day's slots, but must still keep the per-page time order.
 M000332 ("Real cars, not game cars", B-roll only, follow outro) is set for 23:45 on 2026-11-18 on TikTok, Instagram,
 Facebook, YouTube and X. Both publishers were run by hand right after the push.
+Also fixed: from 2026-11-18 04:25 the main lane stopped because its ledger passed 1 MB, where GitHub's contents API
+returns no file body. Ledgers over 1 MB are now read through the git blob API (works up to 100 MB).

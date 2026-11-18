@@ -97,7 +97,11 @@ class GitHubLedger:
     def load(self):
         result = self.gh.file(self.PATH, self.BRANCH)
         require(result is not None, 'Run init-state once before publishing. Missing state is never silently reset.')
-        require(result.get('encoding') == 'base64', 'State format/size unsupported; inspect ledger.')
+        if result.get('encoding') != 'base64':
+            # Over 1 MB the contents API returns no content; read the same blob (up to 100 MB) by its sha.
+            require(re.fullmatch('[0-9a-f]{40}', result.get('sha') or ''), 'State format/size unsupported; inspect ledger.')
+            result = {**self.gh.request('GET', f"/git/blobs/{result['sha']}"), 'sha': result['sha']}
+            require(result.get('encoding') == 'base64', 'State format/size unsupported; inspect ledger.')
         self.data = json.loads(base64.b64decode(result['content']))
         require(self.data.get('version') == 1, 'Unknown state version.')
         self.version = result['sha']
