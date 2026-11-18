@@ -25,11 +25,11 @@ def main():
     cid = env('INPUT_CLIP_ID'); due = env('INPUT_DUE_AT'); url = os.environ.get('INPUT_MEDIA_URL', '').strip()
     require(re.fullmatch(r'M\d{6}', cid), 'Bad clip id.')
     require(not url or url.startswith('https://'), 'Bad media URL.')
-    gh = GitHub(env('GITHUB_REPOSITORY'), env('GITHUB_TOKEN')); buf = Buffer(); out = []
+    gh = GitHub(env('GITHUB_REPOSITORY'), env('GITHUB_TOKEN')); bufs = {'main': Buffer(), 'lane2': Buffer(token=env('BUFFER_API_KEY_2'))}; out = []
     for L, prefix in ((GitHubLedger(gh), cid + ':'), (Lane2Ledger(gh), 'motivtated:' + cid + ':')):
         L.load(); changed = False
         for k, r in L.data['records'].items():
-            if not k.startswith(prefix) or r.get('state') != 'submitted' or not r.get('buffer_post_id'):
+            if not k.startswith(prefix) or r.get('state') != 'submitted' or not r.get('buffer_post_id') or r.get('media', {}).get('url') == url:
                 continue
             p = r['platform']; media = url or r['media']['url']
             if p in ('youtube', 'twitter'):
@@ -37,7 +37,7 @@ def main():
             else:
                 data = payload(p, r['channel_id'], r['caption'], media, due)
             try:
-                post = edit(buf, r['buffer_post_id'], data)
+                post = edit(bufs['lane2' if p in ('youtube', 'twitter') else 'main'], r['buffer_post_id'], data)
             except Exception as exc:
                 out.append({k: 'FAILED ' + str(exc)[:200]}); continue
             for f in ('scheduled_at', 'due_at'):

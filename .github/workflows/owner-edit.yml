@@ -23,6 +23,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_API_KEY_2: ${{ secrets.BUFFER_API_KEY_2 }}
           INPUT_CLIP_ID: ${{ inputs.clip_id }}
           INPUT_DUE_AT: ${{ inputs.due_at }}
           INPUT_MEDIA_URL: ${{ inputs.media_url }}
