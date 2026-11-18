@@ -5,9 +5,13 @@ name: Owner edit of a queued clip
       clip_id: {description: Clip ID, type: string, required: true}
       due_at: {description: New time (ISO with offset), type: string, required: true}
       media_url: {description: Optional replacement video URL, type: string}
+      free_keys: {description: 'Comma-separated queued record keys to delete from Buffer to make room (clip_id=free)', type: string}
       keep_main_ledger: {description: Do not write the main-lane ledger (a main run is active; time unchanged), type: boolean, default: false}
 permissions:
   contents: write
+concurrency:
+  group: motivtated-publisher-single-writer
+  cancel-in-progress: false
 jobs:
   edit:
     if: github.ref == 'refs/heads/main'
@@ -23,8 +27,15 @@ jobs:
         if: inputs.clip_id == 'schema'
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      - run: python -m publisher.owner_free
+        if: inputs.clip_id == 'free'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_API_KEY_2: ${{ secrets.BUFFER_API_KEY_2 }}
+          INPUT_KEYS: ${{ inputs.free_keys }}
       - run: python -m publisher.owner_edit
-        if: inputs.clip_id != 'schema'
+        if: inputs.clip_id != 'schema' && inputs.clip_id != 'free'
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
