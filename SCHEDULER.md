@@ -113,3 +113,9 @@ returns no file body. Ledgers over 1 MB are now read through the git blob API (w
 in between the normal slots. Every caption mentions GTA 6. The Motivtated length check is now 90 s (Reels limit); M000337 is 89.3 s.
 Queues were full through Nov 20, so the three latest Nov 20 posts per channel were deleted from Buffer and their records dropped
 (owner_free); the lanes schedule them again later. The rest of the extras get room as the morning posts go out.
+
+## YouTube at 2 a day (2026-11-19, Claude, authorized by Blert)
+- Buffer's free plan now allows only 2 YouTube posts per channel per day ("daily posting limit"); every YouTube post from Nov 19 10:00 failed.
+- Every not-yet-posted YouTube clip moved to an extra row `<page>:<clip>-yt2` (YouTube only) at 12:05 and 20:05 from Nov 20, in the old order (failed ones first). The original rows keep X (twitter) at their old times. Tonight's already queued posts (19:45/20:00/21:30) were left alone.
+- Queued YouTube posts for Nov 20+ were deleted from Buffer with owner-edit `free` so they don't fail at the old pace.
+- Extra Shorts beyond 2 a day go up through YouTube Studio's own scheduler (done by hand/browser, not by this repo).
