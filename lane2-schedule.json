@@ -1661,6 +1661,20 @@
       "extra_note": "Blert asked on 2026-11-19 00:15 for these GTA 6 videos to go live on Nov 19"
     },
     {
+      "key": "motivtated:M000334-yt-retry",
+      "page": "motivtated",
+      "clip_id": "M000334",
+      "asset_name": "M000334.zip",
+      "bundle_sha256": "7d6ee2abe2b82827b7de500861d24f26d6a2330c40e45444eb05db6a4efb34b1",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2026-11-19T13:15:00+01:00",
+      "title": "GTA 6 is a test. Live it for real.",
+      "extra_post": true,
+      "extra_note": "Retry: the 10:45 YouTube upload failed at Buffer on 2026-11-19"
+    },
+    {
       "key": "motivtated:M000076",
       "page": "motivtated",
       "clip_id": "M000076",
