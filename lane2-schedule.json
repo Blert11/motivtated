@@ -8390,9 +8390,163 @@
       "title": "If I knew I'd wake up broke",
       "extra_post": true,
       "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert"
+    },
+    {
+      "key": "motivtated:M000312-yt2",
+      "page": "motivtated",
+      "clip_id": "M000312",
+      "asset_name": "M000312.zip",
+      "bundle_sha256": "ecb082adb910b371708c56746c1c1950eb1271bc893427fca48baaa936ac049f",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-17T20:05:00+01:00",
+      "title": "Never ring the bell | Admiral McRaven",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000313-yt2",
+      "page": "motivtated",
+      "clip_id": "M000313",
+      "asset_name": "M000313.zip",
+      "bundle_sha256": "3a70f87e344a36235e9faefd053d05fc6a66d043a2158b146b5a99f569e1291d",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-18T12:05:00+01:00",
+      "title": "Where a lamborghini should be",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000314-yt2",
+      "page": "motivtated",
+      "clip_id": "M000314",
+      "asset_name": "M000314.zip",
+      "bundle_sha256": "3a329ce6626483b6ae7fff8ffa42ddffa3d772ebaa5a51c444fbcf6b3c1848f5",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-18T20:05:00+01:00",
+      "title": "If you want to be a diamond",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000315-yt2",
+      "page": "motivtated",
+      "clip_id": "M000315",
+      "asset_name": "M000315.zip",
+      "bundle_sha256": "035958b8b785e4e13ab4e46c74d36f8234e459db48f27558baf0551a7ba88cd0",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-19T12:05:00+01:00",
+      "title": "You outlasted it",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000316-yt2",
+      "page": "motivtated",
+      "clip_id": "M000316",
+      "asset_name": "M000316.zip",
+      "bundle_sha256": "97b8a7c715e65138e8a6517936bee602817b5db88328a0c2bf89fab84decdccf",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-19T20:05:00+01:00",
+      "title": "Proud is larger than fun",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000326-yt2",
+      "page": "motivtated",
+      "clip_id": "M000326",
+      "asset_name": "M000326.zip",
+      "bundle_sha256": "2bd11150ad3b96650e4e2b0d2398c147b24021b45f29b9b2f42092f44a6c05cb",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-20T12:05:00+01:00",
+      "title": "Imagine you had a clone",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000327-yt2",
+      "page": "motivtated",
+      "clip_id": "M000327",
+      "asset_name": "M000327.zip",
+      "bundle_sha256": "ec028d7a4315de9723e2deee9ea858746b7955044fd8783d4cb38c321ab6c0a4",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-20T20:05:00+01:00",
+      "title": "Everybody wants the prize",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000328-yt2",
+      "page": "motivtated",
+      "clip_id": "M000328",
+      "asset_name": "M000328.zip",
+      "bundle_sha256": "0a7d6c44cfb8ac296b431274ce67ab455effa19c08fe81207245d02d024bea54",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-21T12:05:00+01:00",
+      "title": "There is nothing fake about belief",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000329-yt2",
+      "page": "motivtated",
+      "clip_id": "M000329",
+      "asset_name": "M000329.zip",
+      "bundle_sha256": "d8a11e0e1458f7c64bf402dd4d56928805878efc1f239868fb8408f9c6b31306",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-21T20:05:00+01:00",
+      "title": "No benefit to doubting yourself",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000330-yt2",
+      "page": "motivtated",
+      "clip_id": "M000330",
+      "asset_name": "M000330.zip",
+      "bundle_sha256": "aa637f02e6b74a00e5fa3a8d79714b641416504cf20a21c59507274ae362426b",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-22T12:05:00+01:00",
+      "title": "Just a regular human being",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
+    },
+    {
+      "key": "motivtated:M000331-yt2",
+      "page": "motivtated",
+      "clip_id": "M000331",
+      "asset_name": "M000331.zip",
+      "bundle_sha256": "3bdeb56afbccc528ed0dde2d01db4cdb60a99f18c3457fc9637fb3b46ce0ddf1",
+      "platforms": [
+        "youtube"
+      ],
+      "due_at": "2027-03-22T20:05:00+01:00",
+      "title": "Effort is a muscle",
+      "extra_post": true,
+      "extra_note": "YouTube at 2 a day (Buffer free limit since 2026-11-19), authorized by Blert; back from Studio (upload limit)"
     }
   ],
   "pace_changed_on": "2026-11-07",
   "youtube_limit_note": "2026-11-19: Buffer free allows 2 YouTube posts per channel per day. Unposted YouTube clips moved to -yt2 rows at 12:05 and 20:05 from Nov 20; X keeps its own times.",
-  "studio_note": "2026-11-19: M000311-M000331 go to YouTube via YouTube Studio scheduling (Nov 20-26, 10:00/15:00/18:00), removed from Buffer YouTube rows."
+  "studio_note": "2026-11-19: M000311 and M000317-M000325 scheduled in YouTube Studio (Nov 20-22). M000312-316 and M000326-331 hit the Studio daily upload limit and went back to Buffer YouTube rows at the end."
 }
