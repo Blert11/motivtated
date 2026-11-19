@@ -27,6 +27,8 @@ jobs:
         if: inputs.clip_id == 'schema'
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_API_KEY_2: ${{ secrets.BUFFER_API_KEY_2 }}
+          INPUT_IDS: ${{ inputs.free_keys }}
       - run: python -m publisher.owner_free
         if: inputs.clip_id == 'free'
         env:
