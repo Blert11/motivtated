@@ -55,7 +55,8 @@ def validate_plan(plan):
     for row in plan['rows']:
         page = row['page']
         require(page in PAGES and re.fullmatch(ID_RE[page], row['clip_id']), 'Bad page/clip ID.')
-        require(row['key'] == page+':'+row['clip_id'] and row['key'] not in seen, 'Duplicate or bad row key.')
+        require((row['key'] == page+':'+row['clip_id'] or row.get('extra_post') and row['key'].startswith(page+':'+row['clip_id']+'-'))
+                and row['key'] not in seen, 'Duplicate or bad row key.')   # extra rows may retry a clip under a suffixed key
         seen.add(row['key'])
         require(re.fullmatch(r'[0-9a-f]{64}', row['bundle_sha256']), 'Bad bundle digest.')
         require(re.fullmatch(re.escape(row['clip_id'])+r'(\.r[0-9]{1,2})?\.zip', row['asset_name']), 'Bad asset name.')
