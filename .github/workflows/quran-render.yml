@@ -1,0 +1,79 @@
+name: Quran render (An-Naba, An-Naziat)
+'on':
+  push:
+    branches: [quran-render]
+permissions:
+  contents: write
+jobs:
+  part:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {job: 2, name: 2_An-Naba, start: 0}
+          - {job: 2, name: 2_An-Naba, start: 30}
+          - {job: 2, name: 2_An-Naba, start: 60}
+          - {job: 2, name: 2_An-Naba, start: 90}
+          - {job: 2, name: 2_An-Naba, start: 120}
+          - {job: 2, name: 2_An-Naba, start: 150}
+          - {job: 2, name: 2_An-Naba, start: 180}
+          - {job: 2, name: 2_An-Naba, start: 210}
+          - {job: 2, name: 2_An-Naba, start: 240}
+          - {job: 2, name: 2_An-Naba, start: 270}
+          - {job: 2, name: 2_An-Naba, start: 300}
+          - {job: 6, name: 6_An-Naziat, start: 0}
+          - {job: 6, name: 6_An-Naziat, start: 30}
+          - {job: 6, name: 6_An-Naziat, start: 60}
+          - {job: 6, name: 6_An-Naziat, start: 90}
+          - {job: 6, name: 6_An-Naziat, start: 120}
+          - {job: 6, name: 6_An-Naziat, start: 150}
+          - {job: 6, name: 6_An-Naziat, start: 180}
+          - {job: 6, name: 6_An-Naziat, start: 210}
+          - {job: 6, name: 6_An-Naziat, start: 240}
+          - {job: 6, name: 6_An-Naziat, start: 270}
+          - {job: 6, name: 6_An-Naziat, start: 300}
+          - {job: 6, name: 6_An-Naziat, start: 330}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libraqm0 libfribidi0 >/dev/null
+          pip install -q numpy opencv-python-headless pillow
+          python -c "from PIL import features; assert features.check('raqm'), 'no raqm'"
+      - run: |
+          mkdir -p out/parts
+          ffmpeg -v error -y -i ${{ matrix.name }}.flac out/${{ matrix.name }}.wav
+          python render_part.py ${{ matrix.job }} ${{ matrix.start }} $(( ${{ matrix.start }} + 30 ))
+          ls -la out/parts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: part-${{ matrix.name }}-${{ matrix.start }}
+          path: out/parts/*.mp4
+  join:
+    needs: part
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - uses: actions/download-artifact@v4
+        with: {path: parts, merge-multiple: true}
+      - run: |
+          set -e
+          mkdir -p final
+          for n in 2_An-Naba 6_An-Naziat; do
+            ffmpeg -v error -y -i $n.flac final/$n.wav
+            for f in full wide; do
+              ls parts/${n}_${f}_*.mp4 | sort | sed "s/^/file '/; s/$/'/; s#file 'parts/#file '#" > parts/list_${n}_$f.txt
+              cat parts/list_${n}_$f.txt
+              ffmpeg -v error -y -f concat -safe 0 -i parts/list_${n}_$f.txt -i final/$n.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart final/${n}_$f.mp4
+            done
+          done
+          ls -la final
+          gh release create quran-render-out --target quran-render --title "Quran render output" --notes "temporary" --prerelease || true
+          gh release upload quran-render-out final/*.mp4 --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}
