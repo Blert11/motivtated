@@ -9,15 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       cids: ${{ steps.l.outputs.cids }}
+      comps: ${{ steps.l.outputs.comps }}
     steps:
       - uses: actions/checkout@v4
-        with: {sparse-checkout: render.json, sparse-checkout-cone-mode: false}
+        with: {sparse-checkout: "render.json\ncomps.json", sparse-checkout-cone-mode: false}
       - run: gh release view b5-out -R ${{ github.repository }} >/dev/null 2>&1 || gh release create b5-out -R ${{ github.repository }} --target b5-render --title "Batch 5 render output (temporary)" --notes "temporary" --prerelease
         env: {GH_TOKEN: '${{ github.token }}'}
       - id: l
-        run: echo "cids=$(python3 -c 'import json;print(json.dumps(json.load(open("render.json"))))')" >> $GITHUB_OUTPUT
+        run: |
+          echo "cids=$(python3 -c 'import json;print(json.dumps(json.load(open("render.json"))))')" >> $GITHUB_OUTPUT
+          echo "comps=$(python3 -c 'import json,os;print(json.dumps(json.load(open("comps.json")) if os.path.exists("comps.json") else []))')" >> $GITHUB_OUTPUT
   render:
     needs: list
+    if: needs.list.outputs.cids != '[]'
     runs-on: ubuntu-latest
     timeout-minutes: 180
     strategy:
@@ -46,4 +50,32 @@ jobs:
           ls -la out/${{ matrix.cid }}/
       - name: Upload
         run: gh release upload b5-out -R ${{ github.repository }} /home/claude/w/out/${{ matrix.cid }}/${{ matrix.cid }}_o.mp4 --clobber
+        env: {GH_TOKEN: '${{ github.token }}'}
+  comp:
+    needs: list
+    if: needs.list.outputs.comps != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        vid: ${{ fromJSON(needs.list.outputs.comps) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Setup
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libraqm0 libfribidi0 >/dev/null
+          pip install -q numpy opencv-contrib-python-headless pillow soundfile scipy onnxruntime
+          sudo mkdir -p /home/claude /mnt/user-data/uploads/imanivated && sudo chown -R $USER /home/claude /mnt/user-data
+          ln -s $GITHUB_WORKSPACE/w /home/claude/w; ln -s $GITHUB_WORKSPACE/fonts /home/claude/fonts; ln -s $GITHUB_WORKSPACE/models /home/claude/models
+          cp "logo/Logo PNG White.png" "/mnt/user-data/uploads/imanivated/"
+      - name: Render
+        run: |
+          cd /home/claude/w && B5_SRC_DIR=$GITHUB_WORKSPACE/cuts python b5/comp5.py ${{ matrix.vid }}
+          ls -la b5/${{ matrix.vid }}
+          f=$(python3 -c "import json;print(json.load(open('b5/${{ matrix.vid }}/cfg.json'))['out'])"); cp "b5/${{ matrix.vid }}/$f" "/tmp/${{ matrix.vid }}.mp4"
+      - name: Upload
+        run: gh release upload b5-out -R ${{ github.repository }} /tmp/${{ matrix.vid }}.mp4 --clobber
         env: {GH_TOKEN: '${{ github.token }}'}
