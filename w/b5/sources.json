@@ -1,23 +1,142 @@
 {
- "c_T_serif": {
-  "file": "T_serif.mkv"
+ "c_I5_01": {
+  "file": "I5_01.mkv",
+  "crop": [
+   1280,
+   608,
+   0,
+   0
+  ]
  },
- "c_T_hbox": {
-  "file": "T_hbox.mkv"
+ "c_I5_02": {
+  "file": "I5_02.mkv",
+  "crop": [
+   1920,
+   860,
+   0,
+   0
+  ]
  },
- "c_T_typecap": {
-  "file": "T_typecap.mkv"
+ "c_I5_03": {
+  "file": "I5_03.mkv",
+  "crop": [
+   1920,
+   860,
+   0,
+   0
+  ]
  },
- "c_T_gold": {
-  "file": "T_gold.mkv"
+ "c_I5_04": {
+  "file": "I5_04.mkv",
+  "crop": [
+   1200,
+   550,
+   40,
+   30
+  ]
  },
- "c_T_mixed": {
-  "file": "T_mixed.mkv"
+ "c_I5_05": {
+  "file": "I5_05.mkv",
+  "crop": [
+   1200,
+   550,
+   40,
+   30
+  ]
  },
- "c_T_film": {
-  "file": "T_film.mkv"
+ "c_I5_06": {
+  "file": "I5_06.mkv",
+  "crop": [
+   1200,
+   550,
+   40,
+   30
+  ]
  },
- "c_T_bracket": {
-  "file": "T_bracket.mkv"
+ "c_I5_07": {
+  "file": "I5_07.mkv",
+  "crop": null
+ },
+ "c_I5_08": {
+  "file": "I5_08.mkv",
+  "crop": null
+ },
+ "c_I5_09": {
+  "file": "I5_09.mkv",
+  "crop": null
+ },
+ "c_I5_10": {
+  "file": "I5_10.mkv",
+  "crop": [
+   1060,
+   700,
+   40,
+   20
+  ]
+ },
+ "c_I5_11": {
+  "file": "I5_11.mkv",
+  "crop": [
+   1060,
+   700,
+   40,
+   20
+  ]
+ },
+ "c_I5_12": {
+  "file": "I5_12.mkv",
+  "crop": [
+   1140,
+   720,
+   0,
+   0
+  ]
+ },
+ "c_I5_13": {
+  "file": "I5_13.mkv",
+  "crop": [
+   1140,
+   720,
+   0,
+   0
+  ]
+ },
+ "c_I5_14": {
+  "file": "I5_14.mkv",
+  "crop": null
+ },
+ "c_I5_15": {
+  "file": "I5_15.mkv",
+  "crop": null
+ },
+ "c_I5_16": {
+  "file": "I5_16.mkv",
+  "crop": [
+   1100,
+   620,
+   90,
+   45
+  ]
+ },
+ "c_I5_17": {
+  "file": "I5_17.mkv",
+  "crop": [
+   1100,
+   620,
+   90,
+   45
+  ]
+ },
+ "c_I5_18": {
+  "file": "I5_18.mkv",
+  "crop": null
+ },
+ "c_I5_19": {
+  "file": "I5_19.mkv",
+  "crop": null
+ },
+ "c_I5_20": {
+  "file": "I5_20.mkv",
+  "crop": null
  }
 }

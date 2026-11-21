@@ -31,6 +31,7 @@ for k, v in SRCS.items():
     L.SRC[k] = os.environ.get('B5_SRC_DIR', '/mnt/user-data/uploads/Downloads') + '/' + v['file']
     L.ASR[k] = f'b5/asr/{k}.json'
     L.NOSEP.add(k)
+    if v.get('crop'): L.CROP[k] = tuple(v['crop'])
 caps.SACRED.append((r"^musa('s)?$", ["alayhi", "alaihi", "salam", "as-salam", "assalam", "salatu", "wasalam", "wassalam"], 'Musa{p} AS', 'موسى'))
 caps.SACRED.append((r"^yusuf('s)?$", ["alayhi", "alaihi", "salam", "as-salam", "assalam"], 'Yusuf{p} AS', 'يوسف'))
 caps.SACRED.append((r"^isa('s)?$", ["alayhi", "alaihi", "salam", "as-salam", "assalam"], 'Isa{p} AS', 'عيسى'))
@@ -79,6 +80,10 @@ def clean_text(t, lower):
 # ------------------------------------------------------------------ caption styles
 class Base:
     def __init__(self, units, cy): self.cy = cy; self.items = []
+    def hold(self, gap=0.6):
+        for i in range(len(self.items) - 1):
+            it = list(self.items[i]); nb = self.items[i + 1][0]
+            if 0 < nb - it[1] < gap: it[1] = nb; self.items[i] = tuple(it)
     def cur(self, t):
         for it in self.items:
             if it[0] <= t < it[1]: return it
@@ -95,6 +100,7 @@ class Clean(Base):
                 runs.append((w['text'] if w['sacred'] else clean_text(w['text'], lower), F(font), size, col))
                 if w['ar']: runs.append((w['ar'], F('NotoNaskhArabic.ttf'), int(size * 1.05), col))
             self.items.append((u['t0'], u['t1'], run_img(runs, shadow=0.7)))
+        self.hold()
     def draw(self, cv, t):
         it = self.cur(t)
         if it: age = t - it[0]; put(cv, it[2], self.cy, min(1, age / 0.05), 0.9 + 0.1 * ease(age / 0.1))
@@ -116,6 +122,7 @@ class HBox(Base):
                 if w['ar']: txt = txt + ' ' + w['ar']
                 parts.append((txt, i == k))
             self.items.append((u['t0'], u['t1'], self.img(parts, f, size)))
+        self.hold()
     @staticmethod
     def img(parts, f, size):
         pad = 40; gap = size * 0.28; bx = size * 0.22; by = size * 0.12
@@ -149,6 +156,7 @@ class TypeCaps(Base):
             ws = u['words']
             txt = [w['text'] if w['sacred'] else w['text'].upper() for w in ws]
             self.items.append((u['t0'], u['t1'], ws, txt, {}))
+        self.hold()
     def draw(self, cv, t):
         it = self.cur(t)
         if not it: return
@@ -358,11 +366,11 @@ GRADE5 = {
  'clean':   "eq=contrast=1.06:saturation=1.04:brightness=0.0,curves=all='0/0.01 0.5/0.5 1/0.98'",
  'serif':   "eq=contrast=1.08:saturation=0.98:brightness=-0.02,colorbalance=rh=0.02:bh=-0.02,curves=all='0/0.01 0.5/0.48 1/0.97'",
  'hbox':    "eq=contrast=1.08:saturation=1.02:brightness=-0.01,curves=all='0/0.01 0.5/0.49 1/0.98'",
- 'typecap': "eq=contrast=1.10:saturation=0.85:brightness=-0.04,colorbalance=bs=0.03:rh=0.02,curves=all='0/0.01 0.5/0.45 1/0.95'",
- 'gold':    "eq=contrast=1.12:saturation=0.95:brightness=-0.07:gamma=0.92,colorbalance=rs=0.04:bs=0.08:rm=0.03:bm=0.04:rh=0.05:bh=-0.03,curves=all='0/0 0.5/0.42 1/0.9'",
- 'mixed':   "eq=contrast=1.08:saturation=0.95:brightness=-0.04,colorbalance=rs=0.05:gs=0.01:bs=-0.05:rm=0.05:bm=-0.05:rh=0.05:bh=-0.06,curves=all='0/0.01 0.5/0.46 1/0.93'",
- 'film':    "hue=s=0,eq=contrast=1.16:brightness=-0.04:gamma=0.92,curves=all='0/0.03 0.5/0.47 1/0.93'",
- 'bracket': "hue=s=0,eq=contrast=1.30:brightness=-0.06:gamma=0.86,curves=all='0/0 0.2/0.05 0.6/0.58 1/0.98'",
+ 'typecap': "eq=contrast=1.08:saturation=0.88:brightness=0.0,colorbalance=bs=0.03:rh=0.02,curves=all='0/0.01 0.5/0.45 1/0.95'",
+ 'gold':    "eq=contrast=1.08:saturation=0.95:brightness=-0.01:gamma=1.0,colorbalance=rs=0.04:bs=0.08:rm=0.03:bm=0.04:rh=0.05:bh=-0.03,curves=all='0/0 0.5/0.42 1/0.9'",
+ 'mixed':   "eq=contrast=1.06:saturation=0.98:brightness=0.0,colorbalance=rs=0.05:gs=0.01:bs=-0.05:rm=0.05:bm=-0.05:rh=0.05:bh=-0.06,curves=all='0/0.01 0.5/0.46 1/0.93'",
+ 'film':    "hue=s=0,eq=contrast=1.14:brightness=0.0:gamma=1.0,curves=all='0/0.03 0.5/0.47 1/0.93'",
+ 'bracket': "hue=s=0,eq=contrast=1.25:brightness=0.03:gamma=1.05,curves=all='0/0 0.2/0.10 0.6/0.66 1/1'",
 }
 # (window w, h, top) inside 1080x1920; None = full frame head lock
 LAYOUT = {'clean': None, 'serif': None, 'hbox': None, 'bracket': None,
@@ -409,7 +417,10 @@ def render(cid):
     st = c['style']
     if st in ('bright', 'cinema', 'text'):
         C4.CL[cid] = c
-        return C4.render(cid)
+        keep = C4.Portrait
+        if not c.get('blur'): C4.Portrait = lambda: None
+        try: return C4.render(cid)
+        finally: C4.Portrait = keep
     src = L.SRC[c['src']]
     a2, b2 = L.snap(c['src'], c['a'] - 0.1, 'start'), L.snap(c['src'], c['b'] + 0.15, 'end')
     d = b2 - a2
@@ -422,7 +433,7 @@ def render(cid):
     nat = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', src], capture_output=True, text=True).stdout.split(',')
     SW, SH = int(nat[0]), int(nat[1]); pre = ''
     if SH > 1080: pre = 'scale=1920:1080:flags=lanczos,'; SW, SH = 1920, 1080
-    crop = c.get('crop')
+    crop = c.get('crop') or SRCS.get(c['src'], {}).get('crop')
     if crop: SW, SH = crop[0], crop[1]
     xs, ys, ss, n_t = C4.track(src, a2, d, tuple(crop) if crop else None, pre)
     if lay is None:
@@ -440,7 +451,7 @@ def render(cid):
     cap = {'clean': lambda: Clean(U, cy_), 'serif': lambda: Serif(U, cy_), 'hbox': lambda: HBox(U, cy_), 'typecap': lambda: TypeCaps(U, cy_),
            'gold': lambda: Gold(U, cy_), 'mixed': lambda: Mixed(U, cy_), 'film': lambda: Film(U, cy_),
            'bracket': lambda: Bracket(U, cy_, c.get('credit', ''))}[st]()
-    noise = {'film': 'noise=c0s=30:c0f=t+u', 'bracket': 'noise=c0s=16:c0f=t+u'}.get(st, 'noise=c0s=12:c0f=t+u')
+    noise = {'film': 'noise=c0s=20:c0f=t+u', 'bracket': 'noise=c0s=16:c0f=t+u'}.get(st, 'noise=c0s=12:c0f=t+u')
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'bgr24', '-s', f'{W}x{H}', '-r', str(OFPS), '-i', '-',
                             '-vf', f'unsharp=5:5:0.45:5:5:0,{noise}', '-c:v', 'libx264', '-profile:v', 'high', '-preset', 'veryfast', '-crf', '20',
                             '-maxrate', '12M', '-bufsize', '24M', '-pix_fmt', 'yuv420p', '-r', str(OFPS), '-video_track_timescale', '15360', f'{od}/{cid}.mp4'], stdin=subprocess.PIPE)
@@ -479,7 +490,7 @@ def render(cid):
             x0 = (W - OWn) // 2; y0 = lay[2]
             cv[y0:y0 + OHn, x0:x0 + OWn] = img * mask + cv[y0:y0 + OHn, x0:x0 + OWn] * (1 - mask)
         if dust: dust.draw(cv, t)
-        if st == 'film': grain(cv, 22, rng)
+        if st == 'film': grain(cv, 13, rng)
         if st == 'bracket':
             cv = cv * (1 - 0.10 * dots()) + 255 * 0.05 * dots()
         cap.draw(cv, t)

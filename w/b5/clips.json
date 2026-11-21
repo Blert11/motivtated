@@ -1,58 +1,222 @@
 {
- "T_serif": {
-  "src": "c_T_serif",
-  "a": 3.0,
-  "b": 27.69999999999999,
-  "style": "serif",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
- },
- "T_hbox": {
-  "src": "c_T_hbox",
-  "a": 3.0,
-  "b": 27.69999999999999,
-  "style": "hbox",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
- },
- "T_typecap": {
-  "src": "c_T_typecap",
-  "a": 3.0,
-  "b": 27.69999999999999,
-  "style": "typecap",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
- },
- "T_gold": {
-  "src": "c_T_gold",
-  "a": 3.0,
-  "b": 27.69999999999999,
-  "style": "gold",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
- },
- "T_mixed": {
-  "src": "c_T_mixed",
-  "a": 3.0,
-  "b": 27.69999999999999,
+ "I5_01": {
+  "name": "The real man controls his anger",
+  "src": "c_I5_01",
+  "a": 7.566666999999995,
+  "b": 100.966667,
+  "text": "They're not doing anything haram, Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that. That's not how we determine who the rajul is. The Prophet is telling him, this is not how we determine men. He said ar-rajul amongst you. The man amongst you. Please, my young brothers, please, don't fall for the fitna of the street, man. This deen will make a man out of you. The street will only make a thug out of you. He said ar-rajul amongst you. The man amongst you is the one When a musiba, when a calamity happens He can control his anger and his wrath. He can control it. He's patient. This is the man.",
+  "credit": "",
   "style": "mixed",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+  "music": 0,
+  "blur": false
  },
- "T_film": {
-  "src": "c_T_film",
-  "a": 3.0,
-  "b": 27.69999999999999,
+ "I5_02": {
+  "name": "One sinner stopped the rain",
+  "src": "c_I5_02",
+  "a": 3.269999999999996,
+  "b": 95.01,
+  "text": "And imagine the pressure he was under. My people are turning to me, they're waiting for the response. I'm a prophet of Allah, right? I have direct relationship with Allah subhanahu wa ta'ala. Ya Allah, I clearly asked you for rain and nothing happens. Talk about heat under the collar. And he says, Ya Allah, what's happening? I asked for rain and no rain. Listen to what Allah says. He says, Ya Musa, from amongst your people there is one sinner. One. Many sinners are in our towns. Many of our Muslims don't pray. How many of our sisters are still unscarved? How many of our elders still cannot read Fatiha properly? Ya Musa, from amongst your people is one sinner, and because of him and him alone, I have deprived the rain from falling. So you can come to me now and talk to me about justice and wisdom and is this fair all night long. Doesn't change the fact that Allah deprived rain upon a prophet, upon people, upon innocent women and children and animals and crops because of the actions of one man. One man!",
+  "credit": "Mohamed Hoblos",
+  "style": "serif",
+  "music": 1,
+  "blur": false
+ },
+ "I5_03": {
+  "name": "Allah did not expose him",
+  "src": "c_I5_03",
+  "a": 3.730000000000018,
+  "b": 75.94199996185301,
+  "text": "So Musa waits for the man to come forward. No one comes forward. Musa goes back, asks Allah. To his amazement, the rain comes and starts falling there. So yes, of course Musa's happy the rain is there. Yeah, he's baffled. He's in ajab. He says, Ya Allah, please some clarification. I asked for rain to begin with, you said there's a sinner. I asked for the sinner to come forward, no one came forward. I asked for rain the second time and now the rain comes down. What's going on? Listen to what Allah subhanahu wa ta'ala says to you. He says, Ya Musa, I deprived the rain from coming because of him and him alone. that person, he turned back to me and he asked for my forgiveness. I accepted his tawbah and now because of him and him alone, I've allowed the rain to fall down. So Musa is now interested. He says, oh no. Tell me who this man is. Allah says to Musa, he says, Yeah, Musa, I didn't expose him when he was a sinner. What makes you think I'm gonna expose him now that he's repented and told me?",
+  "credit": "Mohamed Hoblos",
+  "style": "clean",
+  "music": 2,
+  "blur": true
+ },
+ "I5_04": {
+  "name": "Every sin begins with a thought",
+  "src": "c_I5_04",
+  "a": 5.740000000000009,
+  "b": 60.84,
+  "text": "He says, every bad habit, every sinful habit begins with a thought. A what? A thought. Whisper comes and goes. If you catch that thought and hold on to it, it turns into an idea. If you hold on to the idea and don't repel it, it turns into A plan. If you hold on to the plan and you don't repel it, it turns into An action. If you repeat the action, the less you feel sensitive towards it and the more normalised it becomes. Then it turns into a habit. And what do habits turn into if you don't deal with them? Addictions. No. The reversal is the same way. Come up with a thought to counter it. Then get an idea, plan it, do an action. Get into the opposite habit again and again and insha'Allah it'll go away.",
+  "credit": "",
+  "style": "gold",
+  "music": 3,
+  "blur": false
+ },
+ "I5_05": {
+  "name": "You still have hope",
+  "src": "c_I5_05",
+  "a": 6.990000000000009,
+  "b": 56.23000000000002,
+  "text": "And what happens to you is that you start having a low opinion of yourself. I'm a loser. I'm not worthy. It's true what they say about me. So you start creating these names for yourself and these beliefs. Some people even you start to use religion. to justify their bad thoughts. They say God must hate me. This is a punishment. I make my dua, he doesn't accept it. That means Allah is not pleased with me. Maybe it's because I said this to my mum or my dad. And they start creating so many things which they don't really know about. And sometimes they say, my qadar, the qadar of Allah, is that my life is just bad luck? That's everything's misfortune. That's what Allah has written upon me. No. How do you know Allah has written this upon you? The moment you die, that's it. The moment you're still breathing, it means you have hope. There are doors. Allah doesn't leave you.",
+  "credit": "",
+  "style": "mixed",
+  "music": 0,
+  "blur": false
+ },
+ "I5_06": {
+  "name": "99% of your fears never happen",
+  "src": "c_I5_06",
+  "a": 4.710000000000036,
+  "b": 36.07000000000005,
+  "text": "I'm just saying that alhamdulillah, the lesson from that the way to beat your anxiety and depression is to do the opposite. and prove to yourself that you are not what you thought you were. The moment you take those steps other avenues open up. And that is why Rasul said, wala ta'jaz, plan, go ahead, rely on Allah and don't become paralyzed. Keep going. Whatever happens, happens. 99% of our fears never happen. Just think backwards and think how many of your fears actually happened. 99% of them didn't happen. You don't think about them because you forgot about them because nothing happened.",
+  "credit": "",
+  "style": "hbox",
+  "music": 1,
+  "blur": false
+ },
+ "I5_07": {
+  "name": "You are a multi-trillionaire",
+  "src": "c_I5_07",
+  "a": 6.053999923706101,
+  "b": 116.62999931335446,
+  "text": "One of them, the ungrateful one, he says, I'm poor. I've got nothing to my name. I've been on benefits. I've been on universal credit now for the last five, ten years. I just can't get out of this circle. What do I do? I have nothing. I'm poor. I can't even make ends meet. I can't live like this. But then the happily grateful one says to him, Oh, you're poor, is it? Well give me a price. for your kidneys. How much will you sell them to me for? \u00a310,000, 20,000, what about the price for your liver? How much? \u00a3200,000? How much will you sell me your eyesight for? What about your hearing? What about your ability to articulate yourself in a clear and concise way? How much will you sell that for? What about those enzymes that work flawlessly around the clock in your body with no instruction from yourself? How much will you sell them for? What about your epiglottis? That flaps shut that bit of cartilage at the back of your throat when you swallow food or you drink water. If it wasn't for that bit of cartilage, you'd suffocate from any bit of food or water that goes down your windpipe instead of your food pipe. How much will you sell that for? Your ability to go to sleep without injecting yourself or swallowing pills. How much will you sell that for? What about your ability to purify yourself from the bathroom in a dignified and independent way without the help of anybody else? How much will you sell that for? What about the gift of Islam that Allah Almighty has given you free of charge? How the religion is so fair-seeming and beautiful in your eyes, yet your neighbor detests the same religion of yours. How much will you sell that for? So let's put that all together and add it up. Then we see your net worth. You realize you're a multi-trillionaire. But shaitan, he only ever shows us the things that we don't have. And a person like that will stay poor for the rest of his life. Why? Because he's ungrateful. Say, Alhamdulillah. Alhamdulillah.",
+  "credit": "Sheikh Ali Hammuda",
+  "style": "serif",
+  "music": 2,
+  "blur": true
+ },
+ "I5_08": {
+  "name": "Don't wait for the blessing to be taken",
+  "src": "c_I5_08",
+  "a": 7.1099999999999,
+  "b": 74.30999999999995,
+  "text": "But what I want to say really is, and to leave you with this, don't be that person. Don't be that person who awaits a calamity in his or her life to realize just how indebted you've always been to Allah. Don't wait for a blessing to be withheld from you or even taken away for you then to realize just how blessed you were not too long ago. Don't be that person. Don't be like that person who is trapped into an elevator. He's now breathing damp and hot air. Now he's getting a little bit wheezy and light-headed, and it's getting dangerous. It's critical now, and he's stuck and he's afraid. 30 minutes later, the rescue team comes and the doors open, and he inhales cold, beautiful, pure air and he says, Alhamdulillah, Alhamdulillah, I can breathe again. Alhamdulillah, for the blessing of breathing. Hold on a minute. What are you praising Allah for? What are you thanking Him for? You're thanking him for a blessing that you've had all throughout your life. but it needed to be withheld from you for half an hour.",
+  "credit": "Sheikh Ali Hammuda",
+  "style": "typecap",
+  "music": 3,
+  "blur": false
+ },
+ "I5_09": {
+  "name": "No marriage can endure without gratitude",
+  "src": "c_I5_09",
+  "a": 7.399999999999977,
+  "b": 98.5,
+  "text": "No marriage can endure and listen to this, my young brothers, my young sisters who are yet to be married and those who are married as well will benefit. No marriage can endure if gratitude is lacking in that relationship. And in my short experience dealing with families who are going through hell from a marital perspective, much of their issues can be traced back to this. There is a lack of gratitude from one or the other or both. And I know you will say that I'm able to give you a long list of negative traits in my wife and my husband. He is this and she is that and he is this and she is that. I know. But then if I was to ask you to enumerate All of the positive traits that you know of your wife or your husband, could you be able to enumerate them? Most of us, if we are honest, will say no. But this is the reality. That you forget that had any other man or woman seen the blessing that you are in with your spouse and whom Allah has placed for you as a wife or a husband, they would fall to their knees behind closed doors, begging Allah Almighty for a fraction of the blessing that you've been blessed with with your wife or husband. But this is the way of shaitan always. With those who are ungrateful, always convincing them that the grass will be somehow greener on the other side. And so eyes wander and gazes are not lowered. And discontentment sets in, and you begin to think, no.",
+  "credit": "Sheikh Ali Hammuda",
   "style": "film",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+  "music": 0,
+  "blur": false
  },
- "T_bracket": {
-  "src": "c_T_bracket",
-  "a": 3.0,
-  "b": 27.69999999999999,
+ "I5_10": {
+  "name": "Allah forgives all sins",
+  "src": "c_I5_10",
+  "a": 6.569999999999936,
+  "b": 77.9179998092651,
+  "text": "The Shaykh looks at him. He goes, I didn't know what to say to him. I said to him the best verse that I can think of in the Quran. I don't want the guy to hurt himself. There's still hope, insha'Allah. He goes, I just recited, Qul ya ibadiya alladhina asrafu ala anfusihim la taqnatu min rahmatillah. Innallaha yaghfirudh dhunuba jami'a, innahu huwal ghafurur rahim. Say, O Muhammad, to my slaves, who have overburdened themselves with guilt and regret. Do not despair from the mercy and forgiveness of Allah. Allah forgives all sins. He is the most forgiver, the most merciful. The young ahmed looked at the shaykh and he said, Yeah, shaykh. That is true, Allah will forgive everyone but me. I don't deserve to be forgiven. I have shaykhs around me in ulama. I come from a Muslim land of Hajj and Umrah. I'm married, I have children, I have wealth. I know what's halal and haram, and I fell into it. I don't deserve to be forgiven, Ya Shaykh. This is not for me.",
+  "credit": "Sh. Belal Assaad",
+  "style": "bright",
+  "music": 1,
+  "blur": false
+ },
+ "I5_11": {
+  "name": "He died in the masjid",
+  "src": "c_I5_11",
+  "a": 6.730000000000018,
+  "b": 124.60000000000014,
+  "text": "He said, months passed and it was Ramadan. And suddenly, I received a call from his father, the father of Ahmed. He said, Please come quickly. I went to visit him and I knocked on his big door, his palace. And as soon as the father saw me, he burst into tears and began to hug me. I didn't know what was wrong. He said, Your brother, your dear friend Ahmed. He gives you his salaams and he went back to Allah last night. I said to him subhanAllah, I didn't know whether to cry for my friend or for his father. He goes, I went in and it was the Janazah and they had brought the body to the family to farewell the body. He goes, I went inside and the cover sheet was on his face. I took the sheet off Ahmed's face as his dead body lay there and I saw a face. I saw a face that was glittering with shining with light. I saw a face that did not leave this world but had gone to Jannah, insha'Allah. I made dua for him and kissed him on his forehead. His face, and I sat with his father and said, Tell me what happened. He said, He had been going through some sickness which he didn't tell you about. And it was Ramadan. He said, Last night before Maghrib, we were praying together, and I said to him, Son, come and make iftar with us. I said, Dad, I feel like staying at the masjid a little bit longer today. I feel something special. Please leave me for another few minutes. So I left him there. And after iftar, he didn't arrive. So I sent his little brother to go and see him. He was about 10 years old. And the little brother returned back crying, Dad, Dad, Ahmed is not talking. I went to the masjid and I found him reclining on the footsteps of the minbar. As he always does, and he was barely breathing. I rushed to him with the Quran in his hands and I lifted his head onto my shoulders. The father says, I looked and he was trying to say something to me. I came closer and closer because he couldn't make his voice out very well. As he was dying, I knew he was dying. Subhanallah, we called the ambulance. As he was dying, he said, Give my salaams to the shaykh. Give my salaams to the shaykh. And that's why I called you a shaykh to deliver the amanah. He goes, and then suddenly, while he was in my arms,",
+  "credit": "Sh. Belal Assaad",
+  "style": "mixed",
+  "music": 2,
+  "blur": false
+ },
+ "I5_12": {
+  "name": "Iman is a muscle",
+  "src": "c_I5_12",
+  "a": 7.066666999999995,
+  "b": 101.93666699046327,
+  "text": "Let me explain to you what the Imam al Bukhari said and let me give it to you in plain English. He said, It is qawlun wa amal. iman is statements and actions. yazidu wa yanqus and it goes up and it goes down. When you say statements and actions. When he says actions, many people think he means iman is a physical action. No. Remember this definition. iman is a muscle. iman is what? A muscle, the gym people are getting very excited. Just relax. iman is a muscle. What does that mean? That means when you work it out, when you exercise it. It increases in strength. And when you don't exercise it. It weakens and it shrinks. The way your bicep size is dependent on your bicep curls, your muscle of iman is dependent on the workout that you do. the actions that you do. What kind of actions are we talking about? Physical actions, like salah, like remembrance of Allah, absolutely. But not just physical actions. iman is dependent on spiritual actions. Spiritual actions. What is a spiritual muscle? Tawakkul, trust in Allah is a muscle. Khawf, fear of Allah is a muscle. The love of Allah is a muscle. These are muscles. If you activate them, if you work on them, you will find that your iman increases. There are spiritual actions and there are physical actions and this is the main thing iman depends on.",
+  "credit": "Hisham Abu Yusuf",
   "style": "bracket",
-  "credit": "Reminder",
-  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+  "music": 3,
+  "blur": false
+ },
+ "I5_13": {
+  "name": "Iman changes how you see the world",
+  "src": "c_I5_13",
+  "a": 5.392667002384172,
+  "b": 80.066667,
+  "text": "The second way I'll define iman. iman is a world view. Worldview. Worldview means it's how you see the world. For example. Somebody comes, hits your car. Somebody without iman is saying, Oh my gosh, my life is finished. Somebody with iman is saying, Alhamdulillah, Allah sent me someone to test me. This is going to improve my closeness to Him. Day and night difference. Why? It's just the glasses they wear. The iman glasses make you see everything differently. Somebody without iman, they have a child. Where do they head to? Abortion clinic. Why? Let me get rid of this burden. Okay, somebody who has iman gets finds out their wife is expecting. They weren't planning to. They said, Alhamdulillah, blessing from Allah. Why? Of iman, they see the world differently. Somebody without iman, their parents get old, they move far away, their parents say, It would be nice if you came home in some time other than Christmas. They say, Oh my gosh, these parents, what a burden, what an annoyance, what a nuisance. Somebody with iman, their parents call them. They say, Where are you? Before they finish the call, they're outside the door. Why? They see everything differently.",
+  "credit": "Hisham Abu Yusuf",
+  "style": "serif",
+  "music": 0,
+  "blur": false
+ },
+ "I5_14": {
+  "name": "The forgotten sunnah of solitude",
+  "src": "c_I5_14",
+  "a": 0.13,
+  "b": 74.53,
+  "text": "The Prophet used to love being on his own in order to reflect and think about the creation of Allah. And to just think with clarity. But sometimes you have to escape. You have to book a weekend away in the middle of Wales, in the middle of Yorkshire, in the Peak District, you have to take your family away for two days, for three days. And if you don't do that, a regular practice of that. That was the sunnah of the Messenger. A sunnah that we don't follow anymore. It's the sunnah of escaping from the concrete jungle. Escaping from the markets, escaping from the nine to five. And find a day, find two days, find three days where you are alone in nature with the creation of Allah. and your phone is on airplane mode. That is the sunnah of the Messenger of Allah. What is solitude? Solitude is the ability to be alone. with your own thoughts. Ability to be on your own. in the remembrance of Allah. The ability to not need stimulation, notifications, content, a constant stream of things to keep you distracted.",
+  "credit": "Hisham Abu Yusuf",
+  "style": "cinema",
+  "music": 1,
+  "blur": false
+ },
+ "I5_15": {
+  "name": "We stopped wondering",
+  "src": "c_I5_15",
+  "a": 8.196666999999934,
+  "b": 82.07666699999993,
+  "text": "They look at nature, they ask questions. Why is a squirrel like that? Why does a camel have a hump? Why is the sky this way? Why are the stars white? Children ask why, why, why? But as you grow up, it gets programmed out of you. You stop wondering. That childish wonder is one of the sunnahs of the Messenger and one of the greatest elements of the fitrah. The instinct the human nature Allah gave us. That wonder must remain with us as we grow older, as we have grey hair, as we have children. Allah wants us to look at His creation and wonder. How did Allah create something so beautiful? And if we have lost this ability to wonder we have lost a core piece of what it means to be a human being. We've lost it. This is the crisis that we have in the world. And if you don't escape the concrete jungle and deliberately spend time in the creation of Allah, you will never regain this part of your heart that has been stolen by the world that we live in. The world of screens, the world of dreams, the world of nine-to-fives, the world of the industrial revolution, the world of concrete. It has extracted from you the part of your fitrah, the part of your heart. That looks at a snowflake and thinks, Subhana Rabbiyal A'la, how amazing is Allah, the one who created.",
+  "credit": "Hisham Abu Yusuf",
+  "style": "mixed",
+  "music": 2,
+  "blur": false
+ },
+ "I5_16": {
+  "name": "When you are stressed, run to the prayer",
+  "src": "c_I5_16",
+  "a": 8.536666999999966,
+  "b": 75.06666699999994,
+  "text": "When you are in a state of stress, you lost your job, you're stressed, you have family problems, you lost a loved one, your health is deteriorating, what do you do? Fafza\u02bfu ilas-salah, run to the prayer. That's what you do. Allah told us in the Qur'an. Look for patience. In patience and in prayer, look for aid and support. The Prophet took that verse on. If the Prophet became sad or dumb, Meaning he is distressed. What would he do? He says he would run to the prayer. And he would say the following statement. He will say Arihna biha ya Bilal. Do the adan for us so we can find tranquility through the prayer. Arihna, meaning tuma'nina, tranquility. He would run to the prayer. He would hasten to do sujood and ruku for Allah. The Messenger told us: when you're in sujood, strive.",
+  "credit": "Ustadh Abdulrahman Hassan",
+  "style": "serif",
+  "music": 3,
+  "blur": false
+ },
+ "I5_17": {
+  "name": "If you have these 3 things, you have the world",
+  "src": "c_I5_17",
+  "a": 4.973333000000139,
+  "b": 79.75333300000011,
+  "text": "The Prophet said, Three things if you have. What are you looking for? Number one. You woke up this morning and you are scared. There's nothing to be scared of. No one's stealing you. No one's robbing you. You're in a safe land. A blessing. And may Allah increase safety for the land of the Muslims. May Allah protect. The lands of the Muslims. Number two. Number two, he is healthy. You're healthy, you have no illness. Number three, you have the food for that day, which is three. That day, not weeks, not months. That day you have the food to eat. Guess what? It's like the whole world has been placed under your feet. What are you looking for? Have those three, it's like the world has been given to your rich man.. Safety. How many people in the world can you see that don't have safety? Any minute they can be bombed and killed. Second is what? You're healthy. Some people are living on what? Medical and tubes in their mouth and etc. Third one is food, rizq something to eat for that day. There are people who don't know what to eat after this meal that they've had, and they haven't had meals for days and months, and they don't know where it's gonna come from. Allah has given you that. You have savings, maybe, and then you said, I lost a job and you're depressed.",
+  "credit": "Ustadh Abdulrahman Hassan",
+  "style": "clean",
+  "music": 0,
+  "blur": false
+ },
+ "I5_18": {
+  "name": "Keep a secret good deed",
+  "src": "c_I5_18",
+  "a": 4.180366957084743,
+  "b": 85.61636699999997,
+  "text": "So let's say Allah opened up for you. Opportunity to go do some form of charity or to pray qiyam ul-layl or to do this, and then you go and you ruin it. by sharing it and by hoping that people hear about it. Uh yura'i is in the moment, to be seen in the moment. So while you're you're taking into consideration while you're doing something, who's watching and that's going to determine How much you exert yourself. So, if people are watching, I'm gonna stay longer in the sujood, I'm going to add a little bit of. extra spice to this, right? So that people can attribute. a greater level of piety to me than that's actually present inside of me. So The point is is that If Allah opened up for you the opportunity to do something good. And then that good is only known by him. You actually take that as an intimate moment. between you and him an intimate deed. a secret that you hope will come out on the Day of Judgment when other people And and of course all of us have secrets and sins that We hope that Allah will not shame us for on the day of judgment, right? But a secret good deed that you store. Just like with anyone that you love.ve, you do something good and. You know, you want to have some moments that are between you and the person that you love that no one else knows about. It's between you and them. And of course, with the lies, the love is greater. And the one who is sought is greater Subhanahu wa Ta'ala.",
+  "credit": "Dr. Omar Suleiman",
+  "style": "gold",
+  "music": 1,
+  "blur": false
+ },
+ "I5_19": {
+  "name": "The two hungry wolves",
+  "src": "c_I5_19",
+  "a": 5.625432992847436,
+  "b": 94.19743300000005,
+  "text": "So let's start with the first one. You know, that hadith about two hungry wolves amongst sheep. So what's the solution? If you have hungry wolves and you have a bunch of sheep, what's the solution? I mean, the solution, if you have hungry wolves and you have sheep. I mean, you protect the sheep. So You can protect the sheep. kill the wolves. You do a little bit of both. Sure. But you need shepherds. So Think of your personality. your makeup as being different sheep. There's a portion of me. So how do I protect this part of me from that wolf? How do I protect this part of me from that wolf? How do I protect this part of me from that wolf? And no one's going to Come and shepherd except for you. You have to be the shepherd of yourself in this regard, right? You have to protect yourself. When the Prophet mentions that, one of the benefits of that hadith Is that the wolves will not stop attacking because the wolves here are. a manifestation of Shaitan. Shaitan is the one that's driving the wolves. The wolves are just manifesting against Shaitan's temptations. Shaitan's not going anywhere. Shaitan will be at you. until the time of your death. And so you can never really kill the wolves. Which means you can never really kill fully the desires themselves.",
+  "credit": "Dr. Omar Suleiman",
+  "style": "mixed",
+  "music": 2,
+  "blur": false
+ },
+ "I5_20": {
+  "name": "Stop caring what people say",
+  "src": "c_I5_20",
+  "a": 7.01236700000004,
+  "b": 34.942367000000104,
+  "text": "What's the worst that can happen to me? All right, the flip side of that is. What if everybody praises me? What if everybody thinks I'm an amazing person? What if everybody tells me you're the best? What if everybody celebrates me? What really changed about the quality of my life? Did that make me happy? Did that really fulfill me? And then you start realizing like People's perception of you really does not matter that much. And it's a liberating experience when you stop caring about what people say about you. It is so liberating.",
+  "credit": "Dr. Omar Suleiman",
+  "style": "hbox",
+  "music": 3,
+  "blur": false
  }
 }
