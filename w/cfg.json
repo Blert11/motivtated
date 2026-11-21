@@ -1,0 +1,21 @@
+{
+ "A2": {"style":"bebas","grade":"bw","frame":"full","music":"m4"},
+ "H1": {"style":"resolute","grade":"moody","frame":"rwin","music":"m2"},
+ "A1": {"style":"coolv","grade":"warm","frame":"rect34","music":"m1"},
+ "H2": {"style":"montlight","grade":"cool","frame":"rsq","music":"m3"},
+ "A9": {"style":"accent","grade":"moody","frame":"band169","music":"m4","accent":"&H002B8AFF&"},
+ "H13": {"style":"typewriter","grade":"cool","frame":"band43","music":"m2"},
+ "A4": {"style":"eidos","grade":"bw","frame":"fish","music":"m1"},
+ "H3": {"style":"helvmed","grade":"warm","frame":"full","music":"m3"},
+ "A6": {"style":"boldital","grade":"moody","frame":"rwin","music":"m4"},
+ "H5": {"style":"overlayword","grade":"bw","frame":"full","music":"m2"},
+ "A7": {"style":"podcast","grade":"cool","frame":"band169","music":"m1"},
+ "H11": {"style":"bebas","grade":"moody","frame":"rect34","music":"m3"},
+ "A3": {"style":"coolv","grade":"warm","frame":"rsq","music":"m4"},
+ "H7": {"style":"accent","grade":"bw","frame":"fish","music":"m2","accent":"&H00FFC87E&"},
+ "A8": {"style":"resolute","grade":"warm","frame":"full","music":"m1"},
+ "H14": {"style":"montlight","grade":"moody","frame":"band43","music":"m3"},
+ "H9": {"style":"eidos","grade":"bw","frame":"rwin","music":"m4"},
+ "C1": {"style":"tiny","grade":"comp","frame":"comp","music":"m2"},
+ "C2": {"style":"tiny","grade":"comp","frame":"comp","music":"m1"}
+}

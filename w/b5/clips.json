@@ -1,0 +1,58 @@
+{
+ "T_serif": {
+  "src": "c_T_serif",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "serif",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_hbox": {
+  "src": "c_T_hbox",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "hbox",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_typecap": {
+  "src": "c_T_typecap",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "typecap",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_gold": {
+  "src": "c_T_gold",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "gold",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_mixed": {
+  "src": "c_T_mixed",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "mixed",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_film": {
+  "src": "c_T_film",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "film",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ },
+ "T_bracket": {
+  "src": "c_T_bracket",
+  "a": 3.0,
+  "b": 27.69999999999999,
+  "style": "bracket",
+  "credit": "Reminder",
+  "text": "They're not doing anything haram. Rasulullah knows that, but he was worried about something far deeper. So what does he say? He said, the man amongst you is not the one that can physically put down the other. Any meathead can do that."
+ }
+}

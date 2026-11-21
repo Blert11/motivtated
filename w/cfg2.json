@@ -1,0 +1,760 @@
+{
+ "U1": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m2",
+  "entry": 4.48
+ },
+ "U7": {
+  "style": "overlayword",
+  "grade": "moody",
+  "frame": "full",
+  "music": "m4",
+  "entry": 14.35
+ },
+ "U8": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rwin",
+  "music": "m5",
+  "entry": 0.18
+ },
+ "U9": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m3",
+  "entry": 8.43
+ },
+ "U10": {
+  "style": "helvmed",
+  "grade": "orig",
+  "frame": "rect34",
+  "music": "m1",
+  "entry": 24.26
+ },
+ "U11": {
+  "style": "stoic",
+  "grade": "cool",
+  "frame": "rsq",
+  "music": "m2",
+  "entry": 17.0
+ },
+ "U12": {
+  "style": "kinetic",
+  "grade": "moody",
+  "frame": "full",
+  "music": "m4",
+  "entry": 24.78
+ },
+ "U14": {
+  "style": "coolv",
+  "grade": "orig",
+  "frame": "band169",
+  "music": "m3",
+  "entry": 19.53
+ },
+ "R1": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m5",
+  "entry": 0.18
+ },
+ "R5": {
+  "style": "overlayword",
+  "grade": "orig",
+  "frame": "fish",
+  "music": "m1",
+  "entry": 24.26
+ },
+ "R6": {
+  "style": "bebas",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m2",
+  "entry": 28.7
+ },
+ "R11": {
+  "style": "kinetic",
+  "grade": "moody",
+  "frame": "rwin",
+  "music": "m3",
+  "entry": 37.31
+ },
+ "R12": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m4",
+  "entry": 36.55
+ },
+ "R13": {
+  "style": "eidos",
+  "grade": "bw",
+  "frame": "rsq",
+  "music": "m5",
+  "entry": 0.18
+ },
+ "R14": {
+  "style": "kinetic",
+  "grade": "cool",
+  "frame": "rect34",
+  "music": "m1",
+  "entry": 0.23
+ },
+ "R15": {
+  "style": "accent",
+  "grade": "orig",
+  "frame": "band43",
+  "music": "m2",
+  "entry": 4.48,
+  "accent": "&H002B8AFF&"
+ },
+ "R17": {
+  "style": "typewriter",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m3",
+  "entry": 8.43
+ },
+ "W1": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "rect34",
+  "music": "m4",
+  "entry": 14.35
+ },
+ "W2": {
+  "style": "montlight",
+  "grade": "cool",
+  "frame": "full",
+  "music": "m5",
+  "entry": 0.18
+ },
+ "W4": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "sq",
+  "music": "m2",
+  "entry": 17.0
+ },
+ "W6": {
+  "style": "overlayword",
+  "grade": "orig",
+  "frame": "full",
+  "music": "m3",
+  "entry": 19.53
+ },
+ "W7": {
+  "style": "boldital",
+  "grade": "moody",
+  "frame": "rwin",
+  "music": "m1",
+  "entry": 24.26
+ },
+ "W8": {
+  "style": "kinetic",
+  "grade": "bw",
+  "frame": "sq",
+  "music": "m4",
+  "entry": 24.78
+ },
+ "W10": {
+  "style": "podcast",
+  "grade": "moody",
+  "frame": "band169",
+  "music": "m5",
+  "entry": 0.18
+ },
+ "W11": {
+  "style": "overlayword",
+  "grade": "warm",
+  "frame": "fish",
+  "music": "m2",
+  "entry": 28.7
+ },
+ "C3": {
+  "style": "tiny",
+  "grade": "comp",
+  "frame": "comp",
+  "music": "m3",
+  "entry": 37.31
+ },
+ "C4": {
+  "style": "tiny",
+  "grade": "comp",
+  "frame": "comp",
+  "music": "m1",
+  "entry": 24.26
+ },
+ "F1": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ },
+ "P1": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rwin",
+  "music": "m2",
+  "entry": 17.0,
+  "autolock": false
+ },
+ "F2": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "sq",
+  "music": "m3",
+  "entry": 37.31,
+  "autolock": true
+ },
+ "P2": {
+  "style": "overlayword",
+  "grade": "cool",
+  "frame": "fish",
+  "music": "m4",
+  "entry": 14.35,
+  "autolock": false
+ },
+ "F3": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rect34",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "P3": {
+  "style": "helvmed",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": false
+ },
+ "F5": {
+  "style": "kinetic",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m2",
+  "entry": 4.48,
+  "autolock": true
+ },
+ "P4": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m3",
+  "entry": 19.53,
+  "autolock": true
+ },
+ "F6": {
+  "style": "bebas",
+  "grade": "moody",
+  "frame": "band169",
+  "music": "m4",
+  "entry": 36.55,
+  "autolock": false
+ },
+ "P5": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "F7": {
+  "style": "coolv",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": false
+ },
+ "P6": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rect34",
+  "music": "m2",
+  "entry": 28.7,
+  "autolock": false
+ },
+ "F8": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m3",
+  "entry": 8.43,
+  "autolock": true
+ },
+ "P7": {
+  "style": "montlight",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m4",
+  "entry": 24.78,
+  "autolock": false
+ },
+ "F9": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "P8": {
+  "style": "accent",
+  "grade": "halal",
+  "frame": "band169",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": true
+ },
+ "F10": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m2",
+  "entry": 17.0,
+  "autolock": false
+ },
+ "P9": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m3",
+  "entry": 37.31,
+  "autolock": true
+ },
+ "P10": {
+  "style": "overlayword",
+  "grade": "orig",
+  "frame": "full",
+  "music": "m4",
+  "entry": 14.35,
+  "autolock": false
+ },
+ "P11": {
+  "style": "typewriter",
+  "grade": "warm",
+  "frame": "rect34",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "P12": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ },
+ "P13": {
+  "style": "boldital",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m2",
+  "entry": 4.48,
+  "autolock": true
+ },
+ "T2": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "sq",
+  "music": "m3",
+  "entry": 19.53,
+  "autolock": false
+ },
+ "T3": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m4",
+  "entry": 36.55,
+  "autolock": true
+ },
+ "T4": {
+  "style": "podcast",
+  "grade": "halal",
+  "frame": "band169",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "T5": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": true
+ },
+ "T6": {
+  "style": "overlayword",
+  "grade": "moody",
+  "frame": "full",
+  "music": "m2",
+  "entry": 28.7,
+  "autolock": false
+ },
+ "T7": {
+  "style": "kinetic",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m3",
+  "entry": 8.43,
+  "autolock": true
+ },
+ "T8": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m4",
+  "entry": 24.78,
+  "autolock": true
+ },
+ "T9": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rwin",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "T10": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "sq",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ },
+ "T11": {
+  "style": "overlayword",
+  "grade": "warm",
+  "frame": "fish",
+  "music": "m2",
+  "entry": 17.0,
+  "autolock": false
+ },
+ "T12": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rect34",
+  "music": "m3",
+  "entry": 37.31,
+  "autolock": true
+ },
+ "T13": {
+  "style": "helvmed",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m4",
+  "entry": 14.35,
+  "autolock": true
+ },
+ "T14": {
+  "style": "kinetic",
+  "grade": "orig",
+  "frame": "rsq",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "T15": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": true
+ },
+ "T17": {
+  "style": "bebas",
+  "grade": "halal",
+  "frame": "band169",
+  "music": "m2",
+  "entry": 4.48,
+  "autolock": true
+ },
+ "T18": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m3",
+  "entry": 19.53,
+  "autolock": true
+ },
+ "T19": {
+  "style": "coolv",
+  "grade": "moody",
+  "frame": "sq",
+  "music": "m4",
+  "entry": 36.55,
+  "autolock": false
+ },
+ "T20": {
+  "style": "kinetic",
+  "grade": "halal",
+  "frame": "rect34",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "T21": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ },
+ "T22": {
+  "style": "montlight",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m2",
+  "entry": 28.7,
+  "autolock": false
+ },
+ "D1": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m3",
+  "entry": 8.43,
+  "autolock": true
+ },
+ "D2": {
+  "style": "accent",
+  "grade": "warm",
+  "frame": "band169",
+  "music": "m4",
+  "entry": 24.78,
+  "autolock": false
+ },
+ "D4": {
+  "style": "kinetic",
+  "grade": "moody",
+  "frame": "sq",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "D5": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": true
+ },
+ "D6": {
+  "style": "overlayword",
+  "grade": "orig",
+  "frame": "full",
+  "music": "m2",
+  "entry": 17.0,
+  "autolock": false
+ },
+ "D8": {
+  "style": "typewriter",
+  "grade": "warm",
+  "frame": "rect34",
+  "music": "m3",
+  "entry": 37.31,
+  "autolock": false
+ },
+ "D9": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m4",
+  "entry": 14.35,
+  "autolock": true
+ },
+ "D10": {
+  "style": "boldital",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "D11": {
+  "style": "kinetic",
+  "grade": "moody",
+  "frame": "sq",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": false
+ },
+ "D12": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m2",
+  "entry": 4.48,
+  "autolock": true
+ },
+ "D13": {
+  "style": "podcast",
+  "grade": "orig",
+  "frame": "band169",
+  "music": "m3",
+  "entry": 19.53,
+  "autolock": false
+ },
+ "D14": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m4",
+  "entry": 36.55,
+  "autolock": true
+ },
+ "D16": {
+  "style": "overlayword",
+  "grade": "orig",
+  "frame": "full",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "D17": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rwin",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": false
+ },
+ "D18": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m2",
+  "entry": 28.7,
+  "autolock": true
+ },
+ "D19": {
+  "style": "kinetic",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m3",
+  "entry": 8.43,
+  "autolock": true
+ },
+ "D20": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "sq",
+  "music": "m4",
+  "entry": 24.78,
+  "autolock": true
+ },
+ "D21": {
+  "style": "overlayword",
+  "grade": "warm",
+  "frame": "fish",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "D22": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rect34",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ },
+ "D23": {
+  "style": "helvmed",
+  "grade": "warm",
+  "frame": "full",
+  "music": "m2",
+  "entry": 17.0,
+  "autolock": false
+ },
+ "D24": {
+  "style": "kinetic",
+  "grade": "moody",
+  "frame": "rsq",
+  "music": "m3",
+  "entry": 37.31,
+  "autolock": false
+ },
+ "D25": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m4",
+  "entry": 14.35,
+  "autolock": true
+ },
+ "D26": {
+  "style": "bebas",
+  "grade": "orig",
+  "frame": "band169",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": false
+ },
+ "D27": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m1",
+  "entry": 0.23,
+  "autolock": true
+ },
+ "D28": {
+  "style": "coolv",
+  "grade": "halal",
+  "frame": "sq",
+  "music": "m2",
+  "entry": 4.48,
+  "autolock": true
+ },
+ "D30": {
+  "style": "kinetic",
+  "grade": "warm",
+  "frame": "rect34",
+  "music": "m3",
+  "entry": 19.53,
+  "autolock": false
+ },
+ "Y1": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rwin",
+  "music": "m4",
+  "entry": 36.55,
+  "autolock": true
+ },
+ "Y3": {
+  "style": "montlight",
+  "grade": "halal",
+  "frame": "full",
+  "music": "m5",
+  "entry": 0.18,
+  "autolock": true
+ },
+ "Y5": {
+  "style": "halal",
+  "grade": "halal",
+  "frame": "rsq",
+  "music": "m1",
+  "entry": 24.26,
+  "autolock": true
+ }
+}
