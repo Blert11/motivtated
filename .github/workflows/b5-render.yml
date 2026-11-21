@@ -30,7 +30,7 @@ jobs:
       - name: Setup
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg libraqm0 libfribidi0 >/dev/null
-          pip install -q numpy opencv-python-headless pillow soundfile scipy onnxruntime
+          pip install -q numpy opencv-contrib-python-headless pillow soundfile scipy onnxruntime
           python -c "from PIL import features; assert features.check('raqm')"
           sudo mkdir -p /home/claude /mnt/user-data/uploads/imanivated && sudo chown -R $USER /home/claude /mnt/user-data
           ln -s $GITHUB_WORKSPACE/w /home/claude/w; ln -s $GITHUB_WORKSPACE/fonts /home/claude/fonts; ln -s $GITHUB_WORKSPACE/models /home/claude/models
