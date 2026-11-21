@@ -131,3 +131,9 @@ Queues were full through Nov 20, so the three latest Nov 20 posts per channel we
 - 6 Shorts a day per page (10:00, 12:00, 14:00, 16:00, 18:00, 20:00). The plan holds only the clip order; each clip takes the next free slot of its page when it is scheduled (at least 40 min ahead), so nothing is lost and no backlog posts in a burst.
 - Lane 2 stops new YouTube posts (`stopped_platforms: ["youtube"]` in lane2-schedule.json) and keeps X. Clips already posted or still queued on Buffer YouTube are never sent through Zernio.
 - Long videos are uploaded by Blert himself.
+
+## 2026-11-22 — Actions minutes: main lane hosts media as release assets
+GitHub warned that 90% of the 2,000 monthly Actions minutes were used (resets 2026-12-01). Each main-lane run spent
+~7 minutes waiting for GitHub Pages deploys before posting. New clips now go up as assets of the public `lane1-media`
+prerelease in the media repo (public immediately, like lane 2), and the availability retry is ~2 minutes at most.
+Older Pages-hosted records are still cleaned through the Pages code path.
