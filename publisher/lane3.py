@@ -155,7 +155,11 @@ def discover_channels(buffer, ledger):
 
 class Lane3(lane2.Lane2):
     def __init__(self, plan, ledger, buffer, media, gh, clock=None):
+        # Owner stop (2026-11-21): rows of clips in removed_ids are never scheduled again.
+        removed = set(plan.get('removed_ids', []))
         self.plan, self.rows = plan, validate_plan(plan)
+        if removed:
+            self.rows = [r for r in self.rows if r['clip_id'] not in removed]
         self.ledger, self.buffer, self.media, self.gh = ledger, buffer, media, gh
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.boards, self.counter = {}, {}

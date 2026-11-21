@@ -103,7 +103,13 @@ def load_package(row, directory):
 class Scheduler:
     def __init__(self, plan, engine, channels, loader=load_package, clock=None, retry_edit=None):
         self.plan = plan
+        # Owner stops (2026-11-21): clips listed in removed_ids are never scheduled again, and platforms listed in
+        # stopped_platforms get no new posts. Validation still runs on the full approved plan.
+        self.removed = set(plan.get('removed_ids', []))
+        self.stopped = set(plan.get('stopped_platforms', []))
         self.rows = validate_plan(plan)
+        if self.removed:
+            self.rows = [r for r in self.rows if r['clip_id'] not in self.removed]
         self.engine = engine
         self.channels = channels
         self.loader = loader
@@ -119,7 +125,7 @@ class Scheduler:
         return False   # 2026-11-14: a Facebook failure skips only that post; the channel keeps posting
 
     def platforms_for(self, row, include_paused=False):
-        result = list(PLATFORMS)
+        result = [p for p in PLATFORMS if p not in self.stopped]
         start = self.plan.get('facebook_from')
         if 'facebook' in self.channels and start and parse_time(row['due_at']) >= parse_time(start):
             if include_paused or not self.fb_paused():
@@ -194,6 +200,8 @@ class Scheduler:
     def apply_schedule_changes(self):
         for row in self.rows:
             for platform in PLATFORMS:
+                if platform in self.stopped:
+                    continue
                 record = self.records.get(row['clip_id']+':'+platform)
                 if not record or record.get('scheduled_at') == row['due_at']:
                     continue
@@ -210,7 +218,10 @@ class Scheduler:
             return
         # Only the approved queue; originals and private bundles are always retained.
         for row in self.rows:
-            plats = list(PLATFORMS)
+            plats = [p for p in PLATFORMS if p not in self.stopped
+                     and (self.records.get(row['clip_id']+':'+p) or {}).get('state') != 'skipped']
+            if not plats:
+                continue
             fb = self.records.get(row['clip_id']+':facebook')
             if fb and fb['state'] in ('submitted', 'posted', 'preparing') and fb.get('media'):
                 plats.append('facebook')   # keep the hosted video until Facebook has it too
@@ -332,7 +343,7 @@ class Scheduler:
                                       for row in self.rows for p in self.platforms_for(row))
         self.report['finished'] = self.report['complete'] and all(
             self.records[row['clip_id']+':'+p].get('media_deleted_at') or self.records[row['clip_id']+':'+p]['state'] == 'skipped'
-            for row in self.rows for p in PLATFORMS)
+            for row in self.rows for p in self.platforms_for(row))
         return self.report
 
 

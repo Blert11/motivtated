@@ -212,7 +212,11 @@ def discover_channels(buffer, ledger):
 
 class Lane2:
     def __init__(self, plan, ledger, buffer, media, gh, clock=None):
+        # Owner stop (2026-11-21): rows of clips in removed_ids are never scheduled again.
+        removed = set(plan.get('removed_ids', []))
         self.plan, self.rows = plan, validate_plan(plan)
+        if removed:
+            self.rows = [r for r in self.rows if r['clip_id'] not in removed]
         self.ledger, self.buffer, self.media, self.gh = ledger, buffer, media, gh
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.report = {'scheduled': [], 'posted': [], 'cleaned': [], 'skipped_missed': [], 'problems': []}
@@ -253,7 +257,7 @@ class Lane2:
             if not media or any(r.get('media_deleted_at') for r in recs):
                 continue
             row = next((r for r in self.rows if r['key'] == row_key), None)
-            done = row and all(any(r['platform'] == p and r['state'] in ('posted', 'failed_at_buffer', 'failed_before_submit', 'needs_attention', 'skipped_missed')
+            done = row and all(any(r['platform'] == p and r['state'] in ('posted', 'failed_at_buffer', 'failed_before_submit', 'needs_attention', 'skipped_missed', 'skipped')
                                    for r in recs) for p in row['platforms'])
             sent = [parse_time(r['sent_at']) for r in recs if r.get('sent_at')]
             if done and all(self.clock()-s > timedelta(hours=2) for s in sent):

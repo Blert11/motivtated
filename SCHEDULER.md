@@ -119,3 +119,8 @@ Queues were full through Nov 20, so the three latest Nov 20 posts per channel we
 - Every not-yet-posted YouTube clip moved to an extra row `<page>:<clip>-yt2` (YouTube only) at 12:05 and 20:05 from Nov 20, in the old order (failed ones first). The original rows keep X (twitter) at their old times. Tonight's already queued posts (19:45/20:00/21:30) were left alone.
 - Queued YouTube posts for Nov 20+ were deleted from Buffer with owner-edit `free` so they don't fail at the old pace.
 - Extra Shorts beyond 2 a day go up through YouTube Studio's own scheduler (done by hand/browser, not by this repo).
+
+## Owner stop 2026-11-21 (Claude, authorized by Blert)
+- Motivtated TikTok account was restricted: `stopped_platforms: ["tiktok"]` in posting-schedule.json. The main lane schedules no new TikTok posts; Instagram and Facebook carry on unchanged.
+- No more clips of one speaker on any Motivtated platform: their 95 clip IDs (chosen by the clip filename tag) are listed in `removed_ids` in posting-schedule.json, lane2-schedule.json and lane3-schedule.json. Every lane drops those rows; validation still checks the full approved plan.
+- Posts already waiting in Buffer were deleted with owner-edit `clip_id=remove` (publisher/owner_remove.py): each one is recorded as `skipped` / `owner_removed`, so it is never scheduled again.

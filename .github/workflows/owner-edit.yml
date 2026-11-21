@@ -36,8 +36,16 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_API_KEY_2: ${{ secrets.BUFFER_API_KEY_2 }}
           INPUT_KEYS: ${{ inputs.free_keys }}
+      - run: python -m publisher.owner_remove
+        if: inputs.clip_id == 'remove'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_API_KEY_2: ${{ secrets.BUFFER_API_KEY_2 }}
+          BUFFER_API_KEY_3: ${{ secrets.BUFFER_API_KEY_3 }}
+          INPUT_KEYS: ${{ inputs.free_keys }}
       - run: python -m publisher.owner_edit
-        if: inputs.clip_id != 'schema' && inputs.clip_id != 'free'
+        if: inputs.clip_id != 'schema' && inputs.clip_id != 'free' && inputs.clip_id != 'remove'
         env:
           GITHUB_TOKEN: ${{ github.token }}
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}

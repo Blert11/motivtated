@@ -185,6 +185,7 @@ class SchedulerTests(unittest.TestCase):
 
     def test_batch5_extension_keeps_order_and_pending_limit(self):
         self.plan.update(posts_per_day=10,max_pending_per_channel=10)
+        self.plan.pop('removed_ids',None); self.plan.pop('stopped_platforms',None)
         self.plan['clips'].extend({'clip_id':f'M{n:06d}','bundle_sha256':'b'*64} for n in range(66,108))
         for n,row in enumerate(self.plan['clips']):
             row['due_at']=(datetime(2099,1,1+n//10,9,tzinfo=ZoneInfo('Europe/Budapest'))
@@ -451,3 +452,15 @@ class FacebookTests(SchedulerTests):
         self.scheduler.run()
         fb_calls = [c for c in self.buffer.calls if c['channelId'] == 'facebook']
         self.assertEqual(r['M000010:facebook']['state'], 'skipped')   # never retried
+
+
+class OwnerStopTests(unittest.TestCase):
+    def test_removed_clips_and_stopped_tiktok_are_never_scheduled(self):
+        import publisher.scheduler as sch
+        plan = json.loads(Path('posting-schedule.json').read_text(encoding='utf-8'))
+        s = sch.Scheduler.__new__(sch.Scheduler)
+        s.plan = plan; s.removed = set(plan['removed_ids']); s.stopped = set(plan['stopped_platforms'])
+        s.channels = {'tiktok': 't', 'instagram': 'i', 'facebook': 'f'}
+        rows = [r for r in sch.validate_plan(plan) if r['clip_id'] not in s.removed]
+        self.assertFalse(any('tate' in r['filename'].lower() for r in rows))
+        self.assertTrue(all('tiktok' not in s.platforms_for(r) for r in rows))
