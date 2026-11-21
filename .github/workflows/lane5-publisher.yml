@@ -1,0 +1,48 @@
+name: Lane 5 publisher (YouTube Shorts via Zernio)
+# YouTube Shorts for @motivtated and @imanivated through Zernio: own plan (lane5-schedule.json) and ledger (lane5-state.json).
+'on':
+  schedule:
+    - cron: '27 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [lane5-kick]
+permissions:
+  contents: write
+concurrency:
+  group: motivtated-publisher-single-writer
+  cancel-in-progress: false
+jobs:
+  refill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Ensure ffprobe is installed
+        timeout-minutes: 12
+        run: |
+          if ! command -v ffprobe >/dev/null 2>&1; then
+            # apt mirrors have hung for over an hour on some runners; fall back to a static build
+            if ! (timeout 240 sudo apt-get update -o Acquire::Retries=2 && timeout 300 sudo apt-get install -y --no-install-recommends ffmpeg); then
+              python -m pip install static-ffmpeg
+              dir=$(python -c "import static_ffmpeg.run as r, os; print(os.path.dirname(r.get_or_fetch_platform_executables_else_raise()[1]))")
+              echo "$dir" >> "$GITHUB_PATH"
+            fi
+          fi
+      - name: Offline tests
+        run: python -m unittest tests.test_lane5 -v
+      - name: Reconcile and refill lane 5
+        run: python -m publisher.lane5
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ZERNIO_API_KEY: ${{ secrets.ZERNIO_API_KEY }}
+          MEDIA_GITHUB_TOKEN: ${{ secrets.MEDIA_GITHUB_TOKEN }}
+          MEDIA_PUBLIC_BASE_URL: ${{ vars.MEDIA_PUBLIC_BASE_URL }}
+          MEDIA_GITHUB_REPOSITORY: ${{ vars.MEDIA_GITHUB_REPOSITORY }}

@@ -1,0 +1,1845 @@
+{
+ "version": 1,
+ "enabled": true,
+ "timezone": "Europe/Budapest",
+ "authorized_on": "2026-11-21",
+ "note": "Blert 2026-11-21: stop YouTube on Buffer (free plan allows 2 a day) and post Shorts through Zernio, 6 a day per page for @motivtated and @imanivated. Long videos are uploaded by hand. Clip order follows lane 2; each clip gets the next free slot when it is scheduled.",
+ "max_pending_per_channel": 12,
+ "slots": {
+  "motivtated": [
+   "10:00",
+   "12:00",
+   "14:00",
+   "16:00",
+   "18:00",
+   "20:00"
+  ],
+  "imanivated": [
+   "10:00",
+   "12:00",
+   "14:00",
+   "16:00",
+   "18:00",
+   "20:00"
+  ]
+ },
+ "removed_ids": [
+  "M000010",
+  "M000011",
+  "M000012",
+  "M000013",
+  "M000014",
+  "M000015",
+  "M000016",
+  "M000017",
+  "M000018",
+  "M000019",
+  "M000020",
+  "M000021",
+  "M000022",
+  "M000023",
+  "M000024",
+  "M000025",
+  "M000026",
+  "M000027",
+  "M000028",
+  "M000029",
+  "M000030",
+  "M000031",
+  "M000066",
+  "M000067",
+  "M000068",
+  "M000069",
+  "M000070",
+  "M000071",
+  "M000072",
+  "M000073",
+  "M000074",
+  "M000075",
+  "M000076",
+  "M000077",
+  "M000078",
+  "M000079",
+  "M000080",
+  "M000081",
+  "M000082",
+  "M000083",
+  "M000084",
+  "M000085",
+  "M000086",
+  "M000087",
+  "M000088",
+  "M000089",
+  "M000090",
+  "M000091",
+  "M000092",
+  "M000093",
+  "M000094",
+  "M000095",
+  "M000096",
+  "M000097",
+  "M000098",
+  "M000099",
+  "M000100",
+  "M000101",
+  "M000102",
+  "M000103",
+  "M000104",
+  "M000105",
+  "M000106",
+  "M000107",
+  "M000145",
+  "M000146",
+  "M000147",
+  "M000148",
+  "M000149",
+  "M000150",
+  "M000151",
+  "M000152",
+  "M000153",
+  "M000154",
+  "M000155",
+  "M000156",
+  "M000157",
+  "M000158",
+  "M000159",
+  "M000160",
+  "M000161",
+  "M000162",
+  "M000163",
+  "M000164",
+  "M000165",
+  "M000166",
+  "M000167",
+  "M000168",
+  "M000169",
+  "M000170",
+  "M000171",
+  "M000172",
+  "M000173",
+  "M000174",
+  "M000189"
+ ],
+ "rows": [
+  {
+   "key": "motivtated:M000337",
+   "page": "motivtated",
+   "clip_id": "M000337",
+   "asset_name": "M000337.zip",
+   "bundle_sha256": "4451c0fa2d47ea8b0e5bb21b422fe83e97491cf6c3d177bfd4c2fe2feabd89b8",
+   "title": "Forget GTA 6. Life is the real game. Upgrade your character."
+  },
+  {
+   "key": "motivtated:M000127",
+   "page": "motivtated",
+   "clip_id": "M000127",
+   "asset_name": "M000127.zip",
+   "bundle_sha256": "bbe7f32da03d4bc2f1ded645aecefe8ab31c39c811b54fa94e7e51707d968987",
+   "title": "Practice being successful | Dan Pena"
+  },
+  {
+   "key": "imanivated:I000052",
+   "page": "imanivated",
+   "clip_id": "I000052",
+   "asset_name": "I000052.zip",
+   "bundle_sha256": "ced27232ded08b1b6b9b1c2d41e57ae9a540f0d4487b24818b98e2911f254500",
+   "title": "Raise the next Muhammad al-Fatih, not an iPad kid | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000334",
+   "page": "motivtated",
+   "clip_id": "M000334",
+   "asset_name": "M000334.zip",
+   "bundle_sha256": "7d6ee2abe2b82827b7de500861d24f26d6a2330c40e45444eb05db6a4efb34b1",
+   "title": "GTA 6 is a test. Live it for real."
+  },
+  {
+   "key": "imanivated:I000050",
+   "page": "imanivated",
+   "clip_id": "I000050",
+   "asset_name": "I000050.zip",
+   "bundle_sha256": "ec24b127dc47fb7225337f2fdadc0c143b4b3be6f82fe05e9c4ba61f6427353d",
+   "title": "Is it a test, or is it your own sins? | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000336",
+   "page": "motivtated",
+   "clip_id": "M000336",
+   "asset_name": "M000336.zip",
+   "bundle_sha256": "cb3bcba0f6ff94d7216d31b85bcbbab5e03e1898533dacd5733db687ac0fce75",
+   "title": "Why play GTA 6 when you can do it for real?"
+  },
+  {
+   "key": "imanivated:I000051",
+   "page": "imanivated",
+   "clip_id": "I000051",
+   "asset_name": "I000051.zip",
+   "bundle_sha256": "a6572bced0f1d7ede98259f3269a8125a6c393a19f5339421a21335ad2049491",
+   "title": "Trying to save others, don't lose yourself | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000053",
+   "page": "imanivated",
+   "clip_id": "I000053",
+   "asset_name": "I000053.zip",
+   "bundle_sha256": "2daf1ade573e803b2a5f0ffc25858528a443957255ea840aa3a11b3981b30ee2",
+   "title": "His dad can't walk. Yours can. Go out with him | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000335",
+   "page": "motivtated",
+   "clip_id": "M000335",
+   "asset_name": "M000335.zip",
+   "bundle_sha256": "8e6e80d4f1eee63c33109876f4be1fb8af00756e0da9d2b15dca81ca12244205",
+   "title": "Excited about GTA 6? Go live it for real."
+  },
+  {
+   "key": "imanivated:I000054",
+   "page": "imanivated",
+   "clip_id": "I000054",
+   "asset_name": "I000054.zip",
+   "bundle_sha256": "65b75faf553e3ae6a8b68efd27c0fd7a43d8c2888301791cd3850ed6f25dbedc",
+   "title": "My heart is good isn't a reason not to pray | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000051",
+   "page": "motivtated",
+   "clip_id": "M000051",
+   "asset_name": "M000051.zip",
+   "bundle_sha256": "ef92706994dd571ea00bac905abbc569efa897e3894332b97e3d60981af3ffd9",
+   "title": "Make your bed | Admiral McRaven"
+  },
+  {
+   "key": "imanivated:I000055",
+   "page": "imanivated",
+   "clip_id": "I000055",
+   "asset_name": "I000055.zip",
+   "bundle_sha256": "06d67cea9ac553d9e394e21867ff927d4bccd17fb385dac0e4af464c45f70409",
+   "title": "Reflect. Repent. Return | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000333",
+   "page": "motivtated",
+   "clip_id": "M000333",
+   "asset_name": "M000333.zip",
+   "bundle_sha256": "3704e2800b0f9cb540bd279bebd0b375ab96d4ed568f5d9f974e5d24a9a7abbe",
+   "title": "GTA 6 is every man's fantasy. Why not live it for real?"
+  },
+  {
+   "key": "imanivated:I000056",
+   "page": "imanivated",
+   "clip_id": "I000056",
+   "asset_name": "I000056.zip",
+   "bundle_sha256": "d9b9cd862cfa1ae6aac35f571d70f436c31a177b9f92975ffac5efed29a42294",
+   "title": "Whatever you've done, don't lose hope in His mercy | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000079",
+   "page": "imanivated",
+   "clip_id": "I000079",
+   "asset_name": "I000079.zip",
+   "bundle_sha256": "1ffe3d50e84123bd7861184162890c6e90e5b67c32b8c659e54c733bbcc6dba8",
+   "title": "Light a star with every dhikr: say it with me"
+  },
+  {
+   "key": "motivtated:M000052",
+   "page": "motivtated",
+   "clip_id": "M000052",
+   "asset_name": "M000052.zip",
+   "bundle_sha256": "8c8ddbe935510b2953caf696daeae7b3b0cb5479d4ed9606a6e416a6a0d127a8",
+   "title": "Have an iron will | Motivation"
+  },
+  {
+   "key": "imanivated:I000057",
+   "page": "imanivated",
+   "clip_id": "I000057",
+   "asset_name": "I000057.zip",
+   "bundle_sha256": "ed27ec815a987617b72543cbb59f12c43e46b631983fae06bda830a7b3ee45d0",
+   "title": "Allah rewards you even for not doing the sin | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000058",
+   "page": "imanivated",
+   "clip_id": "I000058",
+   "asset_name": "I000058.zip",
+   "bundle_sha256": "124718eb132f89ba2fcc439bcc4bb8b606f4682b8fc62f14a383dc1aa707e7c5",
+   "title": "Her last dua: before I become a burden on my kids. | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000128",
+   "page": "motivtated",
+   "clip_id": "M000128",
+   "asset_name": "M000128.zip",
+   "bundle_sha256": "b6fbd568b495a0665edc0414a111aa3b2389f1db4a97bc9152450407fa42a89a",
+   "title": "Unbelievable is the stupidest word | Matthew McConaughey"
+  },
+  {
+   "key": "imanivated:I000059",
+   "page": "imanivated",
+   "clip_id": "I000059",
+   "asset_name": "I000059.zip",
+   "bundle_sha256": "89f5fa098e834be917fc92d19e649d4f8ce64e49d2c134d64c5f97a148326503",
+   "title": "Baby steps are better than no steps | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000060",
+   "page": "imanivated",
+   "clip_id": "I000060",
+   "asset_name": "I000060.zip",
+   "bundle_sha256": "94ccb3c07f266d749c04432c610bf828c42054e3f157b02e55331df84a418979",
+   "title": "Stop blaming the imam. Start with yourself | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000053",
+   "page": "motivtated",
+   "clip_id": "M000053",
+   "asset_name": "M000053.zip",
+   "bundle_sha256": "ab06ad01fb7d0410dc818d010a8f5f057e77c5890bae36dd1fc2accca090edd7",
+   "title": "The 300 pound guy | David Goggins"
+  },
+  {
+   "key": "imanivated:I000061",
+   "page": "imanivated",
+   "clip_id": "I000061",
+   "asset_name": "I000061.zip",
+   "bundle_sha256": "a3643c8b9724ec7a2cd30b918ce6ef69f2a653182aa452fe37ae660b2a508a7c",
+   "title": "He led prayers in the prison yard. They moved him out | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000080",
+   "page": "imanivated",
+   "clip_id": "I000080",
+   "asset_name": "I000080.zip",
+   "bundle_sha256": "c2c8bf36d57883575b5eacdd20f3bb2dcfbe949af290a9b3e2a5a7108e9b105b",
+   "title": "One bead for every dhikr: 33, 33, 33, then La ilaha illallah"
+  },
+  {
+   "key": "motivtated:M000129",
+   "page": "motivtated",
+   "clip_id": "M000129",
+   "asset_name": "M000129.zip",
+   "bundle_sha256": "7a7954f9023977c9ce484a92eb76f22a1b0cb24ce8672885b5648cedf7c259cc",
+   "title": "Crazy but not stupid | Jack Ma"
+  },
+  {
+   "key": "imanivated:I000062",
+   "page": "imanivated",
+   "clip_id": "I000062",
+   "asset_name": "I000062.zip",
+   "bundle_sha256": "ce22c820c7162e4ea4e0bdf155c8ec72cc56778664c2f982d264741c2493e632",
+   "title": "One sincere dua and Allah calls you ya ibadi | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000063",
+   "page": "imanivated",
+   "clip_id": "I000063",
+   "asset_name": "I000063.zip",
+   "bundle_sha256": "966de8bd59ad358525a01f6c43b9046d160f7beea0f2b31d32d624bde53823cc",
+   "title": "Want to change the world? Put Allah first | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000054",
+   "page": "motivtated",
+   "clip_id": "M000054",
+   "asset_name": "M000054.zip",
+   "bundle_sha256": "eb72194fdef95a48960a4d6ed2065e88a1fc40773f6b1560f2fd874ae89b7702",
+   "title": "This is what hard feels like | Motivation"
+  },
+  {
+   "key": "imanivated:I000064",
+   "page": "imanivated",
+   "clip_id": "I000064",
+   "asset_name": "I000064.zip",
+   "bundle_sha256": "7d7b4d01ad68633b2dcd0690dc35a8dc22352a54472049f964aaf3ec35d83fea",
+   "title": "You don't see your father's struggle | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000065",
+   "page": "imanivated",
+   "clip_id": "I000065",
+   "asset_name": "I000065.zip",
+   "bundle_sha256": "1bb5c5ee217eaa5bcf53e1c023e3f3a79391babfb38ae2c98648c877dfc381ec",
+   "title": "Compare yourself only with who you were yesterday | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000130",
+   "page": "motivtated",
+   "clip_id": "M000130",
+   "asset_name": "M000130.zip",
+   "bundle_sha256": "30b4911d5210e54d26467eb14f232b02288b9b77b0e3af5a88933dd4d31c54c1",
+   "title": "Five years down the line | Motivation"
+  },
+  {
+   "key": "imanivated:I000066",
+   "page": "imanivated",
+   "clip_id": "I000066",
+   "asset_name": "I000066.zip",
+   "bundle_sha256": "78d6c5196342daf8507925f9dae203581d1efb9fbbce7e64dcd7bcc6b2048bda",
+   "title": "He started praying at work. His boss respected him more | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000081",
+   "page": "imanivated",
+   "clip_id": "I000081",
+   "asset_name": "I000081.zip",
+   "bundle_sha256": "5d87b7e14e192abd1ebccbe1cba8698516feb2a0511fdd79fb5fa6a98943e28d",
+   "title": "A new leaf for every dhikr: grow your tree"
+  },
+  {
+   "key": "motivtated:M000055",
+   "page": "motivtated",
+   "clip_id": "M000055",
+   "asset_name": "M000055.zip",
+   "bundle_sha256": "35c796ba69a93b3c44f9904f37baa4676522c89536be886b68d36805626c4fc2",
+   "title": "If you quit now | Motivation"
+  },
+  {
+   "key": "imanivated:I000067",
+   "page": "imanivated",
+   "clip_id": "I000067",
+   "asset_name": "I000067.zip",
+   "bundle_sha256": "32f7471c54ba0cd3dd8f32e27bb3e9199b7cc615e15fd7f85cf1a0e72d5871a4",
+   "title": "Reverts memorise more Quran than we do | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000068",
+   "page": "imanivated",
+   "clip_id": "I000068",
+   "asset_name": "I000068.zip",
+   "bundle_sha256": "1e67225afa2931b150e210028867a0d6aadc67d6960962f0358fbc43a38aede0",
+   "title": "Stop giving pieces of yourself when you're broken | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000131",
+   "page": "motivtated",
+   "clip_id": "M000131",
+   "asset_name": "M000131.zip",
+   "bundle_sha256": "14143fc53850971a3e0d44dfd32697719615cfd6664e7918a752dbfd3bce94da",
+   "title": "Go to stores you cant afford | Dan Pena"
+  },
+  {
+   "key": "imanivated:I000069",
+   "page": "imanivated",
+   "clip_id": "I000069",
+   "asset_name": "I000069.zip",
+   "bundle_sha256": "9ae436ee9e2070686ad6b34789216f25fca98b316970d5e456e9edfec7e14eea",
+   "title": "Find peace in one salah and you'll want them all | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000070",
+   "page": "imanivated",
+   "clip_id": "I000070",
+   "asset_name": "I000070.zip",
+   "bundle_sha256": "e8a31bf3eb3a7b76591c787890af482dcdbf12bc333735e431f8a55101b07f03",
+   "title": "Maybe your friends aren't the problem. Maybe it's you | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000056",
+   "page": "motivtated",
+   "clip_id": "M000056",
+   "asset_name": "M000056.zip",
+   "bundle_sha256": "4803857077790c418ae30100632cc46a63f4192618c34b957abfd23b138924d4",
+   "title": "You cannot change your life | David Goggins"
+  },
+  {
+   "key": "imanivated:I000071",
+   "page": "imanivated",
+   "clip_id": "I000071",
+   "asset_name": "I000071.zip",
+   "bundle_sha256": "6e5211f1f8c7ad52c33f6131de08ebb332ea6ccfb2e629126ef2d63bf23ce4a6",
+   "title": "Football for hours, but salah feels long? | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000072",
+   "page": "imanivated",
+   "clip_id": "I000072",
+   "asset_name": "I000072.zip",
+   "bundle_sha256": "f148574d69e28fdc22c995e36fa09350d5df6338f568178a8f24b7e73f1284ed",
+   "title": "The Quran is the high that gets you to Jannah | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000132",
+   "page": "motivtated",
+   "clip_id": "M000132",
+   "asset_name": "M000132.zip",
+   "bundle_sha256": "b98d1161fc972059d8135fd256afca5aba8c410ca4a9ca2eaf01a657b4201185",
+   "title": "Battery powered green light | Matthew McConaughey"
+  },
+  {
+   "key": "imanivated:I000073",
+   "page": "imanivated",
+   "clip_id": "I000073",
+   "asset_name": "I000073.zip",
+   "bundle_sha256": "3ea33d6e57a35f850f8966219a98186dc09735bd85a49c53834b9764e5076374",
+   "title": "Go home and wash your mother's feet tonight | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000074",
+   "page": "imanivated",
+   "clip_id": "I000074",
+   "asset_name": "I000074.zip",
+   "bundle_sha256": "a0a83d177badf1f2c745e8d1ef3769d35f0e81e1b9b90f7ab950c66e591e0b53",
+   "title": "Don't walk to Allah. Run | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000057",
+   "page": "motivtated",
+   "clip_id": "M000057",
+   "asset_name": "M000057.zip",
+   "bundle_sha256": "52f7707094e389e9ccd1b8304792292239e71c1d6da5bbcdf79ff1a28be0c6d0",
+   "title": "Just show up | Motivation"
+  },
+  {
+   "key": "imanivated:I000075",
+   "page": "imanivated",
+   "clip_id": "I000075",
+   "asset_name": "I000075.zip",
+   "bundle_sha256": "300f8ffc3e69d2e2b45eb809b2d16d818d662e2f86ef55164a2e4268783184ec",
+   "title": "The worst evil eye is your own | Akhi Ayman"
+  },
+  {
+   "key": "imanivated:I000076",
+   "page": "imanivated",
+   "clip_id": "I000076",
+   "asset_name": "I000076.zip",
+   "bundle_sha256": "f35d5e8494eb3766dec5cfb7177ad5ff625f85e408b66cd61df4942a610213d2",
+   "title": "They had men like me. I have men like you. | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000133",
+   "page": "motivtated",
+   "clip_id": "M000133",
+   "asset_name": "M000133.zip",
+   "bundle_sha256": "3b1513d9d8f71762800bff60542a08ba578008351f4e4fcb5e53574cdc289194",
+   "title": "Opportunity is where people complain | Jack Ma"
+  },
+  {
+   "key": "imanivated:I000077",
+   "page": "imanivated",
+   "clip_id": "I000077",
+   "asset_name": "I000077.zip",
+   "bundle_sha256": "0063496366618db1eee52351158e39a7ec3bf707a27915686dabbb147506aebc",
+   "title": "Deleting your history doesn't delete it with Allah | Akhi Ayman"
+  },
+  {
+   "key": "motivtated:M000058",
+   "page": "motivtated",
+   "clip_id": "M000058",
+   "asset_name": "M000058.zip",
+   "bundle_sha256": "f0f54b4c623a39392fbcdedacce34ad734433317f30952f77f480f2698248567",
+   "title": "It takes what it takes | Motivation"
+  },
+  {
+   "key": "motivtated:M000134",
+   "page": "motivtated",
+   "clip_id": "M000134",
+   "asset_name": "M000134.zip",
+   "bundle_sha256": "e5f2f1a8690d5e0d203a960ca427ccb753bdf72390093492fb06a0d83887a6b0",
+   "title": "Just one day wake up at 4 am | Motivation"
+  },
+  {
+   "key": "motivtated:M000059",
+   "page": "motivtated",
+   "clip_id": "M000059",
+   "asset_name": "M000059.zip",
+   "bundle_sha256": "80f302bdd50c02b9511c0cde9e2cc598a9d4ff39c3d6f38a7f46537cbaec26fd",
+   "title": "Mediocrity feels so good | Motivation"
+  },
+  {
+   "key": "motivtated:M000135",
+   "page": "motivtated",
+   "clip_id": "M000135",
+   "asset_name": "M000135.zip",
+   "bundle_sha256": "05d8253318a1e4cbf99b5bdde073c62918e258066a2928e53093d2f66984e9ce",
+   "title": "Time costs lives | Dan Pena"
+  },
+  {
+   "key": "motivtated:M000060",
+   "page": "motivtated",
+   "clip_id": "M000060",
+   "asset_name": "M000060.zip",
+   "bundle_sha256": "544c5e50bc141d1f26e98d9d8120501e22839cb07461aafb468fd2127cedf823",
+   "title": "Success boils down to this | Motivation"
+  },
+  {
+   "key": "motivtated:M000136",
+   "page": "motivtated",
+   "clip_id": "M000136",
+   "asset_name": "M000136.zip",
+   "bundle_sha256": "432a4454edf773eeb12ad95e44302ec4c7da629eb9916720d2ded8633e08edbd",
+   "title": "Life is not fair get over it | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000061",
+   "page": "motivtated",
+   "clip_id": "M000061",
+   "asset_name": "M000061.zip",
+   "bundle_sha256": "0b4511a92496df787ec0222693e7544af7a05fa4694845d40bef88d6b4367e54",
+   "title": "Zoom into the future | Motivation"
+  },
+  {
+   "key": "motivtated:M000137",
+   "page": "motivtated",
+   "clip_id": "M000137",
+   "asset_name": "M000137.zip",
+   "bundle_sha256": "96fc374187a907960f2420bb231194d13dd928216de9df631dfd397326e96664",
+   "title": "Respect yourself we have a chance | Jack Ma"
+  },
+  {
+   "key": "motivtated:M000062",
+   "page": "motivtated",
+   "clip_id": "M000062",
+   "asset_name": "M000062.zip",
+   "bundle_sha256": "dc4425a1aa75fb7c6fc3bf57e9a142d515884e2fb90c4b59ecbdc5d9a00c2871",
+   "title": "All your excuses are lies | Motivation"
+  },
+  {
+   "key": "motivtated:M000138",
+   "page": "motivtated",
+   "clip_id": "M000138",
+   "asset_name": "M000138.zip",
+   "bundle_sha256": "bb6ad260f6cd221c6faa9f19e4b4d4eec5c120a251f5a59cfae27e37a3bf5d0d",
+   "title": "Happiness vs joy | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000063",
+   "page": "motivtated",
+   "clip_id": "M000063",
+   "asset_name": "M000063.zip",
+   "bundle_sha256": "8554e2f3b6f5ea8707f6d21464682793045e8ce4a6bb2615819774e34b294efa",
+   "title": "No one is watching | Motivation"
+  },
+  {
+   "key": "motivtated:M000139",
+   "page": "motivtated",
+   "clip_id": "M000139",
+   "asset_name": "M000139.zip",
+   "bundle_sha256": "cf74ba9999e118805b3392659aa53d048be0653b1b694937db2be562cdf837ae",
+   "title": "The empty money column | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000064",
+   "page": "motivtated",
+   "clip_id": "M000064",
+   "asset_name": "M000064.zip",
+   "bundle_sha256": "066ed21791c8d3fbe984bff8d986eba5b5348e26fbecc73c83e5c91354fcce70",
+   "title": "People want you to do well not better | Alex Hormozi"
+  },
+  {
+   "key": "motivtated:M000140",
+   "page": "motivtated",
+   "clip_id": "M000140",
+   "asset_name": "M000140.zip",
+   "bundle_sha256": "1fb6b14bb5163c2e927588354582d0fedce961888af1fa6ff0ac5d800c275b7c",
+   "title": "What is success to you | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000065",
+   "page": "motivtated",
+   "clip_id": "M000065",
+   "asset_name": "M000065.zip",
+   "bundle_sha256": "fccd4b83765e97bd868e3f8a6c8c8b532628b17a581e0a778d5061138a3bd474",
+   "title": "Ordinary plus a little extra | Motivation"
+  },
+  {
+   "key": "motivtated:M000141",
+   "page": "motivtated",
+   "clip_id": "M000141",
+   "asset_name": "M000141.zip",
+   "bundle_sha256": "ee296f4221e11c0044d488a7f9d723814440abf89b9e05e8c14db28739761329",
+   "title": "One way ticket out of hollywood | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000142",
+   "page": "motivtated",
+   "clip_id": "M000142",
+   "asset_name": "M000142.zip",
+   "bundle_sha256": "0a568b36b6071d9160ac93c317faacf8d8abb37c99e3b5945148035de597cb10",
+   "title": "Comfort is a long term enemy | Steven Bartlett"
+  },
+  {
+   "key": "motivtated:M000143",
+   "page": "motivtated",
+   "clip_id": "M000143",
+   "asset_name": "M000143.zip",
+   "bundle_sha256": "97a3490868b59a9dd5427a54e74df02e5c32438c74787605baceea713b4df7b9",
+   "title": "Take a hundred risks | Matthew McConaughey"
+  },
+  {
+   "key": "motivtated:M000113",
+   "page": "motivtated",
+   "clip_id": "M000113",
+   "asset_name": "M000113.zip",
+   "bundle_sha256": "6133b1382b7662a03e0075add6efef2e9c84da0db25e0f97b543d0dd40bb08d0",
+   "title": "The competition of creativity | Jack Ma"
+  },
+  {
+   "key": "motivtated:M000175",
+   "page": "motivtated",
+   "clip_id": "M000175",
+   "asset_name": "M000175.zip",
+   "bundle_sha256": "12d00244eff8c923b944b6d7bd8b10db8afb7439be39f0df5672c24f92c4c573",
+   "title": "I could be oprah | Motivation"
+  },
+  {
+   "key": "motivtated:M000176",
+   "page": "motivtated",
+   "clip_id": "M000176",
+   "asset_name": "M000176.zip",
+   "bundle_sha256": "8899e47cee22c8261f5a8e1729d88275ea8f78f57d6d4a6276666f5075b4f16b",
+   "title": "Where attention goes energy flows | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000177",
+   "page": "motivtated",
+   "clip_id": "M000177",
+   "asset_name": "M000177.zip",
+   "bundle_sha256": "04a340a96e960e72fb0ffe0e95186b4a72cc7e341e106bc9bb13e14449c5eada",
+   "title": "Stop being defined by your past | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000178",
+   "page": "motivtated",
+   "clip_id": "M000178",
+   "asset_name": "M000178.zip",
+   "bundle_sha256": "085f8235a3c8925900fb4ab52e81055cb1bb86f07c08d7dc49dd6fe8d48e1394",
+   "title": "Be the useful person at the funeral | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000179",
+   "page": "motivtated",
+   "clip_id": "M000179",
+   "asset_name": "M000179.zip",
+   "bundle_sha256": "c9d808f5eceb5270f288f907d14bad9eda5503acc92abf45e22c6fc1ff6b14db",
+   "title": "An awful lot of it is self taught | Warren Buffett"
+  },
+  {
+   "key": "motivtated:M000180",
+   "page": "motivtated",
+   "clip_id": "M000180",
+   "asset_name": "M000180.zip",
+   "bundle_sha256": "014bdd077a3b396d67fd2df59d58f06e1e1a9ca6d3c07851462137d1457e15e5",
+   "title": "A habits crisis | Jay Shetty"
+  },
+  {
+   "key": "motivtated:M000181",
+   "page": "motivtated",
+   "clip_id": "M000181",
+   "asset_name": "M000181.zip",
+   "bundle_sha256": "9bedf60827d6f7f912bfcd54721804ca39ed1675d1647597b306195a34779f70",
+   "title": "Living in the past | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000182",
+   "page": "motivtated",
+   "clip_id": "M000182",
+   "asset_name": "M000182.zip",
+   "bundle_sha256": "f16f8d0d35df0c44aa75bf21465eb67a909624a254c643b6461ab7458a61ab39",
+   "title": "Be a fool before you can be a master | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000183",
+   "page": "motivtated",
+   "clip_id": "M000183",
+   "asset_name": "M000183.zip",
+   "bundle_sha256": "25bdedfff74fed5962b1b524af801577631b475bcdfbb30bc05e20be62db5137",
+   "title": "Do it badly but do it | Motivation"
+  },
+  {
+   "key": "motivtated:M000184",
+   "page": "motivtated",
+   "clip_id": "M000184",
+   "asset_name": "M000184.zip",
+   "bundle_sha256": "c37cd8f8848b0207380debfcc53c9ca05ab890e31eed1584a33a6f587242a993",
+   "title": "College is an insurance policy | Motivation"
+  },
+  {
+   "key": "motivtated:M000185",
+   "page": "motivtated",
+   "clip_id": "M000185",
+   "asset_name": "M000185.zip",
+   "bundle_sha256": "5873f71de5d523dc10bfc8d131303ee5aeb42df3f5cb7d9af0f357c61da4c2b5",
+   "title": "Get into the operating system | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000186",
+   "page": "motivtated",
+   "clip_id": "M000186",
+   "asset_name": "M000186.zip",
+   "bundle_sha256": "9bc62199095bfa19c90f3b6eb5dcb4ec1d077986223c197d335af4b795423a96",
+   "title": "Stress blocks change | Jay Shetty"
+  },
+  {
+   "key": "motivtated:M000187",
+   "page": "motivtated",
+   "clip_id": "M000187",
+   "asset_name": "M000187.zip",
+   "bundle_sha256": "669f6d8571773789964aff8d3c38fedcb09159a2e772c5ec71270db1098a4d83",
+   "title": "Better to do it badly | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000188",
+   "page": "motivtated",
+   "clip_id": "M000188",
+   "asset_name": "M000188.zip",
+   "bundle_sha256": "2d7037d3babb1b7632f0531d5e876cb4c60dd2c63d2d7306f049899adb50cb58",
+   "title": "I hated school | Motivation"
+  },
+  {
+   "key": "motivtated:M000190",
+   "page": "motivtated",
+   "clip_id": "M000190",
+   "asset_name": "M000190.zip",
+   "bundle_sha256": "52e820e23f30dffe49b71debf43d3f1b84eb1c0402ae5974c01b9971b16c4dcc",
+   "title": "Lose your free will to programs | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000191",
+   "page": "motivtated",
+   "clip_id": "M000191",
+   "asset_name": "M000191.zip",
+   "bundle_sha256": "43ea4b8d3cf755560d862349ad59c079ec1155079e07f189a60f79e1bae4af88",
+   "title": "Full of faults but keep moving | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000192",
+   "page": "motivtated",
+   "clip_id": "M000192",
+   "asset_name": "M000192.zip",
+   "bundle_sha256": "71294d10a4918ae1f3f2ed50d0d8aa430f9cd41567e3d8484ffaf818b107f8f3",
+   "title": "Learn from mistakes not punishment | Motivation"
+  },
+  {
+   "key": "motivtated:M000193",
+   "page": "motivtated",
+   "clip_id": "M000193",
+   "asset_name": "M000193.zip",
+   "bundle_sha256": "36a2e6a740a56254ae39ca5cbd6a7bb251b4a50414f0ff0d9bd81f884ef5f7ac",
+   "title": "It comes from within | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000194",
+   "page": "motivtated",
+   "clip_id": "M000194",
+   "asset_name": "M000194.zip",
+   "bundle_sha256": "91cfe4a562c33aa852d411c64b48d5ff6d7b5b639df2a280f3ddcb3c7cee996e",
+   "title": "Show up for yourself every day | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000195",
+   "page": "motivtated",
+   "clip_id": "M000195",
+   "asset_name": "M000195.zip",
+   "bundle_sha256": "f1cb453af54d9e0972489188e15b8187ad6a9bca928a435ce25f1c91a04eee3e",
+   "title": "Youre the thing that confronts the obstacle | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000208",
+   "page": "motivtated",
+   "clip_id": "M000208",
+   "asset_name": "M000208.zip",
+   "bundle_sha256": "5f2a0dacfcc1c78cb85132a3a3b81d1bef7ab000176a6173a69bdb0a17f49907",
+   "title": "Just a set of habits | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000196",
+   "page": "motivtated",
+   "clip_id": "M000196",
+   "asset_name": "M000196.zip",
+   "bundle_sha256": "bf2b9d19ddaeadd3ff0c6c3d01980d29d38039cb0b55071c4f13a13293bf2d16",
+   "title": "A trillion dollars of lies | Motivation"
+  },
+  {
+   "key": "motivtated:M000197",
+   "page": "motivtated",
+   "clip_id": "M000197",
+   "asset_name": "M000197.zip",
+   "bundle_sha256": "9a88e31fea430e5117ee115472624b5efc669e2cbb516d079963a7ed795a5374",
+   "title": "Dont live in emergency mode | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000198",
+   "page": "motivtated",
+   "clip_id": "M000198",
+   "asset_name": "M000198.zip",
+   "bundle_sha256": "8e17292c1b357579528783b99914958b6a95b4aa3d87b2b84021b7f9744f462d",
+   "title": "Victim or creator | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000199",
+   "page": "motivtated",
+   "clip_id": "M000199",
+   "asset_name": "M000199.zip",
+   "bundle_sha256": "b12b15f25ae9dbf4f3846c55344e2f3e17265e69cbdc0fe2b5bca0848918450c",
+   "title": "Nobody is coming to save you | Motivation"
+  },
+  {
+   "key": "motivtated:M000200",
+   "page": "motivtated",
+   "clip_id": "M000200",
+   "asset_name": "M000200.zip",
+   "bundle_sha256": "e943a221b6e1a4e22d3298b688004f6b8f75d2ddea8d6bc1a6f7c65421f4f160",
+   "title": "Become a bigger bag of tricks | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000201",
+   "page": "motivtated",
+   "clip_id": "M000201",
+   "asset_name": "M000201.zip",
+   "bundle_sha256": "ba2fda4cd4c61363b862e42d3c0242548f457ef01079dddc510ec637bdcfa4a7",
+   "title": "You have to save yourself | Motivation"
+  },
+  {
+   "key": "motivtated:M000202",
+   "page": "motivtated",
+   "clip_id": "M000202",
+   "asset_name": "M000202.zip",
+   "bundle_sha256": "6d45aeee0e8e5c9cacf3c4a78cb4a8170ebb28f13780740bb63ec2facb87b8db",
+   "title": "A day worth living | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000203",
+   "page": "motivtated",
+   "clip_id": "M000203",
+   "asset_name": "M000203.zip",
+   "bundle_sha256": "01ae5ecda4382952d4a94680b3afe6c7844de205c345ba8e106f8d968bb2f345",
+   "title": "You didnt fail you forgot | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000204",
+   "page": "motivtated",
+   "clip_id": "M000204",
+   "asset_name": "M000204.zip",
+   "bundle_sha256": "a466023c9e41020fda64bb834833b6e7edab3d9846ed337b0f93f1d35fa69c09",
+   "title": "Dont attack their whole character | Jordan Peterson"
+  },
+  {
+   "key": "motivtated:M000205",
+   "page": "motivtated",
+   "clip_id": "M000205",
+   "asset_name": "M000205.zip",
+   "bundle_sha256": "9cda67c2bf130965bae65ba00e95a0816bd13307c98c6f0ea90eab3462bf2186",
+   "title": "You cant tell me youre too old | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000206",
+   "page": "motivtated",
+   "clip_id": "M000206",
+   "asset_name": "M000206.zip",
+   "bundle_sha256": "337ab89b40f12e84e0cd06269861cfec01a9b5941100a18a414f452a58593312",
+   "title": "Your presence bleeds | Jay Shetty"
+  },
+  {
+   "key": "motivtated:M000207",
+   "page": "motivtated",
+   "clip_id": "M000207",
+   "asset_name": "M000207.zip",
+   "bundle_sha256": "ad565871d0dbf88ba29e4ded52e82d1c61bc2dfb90de23a57da9eae67e4b3270",
+   "title": "It is possible to change | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000209",
+   "page": "motivtated",
+   "clip_id": "M000209",
+   "asset_name": "M000209.zip",
+   "bundle_sha256": "a6d1f1a2d5864b698865eb89fbbb41399a785ae8ed65a99a503bcd0124dd0520",
+   "title": "We are wired to give | Joe Dispenza"
+  },
+  {
+   "key": "motivtated:M000210",
+   "page": "motivtated",
+   "clip_id": "M000210",
+   "asset_name": "M000210.zip",
+   "bundle_sha256": "53c41a878d96442e2b7a3fea3afb48a90e2d990d1f4378d71f2af446e3624340",
+   "title": "Speed wins"
+  },
+  {
+   "key": "motivtated:M000211",
+   "page": "motivtated",
+   "clip_id": "M000211",
+   "asset_name": "M000211.zip",
+   "bundle_sha256": "e84ce6c6db7aeaaba47d7e7948938396684fe77c8716e990899787db94d1e70b",
+   "title": "You're never tired when you're winning"
+  },
+  {
+   "key": "motivtated:M000212",
+   "page": "motivtated",
+   "clip_id": "M000212",
+   "asset_name": "M000212.zip",
+   "bundle_sha256": "fb969efb734b34af98e9da041f00ae48bf127387e13c75b0cb9afc47f04160ab",
+   "title": "No U-Haul behind a hearse | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000213",
+   "page": "motivtated",
+   "clip_id": "M000213",
+   "asset_name": "M000213.zip",
+   "bundle_sha256": "cb0a846ee610efca3817e8da28f336117bccefcaba3c176f59be8c521d33e726",
+   "title": "Be that guy"
+  },
+  {
+   "key": "motivtated:M000214",
+   "page": "motivtated",
+   "clip_id": "M000214",
+   "asset_name": "M000214.zip",
+   "bundle_sha256": "50be659c31aaef4640cdf83d0e8678d466341ad3a3b306534385d6e9204c0431",
+   "title": "Stress tolerance decides your success"
+  },
+  {
+   "key": "motivtated:M000215",
+   "page": "motivtated",
+   "clip_id": "M000215",
+   "asset_name": "M000215.zip",
+   "bundle_sha256": "3feff03116becd106746df9e7171e22865aa86f5a9f7c99069a406aa735b7ee1",
+   "title": "Make your bed | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000216",
+   "page": "motivtated",
+   "clip_id": "M000216",
+   "asset_name": "M000216.zip",
+   "bundle_sha256": "72284575e849dd5c322970de1b0b3feae31325ed1c90e3f583d011a1077c2b7f",
+   "title": "Wake up and grind"
+  },
+  {
+   "key": "motivtated:M000217",
+   "page": "motivtated",
+   "clip_id": "M000217",
+   "asset_name": "M000217.zip",
+   "bundle_sha256": "9b5670a79e06e6d78410cf97d902d30e3a879adf310d1c04a0bbff219aaf7c7d",
+   "title": "Your personality is a decision"
+  },
+  {
+   "key": "motivtated:M000218",
+   "page": "motivtated",
+   "clip_id": "M000218",
+   "asset_name": "M000218.zip",
+   "bundle_sha256": "39ddce3f502c2b229bedcdf7051bd3e79205625701dd2e6b9129f254fe54b4f6",
+   "title": "There's no such thing as lazy"
+  },
+  {
+   "key": "motivtated:M000219",
+   "page": "motivtated",
+   "clip_id": "M000219",
+   "asset_name": "M000219.zip",
+   "bundle_sha256": "75955ae448905db40a522bc2578e208561984b5a279dc515634ce26202dd30e1",
+   "title": "The first rule of success | Arnold Schwarzenegger"
+  },
+  {
+   "key": "motivtated:M000220",
+   "page": "motivtated",
+   "clip_id": "M000220",
+   "asset_name": "M000220.zip",
+   "bundle_sha256": "1eb676c0e934eef78cc2b1220e3bbdb6ef0fab0dcf1807aa9d9e39f1f4eb5db0",
+   "title": "Ease is a greater threat than hardship | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000221",
+   "page": "motivtated",
+   "clip_id": "M000221",
+   "asset_name": "M000221.zip",
+   "bundle_sha256": "3e134f0ef967aba59779b7818a2c188c2a739c6ad5462527aecd7c07b4ab0bf5",
+   "title": "You talk too much"
+  },
+  {
+   "key": "motivtated:M000222",
+   "page": "motivtated",
+   "clip_id": "M000222",
+   "asset_name": "M000222.zip",
+   "bundle_sha256": "a081eb5cf04feac7e0ae52127aa34bc8db51daf35e3dd91d5342e8ac4ca8a053",
+   "title": "Why don't we learn about money in school | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000223",
+   "page": "motivtated",
+   "clip_id": "M000223",
+   "asset_name": "M000223.zip",
+   "bundle_sha256": "0a25b3d8679d7f75f643609b0ec923de365c12481694a34c5406d74145b224b7",
+   "title": "Stop hearing yourself talk"
+  },
+  {
+   "key": "motivtated:M000224",
+   "page": "motivtated",
+   "clip_id": "M000224",
+   "asset_name": "M000224.zip",
+   "bundle_sha256": "358fff8b8fb07b0baa8a99e1afb23339f23610cbf7a601a38e34f848b9f01206",
+   "title": "The easiest way to win"
+  },
+  {
+   "key": "motivtated:M000225",
+   "page": "motivtated",
+   "clip_id": "M000225",
+   "asset_name": "M000225.zip",
+   "bundle_sha256": "578976129300bed8fbe62a662adad12368eda9b34e7ada6ae8bdb55948057dd4",
+   "title": "Be a brick wall"
+  },
+  {
+   "key": "motivtated:M000226",
+   "page": "motivtated",
+   "clip_id": "M000226",
+   "asset_name": "M000226.zip",
+   "bundle_sha256": "5595f0ec4e4da8683196ec1c744c57a7c7a0bb1030477dc2a0ffef2df35e9d4e",
+   "title": "Fail big | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000227",
+   "page": "motivtated",
+   "clip_id": "M000227",
+   "asset_name": "M000227.zip",
+   "bundle_sha256": "40b2782c1d7ecf0eeabe22b44641212492d05f1ae21fa81f8b17e4ae5520b8e5",
+   "title": "Get stressed while you're young"
+  },
+  {
+   "key": "motivtated:M000228",
+   "page": "motivtated",
+   "clip_id": "M000228",
+   "asset_name": "M000228.zip",
+   "bundle_sha256": "005519ec3b73bb31e1cd6711e23a9e8902e08c5b1720322ad2611cd57ece9cc7",
+   "title": "You don't want to go run, you go run"
+  },
+  {
+   "key": "motivtated:M000229",
+   "page": "motivtated",
+   "clip_id": "M000229",
+   "asset_name": "M000229.zip",
+   "bundle_sha256": "f93a22bbbcc4d7be3a0f923babe80956924d7713e38663109bec3f2de13de8cb",
+   "title": "Find someone to help you paddle | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000230",
+   "page": "motivtated",
+   "clip_id": "M000230",
+   "asset_name": "M000230.zip",
+   "bundle_sha256": "59ef09684287cc9b3ea2c0bce5ad8a632be76e5327d011c6bf7fb225f0d4d1e8",
+   "title": "Everyone wants muscles"
+  },
+  {
+   "key": "motivtated:M000231",
+   "page": "motivtated",
+   "clip_id": "M000231",
+   "asset_name": "M000231.zip",
+   "bundle_sha256": "69c451d6c224768d80040fb35d02728f6231c56e970aa1e4734699f9e8082e8c",
+   "title": "Every rep gets me closer | Arnold Schwarzenegger"
+  },
+  {
+   "key": "motivtated:M000232",
+   "page": "motivtated",
+   "clip_id": "M000232",
+   "asset_name": "M000232.zip",
+   "bundle_sha256": "bc5585062f7cb4412a4a1c6bbfc630456819146f3529c256ebd513f822e55a86",
+   "title": "You're gonna suck at first"
+  },
+  {
+   "key": "motivtated:M000233",
+   "page": "motivtated",
+   "clip_id": "M000233",
+   "asset_name": "M000233.zip",
+   "bundle_sha256": "90eb7eac12c2c03f8a94e4457ba6d3fbca44eaf159ad024d8f1a434bca71a85f",
+   "title": "The broken mirror | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000234",
+   "page": "motivtated",
+   "clip_id": "M000234",
+   "asset_name": "M000234.zip",
+   "bundle_sha256": "8426f2ec2713a496acf7dbff1f0fe5b1d650d774e794517e8928ce11d9ba1733",
+   "title": "Four green houses one red hotel | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000235",
+   "page": "motivtated",
+   "clip_id": "M000235",
+   "asset_name": "M000235.zip",
+   "bundle_sha256": "ced72d630883fcf2bfdffafa8abed70dc3f7af033a6f56e3c15638605bed69a3",
+   "title": "The true measure of a man"
+  },
+  {
+   "key": "motivtated:M000236",
+   "page": "motivtated",
+   "clip_id": "M000236",
+   "asset_name": "M000236.zip",
+   "bundle_sha256": "091dc06c5d55f21f29f490db898304ee3433d0c22e6fc6825bea31f7b93fd8e2",
+   "title": "Swim home or drown"
+  },
+  {
+   "key": "motivtated:M000237",
+   "page": "motivtated",
+   "clip_id": "M000237",
+   "asset_name": "M000237.zip",
+   "bundle_sha256": "93ae35a5dafc08f8a8d80a2ba0e41b741bf1fc549b29f6dac27a0c86f1d0ee50",
+   "title": "Dreams without goals | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000238",
+   "page": "motivtated",
+   "clip_id": "M000238",
+   "asset_name": "M000238.zip",
+   "bundle_sha256": "de2dd1f6ad93845e5863c5480ca212399013c0d05807054c93927c8b65e5d872",
+   "title": "I don't start counting until it hurts"
+  },
+  {
+   "key": "motivtated:M000239",
+   "page": "motivtated",
+   "clip_id": "M000239",
+   "asset_name": "M000239.zip",
+   "bundle_sha256": "813cd12170d142da07db784c197b7637c137c672e5d292eef9e5cecc23f4af16",
+   "title": "Everyone who wronged you is laughing"
+  },
+  {
+   "key": "motivtated:M000240",
+   "page": "motivtated",
+   "clip_id": "M000240",
+   "asset_name": "M000240.zip",
+   "bundle_sha256": "a54d020dd08415112c22a31840c2817bd6822bb7348aad5fb30557ca6e916049",
+   "title": "You ain't got no fights"
+  },
+  {
+   "key": "motivtated:M000241",
+   "page": "motivtated",
+   "clip_id": "M000241",
+   "asset_name": "M000241.zip",
+   "bundle_sha256": "79d86c92bc2c7dddcdf285893cf3535dc314b0106379596a691d20b83e8e51fc",
+   "title": "The size of their heart | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000242",
+   "page": "motivtated",
+   "clip_id": "M000242",
+   "asset_name": "M000242.zip",
+   "bundle_sha256": "2b6d97be34348afcf1ed77ea122419db7c17b07b5c37d89ce4b3b80b2209c8fe",
+   "title": "Stop visualizing like a beggar"
+  },
+  {
+   "key": "motivtated:M000243",
+   "page": "motivtated",
+   "clip_id": "M000243",
+   "asset_name": "M000243.zip",
+   "bundle_sha256": "c4055c7318d5827431ec945da8eec4ad3240e190f5e2aaf8b79e899986ac5ffc",
+   "title": "I smile as I drown"
+  },
+  {
+   "key": "motivtated:M000244",
+   "page": "motivtated",
+   "clip_id": "M000244",
+   "asset_name": "M000244.zip",
+   "bundle_sha256": "59effc3a27d481c060fdca9d3a1e1129ab3d9179ec785fcfc33bc10cc1aad224",
+   "title": "You've got to have a purpose | Arnold Schwarzenegger"
+  },
+  {
+   "key": "motivtated:M000245",
+   "page": "motivtated",
+   "clip_id": "M000245",
+   "asset_name": "M000245.zip",
+   "bundle_sha256": "95806b97103cf5c02b5ab38809440ba27541189d8d60bdd04626991898783be7",
+   "title": "A 20 year overnight sensation | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000246",
+   "page": "motivtated",
+   "clip_id": "M000246",
+   "asset_name": "M000246.zip",
+   "bundle_sha256": "3a81bb143183eb8f3b22555368133ae1f1f249910c1281cce18ce28332ea887f",
+   "title": "I am failing because of me"
+  },
+  {
+   "key": "motivtated:M000247",
+   "page": "motivtated",
+   "clip_id": "M000247",
+   "asset_name": "M000247.zip",
+   "bundle_sha256": "a2d270f834b934a957efd588deecf6537d6e0d114a76a168b50af67627dfec0e",
+   "title": "Poverty is passed on | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000248",
+   "page": "motivtated",
+   "clip_id": "M000248",
+   "asset_name": "M000248.zip",
+   "bundle_sha256": "5c93e4294786672036f851e819ea1a7ef8cfef9d06f829337f40aa24241467f9",
+   "title": "It's not lonely at the top"
+  },
+  {
+   "key": "motivtated:M000249",
+   "page": "motivtated",
+   "clip_id": "M000249",
+   "asset_name": "M000249.zip",
+   "bundle_sha256": "73794de3a9149a6d60deb308382fa905a7b39bd415bc7b0580a7ecd0f3010302",
+   "title": "You could keep your parents alive"
+  },
+  {
+   "key": "motivtated:M000250",
+   "page": "motivtated",
+   "clip_id": "M000250",
+   "asset_name": "M000250.zip",
+   "bundle_sha256": "25da19981130a780a67ee59a80559314d9e303c366bf2f8851f4792613c57265",
+   "title": "Don't confuse movement with progress | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000251",
+   "page": "motivtated",
+   "clip_id": "M000251",
+   "asset_name": "M000251.zip",
+   "bundle_sha256": "1e48f7319bf992ba6f5bd6d43ea9b8326b675b564cc89d4192d608f2be2dfb29",
+   "title": "You must be the house"
+  },
+  {
+   "key": "motivtated:M000252",
+   "page": "motivtated",
+   "clip_id": "M000252",
+   "asset_name": "M000252.zip",
+   "bundle_sha256": "a89c75ab94ac090bb0f717796ba9597bf97d9426fe81a84212f3fac90e2382e7",
+   "title": "Talent hides behind discipline"
+  },
+  {
+   "key": "motivtated:M000253",
+   "page": "motivtated",
+   "clip_id": "M000253",
+   "asset_name": "M000253.zip",
+   "bundle_sha256": "4b3f28a0d292b682607ec869ec73ad92cece99f1eda2ae6e2658d06020cd7f48",
+   "title": "Take ownership"
+  },
+  {
+   "key": "motivtated:M000254",
+   "page": "motivtated",
+   "clip_id": "M000254",
+   "asset_name": "M000254.zip",
+   "bundle_sha256": "67ae7c156a753a9e169113c799ae46af1adcd118c567265b33e4993dbb43ef81",
+   "title": "The sugar cookie | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000255",
+   "page": "motivtated",
+   "clip_id": "M000255",
+   "asset_name": "M000255.zip",
+   "bundle_sha256": "2c874b3521669ea62613d2a881867e279b794b54c3176ef92bf55aa7651cccab",
+   "title": "Ask for the strength to fight"
+  },
+  {
+   "key": "motivtated:M000256",
+   "page": "motivtated",
+   "clip_id": "M000256",
+   "asset_name": "M000256.zip",
+   "bundle_sha256": "590c3bfe8b8fb0adf5865d7bf8dd671bd6db3719213ad578f925e0c23737c835",
+   "title": "It's the tenth round"
+  },
+  {
+   "key": "motivtated:M000257",
+   "page": "motivtated",
+   "clip_id": "M000257",
+   "asset_name": "M000257.zip",
+   "bundle_sha256": "60f7a142a8a5ae68f0f73ab66ac51f485564cce060725f09a991634adaca051f",
+   "title": "Don't listen to the naysayers | Arnold Schwarzenegger"
+  },
+  {
+   "key": "motivtated:M000258",
+   "page": "motivtated",
+   "clip_id": "M000258",
+   "asset_name": "M000258.zip",
+   "bundle_sha256": "905440bbe51fd920ccd641b7c092c142d9d3f4dedab8f5f5c3d4465d15215eae",
+   "title": "Friends are made in bad times"
+  },
+  {
+   "key": "motivtated:M000259",
+   "page": "motivtated",
+   "clip_id": "M000259",
+   "asset_name": "M000259.zip",
+   "bundle_sha256": "d6d7164ae0507cab2b0e7d33204443301d42fb2f84f81e3ebac410d1ede8b89c",
+   "title": "I can't live on other people's opinions | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000260",
+   "page": "motivtated",
+   "clip_id": "M000260",
+   "asset_name": "M000260.zip",
+   "bundle_sha256": "c81169bef21f95d9eb0c8b4392cbde50bcfc42dbf563f07f7067ccfc6aa596d5",
+   "title": "A moment of choice"
+  },
+  {
+   "key": "motivtated:M000261",
+   "page": "motivtated",
+   "clip_id": "M000261",
+   "asset_name": "M000261.zip",
+   "bundle_sha256": "cf3dc237c74fd976260129acaae8b6e6d7acf76e0014a578b5a2c3bb6c1eebfa",
+   "title": "School will never teach you about money | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000262",
+   "page": "motivtated",
+   "clip_id": "M000262",
+   "asset_name": "M000262.zip",
+   "bundle_sha256": "ade516f49b7ec485abf89195159638e8fd39c6329b456f9d6fe8adcd35e6e875",
+   "title": "What are you trying to conquer"
+  },
+  {
+   "key": "motivtated:M000263",
+   "page": "motivtated",
+   "clip_id": "M000263",
+   "asset_name": "M000263.zip",
+   "bundle_sha256": "50bc1d78fc0992fb1ec8bec30dc79fa38ec53ac0680b9e4693a2bdfd627ce018",
+   "title": "Quitting becomes a habit"
+  },
+  {
+   "key": "motivtated:M000264",
+   "page": "motivtated",
+   "clip_id": "M000264",
+   "asset_name": "M000264.zip",
+   "bundle_sha256": "fb0e8c0f9ad575f6c7f7a37b506a1bca4d8b024aaf47dd6ceedf0357568bad74",
+   "title": "Fall forward | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000265",
+   "page": "motivtated",
+   "clip_id": "M000265",
+   "asset_name": "M000265.zip",
+   "bundle_sha256": "7edf8000d585c5248c87722310046daf244bde39bafb11a4c641102b787f980f",
+   "title": "Stop complaining and work"
+  },
+  {
+   "key": "motivtated:M000266",
+   "page": "motivtated",
+   "clip_id": "M000266",
+   "asset_name": "M000266.zip",
+   "bundle_sha256": "b9cace35d92fc4ace50ba7871931f8e83e9e9777f7e990ed99e599e1c8d1bd79",
+   "title": "Learn to like it"
+  },
+  {
+   "key": "motivtated:M000267",
+   "page": "motivtated",
+   "clip_id": "M000267",
+   "asset_name": "M000267.zip",
+   "bundle_sha256": "a6b318fb7fda4d9b8637a06efb820d7ca82a64ba79c82fc777901ca1ddc21fc0",
+   "title": "Don't be afraid of the circuses | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000268",
+   "page": "motivtated",
+   "clip_id": "M000268",
+   "asset_name": "M000268.zip",
+   "bundle_sha256": "1a538d2ae85fe150af89bc35d7a2e59d4a5e7c142204763ad3270f748a31e0df",
+   "title": "Darkest before dawn"
+  },
+  {
+   "key": "motivtated:M000269",
+   "page": "motivtated",
+   "clip_id": "M000269",
+   "asset_name": "M000269.zip",
+   "bundle_sha256": "986da94a8e45dbe06f9ff7bdd289031253d2885cc1e800d6f08d6c1b68df8fd8",
+   "title": "Visualize the fishing rod"
+  },
+  {
+   "key": "motivtated:M000270",
+   "page": "motivtated",
+   "clip_id": "M000270",
+   "asset_name": "M000270.zip",
+   "bundle_sha256": "6ed294e18ca65d516352d21320d72b01ba7b7baef80c6beba41542d0e1e38d46",
+   "title": "My body became an asset | Arnold Schwarzenegger"
+  },
+  {
+   "key": "motivtated:M000271",
+   "page": "motivtated",
+   "clip_id": "M000271",
+   "asset_name": "M000271.zip",
+   "bundle_sha256": "300a0b38ec6d14360032e59741a0aa6b993078db33cc11c8ea1c39d8e3506c63",
+   "title": "Your survival rate is 100 percent"
+  },
+  {
+   "key": "motivtated:M000272",
+   "page": "motivtated",
+   "clip_id": "M000272",
+   "asset_name": "M000272.zip",
+   "bundle_sha256": "56f12b3945f9045b72277816623659b964485a94503f2909ed0dceea68e1eda7",
+   "title": "Put god first | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000273",
+   "page": "motivtated",
+   "clip_id": "M000273",
+   "asset_name": "M000273.zip",
+   "bundle_sha256": "ef1b5f85da7a8fbc697b292de059ebbae22966d2b7c7f0a46381d3496f47e285",
+   "title": "Find a real teacher | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000274",
+   "page": "motivtated",
+   "clip_id": "M000274",
+   "asset_name": "M000274.zip",
+   "bundle_sha256": "7e73938cdc512c5262cda33f19201737f23819141106d14210c64d7e291bc39a",
+   "title": "You need the negatives"
+  },
+  {
+   "key": "motivtated:M000275",
+   "page": "motivtated",
+   "clip_id": "M000275",
+   "asset_name": "M000275.zip",
+   "bundle_sha256": "79f38661f87e6cbbdad99f09776d0de5f88def3861f211a446b12817e23c0f50",
+   "title": "Conquer your own will"
+  },
+  {
+   "key": "motivtated:M000276",
+   "page": "motivtated",
+   "clip_id": "M000276",
+   "asset_name": "M000276.zip",
+   "bundle_sha256": "f3152904d73542dc4b9c71609e25d7f93919f3e2ff29cf39661c153876af46cb",
+   "title": "Even the strong get tired"
+  },
+  {
+   "key": "motivtated:M000277",
+   "page": "motivtated",
+   "clip_id": "M000277",
+   "asset_name": "M000277.zip",
+   "bundle_sha256": "775fbe1287cee45eae68ddd898867da6689aac1305646815caa6c4d540633302",
+   "title": "The barbershop | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000278",
+   "page": "motivtated",
+   "clip_id": "M000278",
+   "asset_name": "M000278.zip",
+   "bundle_sha256": "52186da43ca6f5ba247d11b5db3cd03e86b0399b043862ddc7a5f178047c3f8a",
+   "title": "Losing hope is fatal"
+  },
+  {
+   "key": "motivtated:M000279",
+   "page": "motivtated",
+   "clip_id": "M000279",
+   "asset_name": "M000279.zip",
+   "bundle_sha256": "6dd4b9f80e9d45b00351f7fb082e59ec407b6a86a975bd78c3fc4f009ccd1ccb",
+   "title": "Everybody hits the wall"
+  },
+  {
+   "key": "motivtated:M000280",
+   "page": "motivtated",
+   "clip_id": "M000280",
+   "asset_name": "M000280.zip",
+   "bundle_sha256": "973c8d649f894714eba9d1a86b3e800656ffabca041b01bd614d5a62afb0dd51",
+   "title": "Slide down head first | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000281",
+   "page": "motivtated",
+   "clip_id": "M000281",
+   "asset_name": "M000281.zip",
+   "bundle_sha256": "763e494a9a31e6cac9247b2cbe5ae53e340ab1f99f715bc090541bd3cb0589e1",
+   "title": "I am prepared to suffer"
+  },
+  {
+   "key": "motivtated:M000282",
+   "page": "motivtated",
+   "clip_id": "M000282",
+   "asset_name": "M000282.zip",
+   "bundle_sha256": "16f7a4f4589fd724f6ba7af995e75af56a8a875bab61828832032b461f598e90",
+   "title": "How can I afford it | Robert Kiyosaki"
+  },
+  {
+   "key": "motivtated:M000283",
+   "page": "motivtated",
+   "clip_id": "M000283",
+   "asset_name": "M000283.zip",
+   "bundle_sha256": "aa18b7c5b0a18dc622a84a00a5f5bf9e7a68119c4463f6685920b152cbbd6188",
+   "title": "Die without being remembered"
+  },
+  {
+   "key": "motivtated:M000284",
+   "page": "motivtated",
+   "clip_id": "M000284",
+   "asset_name": "M000284.zip",
+   "bundle_sha256": "c397ba3e1f962be5702d7443fcfafdc248e62bbd62d64a2c79c3f712672dd38b",
+   "title": "You are the main character"
+  },
+  {
+   "key": "motivtated:M000285",
+   "page": "motivtated",
+   "clip_id": "M000285",
+   "asset_name": "M000285.zip",
+   "bundle_sha256": "6ce1286feef6cd62cf3ee056016bd9a26d146e4f381c109007742e5a0a16c3e0",
+   "title": "The ghosts around your deathbed | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000286",
+   "page": "motivtated",
+   "clip_id": "M000286",
+   "asset_name": "M000286.zip",
+   "bundle_sha256": "07b910f9c81b43dcc13b76338f80778b8838cca2eb9edfe86df6706fd58994f7",
+   "title": "Ten thousand things that didn't work"
+  },
+  {
+   "key": "motivtated:M000287",
+   "page": "motivtated",
+   "clip_id": "M000287",
+   "asset_name": "M000287.zip",
+   "bundle_sha256": "89b5ef5d19ea92e34c850840478802cd34d577acfd63bca077588fb31166c05f",
+   "title": "You had guaranteed wins"
+  },
+  {
+   "key": "motivtated:M000288",
+   "page": "motivtated",
+   "clip_id": "M000288",
+   "asset_name": "M000288.zip",
+   "bundle_sha256": "9c426be4111cef072e958ab2f242a38051b0232bfbe9b2e15fb456d15e521b51",
+   "title": "Don't back down from the sharks | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000289",
+   "page": "motivtated",
+   "clip_id": "M000289",
+   "asset_name": "M000289.zip",
+   "bundle_sha256": "ffb7a46014061947f54d2e33fa5129318eb208c9c3f3b42114936a44adc2ce2b",
+   "title": "What do you stand for"
+  },
+  {
+   "key": "motivtated:M000290",
+   "page": "motivtated",
+   "clip_id": "M000290",
+   "asset_name": "M000290.zip",
+   "bundle_sha256": "d55f65030336868acaead29d62183cd70fcbdc7b4fb9a48444e06bba0a567fa6",
+   "title": "The only skill that matters"
+  },
+  {
+   "key": "motivtated:M000291",
+   "page": "motivtated",
+   "clip_id": "M000291",
+   "asset_name": "M000291.zip",
+   "bundle_sha256": "1dfef129d7aeaa4b21d9775fb2908a795511f0710e90b22448a29ea69ff468c0",
+   "title": "Funny is a decision"
+  },
+  {
+   "key": "motivtated:M000292",
+   "page": "motivtated",
+   "clip_id": "M000292",
+   "asset_name": "M000292.zip",
+   "bundle_sha256": "c3bd2405c79ac7042a1c8b05a101e25337bb732d38a1e4401c469001d29a794e",
+   "title": "As the world collapses I grow stronger"
+  },
+  {
+   "key": "motivtated:M000293",
+   "page": "motivtated",
+   "clip_id": "M000293",
+   "asset_name": "M000293.zip",
+   "bundle_sha256": "8aa567efbd4a61367d470573b8cac2a562d1b672f3ff926d3782ef91a4ed34a8",
+   "title": "Have an hour success party"
+  },
+  {
+   "key": "motivtated:M000294",
+   "page": "motivtated",
+   "clip_id": "M000294",
+   "asset_name": "M000294.zip",
+   "bundle_sha256": "0628681d8849c09cd661d122c7e394077b8be143c68fd7ce3aa267f420210a1b",
+   "title": "Say thank you in advance | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000295",
+   "page": "motivtated",
+   "clip_id": "M000295",
+   "asset_name": "M000295.zip",
+   "bundle_sha256": "09cd752d6cfef42b9c621d1cf67a64e4737a3c869c39df86a285fe6f46244e76",
+   "title": "I'm one yes away"
+  },
+  {
+   "key": "motivtated:M000296",
+   "page": "motivtated",
+   "clip_id": "M000296",
+   "asset_name": "M000296.zip",
+   "bundle_sha256": "b2da3665cff4e44fd73c923e57cec14dbfa48d6e277ed05d6db9715980b184ae",
+   "title": "It was never good to be a man"
+  },
+  {
+   "key": "motivtated:M000297",
+   "page": "motivtated",
+   "clip_id": "M000297",
+   "asset_name": "M000297.zip",
+   "bundle_sha256": "daf88ce1a2a070bd0595df15cee18842cf5882fe0f12723b003c0d66390e8295",
+   "title": "Be your best in the darkest moment | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000298",
+   "page": "motivtated",
+   "clip_id": "M000298",
+   "asset_name": "M000298.zip",
+   "bundle_sha256": "c3089d11bffc75d88308e029b6024232a95e643cf305013c6b9c20a25a789e15",
+   "title": "Don't disgrace your bloodline"
+  },
+  {
+   "key": "motivtated:M000299",
+   "page": "motivtated",
+   "clip_id": "M000299",
+   "asset_name": "M000299.zip",
+   "bundle_sha256": "6e9be1ae1304b214dde3a807d5f91df9fb9aef6482c66804966b5fabad63d149",
+   "title": "I believed I would pull it off"
+  },
+  {
+   "key": "motivtated:M000300",
+   "page": "motivtated",
+   "clip_id": "M000300",
+   "asset_name": "M000300.zip",
+   "bundle_sha256": "01ff41ee25686b7addf763db3c5396c491fc2a591e123f468d995024154de42d",
+   "title": "Better than having what you want"
+  },
+  {
+   "key": "motivtated:M000301",
+   "page": "motivtated",
+   "clip_id": "M000301",
+   "asset_name": "M000301.zip",
+   "bundle_sha256": "511088a3e2f5e5af229289f7201e3a1a9b6a52b57ce9e01661d0b7eec6ef35b4",
+   "title": "No more excuses"
+  },
+  {
+   "key": "motivtated:M000302",
+   "page": "motivtated",
+   "clip_id": "M000302",
+   "asset_name": "M000302.zip",
+   "bundle_sha256": "0cadc38e1592203e9cfb586cc606579f9b99330869d3f6fb2705307fe3fab705",
+   "title": "That desire is god's proof | Denzel Washington"
+  },
+  {
+   "key": "motivtated:M000303",
+   "page": "motivtated",
+   "clip_id": "M000303",
+   "asset_name": "M000303.zip",
+   "bundle_sha256": "1087dc7b92940f0afb2fe859146589d4f887df3220b9d7f02eab80366b53fc1c",
+   "title": "Don't count the cost"
+  },
+  {
+   "key": "motivtated:M000304",
+   "page": "motivtated",
+   "clip_id": "M000304",
+   "asset_name": "M000304.zip",
+   "bundle_sha256": "df7ede9494e8062d660e9c598a484b28e097d405b13e7858a45e7d7c8ad6c0a9",
+   "title": "Poverty loves waiting"
+  },
+  {
+   "key": "motivtated:M000305",
+   "page": "motivtated",
+   "clip_id": "M000305",
+   "asset_name": "M000305.zip",
+   "bundle_sha256": "f87bf82c9dbf92b1757f34a6bd1030687bacec85d053a6d34966dbb69d790d9c",
+   "title": "Start singing in the mud | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000306",
+   "page": "motivtated",
+   "clip_id": "M000306",
+   "asset_name": "M000306.zip",
+   "bundle_sha256": "c88c4605d1f9819e2dd67343693d2347621b11a452c06c8a15583ed7f34cb7b7",
+   "title": "The world's lazy"
+  },
+  {
+   "key": "motivtated:M000307",
+   "page": "motivtated",
+   "clip_id": "M000307",
+   "asset_name": "M000307.zip",
+   "bundle_sha256": "81e7aed173f4d938f4922d2516dbf7506257464a41229c72eff0d31fd56b9015",
+   "title": "The last one standing"
+  },
+  {
+   "key": "motivtated:M000308",
+   "page": "motivtated",
+   "clip_id": "M000308",
+   "asset_name": "M000308.zip",
+   "bundle_sha256": "1610e31a86b0a1e46ee15722025ad526be9a9dc13495724a1c7c321f51566365",
+   "title": "I've never lost"
+  },
+  {
+   "key": "motivtated:M000309",
+   "page": "motivtated",
+   "clip_id": "M000309",
+   "asset_name": "M000309.zip",
+   "bundle_sha256": "5dc61db0e03930fc5525454d6a19003b5a7c027f0345ae3697a833b62db319f0",
+   "title": "A man's character"
+  },
+  {
+   "key": "motivtated:M000310",
+   "page": "motivtated",
+   "clip_id": "M000310",
+   "asset_name": "M000310.zip",
+   "bundle_sha256": "e50a38a97e9b0d0444c29b3dd614aaec458df5b0b970fad453dcf0ef4c887980",
+   "title": "If I knew I'd wake up broke"
+  },
+  {
+   "key": "motivtated:M000312",
+   "page": "motivtated",
+   "clip_id": "M000312",
+   "asset_name": "M000312.zip",
+   "bundle_sha256": "ecb082adb910b371708c56746c1c1950eb1271bc893427fca48baaa936ac049f",
+   "title": "Never ring the bell | Admiral McRaven"
+  },
+  {
+   "key": "motivtated:M000313",
+   "page": "motivtated",
+   "clip_id": "M000313",
+   "asset_name": "M000313.zip",
+   "bundle_sha256": "3a70f87e344a36235e9faefd053d05fc6a66d043a2158b146b5a99f569e1291d",
+   "title": "Where a lamborghini should be"
+  },
+  {
+   "key": "motivtated:M000314",
+   "page": "motivtated",
+   "clip_id": "M000314",
+   "asset_name": "M000314.zip",
+   "bundle_sha256": "3a329ce6626483b6ae7fff8ffa42ddffa3d772ebaa5a51c444fbcf6b3c1848f5",
+   "title": "If you want to be a diamond"
+  },
+  {
+   "key": "motivtated:M000315",
+   "page": "motivtated",
+   "clip_id": "M000315",
+   "asset_name": "M000315.zip",
+   "bundle_sha256": "035958b8b785e4e13ab4e46c74d36f8234e459db48f27558baf0551a7ba88cd0",
+   "title": "You outlasted it"
+  },
+  {
+   "key": "motivtated:M000316",
+   "page": "motivtated",
+   "clip_id": "M000316",
+   "asset_name": "M000316.zip",
+   "bundle_sha256": "97b8a7c715e65138e8a6517936bee602817b5db88328a0c2bf89fab84decdccf",
+   "title": "Proud is larger than fun"
+  },
+  {
+   "key": "motivtated:M000326",
+   "page": "motivtated",
+   "clip_id": "M000326",
+   "asset_name": "M000326.zip",
+   "bundle_sha256": "2bd11150ad3b96650e4e2b0d2398c147b24021b45f29b9b2f42092f44a6c05cb",
+   "title": "Imagine you had a clone"
+  },
+  {
+   "key": "motivtated:M000327",
+   "page": "motivtated",
+   "clip_id": "M000327",
+   "asset_name": "M000327.zip",
+   "bundle_sha256": "ec028d7a4315de9723e2deee9ea858746b7955044fd8783d4cb38c321ab6c0a4",
+   "title": "Everybody wants the prize"
+  },
+  {
+   "key": "motivtated:M000328",
+   "page": "motivtated",
+   "clip_id": "M000328",
+   "asset_name": "M000328.zip",
+   "bundle_sha256": "0a7d6c44cfb8ac296b431274ce67ab455effa19c08fe81207245d02d024bea54",
+   "title": "There is nothing fake about belief"
+  },
+  {
+   "key": "motivtated:M000329",
+   "page": "motivtated",
+   "clip_id": "M000329",
+   "asset_name": "M000329.zip",
+   "bundle_sha256": "d8a11e0e1458f7c64bf402dd4d56928805878efc1f239868fb8408f9c6b31306",
+   "title": "No benefit to doubting yourself"
+  },
+  {
+   "key": "motivtated:M000330",
+   "page": "motivtated",
+   "clip_id": "M000330",
+   "asset_name": "M000330.zip",
+   "bundle_sha256": "aa637f02e6b74a00e5fa3a8d79714b641416504cf20a21c59507274ae362426b",
+   "title": "Just a regular human being"
+  },
+  {
+   "key": "motivtated:M000331",
+   "page": "motivtated",
+   "clip_id": "M000331",
+   "asset_name": "M000331.zip",
+   "bundle_sha256": "3bdeb56afbccc528ed0dde2d01db4cdb60a99f18c3457fc9637fb3b46ce0ddf1",
+   "title": "Effort is a muscle"
+  }
+ ]
+}

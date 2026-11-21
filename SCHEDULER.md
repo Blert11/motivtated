@@ -125,3 +125,9 @@ Queues were full through Nov 20, so the three latest Nov 20 posts per channel we
 - No more clips of one speaker on any Motivtated platform: their 95 clip IDs (chosen by the clip filename tag) are listed in `removed_ids` in posting-schedule.json, lane2-schedule.json and lane3-schedule.json. Every lane drops those rows; validation still checks the full approved plan.
 - Posts already waiting in Buffer were deleted with owner-edit `clip_id=remove` (publisher/owner_remove.py): each one is recorded as `skipped` / `owner_removed`, so it is never scheduled again.
 - 2026-11-21 20:23: TikTok is paused, not stopped. `platform_resume: {"tiktok": "2026-11-24T11:02:00+01:00"}` replaces `stopped_platforms`; TikTok gets only rows due from that time (first one Nov 24 16:00), earlier rows never post to TikTok.
+
+## Lane 5: YouTube Shorts through Zernio (2026-11-21, Claude, authorized by Blert)
+- Buffer free allows only 2 YouTube posts a channel a day, so YouTube moves to Zernio (free for 2 accounts, no post cap). `publisher/lane5.py`, workflow `lane5-publisher.yml` (hourly at minute 27), plan `lane5-schedule.json`, ledger `lane5-state.json`, media release `lane5-media`. Secret: `ZERNIO_API_KEY` (until it is set the workflow does nothing).
+- 6 Shorts a day per page (10:00, 12:00, 14:00, 16:00, 18:00, 20:00). The plan holds only the clip order; each clip takes the next free slot of its page when it is scheduled (at least 40 min ahead), so nothing is lost and no backlog posts in a burst.
+- Lane 2 stops new YouTube posts (`stopped_platforms: ["youtube"]` in lane2-schedule.json) and keeps X. Clips already posted or still queued on Buffer YouTube are never sent through Zernio.
+- Long videos are uploaded by Blert himself.

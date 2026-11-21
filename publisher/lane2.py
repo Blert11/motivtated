@@ -288,6 +288,8 @@ class Lane2:
                 break
             todo = []
             for p in row['platforms']:
+                if p in self.plan.get('stopped_platforms', []):
+                    continue   # 2026-11-21: YouTube moved to Zernio (lane 5); X stays here
                 ch = channels.get(row['page']+':'+p)
                 if not ch:
                     continue

@@ -8646,5 +8646,9 @@
     "M000174",
     "M000189"
   ],
-  "removed_note": "Blert 2026-11-21: Motivtated TikTok account restricted - no more TikTok posts; and no more clips of one speaker on any Motivtated platform (removed_ids, chosen by the clip filename tag)."
+  "removed_note": "Blert 2026-11-21: Motivtated TikTok account restricted - no more TikTok posts; and no more clips of one speaker on any Motivtated platform (removed_ids, chosen by the clip filename tag).",
+  "stopped_platforms": [
+    "youtube"
+  ],
+  "zernio_note": "2026-11-21: no new YouTube posts from Buffer; YouTube Shorts go through Zernio (lane5). Posts already queued on Buffer YouTube still publish unless deleted."
 }
