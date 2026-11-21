@@ -2805,8 +2805,8 @@
     "M000174",
     "M000189"
   ],
-  "removed_note": "Blert 2026-11-21: Motivtated TikTok account restricted - no more TikTok posts; and no more clips of one speaker on any Motivtated platform (removed_ids, chosen by the clip filename tag).",
-  "stopped_platforms": [
-    "tiktok"
-  ]
+  "removed_note": "Blert 2026-11-21: Motivtated TikTok account restricted - no more TikTok posts; and no more clips of one speaker on any Motivtated platform (removed_ids, chosen by the clip filename tag). | Blert 2026-11-21 20:23: TikTok paused, not stopped: it resumes with clips due from Nov 24 11:02.",
+  "platform_resume": {
+    "tiktok": "2026-11-24T11:02:00+01:00"
+  }
 }

@@ -125,7 +125,9 @@ class Scheduler:
         return False   # 2026-11-14: a Facebook failure skips only that post; the channel keeps posting
 
     def platforms_for(self, row, include_paused=False):
-        result = [p for p in PLATFORMS if p not in self.stopped]
+        resume = self.plan.get('platform_resume', {})   # owner pause: no posts due before this time
+        result = [p for p in PLATFORMS if p not in self.stopped
+                  and not (p in resume and parse_time(row['due_at']) < parse_time(resume[p]))]
         start = self.plan.get('facebook_from')
         if 'facebook' in self.channels and start and parse_time(row['due_at']) >= parse_time(start):
             if include_paused or not self.fb_paused():
@@ -218,7 +220,7 @@ class Scheduler:
             return
         # Only the approved queue; originals and private bundles are always retained.
         for row in self.rows:
-            plats = [p for p in PLATFORMS if p not in self.stopped
+            plats = [p for p in PLATFORMS if p in self.platforms_for(row)
                      and (self.records.get(row['clip_id']+':'+p) or {}).get('state') != 'skipped']
             if not plats:
                 continue
