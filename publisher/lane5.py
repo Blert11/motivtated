@@ -28,7 +28,7 @@ from .github import GitHub, GitHubLedger
 
 TZ = lane2.TZ
 API = 'https://zernio.com/api/v1'
-MAX_NEW_PER_RUN = 4
+MAX_NEW_PER_RUN = 24   # fill ~2 days per page in one run: runs are kept rare to save Actions minutes
 LEAD = timedelta(minutes=40)
 
 
