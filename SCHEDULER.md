@@ -137,3 +137,5 @@ GitHub warned that 90% of the 2,000 monthly Actions minutes were used (resets 20
 ~7 minutes waiting for GitHub Pages deploys before posting. New clips now go up as assets of the public `lane1-media`
 prerelease in the media repo (public immediately, like lane 2), and the availability retry is ~2 minutes at most.
 Older Pages-hosted records are still cleaned through the Pages code path.
+- Later on 2026-11-22 the minutes ran out (jobs refused for the spending limit). Blert made the publisher repo public,
+  which gives unlimited free Actions minutes; the private-repo guards were removed. History was scanned: no secrets in it.

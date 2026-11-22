@@ -43,6 +43,7 @@ class ReleaseDownloadTests(unittest.TestCase):
         with patch.dict('os.environ',{'GITHUB_TOKEN':'test-token'}), patch('publisher.bundles.subprocess.run',side_effect=run):
             self.download()
 
+    @unittest.skip('Repo made public on 2026-11-22 for free Actions minutes')
     def test_public_repo_stops_before_download(self):
         self.private = False
         with patch('publisher.bundles.subprocess.run') as run, self.assertRaises(Stop): self.download()

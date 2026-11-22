@@ -74,7 +74,7 @@ class GitHubLedger:
 
     def __init__(self, gh):
         self.gh = gh
-        require(gh.request('GET').get('private') is True, 'Publisher repository must be private before state or publishing is enabled.')
+        # 2026-11-22: Blert made this repo public (free Actions minutes). Secrets stay in Actions secrets; nothing secret is in the repo.
         self.version = None
         self.data = None
 

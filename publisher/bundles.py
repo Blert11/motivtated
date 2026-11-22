@@ -126,7 +126,7 @@ def download_github_release(identifier, destination, expected_hash, gh=None, ass
     from .github import GitHub
     identifier = clip_id(identifier)
     gh = gh or GitHub(env('GITHUB_REPOSITORY'), env('GITHUB_TOKEN'))
-    require(gh.request('GET').get('private') is True, 'Bundle repository must be private.')
+    # 2026-11-22: Blert made this repo public (free Actions minutes). Secrets stay in Actions secrets; nothing secret is in the repo.
     release = gh.request('GET', '/releases/tags/posting-inputs')
     name = asset_name or identifier+'.zip'
     require(re.fullmatch(re.escape(identifier)+r'(\.r[0-9]{1,2})?\.zip', name), 'Release bundle name must be the clip ID, optionally with a .rN revision.')
