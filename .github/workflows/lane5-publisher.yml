@@ -2,7 +2,7 @@ name: Lane 5 publisher (YouTube Shorts via Zernio)
 # YouTube Shorts for @motivtated and @imanivated through Zernio: own plan (lane5-schedule.json) and ledger (lane5-state.json).
 'on':
   schedule:
-    - cron: '27 */6 * * *'   # every 6 h: one run queues ~2 days, and Actions minutes are tight
+    - cron: '27 * * * *'
   workflow_dispatch:
   push:
     branches: [lane5-kick]
