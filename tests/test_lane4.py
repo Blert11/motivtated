@@ -16,7 +16,10 @@ class Lane4Tests(unittest.TestCase):
         yt = {r['clip_id']: r for r in json.loads(Path('lane2-schedule.json').read_text(encoding='utf-8'))['rows']
               if r['page'] == 'imanivated'}
         for r in json.loads(Path('lane4-schedule.json').read_text(encoding='utf-8'))['rows']:
-            pass  # YouTube moved to 2 a day (2026-11-19); TikTok/IG/FB keep their own times
+            # YouTube moved to 2 a day (2026-11-19); TikTok/IG/FB keep their own times.
+            # From batch 6 (I000082+) YouTube runs on lane 5 only, so those clips are not in lane 2.
+            if r['clip_id'] not in yt:
+                continue
             self.assertEqual(r['bundle_sha256'], yt[r['clip_id']]['bundle_sha256'])
 
     def test_payloads(self):
