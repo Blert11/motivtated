@@ -30,6 +30,9 @@ TZ = lane2.TZ
 API = 'https://zernio.com/api/v1'
 MAX_NEW_PER_RUN = 24   # fill ~2 days per page in one run: runs are kept rare to save Actions minutes
 LEAD = timedelta(minutes=40)
+STORY_RELEASE = 'animated-inputs'
+STORY_ID = {'motivtated': r'MA\d{4}', 'imanivated': r'IA\d{4}'}
+STORY_HORIZON = timedelta(hours=36)   # fixed-time rows are created at most this far ahead
 
 
 class Lane5Ledger(GitHubLedger):
@@ -99,7 +102,12 @@ def validate_plan(plan):
     seen = set()
     for row in plan['rows']:
         page = row['page']
-        require(page in slots and re.fullmatch(lane2.ID_RE[page], row['clip_id']), 'Bad page/clip ID.')
+        story = row.get('release') == STORY_RELEASE   # animated stories (2026-11-28): fixed time, own release
+        require(page in slots and re.fullmatch(STORY_ID[page] if story else lane2.ID_RE[page], row['clip_id']), 'Bad page/clip ID.')
+        require(story == ('due_at' in row), 'Fixed times only for animated story rows.')
+        if story:
+            due = lane2.parse_time(row['due_at'])
+            require(due.second == 0, 'Bad fixed time.')
         require(row['key'] == page+':'+row['clip_id'] and row['key'] not in seen, 'Duplicate or bad row key.')
         seen.add(row['key'])
         require(re.fullmatch(r'[0-9a-f]{64}', row['bundle_sha256']), 'Bad bundle digest.')
@@ -109,15 +117,15 @@ def validate_plan(plan):
     return plan['rows']
 
 
-def next_slot(slots, after):
-    """First slot (Europe/Budapest) strictly after `after`."""
+def next_slot(slots, after, taken=()):
+    """First slot (Europe/Budapest) strictly after `after`, skipping times held by fixed-time rows."""
     local = after.astimezone(TZ)
     for d in range(0, 30):
         day = (local + timedelta(days=d)).date()
         for t in slots:
             h, m = map(int, t.split(':'))
             cand = datetime(day.year, day.month, day.day, h, m, tzinfo=TZ)
-            if cand > local:
+            if cand > local and cand not in taken:
                 return cand
     raise Stop('No free slot found.')
 
@@ -180,9 +188,24 @@ class Lane5(lane2.Lane2):
                 self.report['problems'].append(f'{key}: {rec["error"][:150]}')
                 self.event(key, 'reconciled_'+status)
 
+    def load(self, row, directory):
+        if row.get('release') != STORY_RELEASE:
+            return super().load(row, directory)
+        from .lane6 import unpack_story
+        bundle = directory/'input.zip'
+        lane2.download_asset(self.gh, STORY_RELEASE, row['asset_name'], bundle, row['bundle_sha256'])
+        content = directory/'content'
+        content.mkdir()
+        manifest = unpack_story(bundle, row['bundle_sha256'], content, row['page'], max_seconds=180)   # Shorts: 3 min
+        require(manifest['clip_id'] == row['clip_id'], 'Package clip ID differs from the plan.')
+        return manifest, content
+
+    def taken(self, page):
+        return {lane2.parse_time(r['due_at']) for r in self.rows if r['page'] == page and r.get('due_at')}
+
     def last_due(self, page):
         times = [lane2.parse_time(r['due_at']) for r in self.records.values()
-                 if r.get('page') == page and r['state'] in ('submitted', 'posted', 'submit_intent', 'needs_attention')]
+                 if r.get('page') == page and not r.get('fixed') and r['state'] in ('submitted', 'posted', 'submit_intent', 'needs_attention')]
         return max(times) if times else None
 
     def pending(self, page):
@@ -202,10 +225,20 @@ class Lane5(lane2.Lane2):
             old = self.records.get(key)
             if old and not (old['state'] == 'failed_before_submit' and old.get('attempts', 1) < 3):
                 continue
-            if self.pending(page) >= cap:
-                continue
-            base = max([t for t in (self.last_due(page), self.clock()+LEAD) if t])
-            due = next_slot(self.plan['slots'][page], base)
+            if row.get('due_at'):
+                due = lane2.parse_time(row['due_at'])
+                if due <= self.clock()+LEAD:
+                    self.records[key] = {'row': row['key'], 'clip_id': row['clip_id'], 'page': page, 'platform': 'youtube',
+                                         'channel_id': acc, 'due_at': row['due_at'], 'state': 'skipped_missed', 'fixed': True}
+                    self.report['skipped_missed'].append(key)
+                    continue
+                if due > self.clock()+STORY_HORIZON:
+                    continue
+            else:
+                if self.pending(page) >= cap:
+                    continue
+                base = max([t for t in (self.last_due(page), self.clock()+LEAD) if t])
+                due = next_slot(self.plan['slots'][page], base, self.taken(page))
             try:
                 self.fill_one(row, key, acc, due)
             except Exception as exc:
@@ -216,6 +249,8 @@ class Lane5(lane2.Lane2):
                 self.records[key] = {'row': row['key'], 'clip_id': row['clip_id'], 'page': page, 'platform': 'youtube',
                                      'channel_id': acc, 'due_at': due.isoformat(), 'state': 'failed_before_submit',
                                      'attempts': prev+1, 'error': msg, 'created_at': now()}
+                if row.get('due_at'):
+                    self.records[key]['fixed'] = True
                 if prev+1 >= 3:
                     self.records[key]['state'] = 'skipped'
                 self.event(key, 'failed_before_submit')
@@ -233,6 +268,8 @@ class Lane5(lane2.Lane2):
             rec = {'row': row['key'], 'clip_id': row['clip_id'], 'page': row['page'], 'platform': 'youtube',
                    'channel_id': acc, 'due_at': due.isoformat(), 'caption': caption, 'title': title,
                    'media': media, 'state': 'submit_intent', 'created_at': now()}
+            if row.get('due_at'):
+                rec['fixed'] = True
             self.records[key] = rec
             self.event(key, 'before_zernio_create')
             try:

@@ -2072,9 +2072,240 @@
    "asset_name": "I000110.zip",
    "bundle_sha256": "c4022cfa5c70840f9a5ed5b859dc5ca2d3547bd82a16823d1546fab402aef58d",
    "title": "It takes courage to be yourself | Hisham Abu Yusuf"
+  },
+  {
+   "key": "motivtated:MA0001",
+   "page": "motivtated",
+   "clip_id": "MA0001",
+   "asset_name": "MA0001.zip",
+   "bundle_sha256": "d7122042f2ce4c9565132773636f85555f3ba364fd10d15e432e69a612bbc175",
+   "release": "animated-inputs",
+   "due_at": "2026-11-29T18:00:00+01:00",
+   "title": "Companies That Said No to a Fortune"
+  },
+  {
+   "key": "motivtated:MA0002",
+   "page": "motivtated",
+   "clip_id": "MA0002",
+   "asset_name": "MA0002.zip",
+   "bundle_sha256": "9b961b112a844bcc001278cda16a950b5c7d6976d4baca7f5b7248ae18cfcd20",
+   "release": "animated-inputs",
+   "due_at": "2026-11-30T18:00:00+01:00",
+   "title": "Why Your Jeans Have Metal Dots"
+  },
+  {
+   "key": "motivtated:MA0003",
+   "page": "motivtated",
+   "clip_id": "MA0003",
+   "asset_name": "MA0003.zip",
+   "bundle_sha256": "21389090e1c1f262077839f3908d5a2c44cf32428ce163273c40ec23b7ffdabc",
+   "release": "animated-inputs",
+   "due_at": "2026-12-01T18:00:00+01:00",
+   "title": "Why the Pony Express Only Lasted 18 Months"
+  },
+  {
+   "key": "motivtated:MA0004",
+   "page": "motivtated",
+   "clip_id": "MA0004",
+   "asset_name": "MA0004.zip",
+   "bundle_sha256": "c91812aa1484b7d4ce62d0ab02b5ee00075e7b1584d5cb2b41856160ebeaff9f",
+   "release": "animated-inputs",
+   "due_at": "2026-12-02T18:00:00+01:00",
+   "title": "Stop Negotiating With Yourself"
+  },
+  {
+   "key": "motivtated:MA0005",
+   "page": "motivtated",
+   "clip_id": "MA0005",
+   "asset_name": "MA0005.zip",
+   "bundle_sha256": "87f5dad352e0460e52fb3930fbc6ad8a3b5f2d7c25cf0f51bebd8b2735ae1995",
+   "release": "animated-inputs",
+   "due_at": "2026-12-03T18:00:00+01:00",
+   "title": "The 101st Blow"
+  },
+  {
+   "key": "motivtated:MA0007",
+   "page": "motivtated",
+   "clip_id": "MA0007",
+   "asset_name": "MA0007.zip",
+   "bundle_sha256": "f83aa0e0a9fb1bb568880b4006fb7289506ec1b5a2f4285e16cf73c9dd43ee04",
+   "release": "animated-inputs",
+   "due_at": "2026-12-05T18:00:00+01:00",
+   "title": "They Took His Rabbit"
+  },
+  {
+   "key": "motivtated:MA0008",
+   "page": "motivtated",
+   "clip_id": "MA0008",
+   "asset_name": "MA0008.zip",
+   "bundle_sha256": "b3d9a5f4461dbe047772568a7fa17d3987b6bf142f90726157daa5d52a577fd6",
+   "release": "animated-inputs",
+   "due_at": "2026-12-06T18:00:00+01:00",
+   "title": "Not a Life Lost"
+  },
+  {
+   "key": "motivtated:MA0009",
+   "page": "motivtated",
+   "clip_id": "MA0009",
+   "asset_name": "MA0009.zip",
+   "bundle_sha256": "96d7736551f3fccbe9a8c7a19637d1f92f7383275e5446160d8e5764b5f89b91",
+   "release": "animated-inputs",
+   "due_at": "2026-12-07T18:00:00+01:00",
+   "title": "47 Out of 50"
+  },
+  {
+   "key": "motivtated:MA0010",
+   "page": "motivtated",
+   "clip_id": "MA0010",
+   "asset_name": "MA0010.zip",
+   "bundle_sha256": "a20280ada47a09a07617844a10aa684ad823b2eb64be42f89347b666e1d64768",
+   "release": "animated-inputs",
+   "due_at": "2026-12-08T18:00:00+01:00",
+   "title": "The Shade He Planted"
+  },
+  {
+   "key": "motivtated:MA0011",
+   "page": "motivtated",
+   "clip_id": "MA0011",
+   "asset_name": "MA0011.zip",
+   "bundle_sha256": "9a6254470756cc0b06c16eebaaf20bfd58cd4a27cc6f69b7eac3acd9804d60ce",
+   "release": "animated-inputs",
+   "due_at": "2026-12-09T18:00:00+01:00",
+   "title": "Apollo 13: Four Days to Get Home"
+  },
+  {
+   "key": "motivtated:MA0012",
+   "page": "motivtated",
+   "clip_id": "MA0012",
+   "asset_name": "MA0012.zip",
+   "bundle_sha256": "e8d4810789583b58908b2e69d18a2a030610a2ad063f375ed3a0771a2093b446",
+   "release": "animated-inputs",
+   "due_at": "2026-12-10T18:00:00+01:00",
+   "title": "The Soldier Who Never Stopped"
+  },
+  {
+   "key": "imanivated:IA0001",
+   "page": "imanivated",
+   "clip_id": "IA0001",
+   "asset_name": "IA0001.zip",
+   "bundle_sha256": "782e031d3ec747e48c55c6881e293728bf31cf0c918facaaaf4fae99ecaa92fa",
+   "release": "animated-inputs",
+   "due_at": "2026-11-29T18:00:00+01:00",
+   "title": "The Scientist Who Pretended to Be Mad"
+  },
+  {
+   "key": "imanivated:IA0002",
+   "page": "imanivated",
+   "clip_id": "IA0002",
+   "asset_name": "IA0002.zip",
+   "bundle_sha256": "4d7a329f28c3ac225922dfa65305593b9b77ddc3e62db035dd65bf32c4e76bb5",
+   "release": "animated-inputs",
+   "due_at": "2026-11-30T18:00:00+01:00",
+   "title": "Be Someone's Relief"
+  },
+  {
+   "key": "imanivated:IA0003",
+   "page": "imanivated",
+   "clip_id": "IA0003",
+   "asset_name": "IA0003.zip",
+   "bundle_sha256": "9d1716d23be1dd11349b838126b936cbd2ed0f6f864d302798e6df84ee6dce73",
+   "release": "animated-inputs",
+   "due_at": "2026-12-01T18:00:00+01:00",
+   "title": "The Tree That Pays You While You Sleep"
+  },
+  {
+   "key": "imanivated:IA0004",
+   "page": "imanivated",
+   "clip_id": "IA0004",
+   "asset_name": "IA0004.zip",
+   "bundle_sha256": "c37baa87bbee55b662353b7e2ec3ad12e1161b1a11e8accd19eb925d842254ea",
+   "release": "animated-inputs",
+   "due_at": "2026-12-02T18:00:00+01:00",
+   "title": "The Cloud That Knew His Name"
+  },
+  {
+   "key": "imanivated:IA0005",
+   "page": "imanivated",
+   "clip_id": "IA0005",
+   "asset_name": "IA0005.zip",
+   "bundle_sha256": "2f0147f9b97328088442562d54b01682c65a5cbf8ebf2e01d08be55246357413",
+   "release": "animated-inputs",
+   "due_at": "2026-12-03T18:00:00+01:00",
+   "title": "Put Allah First"
+  },
+  {
+   "key": "imanivated:IA0006",
+   "page": "imanivated",
+   "clip_id": "IA0006",
+   "asset_name": "IA0006.zip",
+   "bundle_sha256": "d24a114fbb834d219ae7db48fc0345208ed7f3c98cef8da15405c8ecbafeb6f5",
+   "release": "animated-inputs",
+   "due_at": "2026-12-04T18:00:00+01:00",
+   "title": "One Shoe of Water"
+  },
+  {
+   "key": "imanivated:IA0007",
+   "page": "imanivated",
+   "clip_id": "IA0007",
+   "asset_name": "IA0007.zip",
+   "bundle_sha256": "68cca6cb34abc3e6d68cbd9d80f25b0194313981c55e7693109bbea63ac1a9a5",
+   "release": "animated-inputs",
+   "due_at": "2026-12-05T18:00:00+01:00",
+   "title": "The Branch in the Road"
+  },
+  {
+   "key": "imanivated:IA0008",
+   "page": "imanivated",
+   "clip_id": "IA0008",
+   "asset_name": "IA0008.zip",
+   "bundle_sha256": "e19abed99d437193177cf3447bfbe5e6831c94d8e6283a3e544371813d1243a8",
+   "release": "animated-inputs",
+   "due_at": "2026-12-06T18:00:00+01:00",
+   "title": "The Coin That Came Back"
+  },
+  {
+   "key": "imanivated:IA0009",
+   "page": "imanivated",
+   "clip_id": "IA0009",
+   "asset_name": "IA0009.zip",
+   "bundle_sha256": "1faf250be70454127906561e782f62251301ce673cc7ed3ee66d3d65d8ce2acf",
+   "release": "animated-inputs",
+   "due_at": "2026-12-07T18:00:00+01:00",
+   "title": "Drop by Drop"
+  },
+  {
+   "key": "imanivated:IA0010",
+   "page": "imanivated",
+   "clip_id": "IA0010",
+   "asset_name": "IA0010.zip",
+   "bundle_sha256": "4a2e29551bd0d01664a74e5848b925181dbf7553525a0132ab7a2bd308c33f01",
+   "release": "animated-inputs",
+   "due_at": "2026-12-08T18:00:00+01:00",
+   "title": "The Road Back"
+  },
+  {
+   "key": "imanivated:IA0011",
+   "page": "imanivated",
+   "clip_id": "IA0011",
+   "asset_name": "IA0011.zip",
+   "bundle_sha256": "dd4d6368bafac7eee31765ed552f64097de02f650c993054f43f0d17c9690408",
+   "release": "animated-inputs",
+   "due_at": "2026-12-09T18:00:00+01:00",
+   "title": "The Army of Elephants"
+  },
+  {
+   "key": "imanivated:IA0012",
+   "page": "imanivated",
+   "clip_id": "IA0012",
+   "asset_name": "IA0012.zip",
+   "bundle_sha256": "2c6ab11996cae046053fc05973d5460b717b3cf618b9134154a4b9a6d50a618c",
+   "release": "animated-inputs",
+   "due_at": "2026-12-10T18:00:00+01:00",
+   "title": "The Man Who Killed 99"
   }
  ],
  "notes": [
-  "2026-11-27: batch 6 Imanivated Shorts I000082-I000110 added (authorized by Blert)."
+  "2026-11-27: batch 6 Imanivated Shorts I000082-I000110 added (authorized by Blert).",
+  "2026-11-28: animated story Shorts (MA0001-MA0012 except the 5-min MA0006, IA0001-IA0012) at fixed 18:00 times from Nov 29, package release animated-inputs (authorized by Blert). Regular clips skip those 18:00 slots."
  ]
 }

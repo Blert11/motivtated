@@ -2,7 +2,7 @@
   "version": 1,
   "enabled": true,
   "timezone": "Europe/Budapest",
-  "max_pending_per_channel": 10,
+  "max_pending_per_channel": 8,
   "cleanup_after_both_sent": true,
   "authorized_on": "2026-10-28",
   "excluded_ids": [

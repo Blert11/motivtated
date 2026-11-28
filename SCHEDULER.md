@@ -140,3 +140,12 @@ prerelease in the media repo (public immediately, like lane 2), and the availabi
 Older Pages-hosted records are still cleaned through the Pages code path.
 - Later on 2026-11-22 the minutes ran out (jobs refused for the spending limit). Blert made the publisher repo public,
   which gives unlimited free Actions minutes; the private-repo guards were removed. History was scanned: no secrets in it.
+
+## Lane 6: animated story videos (2026-11-28, Claude, authorized by Blert)
+- One animated story a day per page at 18:00 Europe/Budapest, Nov 29 to Dec 10, on TikTok, Instagram and Facebook (`publisher/lane6.py`, workflow `lane6-publisher.yml` hourly at minute 53, plan `lane6-schedule.json`), and as YouTube Shorts on lane 5 at the same fixed times.
+- Motivtated: MA0001-MA0012 (from video 9 "Companies That Said No to a Fortune", then 13-22 and the Claude Videos) on the first Buffer account. MA0005 (The 101st Blow) skips TikTok, it is already there. MA0006 (5:24) is not a Short.
+- Imanivated: IA0001-IA0012 (from video 11 "The Scientist Who Pretended to Be Mad", then 12-21 and the Claude Videos) on the fourth Buffer account.
+- Cinematic Editions replace the earlier cut of the same story (Shade He Planted, Road Back); Jeans uses the new-host version.
+- Packages: `animated-inputs` release (uploaded from branch `claude-bundles-animated`). Ledgers `lane6-motivtated-state.json`, `lane6-imanivated-state.json`. Media release `lane6-media`.
+- Shared Buffer channels: lane 6 counts the live Buffer queue before each create (cap 10) and creates posts at most 36 h ahead. The main lane and lane 4 now keep at most 8 waiting per channel so there is room.
+- Lane 5 rows with `release: animated-inputs` carry a fixed `due_at`; regular clips skip those 18:00 slots.

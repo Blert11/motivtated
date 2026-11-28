@@ -4,7 +4,7 @@
   "timezone": "Europe/Budapest",
   "authorized_on": "2026-11-18",
   "note": "Imanivated TikTok/Instagram/Facebook on the fourth Buffer account. Same clips and times as the Imanivated YouTube lane, starting after I000045 (the last clip Blert posted by hand on Nov 16).",
-  "max_pending_per_channel": 10,
+  "max_pending_per_channel": 8,
   "rows": [
     {
       "key": "imanivated:I000046",
@@ -854,6 +854,7 @@
   ],
   "notes": [
     "2026-11-18: dhikr videos I000078-I000081 added at 20:00 on Nov 19-22, mixed between the regular clips (authorized by Blert).",
-    "2026-11-27: batch 6 (I000082-I000110, 29 clips) added at 10:00, 12:00, 14:00, 18:00 and 21:30 from Nov 27 to Dec 2 (authorized by Blert)."
+    "2026-11-27: batch 6 (I000082-I000110, 29 clips) added at 10:00, 12:00, 14:00, 18:00 and 21:30 from Nov 27 to Dec 2 (authorized by Blert).",
+    "2026-11-28: queue cap 10 -> 8 so lane 6 (animated stories) has room on the same Buffer channels."
   ]
 }

@@ -43,7 +43,7 @@ def pace_for(plan, day):
 
 def validate_plan(plan):
     require(plan.get('version') == 1 and plan.get('timezone') == 'Europe/Budapest', 'Unsupported schedule plan.')
-    require(plan.get('max_pending_per_channel') in [6,10], 'Queue capacity must be six or ten per channel.')
+    require(plan.get('max_pending_per_channel') in [6,8,10], 'Queue capacity must be six, eight or ten per channel.')   # 8 from 2026-11-28: lane 6 shares these channels
     require(plan.get('cleanup_grace_hours',48) in [2,48], 'Unsupported cleanup retention period.')
     pace_for(plan, datetime(2000, 1, 1).date())
     for change in plan.get('pace_changes', []):
